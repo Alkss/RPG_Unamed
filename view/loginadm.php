@@ -11,4 +11,6 @@ include('../header.php');
 
 ?>
 
+<h2>Query = SELECT name, password FROM tb_usuario WHERE name='<?=$_GET['name']?>' AND password='<?=$_GET['password']?>' </h2>
+<hr>
 <h1>ADM</h1>

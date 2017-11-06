@@ -15,27 +15,25 @@ include('../header.php');
 <div class="container">
     <h1>RPG Unamed</h1>
     <div class="row">
-        <form class="form-group" id="loginForm">
+        <form class="form-group" id="loginForm" method="post" action="../Control/LoginController.php">
             <div>
                 <div class="col-xs-6">
                     Nome de Usuário:
-                    <input type="text" class="form-control">
+                    <input type="text" class="form-control" name="usrName" id="usrName">
                 </div>
                 <div class="col-xs-3">
                     Senha:
-                    <input type="password" class="form-control">
+                    <input type="password" class="form-control" name="psswrd" id="usrName">
                 </div>
             </div>
     </div>
-    </form>
 
     <div class="row">
         <div class="col-xs-12">
-            <a class="btn btn-primary" href="loginadm.php">Login ADM</a>
-            <a class="btn btn-primary" href="loginusr.php">Login Comum</a>
+            <button class="btn btn-primary" id="loginAdm" name="loginBtn" value="ADM">Login ADM</button>
+            <button class="btn btn-primary" id="loginUsr" name="loginBtn" value="USER">Login Comum</button>
         </div>
     </div>
+    </form>
 
 </div>
-
-
