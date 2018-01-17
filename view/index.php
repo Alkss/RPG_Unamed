@@ -2,6 +2,23 @@
 require('../config.php');
 include('../header.php');
 
+if (isset($_POST['usrName'])) {
+    $user = new User();
+    $login = $user->login($_POST['usrName'], $_POST['psswrd']);
+    if ($login == "adm") {
+        header("Location:adm/homepageADM.php");
+    } else if ($login == "usr") {
+        header("Location:user/homepage.php");
+    } else {
+        ?>
+        <script>
+            alert('<?php echo $login?>')
+        </script>
+
+        <?php
+
+    }
+}
 
 /**
  * Created by PhpStorm.
@@ -15,7 +32,7 @@ include('../header.php');
 <div class="container">
     <h1>RPG Unamed</h1>
     <div class="row">
-        <form class="form-group" id="loginForm" method="post" action="../Control/LoginController.php">
+        <form class="form-group" id="loginForm" method="post">
             <div>
                 <div class="col-xs-6">
                     Nome de Usuário:
@@ -30,8 +47,7 @@ include('../header.php');
 
     <div class="row">
         <div class="col-xs-12">
-            <button class="btn btn-primary" id="loginAdm" name="loginBtn" value="ADM">Login ADM</button>
-            <button class="btn btn-primary" id="loginUsr" name="loginBtn" value="USER">Login Comum</button>
+            <button class="btn btn-primary" id="login" name="loginBtn" value="ADM">Acessar</button>
         </div>
     </div>
     </form>

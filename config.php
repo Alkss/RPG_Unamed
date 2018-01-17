@@ -11,8 +11,9 @@ ini_set('max_execution_time', 30);
 
 define('DB_HOST', 'localhost'); //Host
 define('DB_USER', 'root'); //User
-define('DB_PASS', ''); //Password
-define('DB_NAME', 'repository'); //Database
+define('DB_PASS', 'root'); //Password
+define('DB_NAME', 'RPG_unamed'); //Database
+define('RPG_NAME', 'RPG_unamed'); // nome do projeto.
 
 define('DEBUG', 1);
 
@@ -29,7 +30,7 @@ session_start();
 
 function __autoload($class_name)
 {
-    include ABSPATH . DS . "classes" . DS . $class_name . '.php';
+    include ABSPATH . DS . "Control" . DS . $class_name . '.php';
 }
 
 function validadeParameters($path, $needed)

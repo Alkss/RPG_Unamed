@@ -1,7 +1,6 @@
 <?php
 require('../config.php');
-new LoginController($_POST['loginBtn']);
-
+$user = new User();
 /**
  * Created by PhpStorm.
  * User: alex
@@ -11,20 +10,5 @@ new LoginController($_POST['loginBtn']);
 class LoginController
 {
 
-    function __construct($choice)
-    {
-        $this->redirect($choice);
-    }
-
-
-    public function redirect($choice)
-    {
-        if ($choice == "ADM") {
-            header('Location:../view/loginadm.php?name=' . $_POST['usrName'] . '&password=' . $_POST['psswrd']);
-        } else if ($choice == "USER") {
-            header('Location:../view/loginusr.php?name=' . $_POST['usrName'] . '&password=' . $_POST['psswrd']);
-        }
-
-    }
 
 }
