@@ -10,15 +10,16 @@ include('../../header.php');
 
 
 if ($_SESSION['logado'] != 1) {
-    header('location:index.php');
+    header('location:../index.php');
 } else {
     ?>
     <head>
         <title><?= RPG_NAME ?></title>
     </head>
+    <body id="home-page-user">
     <h1><?= RPG_NAME ?></h1>
     <h2>Bem Vindo!</h2>
-
+    </body>
 
     <?php
 }

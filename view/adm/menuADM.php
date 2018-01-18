@@ -6,7 +6,7 @@
  * Time: 16:06
  */
 ?>
-<div class="row">
+<body id="menu-ADM">
     <div class="col-xs-4">
         <p class="menuTitle">Menu</p>
         <p><a href="homepageADM.php">Início</a></p>
@@ -16,3 +16,4 @@
         <p><a>Raças</a></p>
         <p><a>Alinhamento</a></p>
     </div>
+</body>

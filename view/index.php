@@ -1,6 +1,10 @@
 <?php
 require('../config.php');
 include('../header.php');
+?>
+<body id="index-page">
+<?php
+
 
 if (isset($_POST['usrName'])) {
     $user = new User();
@@ -14,9 +18,9 @@ if (isset($_POST['usrName'])) {
         <script>
             alert('<?php echo $login?>')
         </script>
-
+        
         <?php
-
+        
     }
 }
 
@@ -26,6 +30,15 @@ if (isset($_POST['usrName'])) {
  * Date: 02/11/17
  * Time: 23:13
  */
+
+if (isset($_GET['sucess'])) {
+    ?>
+    <div class="alert alert-success">Usuário Registrado com sucesso, aguarde a aprovação de um administrador.</div>
+    
+    <?php
+    
+}
+
 ?>
 
 
@@ -34,7 +47,7 @@ if (isset($_POST['usrName'])) {
     <div class="row">
         <form class="form-group" id="loginForm" method="post">
             <div>
-                <div class="col-xs-6">
+                <div class="col-xs-4">
                     Nome de Usuário:
                     <input type="text" class="form-control" name="usrName" id="usrName">
                 </div>
@@ -46,10 +59,12 @@ if (isset($_POST['usrName'])) {
     </div>
 
     <div class="row">
-        <div class="col-xs-12">
-            <button class="btn btn-primary" id="login" name="loginBtn" value="ADM">Acessar</button>
+        <div class="col-xs-6">
+            <button class="btn btn-primary" id="login" name="loginBtn">Acessar</button>
+            </form>
+            <a class="btn btn-primary" id="createNewUser" name="newUser">Criar novo usuário</a>
         </div>
     </div>
-    </form>
 
 </div>
+</body>
