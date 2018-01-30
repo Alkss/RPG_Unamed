@@ -9,11 +9,11 @@
 <body id="menu-ADM">
     <div class="col-xs-4">
         <p class="menuTitle">Menu</p>
-        <p><a href="homepageADM.php">Início</a></p>
+        <p><a href="<?= URL ?>view/adm/homepageADM.php">Início</a></p>
         <p><a>Salas</a></p>
         <p><a>Classes</a></p>
         <p><a>Linguagens</a></p>
         <p><a>Raças</a></p>
-        <p><a>Alinhamento</a></p>
+        <p><a href="<?= URL ?>view/adm/Alignment/alignment.php">Alinhamentos</a></p>
     </div>
 </body>

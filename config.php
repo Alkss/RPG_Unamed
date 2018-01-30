@@ -21,7 +21,7 @@ $TITULO2 = false;
 //
 define('DS', DIRECTORY_SEPARATOR);
 /*Configurações Básicas do Servidor*/
-$url = "";
+$url = "http://localhost/RPG_Unamed/";
 define('ABSPATH', dirname(__FILE__));
 define('URL',$url);
 $secureKey = "thisPasswordisnot-so-secure";
