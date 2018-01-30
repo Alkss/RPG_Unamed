@@ -10,7 +10,7 @@ include('../../header.php');
 
 //TODO: Confirmar a ativação dos usuários!
 if (!($_SESSION['logado'] == 1 && $_SESSION['permissoes'] == "adm")) {
-    header('Location:../index.php');
+    header('location:'. URL .'/view/index.php');
 }
 if (isset($_POST['activeUser'])) {
     $db = new DataBase();

@@ -10,7 +10,7 @@ include('../../header.php');
 
 
 if ($_SESSION['logado'] != 1) {
-    header('location:../index.php');
+    header('location:'. URL .'/view/index.php');
 } else {
     ?>
     <head>

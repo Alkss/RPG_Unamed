@@ -10,8 +10,9 @@ include('../../../header.php');
 
 
 if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
-    header('location:index.php');
+    header('location:' . URL . '/view/index.php');
 } else {
+    
     ?>
     <head>
         <title><?= RPG_NAME ?> - Alinhamentos</title>
@@ -26,8 +27,8 @@ include '../menuADM.php';
 ?>
 <a href="addAlignment.php" class="btn btn-primary" id="addAlignmentBtn">Adicionar alinhamento</a><br>
 <div class="col-xs-5">
-    <form action="../confirmUsers.php" class="form-horizontal" method="post" id="form"
-          onsubmit="return confirm('Deseja realmente fazer a ativação dos usuários ' +
+    <form action="deleteAlignments.php" class="form-horizontal" method="post" id="form"
+          onsubmit="return confirm('Deseja realmente deletar os alinhamentos ' +
              'selecionados?')">
         <table class="table table-responsive">
             <thead>
@@ -38,15 +39,30 @@ include '../menuADM.php';
             </tr>
             </thead>
             <tbody>
-            <tr>
-                <td><input type="checkbox" name="activeUser[]" value=""></td>
-                <td>Bla bla bla</td>
-                <td><a class="btn btn-primary">Editar</a></td>
-            </tr>
+            
+            <?php
+            $db = new DataBase();
+            $alignments = $db->search("SELECT * FROM td_alinhamento");
+            foreach ($alignments as $alignment) {
+                
+                ?>
+                <tr>
+                        <td><input type="checkbox" name="alignments[]" value="<?= $alignment['idt_alinhamento'] ?>">
+                        </td>
+                        <td><?= $alignment['nme_alinhamento'] ?></td>
+                        <td>
+                            <a href="editAlignment.php?idt=<?=$alignment['idt_alinhamento']?>"><i class="fa fa-pencil" aria-hidden="true"></i>
+                            </a>
+                        </td>
+                </tr>
+                
+                <?php
+            }
+            ?>
 
             </tbody>
         </table>
-        <input type="submit" value="Deletar" class="btn btn-default btn-sm">
+        <input type=" submit" value="Deletar" class="btn btn-default btn-sm">
     </form>
 </div>
 <script>

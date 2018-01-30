@@ -62,7 +62,7 @@ if (isset($_GET['sucess'])) {
         <div class="col-xs-6">
             <button class="btn btn-primary" id="login" name="loginBtn">Acessar</button>
             </form>
-            <a class="btn btn-primary" id="createNewUser" name="newUser">Criar novo usuário</a>
+            <a href="user/createNewUser.php" class="btn btn-primary" id="createNewUser" name="newUser">Criar novo usuário</a>
         </div>
     </div>
 

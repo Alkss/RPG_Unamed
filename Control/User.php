@@ -27,8 +27,8 @@ class User
             $stringSQL = "INSERT INTO `tb_usuario`(`nme_usuario`,`lgn_usuario`,`pwd_usuario`,`eml_usuario`,`cod_perfil`,`atv_usuario`)
                           VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($login) . "','" . $this->db->scapeCont($md5Password) . "','" . $this->db->scapeCont($email) . "',2,0);";
             
-            $this->db->insert($stringSQL);
-            
+            echo $this->db->insert($stringSQL);
+            die;
             return true;
         }
         
