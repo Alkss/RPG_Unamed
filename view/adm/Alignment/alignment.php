@@ -23,6 +23,22 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
 <h2>Alinhamentos</h2>
 
 <?php
+if (isset($_GET['error'])) {
+    if ($_GET['error'] == 2) {
+        ?>
+        <div class="alert alert-danger">Não foi possível editar o item selecionado, tente novamente.</div>
+        <?php
+        
+    }
+}
+if(isset($_GET['sucess'])){
+    if ($_GET['sucess']==2){
+        ?>
+        <div class="alert alert-success">Alinhamento alterado com sucesso!</div>
+        <?php
+    }
+}
+
 include '../menuADM.php';
 ?>
 <a href="addAlignment.php" class="btn btn-primary" id="addAlignmentBtn">Adicionar alinhamento</a><br>
@@ -47,13 +63,14 @@ include '../menuADM.php';
                 
                 ?>
                 <tr>
-                        <td><input type="checkbox" name="alignments[]" value="<?= $alignment['idt_alinhamento'] ?>">
-                        </td>
-                        <td><?= $alignment['nme_alinhamento'] ?></td>
-                        <td>
-                            <a href="editAlignment.php?idt=<?=$alignment['idt_alinhamento']?>"><i class="fa fa-pencil" aria-hidden="true"></i>
-                            </a>
-                        </td>
+                    <td><input type="checkbox" name="alignments[]" value="<?= $alignment['idt_alinhamento'] ?>">
+                    </td>
+                    <td><?= $alignment['nme_alinhamento'] ?></td>
+                    <td>
+                        <a href="editAlignment.php?idt=<?= $alignment['idt_alinhamento'] ?>"><i class="fa fa-pencil"
+                                                                                                aria-hidden="true"></i>
+                        </a>
+                    </td>
                 </tr>
                 
                 <?php
@@ -62,7 +79,7 @@ include '../menuADM.php';
 
             </tbody>
         </table>
-        <input type=" submit" value="Deletar" class="btn btn-default btn-sm">
+        <input type="submit" value="Deletar" class="btn btn-default btn-sm">
     </form>
 </div>
 <script>
