@@ -1,0 +1,38 @@
+#index-page {
+  background-color: black;
+  color: white; }
+  #index-page h1 {
+    text-align: center; }
+  #index-page div#form {
+    display: flex;
+    justify-content: center;
+    vertical-align: middle; }
+  #index-page div#login {
+    margin-left: 35%; }
+  #index-page div#btns {
+    margin-left: 40%; }
+  #index-page .btn-primary {
+    margin-top: 10px;
+    background-color: darkred;
+    border-color: #ab0000; }
+
+#create-new-user {
+  background-color: black;
+  color: white; }
+  #create-new-user h1 {
+    text-align: center; }
+  #create-new-user h2 {
+    color: darkred;
+    text-align: center; }
+  #create-new-user .btn-primary {
+    background-color: darkred;
+    border-color: #ab0000;
+    margin: auto;
+    display: flex; }
+  #create-new-user div#form {
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center; }
+
+/*# sourceMappingURL=style.css.map */

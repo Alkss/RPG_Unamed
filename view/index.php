@@ -44,27 +44,22 @@ if (isset($_GET['sucess'])) {
 
 <div class="container">
     <h1>RPG Unamed</h1>
-    <div class="row">
+    <div id="form">
         <form class="form-group" id="loginForm" method="post">
-            <div>
-                <div class="col-xs-4">
-                    Nome de Usuário:
-                    <input type="text" class="form-control" name="usrName" id="usrName">
-                </div>
-                <div class="col-xs-3">
-                    Senha:
-                    <input type="password" class="form-control" name="psswrd" id="usrName">
-                </div>
-            </div>
-    </div>
+            <div class="row">
+                <label for="usrName">Nome de Usuário:</label>
+                <input type="text" class="form-control" name="usrName" id="usrName">
 
-    <div class="row">
-        <div class="col-xs-6">
-            <button class="btn btn-primary" id="login" name="loginBtn">Acessar</button>
-            </form>
-            <a href="user/createNewUser.php" class="btn btn-primary" id="createNewUser" name="newUser">Criar novo usuário</a>
-        </div>
+                <label for="psswrd">Senha:</label>
+                <input type="password" class="form-control" name="psswrd" id="psswrd">
+            </div>
+            <div class="row">
+                <button class="btn btn-primary" id="login" name="loginBtn">Acessar</button>
+        </form>
+        <a href="user/createNewUser.php" class="btn btn-primary" id="createNewUser" name="newUser">Criar novo
+            usuário</a>
     </div>
+</div>
 
 </div>
 </body>

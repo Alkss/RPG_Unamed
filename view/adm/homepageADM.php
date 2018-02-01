@@ -10,7 +10,7 @@ include('../../header.php');
 
 
 if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
-    header('location:'. URL .'/view/index.php');
+    header('location:' . URL . '/view/index.php');
 } else {
     ?>
     <head>
@@ -23,6 +23,8 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     
     <?php
     include 'menuADM.php';
+    $db = new DataBase();
+    $inactiveUsers = $db->search("select idt_usuario, nme_usuario from tb_usuario where atv_usuario = 0");
     ?>
     <div class="col-xs-5">
         <form action="confirmUsers.php" class="form-horizontal" method="post" id="form"
@@ -31,31 +33,58 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
             <table class="table table-responsive">
                 <thead class="inactiveUsers">
                 <tr>
-                    <td><input type="checkbox" onchange="checkAll(this)" name="chk[]"/></td>
+                    
+                    <?php
+                    if ($inactiveUsers) {
+                        ?>
+                        <td><input type="checkbox" onchange="checkAll(this)" name="chk[]"/></td>
+                        <?php
+                    } else {
+                        ?>
+                        <td><input disabled="disabled" type="checkbox" onchange="checkAll(this)" name="chk[]"/></td>
+    
+                        <?php
+                    }
+                    ?>
+
                     <td>Usuários inativos</td>
                 </tr>
                 </thead>
                 <tbody>
                 <?php
-                $db = new DataBase();
-                $inactiveUsers = $db->search("select idt_usuario, nme_usuario from tb_usuario where atv_usuario = 0");
-                foreach ($inactiveUsers as $user) {
+                if ($inactiveUsers) {
+                    foreach ($inactiveUsers as $user) {
+                        ?>
+                        <tr>
+                            <td>
+                                <input type="checkbox" name="activeUser[]" value="<?= $user['idt_usuario'] ?>">
+                            </td>
+                            <td>
+                                <?= $user['nme_usuario'] ?>
+                            </td>
+                        </tr>
+                        <?php
+                    }
+                } else
                     ?>
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="activeUser[]" value="<?= $user['idt_usuario'] ?>">
-                        </td>
-                        <td>
-                            <?= $user['nme_usuario'] ?>
-                        </td>
-                    </tr>
+                    <div class="alert alert-info">Não há nenhum usuário inativo para ser aprovado!</div>
                     <?php
-                }
                 ?>
 
                 </tbody>
             </table>
-            <input type="submit" value="Ativar" class="btn btn-default btn-sm">
+            <?php
+            if ($inactiveUsers) {
+                ?>
+                <input type="submit" value="Ativar" class="btn btn-default btn-sm">
+                <?php
+            } else {
+                ?>
+                <input disabled="disabled" type="submit" value="Ativar" class="btn btn-default btn-sm">
+    
+                <?php
+            }
+            ?>
         </form>
     </div>
     </div>

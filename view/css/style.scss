@@ -1,0 +1,52 @@
+#index-page {
+  background-color: black;
+  color: white;
+  h1 {
+    text-align: center;
+  }
+  div {
+    &#form{
+      display: flex;
+      justify-content: center;
+      vertical-align: middle;
+    }
+    &#login {
+      margin-left: 35%;
+    }
+    &#btns {
+      margin-left: 40%;
+    }
+  }
+  .btn-primary{
+    margin-top: 10px;
+    background-color: darkred;
+    border-color: #ab0000;
+
+  }
+}
+
+#create-new-user{
+  background-color: black;
+  color: white;
+  h1 {
+    text-align: center;
+  }
+  h2{
+    color: darkred;
+    text-align: center;
+  }
+  .btn-primary{
+    background-color: darkred;
+    border-color: #ab0000;
+    margin:auto;
+    display: flex;
+  }
+  div{
+    &#form{
+      display: flex;
+      vertical-align: middle;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

@@ -17,7 +17,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
         $alignment = new Alignment();
         
         if ($alignment->createAlignment($_POST['alignmentName'], $_POST['alignmentDesc'])) {
-            header('Location: addAlignment.php?sucess=1');
+            header('Location: addClass.php?sucess=1');
         }
     }
     

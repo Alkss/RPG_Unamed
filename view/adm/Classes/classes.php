@@ -15,12 +15,12 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     
     ?>
     <head>
-        <title><?= RPG_NAME ?> - Alinhamentos</title>
+        <title><?= RPG_NAME ?> - Classes</title>
     </head>
-    <body id="alignment-home">
+    <body id="classes-home">
 
 <h1><?= RPG_NAME ?></h1>
-<h2>Alinhamentos</h2>
+<h2>Classes</h2>
 
 <?php
 if (isset($_GET['error'])) {
@@ -34,26 +34,26 @@ if (isset($_GET['error'])) {
 if (isset($_GET['sucess'])) {
     if ($_GET['sucess'] == 2) {
         ?>
-        <div class="alert alert-success">Alinhamento alterado com sucesso!</div>
+        <div class="alert alert-success">Classe alterada com sucesso!</div>
         <?php
     }
 }
 
 include '../menuADM.php';
 $db = new DataBase();
-$alignments = $db->search("SELECT * FROM td_alinhamento");
+$classes = $db->search("SELECT * FROM td_classe");
 ?>
-<a href="addAlignment.php" class="btn btn-primary" id="addAlignmentBtn">Adicionar alinhamento</a><br>
+<a href="addClass.php" class="btn btn-primary" id="addClassBtn">Adicionar classe</a><br>
 <div class="col-xs-5">
-    <form action="deleteAlignments.php" class="form-horizontal" method="post" id="form"
-          onsubmit="return confirm('Deseja realmente deletar os alinhamentos ' +
-             'selecionados?')">
+    <form action="deleteClasses.php" class="form-horizontal" method="post" id="form"
+          onsubmit="return confirm('Deseja realmente deletar as classes ' +
+             'selecionadas?')">
         <table class="table table-responsive">
             <thead>
             <tr>
                 
                 <?php
-                if ($alignments) {
+                if ($classes) {
                     ?>
                     <td><input type="checkbox" onchange="checkAll(this)" name="chk[]"/></td>
                     <?php
@@ -64,24 +64,24 @@ $alignments = $db->search("SELECT * FROM td_alinhamento");
                     <?php
                 }
                 ?>
-                <td>Alinhamento</td>
+                <td>Classe</td>
                 <td>Editar</td>
             </tr>
             </thead>
             <tbody>
             
             <?php
-            if ($alignments) {
-                foreach ($alignments as $alignment) {
+            if ($classes) {
+                foreach ($classes as $classe) {
                     
                     ?>
                     <tr>
-                        <td><input type="checkbox" name="alignments[]" value="<?= $alignment['idt_alinhamento'] ?>">
+                        <td><input type="checkbox" name="classes[]" value="<?= $classe['idt_classe'] ?>">
                         </td>
-                        <td><?= $alignment['nme_alinhamento'] ?></td>
+                        <td><?= $classe['nme_classe'] ?></td>
                         <td>
-                            <a href="editAlignment.php?idt=<?= $alignment['idt_alinhamento'] ?>"><i class="fa fa-pencil"
-                                                                                                    aria-hidden="true"></i>
+                            <a href="editClasses.php?idt=<?= $classe['idt_classe'] ?>"><i class="fa fa-pencil"
+                                                                                          aria-hidden="true"></i>
                             </a>
                         </td>
                     </tr>
@@ -90,7 +90,7 @@ $alignments = $db->search("SELECT * FROM td_alinhamento");
                 }
             } else {
                 ?>
-                <div class="alert alert-info">Não há nenhum alinhamento registrado ainda</div>
+                <div class="alert alert-info">Não há nenhuma classe registrado ainda</div>
                 <?php
             }
             ?>
@@ -98,14 +98,14 @@ $alignments = $db->search("SELECT * FROM td_alinhamento");
             </tbody>
         </table>
         <?php
-        if ($alignments) {
+        if ($classes) {
             ?>
             <input type="submit" value="Deletar" class="btn btn-default btn-sm">
             <?php
         } else {
             ?>
             <input disabled="disabled" type="submit" value="Deletar" class="btn btn-default btn-sm">
-    
+            
             <?php
         }
         ?>
