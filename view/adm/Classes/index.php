@@ -7,7 +7,7 @@
  */
 require('../../../config.php');
 include('../../../header.php');
-//teste!
+//TODO
 
 if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     header('location:' . URL . '/view/index.php');
