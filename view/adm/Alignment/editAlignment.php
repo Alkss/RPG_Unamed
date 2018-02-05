@@ -11,12 +11,12 @@ include('../../../header.php');
 if (isset($_POST['idt']) && isset($_POST['alignment-name']) && isset($_POST['alignment-desc'])) {
     $alignment = new Alignment();
     if ($alignment->updateAlignment($_POST['idt'], $_POST['alignment-name'], $_POST['alignment-desc']))
-        header('Location:' . URL . 'view/adm/Alignment/classes.php?sucess=2');
+        header('Location:' . URL . 'view/adm/Alignment/races.php?sucess=2');
 }
 
 
 if (!isset($_GET['idt'])) {
-    header('Location:' . URL . 'view/adm/Alignment/classes.php?error=2');
+    header('Location:' . URL . 'view/adm/Alignment/races.php?error=2');
 } else {
     if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
         header('location:' . URL . '/view/index.php');

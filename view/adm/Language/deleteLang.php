@@ -12,16 +12,16 @@ include('../../../header.php');
 if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     header('location:' . URL . '/view/index.php');
 } else {
-    $alignment = new Alignment();
-    $deleteAlingments = "";
-    foreach ($_POST['alignments'] as $singleAlignment) {
-        $deleteAlingments .= $singleAlignment . ',';
+    $lang = new Language();
+    $deleteLang = "";
+    foreach ($_POST['languages'] as $singleLang) {
+        $deleteLang .= $singleLang . ',';
     }
-    $deleteAlingments = rtrim($deleteAlingments, ', ');
-    if($alignment->deleteAlingment($deleteAlingments)){
+    $deleteLang = rtrim($deleteLang, ', ');
+    if($lang->deleteLang($deleteLang)){
         echo "<script type='text/javascript'>";
         echo "alert('Operação realizada com sucesso');";
-        echo "window.location='races.php'";
+        echo "window.location='langs.php'";
         echo "</script>";
     }
 }

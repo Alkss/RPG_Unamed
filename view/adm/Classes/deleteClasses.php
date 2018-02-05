@@ -21,7 +21,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     if($class->deleteClasse($deleteClasses)){
         echo "<script type='text/javascript'>";
         echo "alert('Operação realizada com sucesso');";
-        echo "window.location='classes.php'";
+        echo "window.location='races.php'";
         echo "</script>";
     }
 }

@@ -12,13 +12,13 @@ include('../../../header.php');
 if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     header('location:' . URL . '/view/index.php');
 } else {
-    $alignment = new Alignment();
-    $deleteAlingments = "";
-    foreach ($_POST['alignments'] as $singleAlignment) {
-        $deleteAlingments .= $singleAlignment . ',';
+    $race = new Race();
+    $deleteRaces = "";
+    foreach ($_POST['races'] as $singleRace) {
+        $deleteRaces .= $singleRace . ',';
     }
-    $deleteAlingments = rtrim($deleteAlingments, ', ');
-    if($alignment->deleteAlingment($deleteAlingments)){
+    $deleteRaces = rtrim($deleteRaces, ', ');
+    if($race->deleteRace($deleteRaces)){
         echo "<script type='text/javascript'>";
         echo "alert('Operação realizada com sucesso');";
         echo "window.location='races.php'";

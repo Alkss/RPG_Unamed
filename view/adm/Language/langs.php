@@ -15,12 +15,12 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     
     ?>
     <head>
-        <title><?= RPG_NAME ?> - Classes</title>
+        <title><?= RPG_NAME ?> - Linguagens</title>
     </head>
-    <body id="classes-home">
+    <body id="lang-home">
 
 <h1><?= RPG_NAME ?></h1>
-<h2>Classes</h2>
+<h2>Linguagens</h2>
 
 <?php
 if (isset($_GET['error'])) {
@@ -34,26 +34,26 @@ if (isset($_GET['error'])) {
 if (isset($_GET['sucess'])) {
     if ($_GET['sucess'] == 2) {
         ?>
-        <div class="alert alert-success">Classe alterada com sucesso!</div>
+        <div class="alert alert-success">Linguagem alterada com sucesso!</div>
         <?php
     }
 }
 
 include '../menuADM.php';
 $db = new DataBase();
-$classes = $db->search("SELECT * FROM td_classe");
+$langs = $db->search("SELECT * FROM td_linguagem");
 ?>
-<a href="addClass.php" class="btn btn-primary" id="addClassBtn">Adicionar classe</a><br>
+<a href="addLang.php" class="btn btn-primary" id="addClassBtn">Adicionar Linguagem</a><br>
 <div class="col-xs-5">
-    <form action="deleteClasses.php" class="form-horizontal" method="post" id="form"
-          onsubmit="return confirm('Deseja realmente deletar as classes ' +
+    <form action="deleteLang.php" class="form-horizontal" method="post" id="form"
+          onsubmit="return confirm('Deseja realmente deletar as linguagens ' +
              'selecionadas?')">
         <table class="table table-responsive">
             <thead>
             <tr>
                 
                 <?php
-                if ($classes) {
+                if ($langs) {
                     ?>
                     <td><input type="checkbox" onchange="checkAll(this)" name="chk[]"/></td>
                     <?php
@@ -64,24 +64,24 @@ $classes = $db->search("SELECT * FROM td_classe");
                     <?php
                 }
                 ?>
-                <td>Classe</td>
+                <td>Linguagem</td>
                 <td>Editar</td>
             </tr>
             </thead>
             <tbody>
             
             <?php
-            if ($classes) {
-                foreach ($classes as $classe) {
+            if ($langs) {
+                foreach ($langs as $lang) {
                     
                     ?>
                     <tr>
-                        <td><input type="checkbox" name="classes[]" value="<?= $classe['idt_classe'] ?>">
+                        <td><input type="checkbox" name="languages[]" value="<?= $lang['idt_linguagem'] ?>">
                         </td>
-                        <td><?= $classe['nme_classe'] ?></td>
+                        <td><?= $lang['nme_linguagem'] ?></td>
                         <td>
-                            <a href="editClasses.php?idt=<?= $classe['idt_classe'] ?>"><i class="fa fa-pencil"
-                                                                                          aria-hidden="true"></i>
+                            <a href="editLang.php?idt=<?= $lang['idt_linguagem'] ?>"><i class="fa fa-pencil"
+                                                                                        aria-hidden="true"></i>
                             </a>
                         </td>
                     </tr>
@@ -90,7 +90,7 @@ $classes = $db->search("SELECT * FROM td_classe");
                 }
             } else {
                 ?>
-                <div class="alert alert-info">Não há nenhuma classe registrada ainda</div>
+                <div class="alert alert-info">Não há nenhuma linguagem registrada ainda</div>
                 <?php
             }
             ?>
@@ -98,7 +98,7 @@ $classes = $db->search("SELECT * FROM td_classe");
             </tbody>
         </table>
         <?php
-        if ($classes) {
+        if ($langs) {
             ?>
             <input type="submit" value="Deletar" class="btn btn-default btn-sm">
             <?php
