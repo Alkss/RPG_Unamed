@@ -11,12 +11,12 @@ include('../../../header.php');
 if (isset($_POST['idt']) && isset($_POST['class-name']) && isset($_POST['class-desc'])) {
     $class = new Classe();
     if ($class->updateClasse($_POST['idt'], $_POST['class-name'], $_POST['class-desc']))
-        header('Location:' . URL . 'view/adm/Classes/races.php?sucess=2');
+        header('Location:' . URL . 'view/adm/Classes/index.php?sucess=2');
 }
 
 
 if (!isset($_GET['idt'])) {
-    header('Location:' . URL . 'view/adm/Classes/races.php?error=2');
+    header('Location:' . URL . 'view/adm/Classes/index.php?error=2');
 } else {
     if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
         header('location:' . URL . '/view/index.php');

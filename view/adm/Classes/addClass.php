@@ -24,7 +24,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     
     ?>
     <head>
-        <title><?= RPG_NAME ?> - Nova classe</title>
+        <title><?= RPG_NAME ?> - Nova Classe</title>
     </head>
     <body id="new-class">
 
@@ -39,7 +39,7 @@ if (isset($_GET['sucess'])) {
         <?php
     } else {
         ?>
-        <div class="alert alert-error"><p>Erro na criação da classe!</p></div>
+        <div class="alert alert-error"><p>Erro na criação da Classe!</p></div>
         <?php
     }
 }
@@ -52,12 +52,12 @@ include '../menuADM.php';
             <input class="form-control" type="text" id="className" name="className">
         </p>
         <p>
-            <label for="classDesc">Descrição da classe</label>
+            <label for="classDesc">Descrição da Classe</label>
         </p>
-        <textarea class="form-control" form="create-new-alignment" id="classDesc" name="classDesc"
+        <textarea class="form-control" form="create-new-class" id="classDesc" name="classDesc"
                   style="height: 180px"></textarea>
 
-        <button class="btn btn-primary" id="createClass" name="createClass">Adicionar classe</button>
+        <button class="btn btn-primary" id="createclass" name="createclass">Adicionar Classe</button>
     </form>
 </div>
     <?php

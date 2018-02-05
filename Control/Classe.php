@@ -25,6 +25,7 @@ class Classe
     
     public function createClasse($name, $desc)
     {
+        
         $stringSQL = "INSERT INTO td_classe (nme_classe,dsc_classe)
 VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($desc) . "')";
         $this->db->insert($stringSQL);

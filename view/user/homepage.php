@@ -10,7 +10,7 @@ include('../../header.php');
 
 
 if ($_SESSION['logado'] != 1) {
-    header('location:'. URL .'/view/index.php');
+    header('location:' . URL . '/view/index.php');
 } else {
     ?>
     <head>
@@ -19,7 +19,12 @@ if ($_SESSION['logado'] != 1) {
     <body id="home-page-user">
     <h1><?= RPG_NAME ?></h1>
     <h2>Bem Vindo!</h2>
+    <div class="container">
+        <div id="menu">
+            <a class="btn btn-primary pull-right" href="Table/createTable.php">Criar nova mesa</a>
+        </div>
+    </div>
     </body>
-
+    
     <?php
 }

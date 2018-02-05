@@ -25,7 +25,7 @@
   }
 }
 
-#create-new-user{
+#create-new-user, #home-page-user{
   background-color: black;
   color: white;
   h1 {
@@ -42,7 +42,7 @@
     display: flex;
   }
   div{
-    &#form{
+    &#form, &#menu{
       display: flex;
       vertical-align: middle;
       justify-content: center;

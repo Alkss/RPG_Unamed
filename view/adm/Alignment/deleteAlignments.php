@@ -21,7 +21,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     if($alignment->deleteAlingment($deleteAlingments)){
         echo "<script type='text/javascript'>";
         echo "alert('Operação realizada com sucesso');";
-        echo "window.location='races.php'";
+        echo "window.location='index.php'";
         echo "</script>";
     }
 }

@@ -11,12 +11,12 @@ include('../../../header.php');
 if (isset($_POST['idt']) && isset($_POST['race-name']) && isset($_POST['race-desc'])) {
     $race = new Race();
     if ($race->updateRace($_POST['idt'], $_POST['race-name'], $_POST['race-desc']))
-        header('Location:' . URL . 'view/adm/Race/races.php?sucess=2');
+        header('Location:' . URL . 'view/adm/Race/index.php?sucess=2');
 }
 
 
 if (!isset($_GET['idt'])) {
-    header('Location:' . URL . 'view/adm/Race/races.php?error=2');
+    header('Location:' . URL . 'view/adm/Race/index.php?error=2');
 } else {
     if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
         header('location:' . URL . '/view/index.php');

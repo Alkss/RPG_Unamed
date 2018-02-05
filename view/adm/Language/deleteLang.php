@@ -21,7 +21,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     if($lang->deleteLang($deleteLang)){
         echo "<script type='text/javascript'>";
         echo "alert('Operação realizada com sucesso');";
-        echo "window.location='langs.php'";
+        echo "window.location='index.php'";
         echo "</script>";
     }
 }
