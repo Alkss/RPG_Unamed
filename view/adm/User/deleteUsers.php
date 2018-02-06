@@ -8,7 +8,6 @@ include('../../header.php');
  * Time: 15:01
  */
 
-//TODO: Confirmar a ativação dos usuários!
 if (!($_SESSION['logado'] == 1 && $_SESSION['permissoes'] == "adm")) {
     header('location:'. URL .'/view/index.php');
 }
