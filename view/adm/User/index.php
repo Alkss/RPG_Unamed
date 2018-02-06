@@ -62,7 +62,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
                             ?>
                             <tr>
                                 <td>
-                                    <input type="checkbox" name="activeUser[]" value="<?= $user['idt_usuario'] ?>">
+                                    <input type="checkbox" name="deleteUser[]" value="<?= $user['idt_usuario'] ?>">
                                 </td>
                                 <td>
                                     <?= $user['nme_usuario'] ?>

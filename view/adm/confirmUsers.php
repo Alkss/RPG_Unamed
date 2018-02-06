@@ -14,7 +14,6 @@ if (!($_SESSION['logado'] == 1 && $_SESSION['permissoes'] == "adm")) {
 if (isset($_POST['activeUser'])) {
     $db = new DataBase();
 
-    $selectedUsers = array();
     foreach ($_POST['activeUser'] as $user) {
         if ($db->executeQuery("update tb_usuario set atv_usuario=1 where idt_usuario=" . $user . ";")) {
             echo "<script type='text/javascript'>";
