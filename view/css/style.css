@@ -16,6 +16,9 @@
     background-color: darkred;
     border-color: #ab0000; }
 
+.container {
+  display: flex; }
+
 #create-new-user, #home-page-user {
   background-color: black;
   color: white; }
@@ -34,5 +37,13 @@
     vertical-align: middle;
     justify-content: center;
     align-items: center; }
+
+tbody {
+  max-width: 100%;
+  overflow: auto;
+  max-height: 500px; }
+
+#create-new-user-adm #create-new-user-adm .row {
+  margin: auto; }
 
 /*# sourceMappingURL=style.css.map */

@@ -42,7 +42,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
                     } else {
                         ?>
                         <td><input disabled="disabled" type="checkbox" onchange="checkAll(this)" name="chk[]"/></td>
-    
+                        
                         <?php
                     }
                     ?>
@@ -65,10 +65,11 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
                         </tr>
                         <?php
                     }
-                } else
+                } else {
                     ?>
                     <div class="alert alert-info">Não há nenhum usuário inativo para ser aprovado!</div>
                     <?php
+                }
                 ?>
 
                 </tbody>
@@ -81,7 +82,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
             } else {
                 ?>
                 <input disabled="disabled" type="submit" value="Ativar" class="btn btn-default btn-sm">
-    
+                
                 <?php
             }
             ?>

@@ -25,6 +25,10 @@
   }
 }
 
+.container{
+  display: flex;
+}
+
 #create-new-user, #home-page-user{
   background-color: black;
   color: white;
@@ -49,4 +53,21 @@
       align-items: center;
     }
   }
+}
+
+tbody{
+  max-width: 100%;
+  overflow: auto;
+  max-height:500px;
+}
+
+
+#create-new-user-adm{
+  #create-new-user-adm{
+    .row{
+      margin: auto;
+    }
+  }
+
+
 }

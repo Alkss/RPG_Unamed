@@ -14,6 +14,23 @@ class User
         $this->db = new DataBase();
     }
     
+    public function createUserADM($name,$login,$email,$password,$userType,$active){
+        if ($this->checkIfExistsByEmail($email)) {
+            return "O email já existe";
+        }
+        else if ($this->checkIfExistsByLogin($login)) {
+            return "O nome de usuário já existe";
+        } else {
+            $md5Password = md5($password);
+        
+            $stringSQL = "INSERT INTO `tb_usuario`(`nme_usuario`,`lgn_usuario`,`pwd_usuario`,`eml_usuario`,`cod_perfil`,`atv_usuario`)
+                          VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($login) . "','" . $this->db->scapeCont($md5Password) . "','" . $this->db->scapeCont($email) . "',".$this->db->scapeCont($userType).",".$this->db->scapeCont($active).");";
+        $this->db->executeQuery($stringSQL);
+            return true;
+        }
+    }
+    
+    
     public function createUser($name, $login, $email, $password)
     {
         if ($this->checkIfExistsByEmail($email)) {
@@ -26,7 +43,7 @@ class User
             
             $stringSQL = "INSERT INTO `tb_usuario`(`nme_usuario`,`lgn_usuario`,`pwd_usuario`,`eml_usuario`,`cod_perfil`,`atv_usuario`)
                           VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($login) . "','" . $this->db->scapeCont($md5Password) . "','" . $this->db->scapeCont($email) . "',2,0);";
-            
+            $this->db->executeQuery($stringSQL);
             return true;
         }
         
