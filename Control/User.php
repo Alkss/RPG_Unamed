@@ -1,5 +1,6 @@
 <?php
 
+
 /**
  * Created by PhpStorm.
  * User: Alex.Oliveira
@@ -108,7 +109,7 @@ class User
         return $this->db->search($sql);
     }
     
-    public function alterarUsuario($id, $nome, $email, $login, $senha, $perfil, $ativo)
+    public function updateUser($id, $nome, $email, $login, $senha, $perfil, $ativo)
     {
         $sql = "update tb_usuario set nome = '" . $this->db->scapeCont($nome) . "',"
             . "email = '" . $this->db->scapeCont($email) . "',"
