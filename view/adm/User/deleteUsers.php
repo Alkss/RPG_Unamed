@@ -1,6 +1,6 @@
 <?php
-require('../../config.php');
-include('../../header.php');
+require('../../../config.php');
+include('../../../header.php');
 /**
  * Created by PhpStorm.
  * User: alex
@@ -14,11 +14,11 @@ if (!($_SESSION['logado'] == 1 && $_SESSION['permissoes'] == "adm")) {
 if (isset($_POST['deleteUser'])) {
     $db = new DataBase();
 
-    foreach ($_POST['activeUser'] as $user) {
+    foreach ($_POST['deleteUser'] as $user) {
         if ($db->executeQuery("DELETE FROM tb_usuario WHERE idt_usuario=" . $user . ";")) {
             echo "<script type='text/javascript'>";
             echo "alert('Usuarios deletados com sucesso!');";
-            echo 'window.location="homepageADM.php"';
+            echo 'window.location="index.php"';
             echo "</script>";
         }
     }

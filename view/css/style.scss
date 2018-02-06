@@ -25,7 +25,7 @@
   }
 }
 
-.container{
+.container:not(in #index-page){
   display: flex;
 }
 

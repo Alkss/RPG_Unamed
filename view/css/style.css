@@ -16,7 +16,7 @@
     background-color: darkred;
     border-color: #ab0000; }
 
-.container {
+.container:not(in #index-page) {
   display: flex; }
 
 #create-new-user, #home-page-user {
