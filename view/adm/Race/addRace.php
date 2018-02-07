@@ -17,7 +17,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
         $race = new Race();
         
         if ($race->createRace($_POST['raceName'], $_POST['raceDesc'])) {
-            header('Location: addRace.php?sucess=1');
+            header('Location: addRace.php?success=1');
         }
     }
     
@@ -32,8 +32,8 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
 <h2>Nova Raça</h2>
 
 <?php
-if (isset($_GET['sucess'])) {
-    if ($_GET['sucess'] == 1) {
+if (isset($_GET['success'])) {
+    if ($_GET['success'] == 1) {
         ?>
         <div class="alert alert-success"><p>Raça criada com sucesso!</p></div>
         <?php

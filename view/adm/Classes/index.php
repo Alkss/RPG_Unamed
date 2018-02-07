@@ -31,8 +31,8 @@ if (isset($_GET['error'])) {
         
     }
 }
-if (isset($_GET['sucess'])) {
-    if ($_GET['sucess'] == 2) {
+if (isset($_GET['success'])) {
+    if ($_GET['success'] == 2) {
         ?>
         <div class="alert alert-success">Classe alterada com sucesso!</div>
         <?php

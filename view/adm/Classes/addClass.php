@@ -17,7 +17,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
         $class = new Classe();
         
         if ($class->createClasse($_POST['className'], $_POST['classDesc'])) {
-            header('Location: addClass.php?sucess=1');
+            header('Location: addClass.php?success=1');
         }
     }
     
@@ -32,8 +32,8 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
 <h2>Nova Classe</h2>
 
 <?php
-if (isset($_GET['sucess'])) {
-    if ($_GET['sucess'] == 1) {
+if (isset($_GET['success'])) {
+    if ($_GET['success'] == 1) {
         ?>
         <div class="alert alert-success"><p>Classe criada com sucesso!</p></div>
         <?php

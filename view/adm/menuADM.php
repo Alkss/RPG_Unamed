@@ -11,7 +11,7 @@
         <p class="menuTitle">Menu</p>
         <p><a href="<?= URL ?>view/adm/homepageADM.php">Início</a></p>
         <p><a href="<?= URL ?>view/adm/User/index.php">Usuários</a></p>
-        <p><a>Salas</a></p> <?//TODO:Acrescentar as salas depois de finalizar a criação de salas na parte do jogador?>
+        <p><a>Salas</a></p>
         <p><a href="<?= URL ?>view/adm/Classes/index.php">Classes</a></p>
         <p><a href="<?= URL ?>view/adm/Language/index.php">Linguagens</a></p>
         <p><a href="<?= URL ?>view/adm/Race/index.php">Raças</a></p>

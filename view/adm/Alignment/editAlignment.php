@@ -11,7 +11,7 @@ include('../../../header.php');
 if (isset($_POST['idt']) && isset($_POST['alignment-name']) && isset($_POST['alignment-desc'])) {
     $alignment = new Alignment();
     if ($alignment->updateAlignment($_POST['idt'], $_POST['alignment-name'], $_POST['alignment-desc']))
-        header('Location:' . URL . 'view/adm/Alignment/index.php?sucess=2');
+        header('Location:' . URL . 'view/adm/Alignment/index.php?success=2');
 }
 
 

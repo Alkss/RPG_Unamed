@@ -11,7 +11,7 @@ include('../../../header.php');
 if (isset($_POST['idt']) && isset($_POST['race-name']) && isset($_POST['race-desc'])) {
     $race = new Race();
     if ($race->updateRace($_POST['idt'], $_POST['race-name'], $_POST['race-desc']))
-        header('Location:' . URL . 'view/adm/Race/index.php?sucess=2');
+        header('Location:' . URL . 'view/adm/Race/index.php?success=2');
 }
 
 

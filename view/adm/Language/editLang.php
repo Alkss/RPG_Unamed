@@ -11,7 +11,7 @@ include('../../../header.php');
 if (isset($_POST['idt']) && isset($_POST['lang-name'])) {
     $lang = new Language();
     if ($lang->updateLang($_POST['idt'], $_POST['lang-name']))
-        header('Location:' . URL . 'view/adm/Language/index.php?sucess=2');
+        header('Location:' . URL . 'view/adm/Language/index.php?success=2');
 }
 
 

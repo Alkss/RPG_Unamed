@@ -21,8 +21,13 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
 
     <h1><?= RPG_NAME ?></h1>
     <h2>Usuarios</h2>
-    
     <?php
+    if (isset($_GET['success']) && ($_GET['success'] == 1)) {
+        ?>
+            <div class="alert alert-success">Usuário alterado com sucesso</div>
+        <?php
+    }
+    
     include '../menuADM.php';
     $db = new DataBase();
     $allUsers = $db->search("select idt_usuario, nme_usuario, lgn_usuario, nme_tipo_perfil, atv_usuario from tb_usuario join td_tipo_perfil on cod_perfil=idt_tipo_perfil");
@@ -39,10 +44,10 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
             } else {
                 ?>
                 <input disabled="disabled" type="submit" value="Deletar" class="btn btn-default btn-sm">
-        
+                
                 <?php
             }
-    
+            
             ?>
             <div class="content">
                 <table class="table table-responsive">
@@ -95,7 +100,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
                     </tbody>
                 </table>
             </div>
-            
+
         </form>
     </div>
     </div>

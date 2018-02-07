@@ -11,7 +11,7 @@ include('../../../header.php');
 if (isset($_POST['idt']) && isset($_POST['class-name']) && isset($_POST['class-desc'])) {
     $class = new Classe();
     if ($class->updateClasse($_POST['idt'], $_POST['class-name'], $_POST['class-desc']))
-        header('Location:' . URL . 'view/adm/Classes/index.php?sucess=2');
+        header('Location:' . URL . 'view/adm/Classes/index.php?success=2');
 }
 
 

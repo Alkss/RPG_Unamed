@@ -32,7 +32,7 @@ include '../menuADM.php';
                 <p>
                     <label for="userType">Tipo de usuário</label>
                     <select class="form-control" id="userType" name="userType">
-                        <option selected disabled>Escolha um valor</option>
+                        <option selected disabled="disabled" hidden>Escolha um valor</option>
                         <option value="1">Administrador</option>
                         <option value="2">Usuario Comum</option>
                     </select>

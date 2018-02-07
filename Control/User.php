@@ -15,18 +15,18 @@ class User
         $this->db = new DataBase();
     }
     
-    public function createUserADM($name,$login,$email,$password,$userType,$active){
+    public function createUserADM($name, $login, $email, $password, $userType, $active)
+    {
         if ($this->checkIfExistsByEmail($email)) {
             return "O email já existe";
-        }
-        else if ($this->checkIfExistsByLogin($login)) {
+        } else if ($this->checkIfExistsByLogin($login)) {
             return "O nome de usuário já existe";
         } else {
             $md5Password = md5($password);
-        
+            
             $stringSQL = "INSERT INTO `tb_usuario`(`nme_usuario`,`lgn_usuario`,`pwd_usuario`,`eml_usuario`,`cod_perfil`,`atv_usuario`)
-                          VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($login) . "','" . $this->db->scapeCont($md5Password) . "','" . $this->db->scapeCont($email) . "',".$this->db->scapeCont($userType).",".$this->db->scapeCont($active).");";
-        $this->db->executeQuery($stringSQL);
+                          VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($login) . "','" . $this->db->scapeCont($md5Password) . "','" . $this->db->scapeCont($email) . "'," . $this->db->scapeCont($userType) . "," . $this->db->scapeCont($active) . ");";
+            $this->db->executeQuery($stringSQL);
             return true;
         }
     }
@@ -36,8 +36,7 @@ class User
     {
         if ($this->checkIfExistsByEmail($email)) {
             return "O email já existe";
-        }
-        else if ($this->checkIfExistsByLogin($login)) {
+        } else if ($this->checkIfExistsByLogin($login)) {
             return "O nome de usuário já existe";
         } else {
             $md5Password = md5($password);
@@ -109,15 +108,16 @@ class User
         return $this->db->search($sql);
     }
     
-    public function updateUser($id, $nome, $email, $login, $senha, $perfil, $ativo)
+    public function updateUser($id, $name, $email, $login, $password, $perfil, $active)
     {
-        $sql = "update tb_usuario set nome = '" . $this->db->scapeCont($nome) . "',"
-            . "email = '" . $this->db->scapeCont($email) . "',"
-            . "login = '" . $this->db->scapeCont($login) . "',"
-            . "senha = '" . $this->db->scapeCont(MD5($senha)) . "',"
-            . "perfil = '" . $this->db->scapeCont($perfil) . "',"
-            . "ativo = '" . $this->db->scapeCont($ativo) . "' where id = '" . $this->db->scapeCont($id) . "'";
-        return $this->db->executaQuery($sql);
+        $sql = "update tb_usuario set nme_usuario = '" . $this->db->scapeCont($name) . "',"
+            . "lgn_usuario = '" . $this->db->scapeCont($login) . "',"
+            . "pwd_usuario = '" . $this->db->scapeCont($password) . "',"
+            . "eml_usuario = '" . $this->db->scapeCont($email) . "',"
+            . "cod_perfil = '" . $this->db->scapeCont($perfil) . "',"
+            . "atv_usuario = '" . $this->db->scapeCont($active) . "' "
+            . " where idt_usuario = " . $this->db->scapeCont($id);
+        return $this->db->executeQuery($sql);
     }
     
     public function alterarPerfil($id, $nome, $email, $senha)

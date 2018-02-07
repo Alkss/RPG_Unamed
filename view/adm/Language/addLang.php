@@ -17,7 +17,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
         $lang = new Language();
         
         if ($lang->createLang($_POST['langName'])) {
-            header('Location: addLang.php?sucess=1');
+            header('Location: addLang.php?success=1');
         }
     }
     
@@ -32,8 +32,8 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
 <h2>Nova Linguagem</h2>
 
 <?php
-if (isset($_GET['sucess'])) {
-    if ($_GET['sucess'] == 1) {
+if (isset($_GET['success'])) {
+    if ($_GET['success'] == 1) {
         ?>
         <div class="alert alert-success"><p>Linguagem criada com sucesso!</p></div>
         <?php

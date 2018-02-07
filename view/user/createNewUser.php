@@ -30,7 +30,7 @@ if (isset($_POST['name']) && isset($_POST['login']) && isset($_POST['email']) &&
         if ($_POST['password'] == $_POST['confirm-password']) {
             if ($user->createUser($_POST['name'], $_POST['login'], $_POST['email'], $_POST['password'])) {
                 $user->login($_POST['login'], $_POST['password']);
-                header('Location:../index.php?sucess=1');
+                header('Location:../index.php?success=1');
                 
             }
             

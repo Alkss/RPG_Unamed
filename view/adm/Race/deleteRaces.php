@@ -20,7 +20,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     $deleteRaces = rtrim($deleteRaces, ', ');
     if($race->deleteRace($deleteRaces)){
         echo "<script type='text/javascript'>";
-        echo "alert('Operação realizada com sucesso');";
+        echo "alert('Operação realizada com successo');";
         echo "window.location='index.php'";
         echo "</script>";
     }

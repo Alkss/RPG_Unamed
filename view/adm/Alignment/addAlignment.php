@@ -17,7 +17,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
         $alignment = new Alignment();
         
         if ($alignment->createAlignment($_POST['alignmentName'], $_POST['alignmentDesc'])) {
-            header('Location: addAlignment.php?sucess=1');
+            header('Location: addAlignment.php?success=1');
         }
     }
     
@@ -32,8 +32,8 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
 <h2>Novo Alinhamento</h2>
 
 <?php
-if (isset($_GET['sucess'])) {
-    if ($_GET['sucess'] == 1) {
+if (isset($_GET['success'])) {
+    if ($_GET['success'] == 1) {
         ?>
         <div class="alert alert-success"><p>Alinhamento criado com sucesso!</p></div>
         <?php

@@ -31,7 +31,7 @@ if (isset($_POST['usrName'])) {
  * Time: 23:13
  */
 
-if (isset($_GET['sucess'])) {
+if (isset($_GET['success'])) {
     ?>
     <div class="alert alert-success">Usuário Registrado com sucesso, aguarde a aprovação de um administrador.</div>
     
