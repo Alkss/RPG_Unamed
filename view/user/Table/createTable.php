@@ -12,8 +12,6 @@ include('../../../header.php');
 if ($_SESSION['logado'] != 1) {
     header('location:' . URL . '/view/index.php');
 } else {
-    ?>
     
-    
-    <?php
+    include 'createTableAux.php';
 }

@@ -55,11 +55,13 @@ class User
             $md5Password = md5($password);
             $login = $this->db->scapeCont($login);
             
-            $stringSQL = "SELECT nme_usuario, lgn_usuario, pwd_usuario, atv_usuario, cod_perfil FROM `tb_usuario` WHERE lgn_usuario = '" . $login . "' AND pwd_usuario = '" . $md5Password . "'";
+            $stringSQL = "SELECT nme_usuario, lgn_usuario, pwd_usuario, atv_usuario, cod_perfil, idt_usuario FROM `tb_usuario` WHERE lgn_usuario = '" . $login . "' AND pwd_usuario = '" . $md5Password . "'";
             $sql = $this->db->search($stringSQL);
             if (($login == $sql[0]['lgn_usuario']) && ($sql[0]['pwd_usuario'] == $md5Password) && ($sql[0]['atv_usuario'] == 1)) {
                 $_SESSION['logado'] = 1;
                 $_SESSION['nme_usuario'] = $sql[0]['nme_usuario'];
+                $_SESSION['idt_usuario'] = $sql[0]['idt_usuario'];
+                
                 if ($sql[0]['cod_perfil'] == 1) {
                     $_SESSION['permissoes'] = "adm";
                 } else {

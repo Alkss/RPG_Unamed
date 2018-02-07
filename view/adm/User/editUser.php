@@ -22,7 +22,7 @@ if (isset($_POST['name']) && isset($_POST['login']) && isset($_POST['email']) &&
     header('Location:index.php?success=1');
 } else {
     ?>
-    <body id="create-new-user-adm">
+    <body id="edit-user-adm">
     <h1><?= RPG_NAME ?></h1>
     <h2>Novo usuário</h2>
     <?php
@@ -32,7 +32,7 @@ if (isset($_POST['name']) && isset($_POST['login']) && isset($_POST['email']) &&
     ?>
     <div class="col-xs-5">
         <div id="form-adm">
-            <form method="post" id="create-new-user-adm">
+            <form method="post" id="edit-user-adm">
                 <p>
                     <label for="name">Nome</label><br>
                     <input class="form-control" type="text" name="name" id="name"

@@ -12,7 +12,7 @@ if (isset($_POST['usrName'])) {
     if ($login == "adm") {
         header("Location:adm/homepageADM.php");
     } else if ($login == "usr") {
-        header("Location:user/homepage.php");
+        header("Location:user/index.php");
     } else {
         ?>
         <script>
