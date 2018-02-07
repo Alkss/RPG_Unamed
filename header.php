@@ -11,7 +11,8 @@
     <link href="<?php echo URL ?>/view/css/style.css" type="text/css" rel="stylesheet">
     <script src="<?php echo URL ?>/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <link rel="stylesheet" href="<?php echo URL ?>/bootstrap/fonts/font-awesome/css/font-awesome.min.css">
-    
+    <link rel="icon" href="<?php echo URL?>/view/imgs/favicon.ico" type="image/ico">
+
 </head>
 
 <?php
