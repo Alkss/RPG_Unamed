@@ -5,7 +5,7 @@
     text-align: center;
   }
   div {
-    &#form{
+    &#form {
       display: flex;
       justify-content: center;
       vertical-align: middle;
@@ -17,7 +17,7 @@
       margin-left: 40%;
     }
   }
-  .btn-primary{
+  .btn-primary {
     margin-top: 10px;
     background-color: darkred;
     border-color: #ab0000;
@@ -25,49 +25,52 @@
   }
 }
 
-.container:not(in #index-page){
+.container:not(in #index-page) {
   display: flex;
 }
 
-#create-new-user, #home-page-user{
+#create-new-user, #home-page-user, #create-new-table {
   background-color: black;
   color: white;
   h1 {
     text-align: center;
   }
-  h2{
+  h2 {
     color: darkred;
     text-align: center;
   }
-  .btn-primary{
+  .btn-primary {
     background-color: darkred;
     border-color: #ab0000;
-    margin:auto;
+    margin: auto;
     display: flex;
   }
-  div{
-    &#form, &#menu{
+  div {
+    &#form, &#menu {
       display: flex;
       vertical-align: middle;
       justify-content: center;
       align-items: center;
     }
   }
+  #create-new-table {
+    min-width: 60%;
+    #nPlayers{
+      max-width: 20%;
+    }
+  }
 }
 
-tbody{
+tbody {
   max-width: 100%;
   overflow: auto;
-  max-height:500px;
+  max-height: 500px;
 }
 
-
-#create-new-user-adm{
-  #create-new-user-adm{
-    .row{
+#create-new-user-adm {
+  #create-new-user-adm {
+    .row {
       margin: auto;
     }
   }
-
-
 }

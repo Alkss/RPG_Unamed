@@ -19,24 +19,28 @@
 .container:not(in #index-page) {
   display: flex; }
 
-#create-new-user, #home-page-user {
+#create-new-user, #home-page-user, #create-new-table {
   background-color: black;
   color: white; }
-  #create-new-user h1, #home-page-user h1 {
+  #create-new-user h1, #home-page-user h1, #create-new-table h1 {
     text-align: center; }
-  #create-new-user h2, #home-page-user h2 {
+  #create-new-user h2, #home-page-user h2, #create-new-table h2 {
     color: darkred;
     text-align: center; }
-  #create-new-user .btn-primary, #home-page-user .btn-primary {
+  #create-new-user .btn-primary, #home-page-user .btn-primary, #create-new-table .btn-primary {
     background-color: darkred;
     border-color: #ab0000;
     margin: auto;
     display: flex; }
-  #create-new-user div#form, #create-new-user div#menu, #home-page-user div#form, #home-page-user div#menu {
+  #create-new-user div#form, #create-new-user div#menu, #home-page-user div#form, #home-page-user div#menu, #create-new-table div#form, #create-new-table div#menu {
     display: flex;
     vertical-align: middle;
     justify-content: center;
     align-items: center; }
+  #create-new-user #create-new-table, #home-page-user #create-new-table, #create-new-table #create-new-table {
+    min-width: 60%; }
+    #create-new-user #create-new-table #nPlayers, #home-page-user #create-new-table #nPlayers, #create-new-table #create-new-table #nPlayers {
+      max-width: 20%; }
 
 tbody {
   max-width: 100%;
