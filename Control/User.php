@@ -100,16 +100,6 @@ class User
         
     }
     
-    /*public function verUsuarios($where = "")
-    {
-        if ($where != "") {
-            $where = " where $where";
-        }
-        $sql = "select * from tb_usuario $where ";
-        
-        return $this->db->search($sql);
-    }
-    */
     public function updateUser($id, $name, $email, $login, $password, $perfil, $active)
     {
         $sql = "update tb_usuario set nme_usuario = '" . $this->db->scapeCont($name) . "',"
