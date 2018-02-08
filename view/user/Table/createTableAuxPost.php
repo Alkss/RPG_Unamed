@@ -23,7 +23,7 @@
             </p>
             <p>
                 <label for="campaign">História da Campanha</label><br>
-                <textarea name="campaign" id="campaign" class="form-control" style="height: 180px" <?=$_POST['campaign']?>></textarea>
+                <textarea name="campaign" id="campaign" class="form-control" style="height: 180px" ><?= $_POST['campaign']?></textarea>
             </p>
             <p>
 
