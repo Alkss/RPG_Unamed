@@ -63,9 +63,19 @@
   }
   #create-new-table {
     min-width: 60%;
-    #nPlayers {
-      max-width: 20%;
+
+    #name-label-post:before {
+      font-family: FontAwesome;
+      content: "\f071";
+      color:red;
     }
+
+    #name-post {
+      color: red;
+    }
+  }
+  #nPlayers {
+    max-width: 20%;
   }
 }
 

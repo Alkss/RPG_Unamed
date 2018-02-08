@@ -42,8 +42,14 @@
     align-items: center; }
   #create-new-user #create-new-table, #home-page-user #create-new-table, #create-new-table #create-new-table {
     min-width: 60%; }
-    #create-new-user #create-new-table #nPlayers, #home-page-user #create-new-table #nPlayers, #create-new-table #create-new-table #nPlayers {
-      max-width: 20%; }
+    #create-new-user #create-new-table #name-label-post:before, #home-page-user #create-new-table #name-label-post:before, #create-new-table #create-new-table #name-label-post:before {
+      font-family: FontAwesome;
+      content: "\f071";
+      color: red; }
+    #create-new-user #create-new-table #name-post, #home-page-user #create-new-table #name-post, #create-new-table #create-new-table #name-post {
+      color: red; }
+  #create-new-user #nPlayers, #home-page-user #nPlayers, #create-new-table #nPlayers {
+    max-width: 20%; }
 
 tbody {
   max-width: 100%;

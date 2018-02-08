@@ -14,8 +14,8 @@
     <div id="form">
         <form method="post" id="create-new-table">
             <p>
-                <label for="name">Nome da mesa</label><br>
-                <input class="form-control" type="text" name="name" id="name-post" value="<?= $_POST['name']?>">
+                <label for="name" id="name-label-post">Nome da mesa</label><br>
+                <input class="form-control" type="text" name="name" id="name-post" onclick="colorNameBlack();" value="<?= $_POST['name']?>">
             </p>
             <p>
                 <label for="nPlayers">Quantidade de Jogadores</label><br>
@@ -39,6 +39,11 @@
 </div>
 </body>
 <script>
+    
+    function colorNameBlack() {
+        var text = document.getElementById('name-post')
+        text.setAttribute('style','color:black');
+    }
 
     function showPass() {
         var password = document.getElementById('password');
