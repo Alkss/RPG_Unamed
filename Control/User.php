@@ -100,7 +100,7 @@ class User
         
     }
     
-    public function verUsuarios($where = "")
+    /*public function verUsuarios($where = "")
     {
         if ($where != "") {
             $where = " where $where";
@@ -109,7 +109,7 @@ class User
         
         return $this->db->search($sql);
     }
-    
+    */
     public function updateUser($id, $name, $email, $login, $password, $perfil, $active)
     {
         $sql = "update tb_usuario set nme_usuario = '" . $this->db->scapeCont($name) . "',"
@@ -121,22 +121,5 @@ class User
             . " where idt_usuario = " . $this->db->scapeCont($id);
         return $this->db->executeQuery($sql);
     }
-    
-    public function alterarPerfil($id, $nome, $email, $senha)
-    {
-        $sql = "update tb_usuario set nome = '" . $this->db->scapeCont($nome) . "',"
-            . "email = '" . $this->db->scapeCont($email) . "',"
-            . "senha = '" . $this->db->scapeCont(MD5($senha)) . "' where id = '" . $this->db->scapeCont($id) . "'";
-        return $this->db->executaQuery($sql);
-    }
-    
-    public function inserirUsuario($nome, $email, $login, $senha, $perfil, $ativo)
-    {
-        $sql = "insert into tb_usuario(nome, email, login, senha, perfil, ativo) values "
-            . "('" . $this->db->scapeCont($nome) . "','" . $this->db->scapeCont($email) . "','" . $this->db->scapeCont($login) . "','" . $this->db->scapeCont
-            (md5($senha)) . "','" . $this->db->scapeCont($perfil) . "','" . $this->db->scapeCont($ativo) . "')";
-        return $this->db->insere($sql);
-    }
-    
     
 }

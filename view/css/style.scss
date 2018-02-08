@@ -32,6 +32,14 @@
 #create-new-user, #home-page-user, #create-new-table {
   background-color: black;
   color: white;
+
+  .alert {
+    &.alert-success {
+      color: #ffffff;
+      background-color: #5d020e;
+    }
+  }
+
   h1 {
     text-align: center;
   }
@@ -55,7 +63,7 @@
   }
   #create-new-table {
     min-width: 60%;
-    #nPlayers{
+    #nPlayers {
       max-width: 20%;
     }
   }

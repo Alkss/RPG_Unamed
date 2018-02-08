@@ -5,8 +5,6 @@
  * Date: 07/02/18
  * Time: 18:12
  */
-//TODO: Finalizar a criação de mesas, verificar o nome da mesa e realizar a inserção no banco de dados.
-
 ?>
 
 <body id="create-new-table">
@@ -17,20 +15,20 @@
         <form method="post" id="create-new-table">
             <p>
                 <label for="name">Nome da mesa</label><br>
-                <input class="form-control" type="text" name="name" id="name">
+                <input class="form-control" type="text" name="name" id="name-post" value="<?= $_POST['name']?>">
             </p>
             <p>
                 <label for="nPlayers">Quantidade de Jogadores</label><br>
-                <input class="form-control" type="number" name="nPlayers" id="nPlayers">
+                <input class="form-control" type="number" name="nPlayers" id="nPlayers" value="<?= $_POST['nPlayers']?>">
             </p>
             <p>
                 <label for="campaign">História da Campanha</label><br>
-                <textarea name="campaign" id="campaign" class="form-control" style="height: 180px"></textarea>
+                <textarea name="campaign" id="campaign" class="form-control" style="height: 180px" <?=$_POST['campaign']?>></textarea>
             </p>
             <p>
 
                 <label for="password">Senha</label><br>
-                <input class="form-control" type="password" name="password" id="password" onmouseover="showPass();"
+                <input class="form-control" type="password" name="password" id="password" value="<?=$_POST['password']?>" onmouseover="showPass();"
                        onmouseout="hidePass();">
             </p>
 
