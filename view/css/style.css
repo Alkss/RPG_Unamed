@@ -19,36 +19,39 @@
 .container:not(in #index-page) {
   display: flex; }
 
-#create-new-user, #home-page-user, #create-new-table {
+#create-new-user, #home-page-user, #create-new-table, #show-tables-user {
   background-color: black;
   color: white; }
-  #create-new-user .alert.alert-success, #home-page-user .alert.alert-success, #create-new-table .alert.alert-success {
+  #create-new-user div#show-tables, #home-page-user div#show-tables, #create-new-table div#show-tables, #show-tables-user div#show-tables {
+    display: flex;
+    justify-content: center; }
+  #create-new-user .alert.alert-success, #home-page-user .alert.alert-success, #create-new-table .alert.alert-success, #show-tables-user .alert.alert-success {
     color: #ffffff;
     background-color: #5d020e; }
-  #create-new-user h1, #home-page-user h1, #create-new-table h1 {
+  #create-new-user h1, #home-page-user h1, #create-new-table h1, #show-tables-user h1 {
     text-align: center; }
-  #create-new-user h2, #home-page-user h2, #create-new-table h2 {
+  #create-new-user h2, #home-page-user h2, #create-new-table h2, #show-tables-user h2 {
     color: darkred;
     text-align: center; }
-  #create-new-user .btn-primary, #home-page-user .btn-primary, #create-new-table .btn-primary {
+  #create-new-user .btn-primary, #home-page-user .btn-primary, #create-new-table .btn-primary, #show-tables-user .btn-primary {
     background-color: darkred;
     border-color: #ab0000;
     margin: auto;
     display: flex; }
-  #create-new-user div#form, #create-new-user div#menu, #home-page-user div#form, #home-page-user div#menu, #create-new-table div#form, #create-new-table div#menu {
+  #create-new-user div#form, #create-new-user div#menu, #home-page-user div#form, #home-page-user div#menu, #create-new-table div#form, #create-new-table div#menu, #show-tables-user div#form, #show-tables-user div#menu {
     display: flex;
     vertical-align: middle;
     justify-content: center;
     align-items: center; }
-  #create-new-user #create-new-table, #home-page-user #create-new-table, #create-new-table #create-new-table {
+  #create-new-user #create-new-table, #home-page-user #create-new-table, #create-new-table #create-new-table, #show-tables-user #create-new-table {
     min-width: 60%; }
-    #create-new-user #create-new-table #name-label-post:before, #home-page-user #create-new-table #name-label-post:before, #create-new-table #create-new-table #name-label-post:before {
+    #create-new-user #create-new-table #name-label-post:before, #home-page-user #create-new-table #name-label-post:before, #create-new-table #create-new-table #name-label-post:before, #show-tables-user #create-new-table #name-label-post:before {
       font-family: FontAwesome;
       content: "\f071";
       color: red; }
-    #create-new-user #create-new-table #name-post, #home-page-user #create-new-table #name-post, #create-new-table #create-new-table #name-post {
+    #create-new-user #create-new-table #name-post, #home-page-user #create-new-table #name-post, #create-new-table #create-new-table #name-post, #show-tables-user #create-new-table #name-post {
       color: red; }
-  #create-new-user #nPlayers, #home-page-user #nPlayers, #create-new-table #nPlayers {
+  #create-new-user #nPlayers, #home-page-user #nPlayers, #create-new-table #nPlayers, #show-tables-user #nPlayers {
     max-width: 20%; }
 
 tbody {

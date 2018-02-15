@@ -27,11 +27,13 @@ if ($_SESSION['logado'] != 1) {
     }
     ?>
     <div class="container">
+        <div id="show-tables">
+            <iframe src="Table/showTables.php"></iframe>
+        </div>
         <div id="menu">
             <a class="btn btn-primary pull-right" href="Table/createTable.php">Criar nova mesa</a>
         </div>
     </div>
     </body>
-    
     <?php
 }

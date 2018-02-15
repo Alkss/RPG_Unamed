@@ -29,9 +29,16 @@
   display: flex;
 }
 
-#create-new-user, #home-page-user, #create-new-table {
+#create-new-user, #home-page-user, #create-new-table, #show-tables-user {
   background-color: black;
   color: white;
+
+  div {
+    &#show-tables{
+      display: flex;
+      justify-content: center;
+    }
+  }
 
   .alert {
     &.alert-success {
@@ -67,7 +74,7 @@
     #name-label-post:before {
       font-family: FontAwesome;
       content: "\f071";
-      color:red;
+      color: red;
     }
 
     #name-post {
