@@ -7,7 +7,7 @@
  */
 ?>
 <body id="menu-ADM">
-    <div class="col-xs-4">
+    <div class="col-xs-4" id="menu-adm">
         <p class="menuTitle">Menu</p>
         <p><a href="<?= URL ?>view/adm/homepageADM.php">Início</a></p>
         <p><a href="<?= URL ?>view/adm/User/index.php">Usuários</a></p>

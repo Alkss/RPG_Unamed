@@ -92,6 +92,35 @@ tbody {
   max-height: 500px;
 }
 
+#menu-adm{
+  border: 1px solid #ff0000;
+  background: rgba(255, 183, 5, 0.18);
+  border-radius: 7px;
+  margin-left: 10px;
+  position: relative;
+  max-width: 20em;
+  a{
+    color: #000000;
+  }
+  .menuTitle{
+    border: 1px solid rgba(247, 111, 111, 0.19);
+    text-align: center;
+    border-radius: 7px;
+    background: rgb(239, 82, 0);
+    color: white;
+    text-shadow: 0 0 2px rgba(0,0,0,1);
+    position: absolute;
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    justify-content: center;
+    transform: translate(0%,-45%);
+  }
+  p:nth-child(2){
+    margin-top: 20px;
+  }
+}
+
 #create-new-user-adm {
   #create-new-user-adm {
     .row {
