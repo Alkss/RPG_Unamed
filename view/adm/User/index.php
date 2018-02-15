@@ -24,7 +24,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     <?php
     if (isset($_GET['success']) && ($_GET['success'] == 1)) {
         ?>
-            <div class="alert alert-success">Usuário alterado com sucesso</div>
+        <div class="alert alert-success">Usuário alterado com sucesso</div>
         <?php
     }
     
@@ -102,8 +102,10 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
             </div>
 
         </form>
+        <a class="btn btn-primary" href="createNewUser.php">Criar novo usuario</a>
     </div>
     </div>
+
     <script>
 
         function checkAll(ele) {
