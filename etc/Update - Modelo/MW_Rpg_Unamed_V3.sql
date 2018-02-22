@@ -185,7 +185,7 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`tb_sala` (
   `hst_campanha_sala` TEXT NULL,
   `pwd_sala` VARCHAR(128) NULL,
   `qtd_players_sala` INT NOT NULL,
-  `vlr_dinheiro_sala` VARCHAR(45) NOT NULL,
+  `vlr_dinheiro_sala` INT NOT NULL,
   PRIMARY KEY (`idt_sala`))
 ENGINE = InnoDB;
 
