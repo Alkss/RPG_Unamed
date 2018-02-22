@@ -1,12 +1,3 @@
-﻿-- MySQL Workbench Forward Engineering
-
--- -----------------------------------------------------
--- Schema RPG_unamed
--- -----------------------------------------------------
-
--- -----------------------------------------------------
--- Schema RPG_unamed
--- -----------------------------------------------------
 CREATE SCHEMA IF NOT EXISTS `RPG_unamed` DEFAULT CHARACTER SET utf8 ;
 USE `RPG_unamed` ;
 
@@ -53,7 +44,7 @@ CREATE UNIQUE INDEX `eml_usuario_UNIQUE` ON `RPG_unamed`.`tb_usuario` (`eml_usua
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `RPG_unamed`.`td_alinhamento` (
   `idt_alinhamento` INT NOT NULL AUTO_INCREMENT,
-  `dsc_alinhamento` VARCHAR(200) NOT NULL,
+  `dsc_alinhamento` VARCHAR(350) NOT NULL,
   `nme_alinhamento` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`idt_alinhamento`))
 ENGINE = InnoDB;
@@ -444,11 +435,6 @@ CREATE INDEX `fk_ta_personagem_linguagem_td_linguagem1_idx` ON `RPG_unamed`.`ta_
 CREATE INDEX `fk_ta_personagem_linguagem_tb_personagem1_idx` ON `RPG_unamed`.`ta_personagem_linguagem` (`cod_personagem` ASC);
 
 CREATE UNIQUE INDEX `uq_ta_personagem_linguagem` ON `RPG_unamed`.`ta_personagem_linguagem` (`cod_personagem` ASC, `cod_linguagem` ASC);
-
-
-SET SQL_MODE=@OLD_SQL_MODE;
-SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
-SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 -- -----------------------------------------------------
 -- Data for table `RPG_unamed`.`td_tipo_perfil`
