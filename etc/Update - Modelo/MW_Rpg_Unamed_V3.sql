@@ -1,9 +1,5 @@
 ﻿-- MySQL Workbench Forward Engineering
 
-SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
-SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
-
 -- -----------------------------------------------------
 -- Schema RPG_unamed
 -- -----------------------------------------------------
@@ -95,7 +91,7 @@ CREATE UNIQUE INDEX `nme_classe_UNIQUE` ON `RPG_unamed`.`td_classe` (`nme_classe
 -- Table `RPG_unamed`.`td_cor_olho`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `RPG_unamed`.`td_cor_olho` (
-  `idt_cor_olho` INT NULL AUTO_INCREMENT,
+  `idt_cor_olho` INT NOT NULL AUTO_INCREMENT,
   `nme_cor_olho` VARCHAR(50) NOT NULL,
   PRIMARY KEY (`idt_cor_olho`))
 ENGINE = InnoDB;
@@ -211,7 +207,7 @@ CREATE UNIQUE INDEX `nme_sala_UNIQUE` ON `RPG_unamed`.`tb_sala` (`nme_sala` ASC)
 CREATE TABLE IF NOT EXISTS `RPG_unamed`.`ta_perfil_sala` (
   `idt_perfil_sala` INT NOT NULL AUTO_INCREMENT,
   `cod_usuario` INT NOT NULL,
-  `cod_personagem` INT NOT NULL,
+  `cod_personagem` INT,
   `cod_papel_sala` INT NOT NULL,
   `cod_sala` INT NOT NULL,
   `vlr_disponivel_perfil` INT NOT NULL,
