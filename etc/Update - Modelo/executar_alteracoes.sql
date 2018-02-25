@@ -23,6 +23,7 @@ DROP TABLE td_previlegio;
 -- Alteracoes em colunas --------------------------------
 ALTER TABLE tb_personagem ADD COLUMN  `cod_religiao` INT NOT NULL;
 ALTER TABLE tb_personagem ADD COLUMN  `cod_cor_olho` INT NOT NULL;
+ALTER TABLE tb_personagem MODIFY column `img_personagem` VARCHAR(150) NOT NULL;
 ALTER TABLE tb_personagem ADD CONSTRAINT `fk_tb_personagem_td_religiao1` FOREIGN KEY (`cod_religiao`) REFERENCES `RPG_unamed`.`td_religiao` (`idt_religiao`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE tb_personagem ADD CONSTRAINT `fk_tb_personagem_td_cor_olho1` FOREIGN KEY (`cod_cor_olho`) REFERENCES `RPG_unamed`.`td_cor_olho` (`idt_cor_olho`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 ALTER TABLE ta_perfil_sala ADD COLUMN `vlr_disponivel_perfil` DECIMAL(10,2) NOT NULL;
