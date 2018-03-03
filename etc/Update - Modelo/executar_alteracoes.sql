@@ -31,7 +31,7 @@ ALTER TABLE tb_personagem ADD CONSTRAINT `fk_tb_personagem_td_cor_olho1` FOREIGN
 -- ALTER TABLE td_equipamento modify column `prc_equipamento` DECIMAL(10,2);
 -- ALTER TABLE td_item modify column `prc_item` DECIMAL(10,2);
 
-ALTER TABLE tb_personagem ADD COLUMN `qtd_dinheiro_personagem` DECIMAL(10,2);
+ALTER TABLE tb_personagem ADD COLUMN `qtd_dinheiro_personagem` DECIMAL(10,2) NOT NULL;
 ALTER TABLE td_item DROP COLUMN `prc_item`;
 ALTER TABLE td_equipamento DROP COLUMN `prc_equipamento`;
 ALTER TABLE ta_perfil_sala modify column `cod_personagem` INT;
