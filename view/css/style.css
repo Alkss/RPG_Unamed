@@ -119,4 +119,28 @@ tbody {
 #create-new-user-adm #create-new-user-adm .row {
   margin: auto; }
 
+/* Descartavel */
+/* line 140, /var/www/html/RPG_Unamed/view/css/style.scss */
+div.gallery {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 180px; }
+
+/* line 147, /var/www/html/RPG_Unamed/view/css/style.scss */
+div.gallery:hover {
+  border: 1px solid #777; }
+
+/* line 151, /var/www/html/RPG_Unamed/view/css/style.scss */
+div.gallery img {
+  width: 100%;
+  height: auto;
+  max-width: 350px;
+  max-height: 600px; }
+
+/* line 158, /var/www/html/RPG_Unamed/view/css/style.scss */
+div.desc {
+  padding: 15px;
+  text-align: center; }
+
 /*# sourceMappingURL=style.css.map */
