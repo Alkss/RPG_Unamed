@@ -45,8 +45,7 @@ VALUES('"
             $idt_usuario = $_SESSION["idt_usuario"];
             $stringSQL = "INSERT INTO ta_perfil_sala(`cod_usuario`,`cod_papel_sala`,`cod_sala`) VALUES (";
             $stringSQL .= $this->db->scapeCont($idt_usuario) . ", 1 ," . 
-                          $this->db->scapeCont($idt_sala) . "," . 
-                          $this->db->scapeCont($vlr_dinheiro) . ")";
+                          $this->db->scapeCont($idt_sala) . ")";
             $this->db->insert($stringSQL);
             return true;
         }
