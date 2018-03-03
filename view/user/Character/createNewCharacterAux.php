@@ -13,9 +13,6 @@
 
 <h1><?= RPG_NAME ?></h1>
 <h2>Novo Personagem</h2>
-<ul class="nav nav-tabs">
-        <li class="active"><a href="#">Criaçao de personagem - PT1</a></li>
-</ul>
 <div class="container">
     <div id="form">
         <form method="post" id="create-new-character">

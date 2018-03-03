@@ -50,13 +50,14 @@ class Character{
         
         //Retorna o ID inserido?
         $personagemID = $this->db->insert($stringSQL);
-        echo $personagemID . " " . $idt_usuario . " " . $sala_id;
+
         //Update na ta_perfil_sala/
-        $stringSQL2 = "UPDATE ta_perfil_sala SET cod_personagem = " . $personagemID;
+        $stringSQL2 = "UPDATE ta_perfil_sala SET cod_personagem = " . $this->db->scapeCont($personagemID);
         $stringSQL2 .= " WHERE cod_usuario = " . $this->db->scapeCont($idt_usuario);
         $stringSQL2 .= " AND cod_sala = " . $sala_id;
         //Update
         $this->db->executeQuery($stringSQL2);
+        echo $personagemID . " " . $idt_usuario . " " . $sala_id;
         return true;
     }
 
