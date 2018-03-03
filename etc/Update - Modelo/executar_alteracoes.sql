@@ -30,9 +30,10 @@ ALTER TABLE tb_personagem ADD CONSTRAINT `fk_tb_personagem_td_cor_olho1` FOREIGN
 -- ALTER TABLE tb_sala ADD COLUMN `vlr_dinheiro_sala` DECIMAL(10,2) NOT NULL;
 -- ALTER TABLE td_equipamento modify column `prc_equipamento` DECIMAL(10,2);
 -- ALTER TABLE td_item modify column `prc_item` DECIMAL(10,2);
-ALTER TABLE tb_personagem ADD COLUMN `qtd_dinheiro_personagem`;
+
+ALTER TABLE tb_personagem ADD COLUMN `qtd_dinheiro_personagem` DECIMAL(10,2);
 ALTER TABLE td_item DROP COLUMN `prc_item`;
-ALTER TABLE td_equipamento DROP COLUMN `prc_equipamento`
+ALTER TABLE td_equipamento DROP COLUMN `prc_equipamento`;
 ALTER TABLE ta_perfil_sala modify column `cod_personagem` INT;
 ALTER TABLE td_alinhamento modify column `dsc_alinhamento` VARCHAR(350) NOT NULL;
 ALTER TABLE tb_personagem DROP column `rel_personagem`;
@@ -98,12 +99,12 @@ INSERT INTO `RPG_unamed`.`td_linguagem` (`idt_linguagem`, `nme_linguagem`) VALUE
 INSERT INTO `RPG_unamed`.`td_linguagem` (`idt_linguagem`, `nme_linguagem`) VALUES (3, 'Sindarin');
 INSERT INTO `RPG_unamed`.`td_linguagem` (`idt_linguagem`, `nme_linguagem`) VALUES (4, 'Português');
 INSERT INTO `RPG_unamed`.`td_linguagem` (`idt_linguagem`, `nme_linguagem`) VALUES (5, 'Grunhidos ');
-INSERT INTO `RPG_unamed`.`td_item` (`idt_item`, `nme_item`, `prc_item`, `dsc_item`) VALUES (1, 'Poção de Cura Pequena', 15, 'Cura 15 pontos de saúde');
-INSERT INTO `RPG_unamed`.`td_item` (`idt_item`, `nme_item`, `prc_item`, `dsc_item`) VALUES (2, 'Pão', 3, 'Cura 1 ponto de saúde');
-INSERT INTO `RPG_unamed`.`td_item` (`idt_item`, `nme_item`, `prc_item`, `dsc_item`) VALUES (3, 'Hálito de Dragão', 300, 'Aplica 30 pontos de dano a um oponente');
-INSERT INTO `RPG_unamed`.`td_equipamento` (`idt_equipamento`, `nme_equipamento`, `prc_equipamento`, `dsc_equipamento`, `tpo_equipamento`, `vlr_base_equipamento`) VALUES (1, 'Excalibur', 500, 'A espada lendária criada para ser usada pelo ser mais nobre existente', 'A', 90);
-INSERT INTO `RPG_unamed`.`td_equipamento` (`idt_equipamento`, `nme_equipamento`, `prc_equipamento`, `dsc_equipamento`, `tpo_equipamento`, `vlr_base_equipamento`) VALUES (2, 'Escudo de aço', 150, 'Protege o personagem reduzindo seus danos', 'D', 20);
-INSERT INTO `RPG_unamed`.`td_equipamento` (`idt_equipamento`, `nme_equipamento`, `prc_equipamento`, `dsc_equipamento`, `tpo_equipamento`, `vlr_base_equipamento`) VALUES (3, 'Adaga de madeira', 30, 'Uma pequena arma que vira mortal nas mãos certas, bonus por ataque furtivo', 'D', 15);
-INSERT INTO `RPG_unamed`.`td_equipamento` (`idt_equipamento`, `nme_equipamento`, `prc_equipamento`, `dsc_equipamento`, `tpo_equipamento`, `vlr_base_equipamento`) VALUES (4, 'Mjönir', 1000, 'O martelo lendário empunhado por um Deus, é uma das armas mais poderosas', 'A', 150);
+INSERT INTO `RPG_unamed`.`td_item` (`idt_item`, `nme_item`, `dsc_item`) VALUES (1, 'Poção de Cura Pequena', 'Cura 15 pontos de saúde');
+INSERT INTO `RPG_unamed`.`td_item` (`idt_item`, `nme_item`, `dsc_item`) VALUES (2, 'Pão','Cura 1 ponto de saúde');
+INSERT INTO `RPG_unamed`.`td_item` (`idt_item`, `nme_item`, `dsc_item`) VALUES (3, 'Hálito de Dragão','Aplica 30 pontos de dano a um oponente');
+INSERT INTO `RPG_unamed`.`td_equipamento` (`idt_equipamento`, `nme_equipamento`, `dsc_equipamento`, `tpo_equipamento`, `vlr_base_equipamento`) VALUES (1, 'Excalibur', 'A espada lendária criada para ser usada pelo ser mais nobre existente', 'A', 90);
+INSERT INTO `RPG_unamed`.`td_equipamento` (`idt_equipamento`, `nme_equipamento`, `dsc_equipamento`, `tpo_equipamento`, `vlr_base_equipamento`) VALUES (2, 'Escudo de aço', 'Protege o personagem reduzindo seus danos', 'D', 20);
+INSERT INTO `RPG_unamed`.`td_equipamento` (`idt_equipamento`, `nme_equipamento`, `dsc_equipamento`, `tpo_equipamento`, `vlr_base_equipamento`) VALUES (3, 'Adaga de madeira', 'Uma pequena arma que vira mortal nas mãos certas, bonus por ataque furtivo', 'D', 15);
+INSERT INTO `RPG_unamed`.`td_equipamento` (`idt_equipamento`, `nme_equipamento`, `dsc_equipamento`, `tpo_equipamento`, `vlr_base_equipamento`) VALUES (4, 'Mjönir', 'O martelo lendário empunhado por um Deus, é uma das armas mais poderosas', 'A', 150);
 
 
