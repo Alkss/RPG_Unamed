@@ -4,12 +4,18 @@
     $race = $db->search("select idt_raca,nme_raca from td_raca");
     $classe = $db->search("select idt_classe,nme_classe from td_classe");
     $language = $db->search("select * from td_linguagem");
+    $language = $db->search("select * from td_linguagem");
+    $cor_olho = $db->search("select * from td_cor_olho");
+    $religiao = $db->search("select * from td_religiao");
 ?>
 
 <body id="create-new-character">
 
 <h1><?= RPG_NAME ?></h1>
 <h2>Novo Personagem</h2>
+<ul class="nav nav-tabs">
+        <li class="active"><a href="#">Criaçao de personagem - PT1</a></li>
+</ul>
 <div class="container">
     <div id="form">
         <form method="post" id="create-new-character">
@@ -53,14 +59,16 @@
             </p>
             
             <p>
-                <label for="cor_olhos_personagem">Cor dos Olhos</label><br>
-                <select id="cor_olhos_personagem" name="cor_olhos_personagem">
+                <label for="cor_olho">Cor dos olhos</label><br>
+                <select id="cor_olho" name="cor_olho">
                     <option value="" selected>-- Selecione uma opçao --</option>
-                    <option value="Azuis">Azuis</option>
-                    <option value="Vermelhos">Vermelhos</option>
-                    <option value="Verdes">Verdes</option>
-                    <option value="Castanhos">Castanhos</option>
-                    <option value="Negros">Negros</option>
+                <?php
+                    foreach($cor_olho as $linha) {
+                ?>
+                    <option value="<?= $linha['idt_cor_olho'] ?>"><?= $linha['nme_cor_olho'] ?></option>
+                <?php
+                    }
+                ?>
                 </select>
             </p>
             
@@ -81,14 +89,16 @@
             </p>
             
             <p>
-                <label for="rel_personagem">Religiao do Personagem</label><br>
-                <select id="rel_personagem" name="rel_personagem">
+                <label for="religiao">Religiao</label><br>
+                <select id="religiao" name="religiao">
                     <option value="" selected>-- Selecione uma opçao --</option>
-                    <option value="Catholic">Catholic</option>
-                    <option value="Xama">Xama</option>
-                    <option value="Atheist">Atheist</option>
-                    <option value="Tribal">Tribal</option>
-                    <option value="Satanist">Satanist</option>
+                <?php
+                    foreach($religiao as $linha) {
+                ?>
+                    <option value="<?= $linha['idt_religiao'] ?>"><?= $linha['nme_religiao'] ?></option>
+                <?php
+                    }
+                ?>
                 </select>
             </p>
             
