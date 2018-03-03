@@ -39,7 +39,14 @@
       justify-content: center;
     }
   }
-
+  select {
+          color: black;
+          display: flex;
+          justify-content: center;
+          vertical-align: middle;
+          height: 34px;
+          width: 100%;
+      }
   .alert {
     &.alert-success {
       color: #ffffff;
