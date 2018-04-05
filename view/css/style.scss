@@ -29,6 +29,18 @@
   display: flex;
 }
 
+#classes-home,#lang-home,#races-home,#alignment-home{
+  .btn{
+    &.btn-primary{
+      margin-left:2.3%;
+    }
+  }
+}
+
+h1,h2{
+  text-align:center;
+}
+
 #create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character {
   background-color: black;
   color: white;
