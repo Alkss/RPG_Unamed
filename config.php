@@ -13,7 +13,7 @@ define('DB_HOST', 'localhost'); //Host
 define('DB_USER', 'root'); //User
 define('DB_PASS', 'root'); //Password
 define('DB_NAME', 'RPG_unamed'); //Database
-define('RPG_NAME', 'RPG_unamed'); // nome do projeto.
+define('RPG_NAME', 'RPG_Unnamed'); // nome do projeto.
 
 define('DEBUG', 1);
 
