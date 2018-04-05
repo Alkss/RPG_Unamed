@@ -16,6 +16,9 @@
         <p><a href="<?= URL ?>view/adm/Language/index.php">Linguagens</a></p>
         <p><a href="<?= URL ?>view/adm/Race/index.php">Raças</a></p>
         <p><a href="<?= URL ?>view/adm/Alignment/index.php">Alinhamentos</a></p>
+        <p><a>Perícias</a></p>
+        <p><a>Cor do Olho</a></p>
+        <p><a>Divindade</a></p>
         <p id="exit_btn"><a href="<?= URL ?>view/adm/exit.php">Sair</a></p>
     </div>
 </body>
