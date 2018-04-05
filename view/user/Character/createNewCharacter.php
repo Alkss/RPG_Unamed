@@ -8,6 +8,7 @@
 require('../../../config.php');
 include('../../../header.php');
 
+
 if ($_SESSION['logado'] != 1) {
     header('location:' . URL . '/view/index.php');
 }
