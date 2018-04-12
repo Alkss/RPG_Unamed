@@ -17,7 +17,11 @@
         <p><a href="<?= URL ?>view/adm/Race/index.php">Raças</a></p>
         <p><a href="<?= URL ?>view/adm/Alignment/index.php">Alinhamentos</a></p>
         <p><a>Perícias</a></p>
-        <p><a>Cor do Olho</a></p>
+        <p><a>Magias</a></p>
+        <p><a>Equipamentos</a></p>
+        <p><a>Atributos</a></p>
+        <p><a>Perícias</a></p>
+        <p><a>Itens</a></p>
         <p><a>Divindade</a></p>
         <p id="exit_btn"><a href="<?= URL ?>view/adm/exit.php">Sair</a></p>
     </div>
