@@ -22,7 +22,7 @@ if ($_SESSION['logado'] != 1) {
     <?php
     if ((isset($_GET['success'])) && ($_GET['success'] == 1)) {
         ?>
-        <div class="alert alert-success">Mesa criada com sucesso</div>
+        <div class="alert alert-success" id="sucessTable">Mesa criada com sucesso</div>
         <?php
     }
     ?>

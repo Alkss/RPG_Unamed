@@ -25,7 +25,7 @@ $salas = $db->search("SELECT idt_sala, nme_sala FROM tb_sala INNER JOIN ta_perfi
                     WHERE cod_usuario=" . $db->scapeCont($idt_usuario));
 ?>
 <body id="showTables">
-<div class="col-xs-5" id="tableList">
+<div class="col-xs-12" id="tableList">
     
     <table class="table table-responsive">
         <thead>
@@ -60,7 +60,7 @@ $salas = $db->search("SELECT idt_sala, nme_sala FROM tb_sala INNER JOIN ta_perfi
             }
         } else {
             ?>
-            <div class="alert alert-info">Não há nenhuma sala registrado ainda</div>
+            <div class="alert alert-info" id="emptyAlert">Não há nenhuma sala registrado ainda</div>
             <?php
         }
         ?>

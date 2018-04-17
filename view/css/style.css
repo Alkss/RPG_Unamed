@@ -28,14 +28,26 @@ h1, h2 {
 #showTables {
   background-color: black; }
   #showTables div {
-    display: flex;
+    padding-top: 2%;
     color: white; }
     #showTables div td {
       color: white; }
+  #showTables #emptyAlert {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: auto;
+    text-align: center;
+    background-color: #580c17; }
 
+#home-page-user #sucessTable {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-bottom: 2%; }
 #home-page-user #tableIframe {
   display: flex;
-  width: 100%;
+  width: 50%;
   height: 100%; }
 
 #create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character {
