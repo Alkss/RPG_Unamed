@@ -12,6 +12,10 @@
     <p><a href="<?= URL ?>view/adm/homepageADM.php" id="homeBtn">Início</a></p>
     <hr>
     <p>Personagens</p>
+    
+    
+
+    <!--Permissão somente para o mestre criar personagem-->
     <?php
     if ($tableInfo[0]['cod_papel_sala'] == '1') {
         ?>

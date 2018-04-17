@@ -17,18 +17,22 @@ if ($_SESSION['logado'] != 1) {
     
     if ($tableInfo[0]['cod_usuario'] != $_SESSION['idt_usuario']) {
         $db->executeQuery("INSERT INTO `ta_perfil_sala`(`cod_usuario`, `cod_personagem`, `cod_papel_sala`, `cod_sala`)
-VALUES ('" . $_SESSION['idt_usuario'] . "',
+VALUES ('" . $db->scapeCont($_SESSION['idt_usuario']) . "',
         '',
         '" . '3' . "',
-        '" . $_GET['idt'] . "'");
+        '" . $db->scapeCont($_GET['idt']) . "'");
     }
+    
+     $db->search("SELECT * FROM tb_personagem JOIN ta_perfil_sala ON idt_personagem=cod_personagem WHERE idt_perfil_sala='" . $db->scapeCont($_GET['idt']) . "'");
+    
+    die;
     ?>
     <body id="table-home">
     <h1><?= RPG_NAME ?></h1>
 
-    <h2>Mesa de <?=$tableInfo[0]['nme_usuario']?></h2>
+    <h2>Mesa de <?= $tableInfo[0]['nme_usuario'] ?></h2>
     <div class="col-xs-4">
-        <?php include 'menu.php';?>
+        <?php include 'menu.php'; ?>
     </div>
 
     </body>
