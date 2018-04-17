@@ -60,52 +60,68 @@ h1, h2 {
   width: 50%;
   height: 100%; }
 
-#create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character {
+#table-home #menu-adm {
+  border: 1px solid white;
+  min-width: 15em;
+  background-color: black; }
+  #table-home #menu-adm a {
+    color: white; }
+    #table-home #menu-adm a:not(#homeBtn) {
+      margin-left: 15px; }
+    #table-home #menu-adm a:hover {
+      color: green; }
+    #table-home #menu-adm a p {
+      color: white; }
+  #table-home #menu-adm .menuTitle {
+    padding-right: 0 !important;
+    padding-left: 0 !important; }
+
+#create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character, #table-home {
   background-color: black;
   color: white; }
-  #create-new-user div#recent-chars, #home-page-user div#recent-chars, #create-new-table div#recent-chars, #show-tables-user div#recent-chars, #create-new-character div#recent-chars {
+  #create-new-user div#recent-chars, #home-page-user div#recent-chars, #create-new-table div#recent-chars, #show-tables-user div#recent-chars, #create-new-character div#recent-chars, #table-home div#recent-chars {
     display: flex;
     justify-content: center; }
-  #create-new-user div#recent-tables, #home-page-user div#recent-tables, #create-new-table div#recent-tables, #show-tables-user div#recent-tables, #create-new-character div#recent-tables {
+  #create-new-user div#recent-tables, #home-page-user div#recent-tables, #create-new-table div#recent-tables, #show-tables-user div#recent-tables, #create-new-character div#recent-tables, #table-home div#recent-tables {
     display: flex;
     justify-content: center; }
-  #create-new-user div#show-tables, #home-page-user div#show-tables, #create-new-table div#show-tables, #show-tables-user div#show-tables, #create-new-character div#show-tables {
+  #create-new-user div#show-tables, #home-page-user div#show-tables, #create-new-table div#show-tables, #show-tables-user div#show-tables, #create-new-character div#show-tables, #table-home div#show-tables {
     display: flex;
     justify-content: center; }
-  #create-new-user select, #home-page-user select, #create-new-table select, #show-tables-user select, #create-new-character select {
+  #create-new-user select, #home-page-user select, #create-new-table select, #show-tables-user select, #create-new-character select, #table-home select {
     color: black;
     display: flex;
     justify-content: center;
     vertical-align: middle;
     height: 34px;
     width: 100%; }
-  #create-new-user .alert.alert-success, #home-page-user .alert.alert-success, #create-new-table .alert.alert-success, #show-tables-user .alert.alert-success, #create-new-character .alert.alert-success {
+  #create-new-user .alert.alert-success, #home-page-user .alert.alert-success, #create-new-table .alert.alert-success, #show-tables-user .alert.alert-success, #create-new-character .alert.alert-success, #table-home .alert.alert-success {
     color: #ffffff;
     background-color: #5d020e; }
-  #create-new-user h1, #home-page-user h1, #create-new-table h1, #show-tables-user h1, #create-new-character h1 {
+  #create-new-user h1, #home-page-user h1, #create-new-table h1, #show-tables-user h1, #create-new-character h1, #table-home h1 {
     text-align: center; }
-  #create-new-user h2, #home-page-user h2, #create-new-table h2, #show-tables-user h2, #create-new-character h2 {
+  #create-new-user h2, #home-page-user h2, #create-new-table h2, #show-tables-user h2, #create-new-character h2, #table-home h2 {
     color: darkred;
     text-align: center; }
-  #create-new-user .btn-primary, #home-page-user .btn-primary, #create-new-table .btn-primary, #show-tables-user .btn-primary, #create-new-character .btn-primary {
+  #create-new-user .btn-primary, #home-page-user .btn-primary, #create-new-table .btn-primary, #show-tables-user .btn-primary, #create-new-character .btn-primary, #table-home .btn-primary {
     background-color: darkred;
     border-color: #ab0000;
     margin: auto;
     display: flex; }
-  #create-new-user div#form, #create-new-user div#menu, #home-page-user div#form, #home-page-user div#menu, #create-new-table div#form, #create-new-table div#menu, #show-tables-user div#form, #show-tables-user div#menu, #create-new-character div#form, #create-new-character div#menu {
+  #create-new-user div#form, #create-new-user div#menu, #home-page-user div#form, #home-page-user div#menu, #create-new-table div#form, #create-new-table div#menu, #show-tables-user div#form, #show-tables-user div#menu, #create-new-character div#form, #create-new-character div#menu, #table-home div#form, #table-home div#menu {
     display: flex;
     vertical-align: middle;
     justify-content: center;
     align-items: center; }
-  #create-new-user #create-new-table, #home-page-user #create-new-table, #create-new-table #create-new-table, #show-tables-user #create-new-table, #create-new-character #create-new-table {
+  #create-new-user #create-new-table, #home-page-user #create-new-table, #create-new-table #create-new-table, #show-tables-user #create-new-table, #create-new-character #create-new-table, #table-home #create-new-table {
     min-width: 60%; }
-    #create-new-user #create-new-table #name-label-post:before, #home-page-user #create-new-table #name-label-post:before, #create-new-table #create-new-table #name-label-post:before, #show-tables-user #create-new-table #name-label-post:before, #create-new-character #create-new-table #name-label-post:before {
+    #create-new-user #create-new-table #name-label-post:before, #home-page-user #create-new-table #name-label-post:before, #create-new-table #create-new-table #name-label-post:before, #show-tables-user #create-new-table #name-label-post:before, #create-new-character #create-new-table #name-label-post:before, #table-home #create-new-table #name-label-post:before {
       font-family: FontAwesome;
       content: "\f071";
       color: red; }
-    #create-new-user #create-new-table #name-post, #home-page-user #create-new-table #name-post, #create-new-table #create-new-table #name-post, #show-tables-user #create-new-table #name-post, #create-new-character #create-new-table #name-post {
+    #create-new-user #create-new-table #name-post, #home-page-user #create-new-table #name-post, #create-new-table #create-new-table #name-post, #show-tables-user #create-new-table #name-post, #create-new-character #create-new-table #name-post, #table-home #create-new-table #name-post {
       color: red; }
-  #create-new-user #nPlayers, #home-page-user #nPlayers, #create-new-table #nPlayers, #show-tables-user #nPlayers, #create-new-character #nPlayers {
+  #create-new-user #nPlayers, #home-page-user #nPlayers, #create-new-table #nPlayers, #show-tables-user #nPlayers, #create-new-character #nPlayers, #table-home #nPlayers {
     max-width: 20%; }
 
 tbody {

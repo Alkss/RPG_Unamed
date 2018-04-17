@@ -64,9 +64,9 @@ h1, h2 {
 
 #home-page-user {
 
-  .btn-primary{
+  .btn-primary {
     position: absolute;
-    transform: translate(12.3em,-39em);
+    transform: translate(12.3em, -39em);
   }
 
   .container {
@@ -92,7 +92,31 @@ h1, h2 {
   }
 }
 
-#create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character {
+#table-home {
+  #menu-adm {
+    border: 1px solid white;
+    min-width: 15em;
+    background-color: black;
+    a {
+      color: white;
+      &:not(#homeBtn) {
+        margin-left: 15px;
+      }
+      &:hover {
+        color: green;
+      }
+      p {
+        color: white;
+      }
+    }
+    .menuTitle {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+  }
+}
+
+#create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character, #table-home {
   background-color: black;
   color: white;
 
