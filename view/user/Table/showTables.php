@@ -50,7 +50,7 @@ $salas = $db->search("SELECT idt_sala, nme_sala FROM tb_sala INNER JOIN ta_perfi
                 <tr>
                     <td><?= $sala['nme_sala'] ?></td>
                     <td>
-                        <a href="index.php?idt=<?= $sala['idt_sala'] ?>">
+                        <a href="index.php?idt=<?= $sala['idt_sala']?>" target="_blank">
                             <i class="fa fa-pencil" aria-hidden="true"></i>
                         </a>
                     </td>

@@ -31,6 +31,7 @@ h1, h2 {
     padding-top: 2%;
     color: white; }
     #showTables div td {
+      background-color: #580c17;
       color: white; }
   #showTables #emptyAlert {
     display: flex;
@@ -45,6 +46,10 @@ h1, h2 {
   justify-content: center;
   margin: auto;
   margin-bottom: 2%; }
+#home-page-user h3 {
+  display: flex;
+  margin: auto;
+  margin-left: 11.8em; }
 #home-page-user #tableIframe {
   display: flex;
   width: 50%;

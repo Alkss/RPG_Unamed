@@ -8,4 +8,4 @@
 require('../../../config.php');
 include('../../../header.php');
 
-header('Location:../index.aphp');
+header('Location:../index.php');
