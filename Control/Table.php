@@ -29,24 +29,25 @@ class Table
         if ($select) {
             return false;
         } else {
-            $date = date('Y-m-d');
-            
-            
+            $today = date('Y-m-d H:i:s');
+    
             $stringSQL = "INSERT INTO tb_sala (`nme_sala`,`dta_criacao_sala`,`dta_ultima_atividade_sala`,`hst_campanha_sala`,`pwd_sala`,`qtd_players_sala`)
 VALUES('"
                 . $this->db->scapeCont($name) . "','"
-                . $this->db->scapeCont($date) . "','"
-                . $this->db->scapeCont($date) . "','"
+                . $this->db->scapeCont($today) . "','"
+                . $this->db->scapeCont($today) . "','"
                 . $this->db->scapeCont($history) . "','"
                 . $this->db->scapeCont($password) . "','"
                 . $this->db->scapeCont($players) . "')";
-            $idt_sala = $this->db->insert($stringSQL);
             
+            
+            $idt_sala = $this->db->insert($stringSQL);
             $idt_usuario = $_SESSION["idt_usuario"];
             $stringSQL = "INSERT INTO ta_perfil_sala(`cod_usuario`,`cod_papel_sala`,`cod_sala`) VALUES (";
-            $stringSQL .= $this->db->scapeCont($idt_usuario) . ", 1 ," . 
+            $stringSQL .= $this->db->scapeCont($idt_usuario) . ", 1 ," .
                           $this->db->scapeCont($idt_sala) . ")";
-            $this->db->insert($stringSQL);
+            $retorno = $this->db->insert($stringSQL);
+            var_dump($retorno);die;
             return true;
         }
     }
