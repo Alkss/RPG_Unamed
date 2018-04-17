@@ -25,6 +25,19 @@
 h1, h2 {
   text-align: center; }
 
+#showTables {
+  background-color: black; }
+  #showTables div {
+    display: flex;
+    color: white; }
+    #showTables div td {
+      color: white; }
+
+#home-page-user #tableIframe {
+  display: flex;
+  width: 100%;
+  height: 100%; }
+
 #create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character {
   background-color: black;
   color: white; }
