@@ -58,6 +58,12 @@ h1, h2 {
 #create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character {
   background-color: black;
   color: white; }
+  #create-new-user div#recent-chars, #home-page-user div#recent-chars, #create-new-table div#recent-chars, #show-tables-user div#recent-chars, #create-new-character div#recent-chars {
+    display: flex;
+    justify-content: center; }
+  #create-new-user div#recent-tables, #home-page-user div#recent-tables, #create-new-table div#recent-tables, #show-tables-user div#recent-tables, #create-new-character div#recent-tables {
+    display: flex;
+    justify-content: center; }
   #create-new-user div#show-tables, #home-page-user div#show-tables, #create-new-table div#show-tables, #show-tables-user div#show-tables, #create-new-character div#show-tables {
     display: flex;
     justify-content: center; }

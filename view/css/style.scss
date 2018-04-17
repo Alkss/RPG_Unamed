@@ -87,10 +87,19 @@ h1, h2 {
   color: white;
 
   div {
+    &#recent-chars {
+      display: flex;
+      justify-content: center;
+    }
+    &#recent-tables {
+      display: flex;
+      justify-content: center;
+    }
     &#show-tables {
       display: flex;
       justify-content: center;
     }
+
   }
   select {
     color: black;
