@@ -64,6 +64,11 @@ h1, h2 {
 
 #home-page-user {
 
+  .btn-primary{
+    position: absolute;
+    transform: translate(12.3em,-39em);
+  }
+
   .container {
     position: relative;
   }
@@ -133,8 +138,6 @@ h1, h2 {
     border-color: #ab0000;
     margin: auto;
     display: flex;
-    position: absolute;
-    transform: translate(12.3em,-39em);
   }
   div {
     &#form, &#menu {

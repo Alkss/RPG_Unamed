@@ -41,6 +41,9 @@ h1, h2 {
     text-align: center;
     background-color: #580c17; }
 
+#home-page-user .btn-primary {
+  position: absolute;
+  transform: translate(12.3em, -39em); }
 #home-page-user .container {
   position: relative; }
 #home-page-user #sucessTable {
@@ -88,9 +91,7 @@ h1, h2 {
     background-color: darkred;
     border-color: #ab0000;
     margin: auto;
-    display: flex;
-    position: absolute;
-    transform: translate(12.3em, -39em); }
+    display: flex; }
   #create-new-user div#form, #create-new-user div#menu, #home-page-user div#form, #home-page-user div#menu, #create-new-table div#form, #create-new-table div#menu, #show-tables-user div#form, #show-tables-user div#menu, #create-new-character div#form, #create-new-character div#menu {
     display: flex;
     vertical-align: middle;
