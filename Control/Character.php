@@ -22,7 +22,7 @@ class Character{
     public function createCharacter_pt1($nme_personagem,$exp_personagem,
                                         $gen_personagem,$cod_religiao,
                                         $pes_personagem,$alt_personagem,
-                                        $dsc_cabelo_pesonagem,$cod_cor_olho,
+                                        $dsc_cabelo_pesonagem,$cor_olho,
                                         $img_personagem,$hst_personagem,
                                         $inf_adicional_personagem,$cod_alinhamento,
                                         $cod_classe, $cod_raca){
@@ -36,14 +36,14 @@ class Character{
         //Insert na tb_personagem
         $stringSQL = "INSERT INTO tb_personagem(";
         $stringSQL .= "nme_personagem,exp_personagem,gen_personagem,";
-        $stringSQL .= "cod_religiao,pes_personagem,alt_personagem,";
-        $stringSQL .= "dsc_cabelo_personagem,cod_cor_olho,img_personagem,";
+        $stringSQL .= "pes_personagem,alt_personagem,";
+        $stringSQL .= "dsc_cabelo_personagem,cor_olho_personagem,img_personagem,";
         $stringSQL .= "hst_personagem,inf_adicional_personagem,cod_alinhamento,";
         $stringSQL .= "cod_classe,cod_raca,qtd_dinheiro_personagem) VALUES ('";
         $stringSQL .= $this->db->scapeCont($nme_personagem) . "'," . $this->db->scapeCont($exp_personagem) . ",'";
-        $stringSQL .= $this->db->scapeCont($gen_personagem) . "'," . $this->db->scapeCont($cod_religiao) . ",";
+        $stringSQL .= $this->db->scapeCont($gen_personagem) . "',";
         $stringSQL .= $this->db->scapeCont($pes_personagem) . "," . $this->db->scapeCont($alt_personagem) . ",'";
-        $stringSQL .= $this->db->scapeCont($dsc_cabelo_pesonagem) . "'," . $this->db->scapeCont($cod_cor_olho) . ",'";
+        $stringSQL .= $this->db->scapeCont($dsc_cabelo_pesonagem) . "','" . $this->db->scapeCont($cor_olho) . "','";
         $stringSQL .= $this->db->scapeCont($img_personagem) . "','" . $this->db->scapeCont($hst_personagem) . "','";
         $stringSQL .= $this->db->scapeCont($inf_adicional_personagem) . "'," . $this->db->scapeCont($cod_alinhamento)  . ",";
         $stringSQL .= $this->db->scapeCont($cod_classe) . "," . $this->db->scapeCont($cod_raca) . ",0)";
