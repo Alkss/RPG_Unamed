@@ -67,7 +67,7 @@ $religiao = $db->search("select * from td_divindade");
 
                 <p>
                     <label for="alt_personagem">Altura do Personagem</label><br>
-                    <input class="form-control" type="number" name="alt_personagem" id="alt_personagem" required="required">
+                    <input class="form-control" type="number" min="0" max="2" step="0.01" name="alt_personagem" id="alt_personagem" required="required">
                 </p>
 
                 <p>
@@ -140,22 +140,4 @@ $religiao = $db->search("select * from td_divindade");
     </div>
 </div>
 </body>
-<script>
-
-    function colorNameBlack() {
-        var text = document.getElementById('name-post')
-        text.setAttribute('style', 'color:black');
-    }
-
-    function showPass() {
-        var password = document.getElementById('password');
-        password.removeAttribute("type");
-    }
-    function hidePass() {
-        var password = document.getElementById('password');
-        password.setAttribute('type', 'password')
-    }
-
-
-</script>
 

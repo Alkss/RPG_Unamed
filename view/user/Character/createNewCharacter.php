@@ -29,7 +29,7 @@ if (isset($_POST['nme_personagem']) && isset($_POST['exp_personagem']) &&
                                          $_POST['img_personagem'],$_POST['hst_personagem'], 
                                         $_POST['inf_adicional_personagem'], $_POST['alignments'],
                                         $_POST['classe'], $_POST['racas'])) {
-       // header('Location: ../index.php?success=1');
+        header('Location: ../Table/index.php?idt='.$_GET['idt']);
     } else {
         ?>
         <div class="alert alert-warning">O nome do personagem já existe, por favor selecione outro.</div>

@@ -5,6 +5,9 @@
  * Date: 17/01/18
  * Time: 16:06
  */
+
+
+
 ?>
 <body id="menu-ADM">
 <div class="col-xs-4" id="menu-adm">
@@ -27,7 +30,7 @@
     <?php
     if ($tableInfo[0]['cod_papel_sala'] == '1') {
         ?>
-        <p><a href="<?= URL ?>view/user/Character/createNewCharacter.php">Criar personagem</a></p>
+        <p><a href="<?= URL ?>view/user/Character/createNewCharacter.php?idt=<?=$_GET['idt']?>">Criar personagem</a></p>
         <?php
     }
     ?>
