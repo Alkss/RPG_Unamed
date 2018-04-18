@@ -14,10 +14,12 @@
     <p>Personagens</p>
     
     <?php
-    foreach ($chars as $char) {
-        ?>
-        <p><a><?= $char['nme_personagem']?></a></p>
-        <?php
+    if ($chars) {
+        foreach ($chars as $char) {
+            ?>
+            <p><a><?= $char['nme_personagem'] ?></a></p>
+            <?php
+        }
     }
     ?>
 
