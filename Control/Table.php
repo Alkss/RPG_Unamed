@@ -46,8 +46,7 @@ VALUES('"
             $stringSQL = "INSERT INTO ta_perfil_sala(`cod_usuario`,`cod_papel_sala`,`cod_sala`) VALUES (";
             $stringSQL .= $this->db->scapeCont($idt_usuario) . ", 1 ," .
                           $this->db->scapeCont($idt_sala) . ")";
-            $retorno = $this->db->insert($stringSQL);
-            var_dump($retorno);die;
+            $this->db->insert($stringSQL);
             return true;
         }
     }

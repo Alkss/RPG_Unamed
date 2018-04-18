@@ -13,6 +13,7 @@ class User
     function __construct()
     {
         $this->db = new DataBase();
+        
     }
     
     public function createUserADM($name, $login, $email, $password, $userType, $active)
@@ -23,9 +24,10 @@ class User
             return "O nome de usuário já existe";
         } else {
             $md5Password = md5($password);
-            
-            $stringSQL = "INSERT INTO `tb_usuario`(`nme_usuario`,`lgn_usuario`,`pwd_usuario`,`eml_usuario`,`cod_perfil`,`atv_usuario`)
-                          VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($login) . "','" . $this->db->scapeCont($md5Password) . "','" . $this->db->scapeCont($email) . "'," . $this->db->scapeCont($userType) . "," . $this->db->scapeCont($active) . ");";
+            $today = date('Y-m-d H:i:s');
+    
+            $stringSQL = "INSERT INTO `tb_usuario`(`nme_usuario`,`lgn_usuario`,`pwd_usuario`,`eml_usuario`,`cod_perfil`,`atv_usuario`,dta_criacao_usuario)
+                          VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($login) . "','" . $this->db->scapeCont($md5Password) . "','" . $this->db->scapeCont($email) . "'," . $this->db->scapeCont($userType) . "," . $this->db->scapeCont($active) . ",'".$this->db->scapeCont($today)."');";
             $this->db->executeQuery($stringSQL);
             return true;
         }
@@ -40,9 +42,10 @@ class User
             return "O nome de usuário já existe";
         } else {
             $md5Password = md5($password);
-            
-            $stringSQL = "INSERT INTO `tb_usuario`(`nme_usuario`,`lgn_usuario`,`pwd_usuario`,`eml_usuario`,`cod_perfil`,`atv_usuario`)
-                          VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($login) . "','" . $this->db->scapeCont($md5Password) . "','" . $this->db->scapeCont($email) . "',2,0);";
+            $today = date('Y-m-d H:i:s');
+    
+            $stringSQL = "INSERT INTO `tb_usuario`(`nme_usuario`,`lgn_usuario`,`pwd_usuario`,`eml_usuario`,`cod_perfil`,`atv_usuario`,dta_criacao_usuario)
+                          VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($login) . "','" . $this->db->scapeCont($md5Password) . "','" . $this->db->scapeCont($email) . "',2,0,'".$this->db->scapeCont($today)."');";
             $this->db->executeQuery($stringSQL);
             return true;
         }

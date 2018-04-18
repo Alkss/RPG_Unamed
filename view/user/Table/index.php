@@ -23,9 +23,8 @@ VALUES ('" . $db->scapeCont($_SESSION['idt_usuario']) . "',
         '" . $db->scapeCont($_GET['idt']) . "'");
     }
     
-     $db->search("SELECT * FROM tb_personagem JOIN ta_perfil_sala ON idt_personagem=cod_personagem WHERE idt_perfil_sala='" . $db->scapeCont($_GET['idt']) . "'");
+     $chars = $db->search("SELECT * FROM ta_perfil_sala JOIN tb_sala ON cod_sala=idt_sala JOIN tb_personagem ON cod_personagem = idt_personagem WHERE cod_sala='" . $db->scapeCont($_GET['idt']) . "'");
     
-    die;
     ?>
     <body id="table-home">
     <h1><?= RPG_NAME ?></h1>

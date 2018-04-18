@@ -13,7 +13,13 @@
     <hr>
     <p>Personagens</p>
     
-    
+    <?php
+    foreach ($chars as $char) {
+        ?>
+        <p><a><?= $char['nme_personagem']?></a></p>
+        <?php
+    }
+    ?>
 
     <!--Permissão somente para o mestre criar personagem-->
     <?php
