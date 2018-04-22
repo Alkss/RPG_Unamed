@@ -2,8 +2,7 @@
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
-SET @OLD_SQL_MODE=@@SQL_MODE, 
-SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='TRADITIONAL,ALLOW_INVALID_DATES';
 
 -- -----------------------------------------------------
 -- Schema mydb
@@ -24,7 +23,7 @@ USE `RPG_unamed` ;
 CREATE TABLE IF NOT EXISTS `RPG_unamed`.`td_equipamento` (
   `idt_equipamento` INT NOT NULL AUTO_INCREMENT,
   `nme_equipamento` VARCHAR(50) NOT NULL,
-  `dsc_equipamento` VARCHAR(200) NOT NULL,
+  `dsc_equipamento` VARCHAR(550) NOT NULL,
   `tpo_equipamento` ENUM('A', 'D') NOT NULL,
   `mod_base_equipamento` VARCHAR(25) NOT NULL,
   PRIMARY KEY (`idt_equipamento`))
@@ -32,8 +31,7 @@ ENGINE = InnoDB
 AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX `uq_td_equipamento_nme_equipamento` ON 
-`RPG_unamed`.`td_equipamento` (`nme_equipamento` ASC);
+CREATE UNIQUE INDEX `uq_td_equipamento_nme_equipamento` ON `RPG_unamed`.`td_equipamento` (`nme_equipamento` ASC);
 
 
 -- -----------------------------------------------------
@@ -42,14 +40,13 @@ CREATE UNIQUE INDEX `uq_td_equipamento_nme_equipamento` ON
 CREATE TABLE IF NOT EXISTS `RPG_unamed`.`td_alinhamento` (
   `idt_alinhamento` INT NOT NULL AUTO_INCREMENT,
   `nme_alinhamento` VARCHAR(50) NOT NULL,
-  `dsc_alinhamento` VARCHAR(350) NOT NULL,
+  `dsc_alinhamento` VARCHAR(550) NOT NULL,
   PRIMARY KEY (`idt_alinhamento`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 10
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX `uq_td_alinhamento_nme_alinhamento` ON 
-`RPG_unamed`.`td_alinhamento` (`nme_alinhamento` ASC);
+CREATE UNIQUE INDEX `uq_td_alinhamento_nme_alinhamento` ON `RPG_unamed`.`td_alinhamento` (`nme_alinhamento` ASC);
 
 
 -- -----------------------------------------------------
@@ -58,14 +55,13 @@ CREATE UNIQUE INDEX `uq_td_alinhamento_nme_alinhamento` ON
 CREATE TABLE IF NOT EXISTS `RPG_unamed`.`td_classe` (
   `idt_classe` INT NOT NULL AUTO_INCREMENT,
   `nme_classe` VARCHAR(50) NOT NULL,
-  `dsc_classe` VARCHAR(200) NOT NULL,
+  `dsc_classe` VARCHAR(550) NOT NULL,
   PRIMARY KEY (`idt_classe`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 7
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX `uq_td_class_nme_classe` ON `RPG_unamed`.`td_classe` 
-(`nme_classe` ASC);
+CREATE UNIQUE INDEX `uq_td_class_nme_classe` ON `RPG_unamed`.`td_classe` (`nme_classe` ASC);
 
 
 -- -----------------------------------------------------
@@ -74,14 +70,13 @@ CREATE UNIQUE INDEX `uq_td_class_nme_classe` ON `RPG_unamed`.`td_classe`
 CREATE TABLE IF NOT EXISTS `RPG_unamed`.`td_raca` (
   `idt_raca` INT NOT NULL AUTO_INCREMENT,
   `nme_raca` VARCHAR(50) NOT NULL,
-  `dsc_raca` VARCHAR(200) NOT NULL,
+  `dsc_raca` VARCHAR(550) NOT NULL,
   PRIMARY KEY (`idt_raca`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX `uq_td_raca_nme_raca` ON `RPG_unamed`.`td_raca` 
-(`nme_raca` ASC);
+CREATE UNIQUE INDEX `uq_td_raca_nme_raca` ON `RPG_unamed`.`td_raca` (`nme_raca` ASC);
 
 
 -- -----------------------------------------------------
@@ -121,17 +116,13 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`tb_personagem` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = big5;
 
-CREATE INDEX `fk_tb_personagem_td_alinhamento` ON 
-`RPG_unamed`.`tb_personagem` (`cod_alinhamento` ASC);
+CREATE INDEX `fk_tb_personagem_td_alinhamento` ON `RPG_unamed`.`tb_personagem` (`cod_alinhamento` ASC);
 
-CREATE INDEX `fk_tb_personagem_td_classe` ON 
-`RPG_unamed`.`tb_personagem` (`cod_classe` ASC);
+CREATE INDEX `fk_tb_personagem_td_classe` ON `RPG_unamed`.`tb_personagem` (`cod_classe` ASC);
 
-CREATE INDEX `fk_tb_personagem_td_raca` ON `RPG_unamed`.`tb_personagem` 
-(`cod_raca` ASC);
+CREATE INDEX `fk_tb_personagem_td_raca` ON `RPG_unamed`.`tb_personagem` (`cod_raca` ASC);
 
-CREATE UNIQUE INDEX `uq_tb_personagem_nme_personagem` ON 
-`RPG_unamed`.`tb_personagem` (`nme_personagem` ASC);
+CREATE UNIQUE INDEX `uq_tb_personagem_nme_personagem` ON `RPG_unamed`.`tb_personagem` (`nme_personagem` ASC);
 
 
 -- -----------------------------------------------------
@@ -155,11 +146,9 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`ta_equipavel` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE INDEX `fk_ta_equipavel_tb_equipamento` ON 
-`RPG_unamed`.`ta_equipavel` (`cod_equipamento` ASC);
+CREATE INDEX `fk_ta_equipavel_tb_equipamento` ON `RPG_unamed`.`ta_equipavel` (`cod_equipamento` ASC);
 
-CREATE INDEX `fk_ta_equipavel_tb_personagem` ON 
-`RPG_unamed`.`ta_equipavel` (`cod_personagem` ASC);
+CREATE INDEX `fk_ta_equipavel_tb_personagem` ON `RPG_unamed`.`ta_equipavel` (`cod_personagem` ASC);
 
 
 -- -----------------------------------------------------
@@ -177,8 +166,7 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`tb_sala` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX `uq_tb_sala_nme_sala` ON `RPG_unamed`.`tb_sala` 
-(`nme_sala` ASC);
+CREATE UNIQUE INDEX `uq_tb_sala_nme_sala` ON `RPG_unamed`.`tb_sala` (`nme_sala` ASC);
 
 
 -- -----------------------------------------------------
@@ -192,8 +180,7 @@ ENGINE = InnoDB
 AUTO_INCREMENT = 3
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX `uq_td_tipo_perfil_nme_tipo_perfil_UNIQUE` ON 
-`RPG_unamed`.`td_tipo_perfil` (`nme_tipo_perfil` ASC);
+CREATE UNIQUE INDEX `uq_td_tipo_perfil_nme_tipo_perfil_UNIQUE` ON `RPG_unamed`.`td_tipo_perfil` (`nme_tipo_perfil` ASC);
 
 
 -- -----------------------------------------------------
@@ -218,14 +205,11 @@ ENGINE = InnoDB
 AUTO_INCREMENT = 16
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX `uq_tb_usuario_eml_usuario` ON 
-`RPG_unamed`.`tb_usuario` (`eml_usuario` ASC);
+CREATE UNIQUE INDEX `uq_tb_usuario_eml_usuario` ON `RPG_unamed`.`tb_usuario` (`eml_usuario` ASC);
 
-CREATE INDEX `fk_tb_usuario_td_tipo_perfil` ON `RPG_unamed`.`tb_usuario` 
-(`cod_perfil` ASC);
+CREATE INDEX `fk_tb_usuario_td_tipo_perfil` ON `RPG_unamed`.`tb_usuario` (`cod_perfil` ASC);
 
-CREATE UNIQUE INDEX `uq_tb_usuario_lgn_usuario` ON 
-`RPG_unamed`.`tb_usuario` (`lgn_usuario` ASC);
+CREATE UNIQUE INDEX `uq_tb_usuario_lgn_usuario` ON `RPG_unamed`.`tb_usuario` (`lgn_usuario` ASC);
 
 
 -- -----------------------------------------------------
@@ -234,14 +218,13 @@ CREATE UNIQUE INDEX `uq_tb_usuario_lgn_usuario` ON
 CREATE TABLE IF NOT EXISTS `RPG_unamed`.`td_papel_sala` (
   `idt_papel_sala` INT NOT NULL AUTO_INCREMENT,
   `nme_papel_sala` VARCHAR(50) NOT NULL,
-  `dsc_papel_sala` VARCHAR(200) NOT NULL,
+  `dsc_papel_sala` VARCHAR(350) NOT NULL,
   PRIMARY KEY (`idt_papel_sala`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX `uq_td_papel_sala_nme_papel_sala` ON 
-`RPG_unamed`.`td_papel_sala` (`nme_papel_sala` ASC);
+CREATE UNIQUE INDEX `uq_td_papel_sala_nme_papel_sala` ON `RPG_unamed`.`td_papel_sala` (`nme_papel_sala` ASC);
 
 
 -- -----------------------------------------------------
@@ -277,22 +260,15 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`ta_perfil_sala` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX 
-`uq_ta_perfil_sala_cod_usuario_cod_personagem_cod_sala` ON 
-`RPG_unamed`.`ta_perfil_sala` (`cod_usuario` ASC, `cod_sala` ASC, 
-`cod_personagem` ASC);
+CREATE UNIQUE INDEX `uq_ta_perfil_sala_cod_usuario_cod_personagem_cod_sala` ON `RPG_unamed`.`ta_perfil_sala` (`cod_usuario` ASC, `cod_sala` ASC, `cod_personagem` ASC);
 
-CREATE INDEX `fk_ta_perfil_sala_tb_usuario` ON 
-`RPG_unamed`.`ta_perfil_sala` (`cod_usuario` ASC);
+CREATE INDEX `fk_ta_perfil_sala_tb_usuario` ON `RPG_unamed`.`ta_perfil_sala` (`cod_usuario` ASC);
 
-CREATE INDEX `fk_ta_perfil_sala_tb_personagem` ON 
-`RPG_unamed`.`ta_perfil_sala` (`cod_personagem` ASC);
+CREATE INDEX `fk_ta_perfil_sala_tb_personagem` ON `RPG_unamed`.`ta_perfil_sala` (`cod_personagem` ASC);
 
-CREATE INDEX `fk_ta_perfil_sala_td_papel_sala` ON 
-`RPG_unamed`.`ta_perfil_sala` (`cod_papel_sala` ASC);
+CREATE INDEX `fk_ta_perfil_sala_td_papel_sala` ON `RPG_unamed`.`ta_perfil_sala` (`cod_papel_sala` ASC);
 
-CREATE INDEX `fk_ta_perfil_sala_tb_sala` ON 
-`RPG_unamed`.`ta_perfil_sala` (`cod_sala` ASC);
+CREATE INDEX `fk_ta_perfil_sala_tb_sala` ON `RPG_unamed`.`ta_perfil_sala` (`cod_sala` ASC);
 
 
 -- -----------------------------------------------------
@@ -301,13 +277,11 @@ CREATE INDEX `fk_ta_perfil_sala_tb_sala` ON
 CREATE TABLE IF NOT EXISTS `RPG_unamed`.`td_atributo` (
   `idt_atributo` INT NOT NULL,
   `nme_atributo` VARCHAR(50) NOT NULL,
-  `val_atributo` INT NOT NULL,
   PRIMARY KEY (`idt_atributo`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX `uq_td_atributo_nme_atributo` ON 
-`RPG_unamed`.`td_atributo` (`nme_atributo` ASC);
+CREATE UNIQUE INDEX `uq_td_atributo_nme_atributo` ON `RPG_unamed`.`td_atributo` (`nme_atributo` ASC);
 
 
 -- -----------------------------------------------------
@@ -317,6 +291,7 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`ta_personagem_atributo` (
   `idt_personagem_atributo` INT NOT NULL AUTO_INCREMENT,
   `cod_atributo` INT NOT NULL,
   `cod_personagem` INT NOT NULL,
+  `val_personagem_atributo` INT NOT NULL,
   PRIMARY KEY (`idt_personagem_atributo`),
   CONSTRAINT `fk_ta_personagem_atributo_tb_personagem1`
     FOREIGN KEY (`cod_personagem`)
@@ -331,16 +306,11 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`ta_personagem_atributo` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX 
-`uq_ta_personagem_atributo_cod_atributo_cod_personagem` ON 
-`RPG_unamed`.`ta_personagem_atributo` (`cod_personagem` ASC, 
-`cod_atributo` ASC);
+CREATE UNIQUE INDEX `uq_ta_personagem_atributo_cod_atributo_cod_personagem` ON `RPG_unamed`.`ta_personagem_atributo` (`cod_personagem` ASC, `cod_atributo` ASC);
 
-CREATE INDEX `fk_ta_personagem_atributo_td_atributo` ON 
-`RPG_unamed`.`ta_personagem_atributo` (`cod_atributo` ASC);
+CREATE INDEX `fk_ta_personagem_atributo_td_atributo` ON `RPG_unamed`.`ta_personagem_atributo` (`cod_atributo` ASC);
 
-CREATE INDEX `fk_ta_personagem_atributo_tb_personagem` ON 
-`RPG_unamed`.`ta_personagem_atributo` (`cod_personagem` ASC);
+CREATE INDEX `fk_ta_personagem_atributo_tb_personagem` ON `RPG_unamed`.`ta_personagem_atributo` (`cod_personagem` ASC);
 
 
 -- -----------------------------------------------------
@@ -354,8 +324,7 @@ ENGINE = InnoDB
 AUTO_INCREMENT = 6
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX `uq_td_linguagem_nme_linguagem` ON 
-`RPG_unamed`.`td_linguagem` (`nme_linguagem` ASC);
+CREATE UNIQUE INDEX `uq_td_linguagem_nme_linguagem` ON `RPG_unamed`.`td_linguagem` (`nme_linguagem` ASC);
 
 
 -- -----------------------------------------------------
@@ -379,15 +348,11 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`ta_personagem_linguagem` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX `uq_ta_personagem_linguagem` ON 
-`RPG_unamed`.`ta_personagem_linguagem` (`cod_personagem` ASC, 
-`cod_linguagem` ASC);
+CREATE UNIQUE INDEX `uq_ta_personagem_linguagem` ON `RPG_unamed`.`ta_personagem_linguagem` (`cod_personagem` ASC, `cod_linguagem` ASC);
 
-CREATE INDEX `fk_ta_personagem_linguagem_td_linguagem` ON 
-`RPG_unamed`.`ta_personagem_linguagem` (`cod_linguagem` ASC);
+CREATE INDEX `fk_ta_personagem_linguagem_td_linguagem` ON `RPG_unamed`.`ta_personagem_linguagem` (`cod_linguagem` ASC);
 
-CREATE INDEX `fk_ta_personagem_linguagem_tb_personagem` ON 
-`RPG_unamed`.`ta_personagem_linguagem` (`cod_personagem` ASC);
+CREATE INDEX `fk_ta_personagem_linguagem_tb_personagem` ON `RPG_unamed`.`ta_personagem_linguagem` (`cod_personagem` ASC);
 
 
 -- -----------------------------------------------------
@@ -396,7 +361,7 @@ CREATE INDEX `fk_ta_personagem_linguagem_tb_personagem` ON
 CREATE TABLE IF NOT EXISTS `RPG_unamed`.`td_magia` (
   `idt_magia` INT NOT NULL AUTO_INCREMENT,
   `nme_magia` VARCHAR(50) NOT NULL,
-  `dsc_magia` VARCHAR(200) NOT NULL,
+  `dsc_magia` VARCHAR(550) NOT NULL,
   `tpo_magia` ENUM('A', 'D') NOT NULL,
   `mod_base_magia` VARCHAR(25) NOT NULL,
   PRIMARY KEY (`idt_magia`))
@@ -404,8 +369,7 @@ ENGINE = InnoDB
 AUTO_INCREMENT = 4
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX `uq_td_magia_nme_magia` ON `RPG_unamed`.`td_magia` 
-(`nme_magia` ASC);
+CREATE UNIQUE INDEX `uq_td_magia_nme_magia` ON `RPG_unamed`.`td_magia` (`nme_magia` ASC);
 
 
 -- -----------------------------------------------------
@@ -429,15 +393,11 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`ta_personagem_magia` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX `uq_ta_personagem_magia_cod_personagem_cod_magia` ON 
-`RPG_unamed`.`ta_personagem_magia` (`cod_personagem` ASC, `cod_magia` 
-ASC);
+CREATE UNIQUE INDEX `uq_ta_personagem_magia_cod_personagem_cod_magia` ON `RPG_unamed`.`ta_personagem_magia` (`cod_personagem` ASC, `cod_magia` ASC);
 
-CREATE INDEX `fk_ta_personagem_magia_tb_personagem` ON 
-`RPG_unamed`.`ta_personagem_magia` (`cod_personagem` ASC);
+CREATE INDEX `fk_ta_personagem_magia_tb_personagem` ON `RPG_unamed`.`ta_personagem_magia` (`cod_personagem` ASC);
 
-CREATE INDEX `fk_ta_personagem_magia_tb_magia` ON 
-`RPG_unamed`.`ta_personagem_magia` (`cod_magia` ASC);
+CREATE INDEX `fk_ta_personagem_magia_tb_magia` ON `RPG_unamed`.`ta_personagem_magia` (`cod_magia` ASC);
 
 
 -- -----------------------------------------------------
@@ -446,13 +406,12 @@ CREATE INDEX `fk_ta_personagem_magia_tb_magia` ON
 CREATE TABLE IF NOT EXISTS `RPG_unamed`.`td_item` (
   `idt_item` INT NOT NULL,
   `nme_item` VARCHAR(50) NOT NULL,
-  `dsc_item` VARCHAR(200) NOT NULL,
+  `dsc_item` VARCHAR(550) NOT NULL,
   PRIMARY KEY (`idt_item`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE UNIQUE INDEX `uq_td_item_nme_item` ON `RPG_unamed`.`td_item` 
-(`nme_item` ASC);
+CREATE UNIQUE INDEX `uq_td_item_nme_item` ON `RPG_unamed`.`td_item` (`nme_item` ASC);
 
 
 -- -----------------------------------------------------
@@ -476,11 +435,9 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`ta_utilizaveis` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8;
 
-CREATE INDEX `fk_ta_inventario_tb_personagem` ON 
-`RPG_unamed`.`ta_utilizaveis` (`cod_personagem` ASC);
+CREATE INDEX `fk_ta_inventario_tb_personagem` ON `RPG_unamed`.`ta_utilizaveis` (`cod_personagem` ASC);
 
-CREATE INDEX `fk_ta_inventario_tb_item` ON `RPG_unamed`.`ta_utilizaveis` 
-(`cod_item` ASC);
+CREATE INDEX `fk_ta_inventario_tb_item` ON `RPG_unamed`.`ta_utilizaveis` (`cod_item` ASC);
 
 
 -- -----------------------------------------------------
@@ -489,12 +446,11 @@ CREATE INDEX `fk_ta_inventario_tb_item` ON `RPG_unamed`.`ta_utilizaveis`
 CREATE TABLE IF NOT EXISTS `RPG_unamed`.`td_divindade` (
   `idt_divindade` INT NOT NULL AUTO_INCREMENT,
   `nme_divindade` VARCHAR(50) NOT NULL,
-  `dsc_divindade` VARCHAR(200) NOT NULL,
+  `dsc_divindade` VARCHAR(550) NOT NULL,
   PRIMARY KEY (`idt_divindade`))
 ENGINE = InnoDB;
 
-CREATE UNIQUE INDEX `uq_td_divindade_nme_divindade` ON 
-`RPG_unamed`.`td_divindade` (`nme_divindade` ASC);
+CREATE UNIQUE INDEX `uq_td_divindade_nme_divindade` ON `RPG_unamed`.`td_divindade` (`nme_divindade` ASC);
 
 
 -- -----------------------------------------------------
@@ -517,14 +473,11 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`ta_culto` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_ta_culto_td_divindade` ON `RPG_unamed`.`ta_culto` 
-(`cod_divindade` ASC);
+CREATE INDEX `fk_ta_culto_td_divindade` ON `RPG_unamed`.`ta_culto` (`cod_divindade` ASC);
 
-CREATE INDEX `fk_ta_culto_tb_personagem` ON `RPG_unamed`.`ta_culto` 
-(`cod_personagem` ASC);
+CREATE INDEX `fk_ta_culto_tb_personagem` ON `RPG_unamed`.`ta_culto` (`cod_personagem` ASC);
 
-CREATE UNIQUE INDEX `uq_ta_culto_cod_divindade_cod_personagem` ON 
-`RPG_unamed`.`ta_culto` (`cod_divindade` ASC, `cod_personagem` ASC);
+CREATE UNIQUE INDEX `uq_ta_culto_cod_divindade_cod_personagem` ON `RPG_unamed`.`ta_culto` (`cod_divindade` ASC, `cod_personagem` ASC);
 
 
 -- -----------------------------------------------------
@@ -533,13 +486,11 @@ CREATE UNIQUE INDEX `uq_ta_culto_cod_divindade_cod_personagem` ON
 CREATE TABLE IF NOT EXISTS `RPG_unamed`.`td_pericia` (
   `idt_pericia` INT NOT NULL AUTO_INCREMENT,
   `nme_pericia` VARCHAR(50) NOT NULL,
-  `dsc_pericia` VARCHAR(250) NOT NULL,
-  `vlr_base_pericia` INT NOT NULL,
+  `dsc_pericia` VARCHAR(550) NOT NULL,
   PRIMARY KEY (`idt_pericia`))
 ENGINE = InnoDB;
 
-CREATE UNIQUE INDEX `uq_td_pericia_nme_pericia` ON 
-`RPG_unamed`.`td_pericia` (`nme_pericia` ASC);
+CREATE UNIQUE INDEX `uq_td_pericia_nme_pericia` ON `RPG_unamed`.`td_pericia` (`nme_pericia` ASC);
 
 
 -- -----------------------------------------------------
@@ -549,6 +500,7 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`ta_aptidao` (
   `idt_aptidao` INT NOT NULL AUTO_INCREMENT,
   `cod_personagem` INT NOT NULL,
   `cod_pericia` INT NOT NULL,
+  `val_aptidao` INT NOT NULL,
   PRIMARY KEY (`idt_aptidao`),
   CONSTRAINT `fk_ta_aptidao_tb_personagem1`
     FOREIGN KEY (`cod_personagem`)
@@ -562,14 +514,11 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`ta_aptidao` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_ta_aptidao_tb_personagem` ON `RPG_unamed`.`ta_aptidao` 
-(`cod_personagem` ASC);
+CREATE INDEX `fk_ta_aptidao_tb_personagem` ON `RPG_unamed`.`ta_aptidao` (`cod_personagem` ASC);
 
-CREATE INDEX `fk_ta_aptidao_td_pericia` ON `RPG_unamed`.`ta_aptidao` 
-(`cod_pericia` ASC);
+CREATE INDEX `fk_ta_aptidao_td_pericia` ON `RPG_unamed`.`ta_aptidao` (`cod_pericia` ASC);
 
-CREATE UNIQUE INDEX `uq_tb_personagem_cod_personagem_cod_pericia` ON 
-`RPG_unamed`.`ta_aptidao` (`cod_personagem` ASC, `cod_pericia` ASC);
+CREATE UNIQUE INDEX `uq_tb_personagem_cod_personagem_cod_pericia` ON `RPG_unamed`.`ta_aptidao` (`cod_personagem` ASC, `cod_pericia` ASC);
 
 
 -- -----------------------------------------------------
@@ -578,7 +527,7 @@ CREATE UNIQUE INDEX `uq_tb_personagem_cod_personagem_cod_pericia` ON
 CREATE TABLE IF NOT EXISTS `RPG_unamed`.`tb_custom` (
   `idt_custom` INT NOT NULL AUTO_INCREMENT,
   `nme_custom` VARCHAR(50) NOT NULL,
-  `dsc_custom` VARCHAR(45) NOT NULL,
+  `dsc_custom` VARCHAR(450) NOT NULL,
   `tpo_custom` ENUM('E', 'M', 'I') NOT NULL,
   `cod_sala` INT NOT NULL,
   PRIMARY KEY (`idt_custom`),
@@ -589,8 +538,7 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`tb_custom` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_tb_custom_tb_sala1_idx` ON `RPG_unamed`.`tb_custom` 
-(`cod_sala` ASC);
+CREATE INDEX `fk_tb_custom_tb_sala1_idx` ON `RPG_unamed`.`tb_custom` (`cod_sala` ASC);
 
 
 -- -----------------------------------------------------
@@ -613,14 +561,11 @@ CREATE TABLE IF NOT EXISTS `RPG_unamed`.`ta_personalizavel` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-CREATE INDEX `fk_ta_personalizavel_tb_custom` ON 
-`RPG_unamed`.`ta_personalizavel` (`cod_custom` ASC);
+CREATE INDEX `fk_ta_personalizavel_tb_custom` ON `RPG_unamed`.`ta_personalizavel` (`cod_custom` ASC);
 
-CREATE INDEX `fk_ta_personalizavel_tb_personagem` ON 
-`RPG_unamed`.`ta_personalizavel` (`cod_personagem` ASC);
+CREATE INDEX `fk_ta_personalizavel_tb_personagem` ON `RPG_unamed`.`ta_personalizavel` (`cod_personagem` ASC);
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
