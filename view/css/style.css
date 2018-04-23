@@ -74,7 +74,9 @@ h1, h2 {
       color: white; }
   #table-home #menu-adm .menuTitle {
     padding-right: 0 !important;
-    padding-left: 0 !important; }
+    padding-left: 0 !important;
+    background-color: black;
+    border: 0; }
 
 #searchTables {
   background-color: black; }
