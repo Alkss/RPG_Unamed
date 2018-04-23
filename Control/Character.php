@@ -31,7 +31,6 @@ class Character{
             $sala_id = $_GET["idt"];
         } else{
             $sala_id = 1;
-            //header("location:index.php");
         }
         //Insert na tb_personagem
         $stringSQL = "INSERT INTO tb_personagem(";
@@ -58,6 +57,7 @@ class Character{
         $stringSQL2 .= " WHERE cod_usuario = " . $this->db->scapeCont($idt_usuario);
         $stringSQL2 .= " AND cod_sala = " . $sala_id;
         //Update
+        var_dump($stringSQL2);die;
         $this->db->executeQuery($stringSQL2);
         return true;
     }

@@ -15,13 +15,19 @@ if ($_SESSION['logado'] != 1) {
     $tableInfo = $db->search("SELECT * FROM tb_usuario JOIN ta_perfil_sala ON idt_usuario=cod_usuario JOIN tb_sala ON idt_sala=cod_sala WHERE cod_sala='" . $_GET['idt'] . "'");
     
     if ($tableInfo[0]['cod_usuario'] != $_SESSION['idt_usuario']) {
-        $db->executeQuery("INSERT INTO `ta_perfil_sala`(`cod_usuario`, `cod_personagem`, `cod_papel_sala`, `cod_sala`)
+        
+        $checkIfCharIsCreated = "SELECT * FROM `ta_perfil_sala` WHERE cod_usuario =" . $_SESSION['idt_usuario'] . " AND cod_sala = " . $_GET['idt'];
+        $checkIfCharIsCreated = $db->search($checkIfCharIsCreated);
+        if (!$checkIfCharIsCreated) {
+            
+            
+            $db->executeQuery("INSERT INTO `ta_perfil_sala`(`cod_usuario`, `cod_personagem`, `cod_papel_sala`, `cod_sala`)
 VALUES ('" . $db->scapeCont($_SESSION['idt_usuario']) . "',
         null,
         '" . '3' . "',
         '" . $db->scapeCont($_GET['idt']) . "')");
+        }
     }
-    
     $numberOfCharSQL = "SELECT * FROM tb_personagem JOIN ta_perfil_sala ON idt_personagem=cod_personagem JOIN tb_usuario ON idt_usuario=cod_usuario WHERE idt_usuario =" . $_SESSION['idt_usuario'];
     $numberOfCharSQL = $db->search($numberOfCharSQL);
     
