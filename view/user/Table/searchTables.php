@@ -57,7 +57,7 @@ if ($_SESSION['logado'] != 1) {
 
     <table id="myTable">
         <tr class="header">
-            <th>Salas</th>
+            <th>Mesas</th>
         </tr>
         <?php
         $allTables = $table->selectAll();
