@@ -7,7 +7,6 @@
  */
 
 
-
 ?>
 <body id="menu-ADM">
 <div class="col-xs-4" id="menu-adm">
@@ -28,9 +27,11 @@
 
     <!--Permissão somente para o mestre criar personagem-->
     <?php
-    if ($tableInfo[0]['cod_papel_sala'] == '1') {
+    
+    if (!$numberOfCharSQL) {
         ?>
-        <p><a href="<?= URL ?>view/user/Character/createNewCharacter.php?idt=<?=$_GET['idt']?>">Criar personagem</a></p>
+        <p><a href="<?= URL ?>view/user/Character/createNewCharacter.php?idt=<?= $_GET['idt'] ?>">Criar personagem</a>
+        </p>
         <?php
     }
     ?>

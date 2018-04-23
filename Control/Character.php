@@ -58,7 +58,6 @@ class Character{
         $stringSQL2 .= " WHERE cod_usuario = " . $this->db->scapeCont($idt_usuario);
         $stringSQL2 .= " AND cod_sala = " . $sala_id;
         //Update
-            var_dump($stringSQL2);
         $this->db->executeQuery($stringSQL2);
         return true;
     }
