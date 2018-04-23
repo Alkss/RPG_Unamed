@@ -11,7 +11,7 @@
 <body id="menu-ADM">
 <div class="col-xs-4" id="menu-adm">
     <p class="menuTitle">Menu</p>
-    <p><a href="<?= URL ?>view/adm/homepageADM.php" id="homeBtn">Início</a></p>
+    <p><a href="<?= URL ?>view/user/Table/index.php?idt=<?=$_GET['idt']?>" id="homeBtn">Início</a></p>
     <hr>
     <p>Personagens</p>
     

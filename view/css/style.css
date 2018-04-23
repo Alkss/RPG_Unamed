@@ -27,11 +27,19 @@ h1, h2 {
 
 #showTables {
   background-color: black; }
+  #showTables th {
+    font-size: 18px;
+    text-align: center;
+    background-color: #340a0f; }
   #showTables div {
     padding-top: 2%;
     color: white; }
     #showTables div td {
       background-color: #580c17;
+      color: white; }
+      #showTables div td:hover {
+        background-color: black; }
+    #showTables div a {
       color: white; }
   #showTables #emptyAlert {
     display: flex;

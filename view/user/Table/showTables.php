@@ -26,15 +26,14 @@ $salas = $db->search("SELECT idt_sala, nme_sala FROM tb_sala INNER JOIN ta_perfi
 ?>
 <body id="showTables">
 <div class="col-xs-12" id="tableList">
-    
+
     <table class="table table-responsive">
         <thead>
         <tr>
             <?php
             if ($salas) {
                 ?>
-                <td>Sala</td>
-                <td>Go</td>
+                <th>Mesas</th>
                 <?php
             }
             ?>
@@ -48,11 +47,7 @@ $salas = $db->search("SELECT idt_sala, nme_sala FROM tb_sala INNER JOIN ta_perfi
                 
                 ?>
                 <tr>
-                    <td><?= $sala['nme_sala'] ?></td>
-                    <td>
-                        <a href="index.php?idt=<?= $sala['idt_sala']?>" target="_blank">
-                            <i class="fa fa-pencil" aria-hidden="true"></i>
-                        </a>
+                    <td><a href="index.php?idt=<?= $sala['idt_sala'] ?>" target="_blank"><?= $sala['nme_sala'] ?></a>
                     </td>
                 </tr>
                 

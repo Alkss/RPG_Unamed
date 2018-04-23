@@ -43,12 +43,24 @@ h1, h2 {
 
 #showTables {
   background-color: black;
+  th {
+    font-size: 18px;
+    text-align: center;
+    background-color: #340a0f;
+  }
   div {
     padding-top: 2%;
     color: white;
     td {
       background-color: #580c17;
       color: white;
+      &:hover{
+        background-color: black;
+      }
+    }
+    a{
+      color: white;
+
     }
   }
   #emptyAlert {
