@@ -43,7 +43,7 @@ if (isset($_GET['success'])) {
 
 
 <div class="container">
-    <h1><?=RPG_NAME?></h1>
+    <h1><?= RPG_NAME ?></h1>
     <div id="form">
         <form class="form-group" id="loginForm" method="post">
             <div class="row">

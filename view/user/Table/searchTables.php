@@ -52,25 +52,25 @@ if ($_SESSION['logado'] != 1) {
         </style>
     </head>
 
-    <h2>Buscar Salas</h2>
-
+    <body id="searchTables">
     <input type="text" id="myInput" onkeyup="filterTable()" placeholder="Digite um nome">
 
     <table id="myTable">
         <tr class="header">
-            <th>Sala</th>
+            <th>Salas</th>
         </tr>
         <?php
         $allTables = $table->selectAll();
         foreach ($allTables as $singleTable) {
             ?>
             <tr>
-                <td><a href="index.php?idt=<?=$singleTable['idt_sala']?>"><?=$singleTable['nme_sala']?></a></td>
+                <td><a href="index.php?idt=<?= $singleTable['idt_sala'] ?>"><?= $singleTable['nme_sala'] ?></a></td>
             </tr>
             <?php
         }
         ?>
     </table>
+    </body>
 
     <script>
         function filterTable() {

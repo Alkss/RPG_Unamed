@@ -26,29 +26,32 @@ if ($_SESSION['logado'] != 1) {
         <?php
     }
     ?>
-    <div class="container">
-        
-        <h3>Personagens</h3>
-        <div id="recent-chars">
-            <iframe src="Table/showRecentChars.php" id="tableIframe"></iframe>
-        </div>
-        
-        <h3>Mesas Recentes</h3>
-        <div id="recent-tables">
-            <iframe src="Table/showRecentTables.php" id="tableIframe"></iframe>
-        </div>
+        <div class="col-xs-6">
+            <h3>Personagens</h3>
+            <div id="recent-chars">
+                <iframe src="Table/showRecentChars.php" id="tableIframe"></iframe>
+            </div>
 
-        
-        
-        <h3>Minhas Mesas</h3>
-        <div id="show-tables">
-            <iframe src="Table/showTables.php" id="tableIframe"></iframe>
+            <h3>Mesas Recentes</h3>
+            <div id="recent-tables">
+                <iframe src="Table/showRecentTables.php" id="tableIframe"></iframe>
+            </div>
         </div>
+        <div class="col-xs-6">
+            <h3>Buscar Mesas</h3>
+            <div id="recent-tables">
+                <iframe src="Table/searchTables.php" id="tableIframe"></iframe>
+            </div>
 
+
+            <h3>Minhas Mesas</h3>
+            <div id="show-tables">
+                <iframe src="Table/showTables.php" id="tableIframe"></iframe>
+            </div>
+        </div>
         <div id="menu">
             <a class="btn btn-primary pull-right" href="Table/createTable.php">Criar nova mesa</a>
         </div>
-    </div>
     </body>
     <?php
 }

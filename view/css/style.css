@@ -43,7 +43,7 @@ h1, h2 {
 
 #home-page-user .btn-primary {
   position: absolute;
-  transform: translate(12.3em, -39em); }
+  transform: translate(-6em, -2em); }
 #home-page-user .container {
   position: relative; }
 #home-page-user #sucessTable {
@@ -53,12 +53,12 @@ h1, h2 {
   margin-bottom: 2%; }
 #home-page-user h3 {
   display: flex;
-  margin: auto;
-  margin-left: 11.8em; }
+  margin: auto; }
 #home-page-user #tableIframe {
   display: flex;
-  width: 50%;
-  height: 100%; }
+  width: 100%;
+  height: 20em;
+  margin-bottom: 10px; }
 
 #table-home #menu-adm {
   border: 1px solid white;
@@ -75,6 +75,22 @@ h1, h2 {
   #table-home #menu-adm .menuTitle {
     padding-right: 0 !important;
     padding-left: 0 !important; }
+
+#searchTables {
+  background-color: black; }
+  #searchTables input {
+    background-color: black;
+    color: white; }
+  #searchTables th {
+    text-align: center !important;
+    background-color: #340a0f;
+    color: white; }
+  #searchTables table {
+    background-color: #580c17; }
+  #searchTables td:hover {
+    background-color: black; }
+  #searchTables a {
+    color: white; }
 
 #create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character, #table-home {
   background-color: black;
