@@ -64,7 +64,7 @@ if ($_SESSION['logado'] != 1) {
         foreach ($allTables as $singleTable) {
             ?>
             <tr>
-                <td><a href="index.php?idt=<?= $singleTable['idt_sala'] ?>"><?= $singleTable['nme_sala'] ?></a></td>
+                <td><a href="index.php?idt=<?= $singleTable['idt_sala'] ?>" target="_blank"><?= $singleTable['nme_sala'] ?></a></td>
             </tr>
             <?php
         }

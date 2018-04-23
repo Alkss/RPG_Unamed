@@ -17,9 +17,9 @@ if ($_SESSION['logado'] != 1) {
     if ($tableInfo[0]['cod_usuario'] != $_SESSION['idt_usuario']) {
         $db->executeQuery("INSERT INTO `ta_perfil_sala`(`cod_usuario`, `cod_personagem`, `cod_papel_sala`, `cod_sala`)
 VALUES ('" . $db->scapeCont($_SESSION['idt_usuario']) . "',
-        '',
+        null,
         '" . '3' . "',
-        '" . $db->scapeCont($_GET['idt']) . "'");
+        '" . $db->scapeCont($_GET['idt']) . "')");
     }
     
     $numberOfCharSQL = "SELECT * FROM tb_personagem JOIN ta_perfil_sala ON idt_personagem=cod_personagem JOIN tb_usuario ON idt_usuario=cod_usuario WHERE idt_usuario =" . $_SESSION['idt_usuario'];
