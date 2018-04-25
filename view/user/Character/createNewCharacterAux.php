@@ -67,7 +67,7 @@ $religiao = $db->search("select * from td_divindade");
 
                 <p>
                     <label for="alt_personagem">Altura do Personagem</label><br>
-                    <input class="form-control" type="number" min="0" max="2" step="0.01" name="alt_personagem" id="alt_personagem" required="required">
+                    <input class="form-control" type="number" min="0.00" max="10.00" step="0.01" name="alt_personagem" id="alt_personagem" required="required">
                 </p>
 
                 <p>
