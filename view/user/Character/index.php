@@ -15,8 +15,10 @@ $class = $char->selectClass("idt_personagem = " . $_GET['char']);
 $alignment = $char->selectAlignment("idt_personagem = " . $_GET['char']);
 $divinity = $char->selectDivinity("idt_personagem = " . $_GET['char']);
 $lang = $char->selectLang("idt_personagem = " . $_GET['char']);
+$equip = $char->selectEquip("idt_personagem = " . $_GET['char']);
+$magic = $char->selectMagic("idt_personagem = " . $_GET['char']);
 
-var_dump($lang);
+var_dump($equip);
 
 ?>
 
@@ -101,26 +103,80 @@ include '../Table/menu.php';
             <?php
         }
         ?>
-        </table>
     </div>
     <div class="row">
-        <div class="row">
-            <h5>Idiomas</h5>
-            <?php
+        <h5>Idiomas</h5>
+        <?php
+        if ($lang) {
             foreach ($lang as $singleLang) {
                 ?>
                 <h6><?= $singleLang['nme_linguagem'] ?></h6>
                 <?php
             }
+        } else {
             ?>
-            </table>
-        </div>
+            <h6>-- Nenhuma --</h6>
+            <?php
+        }
+        ?>
     </div>
     <div class="row">
-        Divindades
+        <h5>Equipamento</h5>
+        <?php
+        if ($equip) {
+        ?>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Valor Base</th>
+                <th>Tipo</th>
+            </tr>
+            <?php
+            foreach ($equip as $singleEquip) {
+                ?>
+                <tr>
+                    <td><?= $singleEquip['nme_equipamento'] ?></td>
+                    <td><?= $singleEquip['mod_base_equipamento'] ?></td>
+                    <td><?= $singleEquip['tpo_equipamento'] ?></td>
+                </tr>
+                <?php
+            }
+            } else {
+                ?>
+                <h6>-- Nenhum --</h6>
+                <?php
+            }
+            ?>
+        </table>
     </div>
     <div class="row">
-        Divindades
+        <h5>Magias</h5>
+        <?php
+        if ($magic) {
+        ?>
+        <table>
+            <tr>
+                <th>Nome</th>
+                <th>Valor Base</th>
+                <th>Tipo</th>
+            </tr>
+            <?php
+            foreach ($magic as $singleMagic) {
+                ?>
+                <tr>
+                    <td><?= $singleMagic['nme_magia'] ?></td>
+                    <td><?= $singleMagic['mod_base_magia'] ?></td>
+                    <td><?= $singleMagic['tpo_magia'] ?></td>
+                </tr>
+                <?php
+            }
+            } else {
+                ?>
+                <h6>-- Nenhuma --</h6>
+                <?php
+            }
+            ?>
+        </table>
     </div>
     <div class="row">
         Divindades

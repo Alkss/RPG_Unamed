@@ -63,6 +63,24 @@ class Character
         return $this->db->search($stringSQL);
     }
     
+    public function selectEquip($where = "")
+    {
+        if ($where != "") {
+            $where = "where " . $where;
+        }
+        $stringSQL = "SELECT * FROM td_equipamento JOIN ta_equipavel ON idt_equipamento=cod_equipamento JOIN tb_personagem ON idt_personagem=cod_personagem " . $where;
+        return $this->db->search($stringSQL);
+    }
+    
+    public function selectMagic($where = "")
+    {
+        if ($where != "") {
+            $where = "where " . $where;
+        }
+        $stringSQL = "SELECT * FROM td_magia JOIN ta_personagem_magia ON idt_magia=cod_magia JOIN tb_personagem ON idt_personagem=cod_personagem " . $where;
+        return $this->db->search($stringSQL);
+    }
+    
     public function selectCharacter($where = "")
     {
         if ($where != "") {

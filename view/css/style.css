@@ -108,7 +108,17 @@ h1, h2 {
 
 #char-page #righ-side-table {
   text-align: center; }
+  #char-page #righ-side-table th {
+    text-align: center; }
+  #char-page #righ-side-table table {
+    margin-left: 15%; }
   #char-page #righ-side-table h5 {
+    border-top-left-radius: 4px;
+    border-top: 1px solid;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-top-right-radius: 4px;
+    border-color: darkred;
     color: darkred;
     font-size: 1.6em; }
   #char-page #righ-side-table h6 {
