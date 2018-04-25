@@ -192,7 +192,7 @@ include '../Table/menu.php';
             <?php
             foreach ($usables as $singleUsable) {
                 ?>
-                <?= $singleUsable['nme_utilizavel'] ?>
+                <h6><?= $singleUsable['nme_item'] ?></h6>
                 <?php
             }
         } else {
