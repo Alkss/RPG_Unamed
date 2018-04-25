@@ -44,7 +44,7 @@ $chars = $db->search("SELECT * FROM ta_perfil_sala JOIN tb_sala ON cod_sala=idt_
         }
         ?>
         <hr>
-        <p><a>Livro de Regras</a></p>
+        <p><a href="http://bunkernerd.com.br/dungeons-dragons-dd-regras-basicas/">Livro de Regras</a></p>
         <hr>
         <p><a>Usuários</a></p>
         <hr>
