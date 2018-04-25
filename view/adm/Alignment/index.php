@@ -15,7 +15,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     
     ?>
     <head>
-        <title><?= RPG_NAME ?> - Alinhamentos</title>
+        <title>RPG_Unnamed - Alinhamentos</title>
     </head>
     <body id="alignment-home">
 

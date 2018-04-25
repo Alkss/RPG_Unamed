@@ -24,7 +24,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     
     ?>
     <head>
-        <title><?= RPG_NAME ?> - Nova Linguagem</title>
+        <title>RPG_Unnamed - Nova Linguagem</title>
     </head>
     <body id="new-lang">
 

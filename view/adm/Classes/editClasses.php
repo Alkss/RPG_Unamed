@@ -26,7 +26,7 @@ if (!isset($_GET['idt'])) {
         $singleClass = $class->selectAll("idt_classe = '" . $_GET['idt'] . "'");
         ?>
         <head>
-            <title><?= RPG_NAME ?> - Editar Classe</title>
+            <title>RPG_Unnamed - Editar Classe</title>
         </head>
         <body id="class-edit">
 

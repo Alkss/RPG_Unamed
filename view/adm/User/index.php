@@ -15,7 +15,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
 } else {
     ?>
     <head>
-        <title><?= RPG_NAME ?> - Usuários</title>
+        <title>RPG_Unnamed - Usuários</title>
     </head>
     <body id="user-page-adm">
 

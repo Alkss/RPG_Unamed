@@ -14,7 +14,7 @@ if ($_SESSION['logado'] != 1) {
 } else {
     ?>
     <head>
-        <title><?= RPG_NAME ?></title>
+        <title>RPG_Unnamed</title>
     </head>
     <body id="home-page-user">
     <h1><?= RPG_NAME ?></h1>

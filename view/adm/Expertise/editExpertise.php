@@ -20,7 +20,7 @@ if (!isset($_GET['idt'])) {
         $singleExpertise = $expertise->selectAll("idt_pericia = '" . $_GET['idt'] . "'");
         ?>
         <head>
-            <title><?= RPG_NAME ?> - Editar pericia</title>
+            <title>RPG_Unnamed - Editar pericia</title>
         </head>
         <body id="expertise-edit">
 

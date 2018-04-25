@@ -15,7 +15,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     
     ?>
     <head>
-        <title><?= RPG_NAME ?> - Raças</title>
+        <title>RPG_Unnamed - Raças</title>
     </head>
     <body id="races-home">
 

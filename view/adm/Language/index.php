@@ -15,7 +15,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     
     ?>
     <head>
-        <title><?= RPG_NAME ?> - Linguagens</title>
+        <title>RPG_Unnamed - Linguagens</title>
     </head>
     <body id="lang-home">
 

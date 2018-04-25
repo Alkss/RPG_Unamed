@@ -10,7 +10,7 @@
 
         ?>
         <head>
-            <title><?= RPG_NAME ?> - Perícias</title>
+            <title>RPG_Unnamed - Perícias</title>
         </head>
         <body id="expertise-home">
 

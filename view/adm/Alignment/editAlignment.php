@@ -26,7 +26,7 @@ if (!isset($_GET['idt'])) {
         $singleAlignment = $alignment->selectAll("idt_alinhamento = '" . $_GET['idt'] . "'");
         ?>
         <head>
-            <title><?= RPG_NAME ?> - Editar alinhamento</title>
+            <title>RPG_Unnamed - Editar alinhamento</title>
         </head>
         <body id="alignment-edit">
 

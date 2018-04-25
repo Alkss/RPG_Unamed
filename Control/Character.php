@@ -144,7 +144,6 @@ class Character
         $stringSQL .= $this->db->scapeCont($cod_classe) . "," . $this->db->scapeCont($cod_raca) . ",0)";
         //Retorna o ID inserido?
         $personagemID = $this->db->insert($stringSQL);
-        var_dump($stringSQL);die;
         //Update na ta_perfil_sala/
         $stringSQL2 = "UPDATE ta_perfil_sala SET cod_personagem = " . $this->db->scapeCont($personagemID);
         $stringSQL2 .= " WHERE cod_usuario = " . $this->db->scapeCont($idt_usuario);

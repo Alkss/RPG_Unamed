@@ -26,7 +26,7 @@ if (!isset($_GET['idt'])) {
         $singleRace = $race->selectAll("idt_raca = '" . $_GET['idt'] . "'");
         ?>
         <head>
-            <title><?= RPG_NAME ?> - Editar Raça</title>
+            <title>RPG_Unnamed - Editar Raça</title>
         </head>
         <body id="race-edit">
 

@@ -26,7 +26,7 @@ if (!isset($_GET['idt'])) {
         $singleLang = $lang->selectAll("idt_linguagem = '" . $_GET['idt'] . "'");
         ?>
         <head>
-            <title><?= RPG_NAME ?> - Editar Linguagem</title>
+            <title>RPG_Unnamed - Editar Linguagem</title>
         </head>
         <body id="lang-edit">
 
