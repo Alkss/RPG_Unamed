@@ -16,7 +16,7 @@
         <p><a href="<?= URL ?>view/adm/Language/index.php">Linguagens</a></p>
         <p><a href="<?= URL ?>view/adm/Race/index.php">Raças</a></p>
         <p><a href="<?= URL ?>view/adm/Alignment/index.php">Alinhamentos</a></p>
-        <p><a>Perícias</a></p>
+        <p><a href="<?= URL ?>view/adm/Expertise/index.php">Perícias</a></p>
         <p><a>Magias</a></p>
         <p><a>Equipamentos</a></p>
         <p><a>Atributos</a></p>
