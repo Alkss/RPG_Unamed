@@ -28,12 +28,21 @@ var_dump($selectedChar);
 <?php
 include '../Table/menu.php';
 ?>
-<div class="col-xs-6 offset-2">
-    <?php
-    $imgURL = $selectedChar[0]['img_personagem'];
-    echo '<img src="'.$imgURL.'">'
-    ?>
-
+<div class="col-xs-6">
+    <div class="row">
+        <div class="col-xs-6">
+            <?php
+            $imgURL = $selectedChar[0]['img_personagem'];
+            echo '<img id="charImg" src="' . $imgURL . '">'
+            ?>
+        </div>
+        <div class="col-xs-6">
+            botão!
+        </div>
+    </div>
+    <div clas="row">
+        Resto das informações
+    </div>
 </div>
 </body>
 </html>
