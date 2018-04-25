@@ -1,12 +1,4 @@
 <?php
-
-
-/**
- * Created by PhpStorm.
- * User: alex
- * Date: 30/01/18
- * Time: 19:23
- */
 class Expertise
 {
     function __construct()

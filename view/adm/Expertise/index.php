@@ -1,10 +1,5 @@
     <?php
-    /**
-     * Created by PhpStorm.
-     * User: alex
-     * Date: 30/01/18
-     * Time: 16:16
-     */
+
     require('../../../config.php');
     include('../../../header.php');
 
@@ -24,12 +19,6 @@
 
     <?php
     if (isset($_GET['error'])) {
-        if ($_GET['error'] == 1) {
-            ?>
-            <div class="alert alert-danger">Não foi possível criar o item selecionado, tente novamente.</div>
-            <?php
-
-        }
         if ($_GET['error'] == 2) {
             ?>
             <div class="alert alert-danger">Não foi possível editar o item selecionado, tente novamente.</div>
@@ -38,11 +27,6 @@
         }
     }
     if (isset($_GET['success'])) {
-        if ($_GET['success'] == 1) {
-            ?>
-            <div class="alert alert-success">Perícia criada com sucesso!</div>
-            <?php
-        }
         if ($_GET['success'] == 2) {
             ?>
             <div class="alert alert-success">Perícia alterada com sucesso!</div>
@@ -91,7 +75,7 @@
                             </td>
                             <td><?= $expertise['nme_pericia'] ?></td>
                             <td>
-                                <a href="editExpertise.php".php?idt=<?= $expertise['idt_pericia'] ?>"><i class="fa fa-pencil"
+                                <a href="editExpertise.php?idt=<?= $expertise['idt_pericia'] ?>"><i class="fa fa-pencil"
                                                                                                         aria-hidden="true"></i>
                                 </a>
                             </td>
@@ -101,7 +85,7 @@
                     }
                 } else {
                     ?>
-                    <div class="alert alert-info">Não há nenhum alinhamento registrado ainda</div>
+                    <div class="alert alert-info">Não há nenhuma perícia registrada ainda</div>
                     <?php
                 }
                 ?>

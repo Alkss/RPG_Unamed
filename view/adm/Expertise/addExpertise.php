@@ -17,7 +17,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
         $expertise = new Expertise();
         
         if ($expertise->createExpertise($_POST['expertiseName'], $_POST['expertiseDesc'])) {
-            header('Location: index.php?success=2');
+            header('Location: addExpertise.php?success=1');
         }
     }
     
@@ -26,7 +26,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     <head>
         <title><?= RPG_NAME ?> - Nova Pericia</title>
     </head>
-    <body id="new-alignment">
+    <body id="new-expertise">
 
 <h1><?= RPG_NAME ?></h1>
 <h2>Nova pericia</h2>

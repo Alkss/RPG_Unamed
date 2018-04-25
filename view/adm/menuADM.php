@@ -20,7 +20,6 @@
         <p><a>Magias</a></p>
         <p><a>Equipamentos</a></p>
         <p><a>Atributos</a></p>
-        <p><a>Perícias</a></p>
         <p><a>Itens</a></p>
         <p><a>Divindade</a></p>
         <p id="exit_btn"><a href="<?= URL ?>view/adm/exit.php">Sair</a></p>
