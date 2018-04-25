@@ -111,6 +111,8 @@ h1, h2 {
   #char-page #righ-side-table h5 {
     color: darkred;
     font-size: 1.6em; }
+  #char-page #righ-side-table h6 {
+    font-size: 1.3em; }
 #char-page #histHead {
   text-align: center; }
 #char-page #histBody {
