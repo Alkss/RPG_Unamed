@@ -29,7 +29,7 @@
   display: flex;
 }
 
-#classes-home, #lang-home, #races-home, #alignment-home,#expertise-home {
+#classes-home, #lang-home, #races-home, #alignment-home, #expertise-home {
   .btn {
     &.btn-primary {
       margin-left: 2.3%;
@@ -159,9 +159,39 @@ h1, h2 {
 }
 
 #char-page {
+  #histHead {
+    text-align: center;
+  }
+  #histBody {
+    text-align: justify;
+  }
+
+  td {
+    padding: 15px;
+  }
+
+  th {
+    color: darkred;
+    padding: 15px;
+  }
+
+  #char-img {
+    text-align: right;
+  }
   img {
     max-width: 250px;
     max-height: 250px;
+    text-align: right;
+  }
+  .btn {
+    &.btn-primary {
+      display: table-caption;
+      margin-top: 4px;
+
+      &:hover {
+        background-color: #5d0000;
+      }
+    }
   }
 }
 

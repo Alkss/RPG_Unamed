@@ -10,7 +10,7 @@ $numberOfCharSQL = "SELECT * FROM tb_personagem JOIN ta_perfil_sala ON idt_perso
 $numberOfCharSQL = $db->search($numberOfCharSQL);
 $chars = $db->search("SELECT * FROM ta_perfil_sala JOIN tb_sala ON cod_sala=idt_sala JOIN tb_personagem ON cod_personagem = idt_personagem WHERE cod_sala='" . $db->scapeCont($_GET['idt']) . "'");
 ?>
-<div class="col-xs-4">
+<div class="col-xs-2">
 
     <body id="menu-table">
     <div class="col-xs-4" id="menu-table">

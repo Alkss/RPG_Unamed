@@ -19,7 +19,7 @@
 .container:not(in #index-page) {
   display: flex; }
 
-#classes-home .btn.btn-primary, #lang-home .btn.btn-primary, #races-home .btn.btn-primary, #alignment-home .btn.btn-primary {
+#classes-home .btn.btn-primary, #lang-home .btn.btn-primary, #races-home .btn.btn-primary, #alignment-home .btn.btn-primary, #expertise-home .btn.btn-primary {
   margin-left: 2.3%; }
 
 h1, h2 {
@@ -106,9 +106,26 @@ h1, h2 {
   #searchTables a {
     color: white; }
 
+#char-page #histHead {
+  text-align: center; }
+#char-page #histBody {
+  text-align: justify; }
+#char-page td {
+  padding: 15px; }
+#char-page th {
+  color: darkred;
+  padding: 15px; }
+#char-page #char-img {
+  text-align: right; }
 #char-page img {
   max-width: 250px;
-  max-height: 250px; }
+  max-height: 250px;
+  text-align: right; }
+#char-page .btn.btn-primary {
+  display: table-caption;
+  margin-top: 4px; }
+  #char-page .btn.btn-primary:hover {
+    background-color: #5d0000; }
 
 #create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character, #table-home, #char-page {
   background-color: black;

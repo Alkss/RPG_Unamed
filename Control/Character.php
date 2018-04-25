@@ -1,10 +1,12 @@
 <?php
-class Character{
 
+class Character
+{
+    
     function __construct()
-     {
+    {
         $this->db = new DataBase();
-     }
+    }
     
     public function selectAll($where = "")
     {
@@ -12,6 +14,43 @@ class Character{
             $where = "where " . $where;
         }
         $stringSQL = "SELECT * FROM tb_personagem " . $where;
+        return $this->db->search($stringSQL);
+    }
+    
+    
+    public function selectRace($where = "")
+    {
+        if ($where != "") {
+            $where = "where " . $where;
+        }
+        $stringSQL = "SELECT nme_raca FROM td_raca JOIN tb_personagem ON idt_raca=cod_raca " . $where;
+        return $this->db->search($stringSQL);
+    }
+    
+    public function selectClass($where = "")
+    {
+        if ($where != "") {
+            $where = "where " . $where;
+        }
+        $stringSQL = "SELECT nme_classe FROM td_classe JOIN tb_personagem ON idt_classe=cod_classe " . $where;
+        return $this->db->search($stringSQL);
+    }
+    
+    public function selectAlignment($where = "")
+    {
+        if ($where != "") {
+            $where = "where " . $where;
+        }
+        $stringSQL = "SELECT nme_alinhamento FROM td_alinhamento JOIN tb_personagem ON idt_alinhamento=cod_alinhamento " . $where;
+        return $this->db->search($stringSQL);
+    }
+    
+    public function selectEyeColor($where = "")
+    {
+        if ($where != "") {
+            $where = "where " . $where;
+        }
+        $stringSQL = "SELECT nme_classe FROM td_classe JOIN tb_personagem ON idt_classe=cod_classe " . $where;
         return $this->db->search($stringSQL);
     }
     
@@ -28,17 +67,18 @@ class Character{
     }
     
     //Pagina 1 de criaçao de personagem
-    public function createCharacter_pt1($nme_personagem,$exp_personagem,
-                                        $gen_personagem,$cod_religiao,
-                                        $pes_personagem,$alt_personagem,
-                                        $dsc_cabelo_pesonagem,$cor_olho,
-                                        $img_personagem,$hst_personagem,
-                                        $inf_adicional_personagem,$cod_alinhamento,
-                                        $cod_classe, $cod_raca){
+    public function createCharacter_pt1($nme_personagem, $exp_personagem,
+                                        $gen_personagem, $cod_religiao,
+                                        $pes_personagem, $alt_personagem,
+                                        $dsc_cabelo_pesonagem, $cor_olho,
+                                        $img_personagem, $hst_personagem,
+                                        $inf_adicional_personagem, $cod_alinhamento,
+                                        $cod_classe, $cod_raca)
+    {
         $idt_usuario = $_SESSION["idt_usuario"];
-        if(isset($_GET["idt"])){
+        if (isset($_GET["idt"])) {
             $sala_id = $_GET["idt"];
-        } else{
+        } else {
             $sala_id = 1;
         }
         //Insert na tb_personagem
@@ -54,13 +94,13 @@ class Character{
         $stringSQL .= $this->db->scapeCont($pes_personagem) . "," . $this->db->scapeCont($alt_personagem) . ",'";
         $stringSQL .= $this->db->scapeCont($dsc_cabelo_pesonagem) . "','" . $this->db->scapeCont($img_personagem) . "','";
         $stringSQL .= $this->db->scapeCont($cor_olho) . "','" . $this->db->scapeCont($hst_personagem) . "','";
-        $stringSQL .= $this->db->scapeCont($inf_adicional_personagem) . "'," . $this->db->scapeCont($cod_alinhamento)  . ",";
+        $stringSQL .= $this->db->scapeCont($inf_adicional_personagem) . "'," . $this->db->scapeCont($cod_alinhamento) . ",";
         $stringSQL .= $this->db->scapeCont('10') . ",";
         $stringSQL .= $this->db->scapeCont($cod_classe) . "," . $this->db->scapeCont($cod_raca) . ",0)";
         
         //Retorna o ID inserido?
         $personagemID = $this->db->insert($stringSQL);
-
+        
         //Update na ta_perfil_sala/
         $stringSQL2 = "UPDATE ta_perfil_sala SET cod_personagem = " . $this->db->scapeCont($personagemID);
         $stringSQL2 .= " WHERE cod_usuario = " . $this->db->scapeCont($idt_usuario);
@@ -69,6 +109,7 @@ class Character{
         $this->db->executeQuery($stringSQL2);
         return true;
     }
+    
+}
 
-    }
 ?>

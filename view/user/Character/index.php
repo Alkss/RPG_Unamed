@@ -7,10 +7,15 @@
  */
 require('../../../config.php');
 include('../../../header.php');
-
+$db = new DataBase();
 $char = new Character();
 $selectedChar = $char->selectAll("idt_personagem = " . $_GET['char']);
+$race = $char->selectRace("idt_personagem = " . $_GET['char']);
+$class = $char->selectClass("idt_personagem = " . $_GET['char']);
+$alignment = $char->selectAlignment("idt_personagem = " . $_GET['char']);
+
 var_dump($selectedChar);
+
 ?>
 
 <!doctype html>
@@ -30,19 +35,60 @@ include '../Table/menu.php';
 ?>
 <div class="col-xs-6">
     <div class="row">
-        <div class="col-xs-6">
+        <div class="col-xs-6" id="char-img">
             <?php
             $imgURL = $selectedChar[0]['img_personagem'];
             echo '<img id="charImg" src="' . $imgURL . '">'
             ?>
         </div>
         <div class="col-xs-6">
-            botão!
+            <a class="btn btn-primary">Editar dados</a>
+            <a class="btn btn-primary">Editar pertences</a>
+            <a class="btn btn-primary">Excluir</a>
         </div>
     </div>
-    <div clas="row">
-        Resto das informações
+    <div class="row">
+        <table>
+            <tr>
+                <th>Raça:</th>
+                <th>Classe:</th>
+                <th>Gênero:</th>
+                <th>Alinhamento:</th>
+                <th>Cor dos Olhos:</th>
+                <th>Altura:</th>
+                <th>Peso:</th>
+            </tr>
+            <tr>
+                <td><?= $race[0]['nme_raca'] ?></td>
+                <td><?= $class[0]['nme_classe'] ?></td>
+                <td><?php
+                    if ($selectedChar[0]['gen_personagem'] == 'M') {
+                        ?>
+                        Masculino
+                        <?php
+                    } else {
+                        ?>
+                        Feminino
+                        <?php
+                    }
+                    ?>
+                </td>
+                <td><?= $alignment[0]['nme_alinhamento'] ?></td>
+                <td><?= $selectedChar[0]['cor_olho_personagem'] ?></td>
+                <td><?= $selectedChar[0]['alt_personagem'] ?>M</td>
+                <td><?= $selectedChar[0]['pes_personagem'] ?>Kg</td>
+            </tr>
+            <tr>
+                <th colspan="7" id="histHead">História</th>
+            </tr>
+            <tr>
+                <td colspan="7" id="histBody"><?= $selectedChar[0]['hst_personagem'] ?></td>
+            </tr>
+        </table>
     </div>
+</div>
+<div class="col-xs-4">
+texto
 </div>
 </body>
 </html>
