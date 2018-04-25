@@ -45,12 +45,21 @@ class Character
         return $this->db->search($stringSQL);
     }
     
-    public function selectEyeColor($where = "")
+    public function selectDivinity($where = "")
     {
         if ($where != "") {
             $where = "where " . $where;
         }
-        $stringSQL = "SELECT nme_classe FROM td_classe JOIN tb_personagem ON idt_classe=cod_classe " . $where;
+        $stringSQL = "SELECT nme_divindade FROM td_divindade JOIN ta_culto ON idt_divindade=cod_divindade JOIN tb_personagem ON idt_personagem=cod_personagem " . $where;
+        return $this->db->search($stringSQL);
+    }
+    
+    public function selectLang($where = "")
+    {
+        if ($where != "") {
+            $where = "where " . $where;
+        }
+        $stringSQL = "SELECT nme_linguagem FROM td_linguagem JOIN ta_personagem_linguagem ON idt_linguagem=cod_linguagem JOIN tb_personagem ON idt_personagem=cod_personagem " . $where;
         return $this->db->search($stringSQL);
     }
     

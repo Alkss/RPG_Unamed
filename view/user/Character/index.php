@@ -13,8 +13,10 @@ $selectedChar = $char->selectAll("idt_personagem = " . $_GET['char']);
 $race = $char->selectRace("idt_personagem = " . $_GET['char']);
 $class = $char->selectClass("idt_personagem = " . $_GET['char']);
 $alignment = $char->selectAlignment("idt_personagem = " . $_GET['char']);
+$divinity = $char->selectDivinity("idt_personagem = " . $_GET['char']);
+$lang = $char->selectLang("idt_personagem = " . $_GET['char']);
 
-var_dump($selectedChar);
+var_dump($lang);
 
 ?>
 
@@ -87,8 +89,48 @@ include '../Table/menu.php';
         </table>
     </div>
 </div>
-<div class="col-xs-4">
-texto
+<div class="col-xs-4" id="righ-side-table">
+    <div class="row">
+
+        <h5>Divindades</h5>
+        <?php
+        foreach ($divinity as $singleDivinity) {
+            ?>
+            <h6><?= $singleDivinity['nme_divindade'] ?></h6>
+            
+            <?php
+        }
+        ?>
+        </table>
+    </div>
+    <div class="row">
+        <div class="row">
+            <h5>Idiomas</h5>
+            <?php
+            foreach ($lang as $singleLang) {
+                ?>
+                <h6><?= $singleLang['nme_linguagem'] ?></h6>
+                <?php
+            }
+            ?>
+            </table>
+        </div>
+    </div>
+    <div class="row">
+        Divindades
+    </div>
+    <div class="row">
+        Divindades
+    </div>
+    <div class="row">
+        Divindades
+    </div>
+    <div class="row">
+        Divindades
+    </div>
+    <div class="row">
+        Divindades
+    </div>
 </div>
 </body>
 </html>
