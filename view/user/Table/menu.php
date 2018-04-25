@@ -24,7 +24,8 @@ $chars = $db->search("SELECT * FROM ta_perfil_sala JOIN tb_sala ON cod_sala=idt_
             foreach ($chars as $char) {
                 ?>
                 <p>
-                    <a href="../Character/index.php?char=<?= $char['idt_personagem'] ?>&idt=<?= $_GET['idt'] ?>"><?= $char['nme_personagem'] ?></a>
+                    <a href="../Character/index.php?char=<?= $char['idt_personagem'] ?>&idt=<?= $_GET['idt'] ?>"><?= $char['nme_personagem'] ?>    (<?=$char['qtd_vida_personagem']?><i class="fa fa-heart-o" aria-hidden="true"></i>)
+                    </a>
                 </p>
                 <?php
             }
@@ -48,7 +49,6 @@ $chars = $db->search("SELECT * FROM ta_perfil_sala JOIN tb_sala ON cod_sala=idt_
         <p><a>Usuários</a></p>
         <hr>
         <p><a>Customizáveis</a></p>
-        <p id="exit_btn"><a href="<?= URL ?>view/adm/exit.php">Sair</a></p>
     </div>
     </body>
 </div>
