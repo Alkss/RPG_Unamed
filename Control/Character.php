@@ -6,6 +6,15 @@ class Character{
         $this->db = new DataBase();
      }
     
+    public function selectAll($where = "")
+    {
+        if ($where != "") {
+            $where = "where " . $where;
+        }
+        $stringSQL = "SELECT * FROM tb_personagem " . $where;
+        return $this->db->search($stringSQL);
+    }
+    
     public function selectCharacter($where = "")
     {
         if ($where != "") {

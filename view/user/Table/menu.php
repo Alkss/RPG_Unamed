@@ -19,7 +19,7 @@
     if ($chars) {
         foreach ($chars as $char) {
             ?>
-            <p><a><?= $char['nme_personagem'] ?></a></p>
+            <p><a href="../Character/index.php?idt=<?= $char['idt_personagem'] ?>"><?= $char['nme_personagem'] ?></a></p>
             <?php
         }
     }

@@ -8,5 +8,8 @@
 require('../../../config.php');
 include('../../../header.php');
 
+$char = new Character();
+$selectedChar = $char->selectAll("idt_personagem = " . $_GET['idt']);
+var_dump($selectedChar);
 ?>
 
