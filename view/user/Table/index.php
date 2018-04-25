@@ -27,19 +27,16 @@ VALUES ('" . $db->scapeCont($_SESSION['idt_usuario']) . "',
         }
     }
     
-    $numberOfCharSQL = "SELECT * FROM tb_personagem JOIN ta_perfil_sala ON idt_personagem=cod_personagem JOIN tb_usuario ON idt_usuario=cod_usuario WHERE idt_usuario =" . $_SESSION['idt_usuario'];
-    $numberOfCharSQL = $db->search($numberOfCharSQL);
     
     
-    $chars = $db->search("SELECT * FROM ta_perfil_sala JOIN tb_sala ON cod_sala=idt_sala JOIN tb_personagem ON cod_personagem = idt_personagem WHERE cod_sala='" . $db->scapeCont($_GET['idt']) . "'");
+    
+    
     ?>
     <body id="table-home">
     <h1><?= RPG_NAME ?></h1>
 
     <h2><?= $tableInfo[0]['nme_sala'] ?> - (Mesa de <?= $tableInfo[0]['nme_usuario'] ?>)</h2>
-    <div class="col-xs-4">
         <?php include 'menu.php'; ?>
-    </div>
 
     </body>
     <?php
