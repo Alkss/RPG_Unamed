@@ -80,12 +80,22 @@ class Character
         $stringSQL = "SELECT * FROM td_magia JOIN ta_personagem_magia ON idt_magia=cod_magia JOIN tb_personagem ON idt_personagem=cod_personagem " . $where;
         return $this->db->search($stringSQL);
     }
+    
     public function selectUsables($where = "")
     {
         if ($where != "") {
             $where = "where " . $where;
         }
         $stringSQL = "SELECT * FROM td_item JOIN ta_utilizaveis ON idt_item=cod_item JOIN tb_personagem ON idt_personagem=cod_personagem " . $where;
+        return $this->db->search($stringSQL);
+    }
+    
+    public function selectAttribute($where = "")
+    {
+        if ($where != "") {
+            $where = "where " . $where;
+        }
+        $stringSQL = "SELECT nme_atributo, val_personagem_atributo FROM td_atributo JOIN ta_personagem_atributo ON idt_atributo=cod_atributo JOIN tb_personagem ON idt_personagem=cod_personagem " . $where;
         return $this->db->search($stringSQL);
     }
     

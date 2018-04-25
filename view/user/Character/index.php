@@ -18,7 +18,7 @@ $lang = $char->selectLang("idt_personagem = " . $_GET['char']);
 $equip = $char->selectEquip("idt_personagem = " . $_GET['char']);
 $magic = $char->selectMagic("idt_personagem = " . $_GET['char']);
 $usables = $char->selectUsables("idt_personagem = " . $_GET['char']);
-
+$attribute = $char->selectAttribute("idt_personagem = " . $_GET['char']);
 
 ?>
 
@@ -96,14 +96,14 @@ include '../Table/menu.php';
 
         <h5>Divindades</h5>
         <?php
-        if($divinity) {
+        if ($divinity) {
             foreach ($divinity as $singleDivinity) {
                 ?>
                 <h6><?= $singleDivinity['nme_divindade'] ?></h6>
-        
+                
                 <?php
             }
-        }else{
+        } else {
             ?>
             <h6>-- Nenhuma --</h6>
             <?php
@@ -188,25 +188,41 @@ include '../Table/menu.php';
         <h5>Utilizáveis</h5>
         <?php
         if ($usables) {
-        ?>
+            ?>
             <?php
             foreach ($usables as $singleUsable) {
                 ?>
-                   <?= $singleUsable['nme_utilizavel'] ?>
+                <?= $singleUsable['nme_utilizavel'] ?>
                 <?php
             }
-            } else {
-                ?>
-                <h6>-- Nenhum --</h6>
-                <?php
-            }
+        } else {
             ?>
+            <h6>-- Nenhum --</h6>
+            <?php
+        }
+        ?>
     </div>
     <div class="row">
-        Divindades
-    </div>
-    <div class="row">
-        Divindades
+        <h5>Atributos</h5>
+        <?php
+        if ($attribute) {
+            ?>
+            <div id="attributes">
+                <?php
+                foreach ($attribute as $singleAttribute) {
+                    ?>
+                    <h6><?= $singleAttribute['nme_atributo'] ?>: <?= $singleAttribute['val_personagem_atributo'] ?></h6>
+                    <?php
+                }
+                ?>
+            </div>
+            <?php
+        } else {
+            ?>
+            <h6>-- Nenhum --</h6>
+            <?php
+        }
+        ?>
     </div>
 </div>
 </body>
