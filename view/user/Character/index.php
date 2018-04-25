@@ -17,8 +17,8 @@ $divinity = $char->selectDivinity("idt_personagem = " . $_GET['char']);
 $lang = $char->selectLang("idt_personagem = " . $_GET['char']);
 $equip = $char->selectEquip("idt_personagem = " . $_GET['char']);
 $magic = $char->selectMagic("idt_personagem = " . $_GET['char']);
+$usables = $char->selectUsables("idt_personagem = " . $_GET['char']);
 
-var_dump($equip);
 
 ?>
 
@@ -33,7 +33,7 @@ var_dump($equip);
 </head>
 <body id="char-page">
 <h1><?= RPG_NAME ?></h1>
-<h2><?= $selectedChar[0]['nme_personagem'] ?></h2>
+<h2>Ficha de <span style="color:white"><?= $selectedChar[0]['nme_personagem'] ?></span></h2>
 <?php
 include '../Table/menu.php';
 ?>
@@ -96,10 +96,16 @@ include '../Table/menu.php';
 
         <h5>Divindades</h5>
         <?php
-        foreach ($divinity as $singleDivinity) {
+        if($divinity) {
+            foreach ($divinity as $singleDivinity) {
+                ?>
+                <h6><?= $singleDivinity['nme_divindade'] ?></h6>
+        
+                <?php
+            }
+        }else{
             ?>
-            <h6><?= $singleDivinity['nme_divindade'] ?></h6>
-            
+            <h6>-- Nenhuma --</h6>
             <?php
         }
         ?>
@@ -179,7 +185,22 @@ include '../Table/menu.php';
         </table>
     </div>
     <div class="row">
-        Divindades
+        <h5>Utilizáveis</h5>
+        <?php
+        if ($usables) {
+        ?>
+            <?php
+            foreach ($usables as $singleUsable) {
+                ?>
+                   <?= $singleUsable['nme_utilizavel'] ?>
+                <?php
+            }
+            } else {
+                ?>
+                <h6>-- Nenhum --</h6>
+                <?php
+            }
+            ?>
     </div>
     <div class="row">
         Divindades
