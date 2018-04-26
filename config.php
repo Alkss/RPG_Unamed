@@ -16,6 +16,9 @@ define('DB_NAME', 'RPG_unamed'); //Database
 define('RPG_NAME', 'RPG_Unnamed'); // nome do projeto.
 
 define('DEBUG', 1);
+ini_set('default_charset', 'UTF-8');
+
+
 
 $TITULO2 = false;
 //

@@ -59,7 +59,7 @@ if ($_SESSION['logado'] != 1) {
         $editHist = $_POST['editHist'];
         
         $chararacter->updateCharacter($idt, $name, $editRace, $editAlignment, $editClass, $editGenre, $editEyeColor, $height, $weight, $editImg, $editHist);
-        header('Location:../Table/index.php?char='.$_GET['char'].'&idt='.$_GET['idt']);
+//        header('Location:../Table/index.php?char='.$_GET['char'].'&idt='.$_GET['idt']);
         
     } else {
         include 'editCharAux.php';
