@@ -9,6 +9,7 @@ require('../../../config.php');
 include('../../../header.php');
 $db = new DataBase();
 $char = new Character();
+
 $selectedChar = $char->selectAll("idt_personagem = " . $_GET['char']);
 $race = $char->selectRace("idt_personagem = " . $_GET['char']);
 $class = $char->selectClass("idt_personagem = " . $_GET['char']);
@@ -46,7 +47,8 @@ include '../Table/menu.php';
             ?>
         </div>
         <div class="col-xs-6">
-            <a class="btn btn-primary">Editar dados</a>
+            <a class="btn btn-primary" href="editCharacter.php?char=<?= $_GET['char'] ?>&idt=<?= $_GET['idt'] ?>">Editar
+                dados</a>
             <a class="btn btn-primary">Editar pertences</a>
             <a class="btn btn-primary">Excluir</a>
         </div>
