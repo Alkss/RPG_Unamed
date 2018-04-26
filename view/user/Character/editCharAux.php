@@ -116,7 +116,7 @@
 
         <div class="row">
             <div class="col-xs-3 col-xs-offset-1">
-                <label for="editImg">Link da imagem (URL)</label>
+                <label for="editImg" id="imgLink">Link da imagem (URL)</label>
                 <input type="text" name="editImg" value="<?= $imgURL ?>" id="editImg" class="form-control">
             </div>
         </div>
