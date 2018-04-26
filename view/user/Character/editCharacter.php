@@ -11,6 +11,11 @@ include('../../../header.php');
 
 $char = new Character();
 $selectedChar = $char->selectAll("idt_personagem= " . $_GET['char']);
+
+$race = new Race();
+$selectedRace = $race->selectAll();
+
+
 var_dump($selectedChar);
 
 if ($_SESSION['logado'] != 1) {
