@@ -158,10 +158,21 @@ h1, h2 {
   }
 }
 
-#char-page, #edit-char {
+#edit-char{
+  h6{
+    text-align: center;
+    font-size:1.6em;
+  }
   input {
     color: black;
   }
+  textarea{
+    color:black;
+  }
+}
+
+#char-page, #edit-char {
+
 
   #righ-side-table {
     th {
