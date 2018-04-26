@@ -153,6 +153,19 @@ class Character
         return true;
     }
     
+    public function updateCharacter($idt, $name, $race, $alignment, $class, $genre, $eyeColor, $height, $weight, $img, $hist)
+    {
+        $stringSQL = "UPDATE tb_personagem SET nme_personagem='" . $this->db->scapeCont($name) . "', gen_personagem ='" .
+            $this->db->scapeCont($genre) . "', pes_personagem='" . $this->db->scapeCont($weight) . "', alt_personagem='" .
+            $this->db->scapeCont($height) . "', img_personagem='" . $this->db->scapeCont($img) . "', cor_olho_personagem='" .
+            $this->db->scapeCont($eyeColor) . "', hst_personagem='" . $this->db->scapeCont($hist) . "', cod_alinhamento='" .
+            $this->db->scapeCont($alignment) . "', cod_classe='" . $this->db->scapeCont($class) . "', cod_raca='" .
+            $this->db->scapeCont($race) . "' WHERE idt_personagem=" . $this->db->scapeCont($idt);
+        
+        $this->db->executeQuery($stringSQL);
+        return true;
+        
+    }
 }
 
 ?>

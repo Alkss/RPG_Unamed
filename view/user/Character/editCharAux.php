@@ -16,13 +16,15 @@
                 ?>
             </div>
 
+            <input type="hidden" name="idt" id="idt" value="<?= $selectedChar[0]['idt_personagem']?>">
+            
             <div class="col-xs-3">
                 <label for="editName">Nome</label>
-                <input type="text" value="<?= $selectedChar[0]['nme_personagem'] ?>" id="editName" name="editName"
+                <input required="required" type="text" value="<?= $selectedChar[0]['nme_personagem'] ?>" id="editName" name="editName"
                        class="form-control">
 
                 <label for="editRace">Raça</label>
-                <select class="form-control" id="editRace" name="editRace">
+                <select required="required" class="form-control" id="editRace" name="editRace">
                     <?php
                     foreach ($selectedRace as $singleRace) {
                         if ($singleRace['idt_raca'] == $selectedChar[0]['cod_raca']) {
@@ -40,7 +42,7 @@
                 </select>
 
                 <label for="editAlignment">Alinhamento</label>
-                <select class="form-control" id="editAlignment" name="editAlignment">
+                <select required="required" class="form-control" id="editAlignment" name="editAlignment">
                     <?php
                     foreach ($selectedAlignment as $singleAlignment) {
                         if ($singleAlignment['idt_alinhamento'] == $selectedChar[0]['cod_alinhamento']) {
@@ -59,7 +61,7 @@
             </div>
             <div class="col-xs-2">
                 <label for="editClass">Classe</label>
-                <select class="form-control" id="editClass" name="editClass">
+                <select required="required" class="form-control" id="editClass" name="editClass">
                     <?php
                     foreach ($selectedClass as $singleClass) {
                         if ($singleClass['idt_classe'] == $selectedClass[0]['cod_classe']) {
@@ -77,7 +79,7 @@
                 </select>
 
                 <label for="editGenre">Genêro</label>
-                <select id="editGenre" name="editGenre" class="form-control">
+                <select required="required" id="editGenre" name="editGenre" class="form-control">
                     <?php
                     $genres = array('M' => 'Masculino', 'F' => 'Feminino');
                     foreach ($genres as $key => $genre) {
@@ -95,16 +97,16 @@
                 </select>
 
                 <label for="eyeColor">Cor dos olhos</label>
-                <input type="text" class="form-control" id="eyeColor" name="eyeColor"
+                <input required="required" type="text" class="form-control" id="eyeColor" name="eyeColor"
                        value="<?= $selectedChar[0]['cor_olho_personagem'] ?>">
             </div>
             <div class="col-xs-3">
                 <label for="height">Altura</label>
-                <input class="form-control" id="height" name="height" type="number" min="0" max="20" step="0.01"
+                <input required="required" class="form-control" id="height" name="height" type="number" min="0" max="20" step="0.01"
                        value="<?= $selectedChar[0]['alt_personagem'] ?>">
 
                 <label for="weight">Peso</label>
-                <input class="form-control" id="weight" name="weight" type="number"
+                <input required="required" class="form-control" id="weight" name="weight" type="number"
                        value="<?= $selectedChar[0]['pes_personagem'] ?>">
 
                 <br>
