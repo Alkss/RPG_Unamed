@@ -121,7 +121,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <h6>História</h6>
-                <textarea id="editHist" name="editHist" style="height: 180px"
+                <textarea id="editHist" name="editHist" style="margin-bottom:15px;text-align: justify; height: 180px"
                           class="form-control"><?= $selectedChar[0]['hst_personagem'] ?></textarea>
             </div>
         </div>
