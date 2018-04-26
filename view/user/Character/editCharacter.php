@@ -15,6 +15,11 @@ $selectedChar = $char->selectAll("idt_personagem= " . $_GET['char']);
 $race = new Race();
 $selectedRace = $race->selectAll();
 
+$class = new Classe();
+$selectedClass = $class->selectAll();
+
+$alignment = new Alignment();
+$selectedAlignment = $alignment->selectAll();
 
 var_dump($selectedChar);
 
