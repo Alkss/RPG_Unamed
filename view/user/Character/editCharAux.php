@@ -17,11 +17,11 @@
         </div>
 
         <div class="col-xs-3">
-            <label for="editName">Editar nome</label>
+            <label for="editName">Nome</label>
             <input type="text" value="<?= $selectedChar[0]['nme_personagem'] ?>" id="editName" name="editName"
                    class="form-control">
 
-            <label for="editRace">Editar raça</label>
+            <label for="editRace">Raça</label>
             <select class="form-control" id="editRace" name="editRace">
                 <?php
                 foreach ($selectedRace as $singleRace) {
@@ -38,11 +38,11 @@
                 }
                 ?>
             </select>
-            
-            <label for="editAlignment">Editar Alinhamento</label>
+
+            <label for="editAlignment">Alinhamento</label>
             <select class="form-control" id="editAlignment" name="editAlignment">
                 <?php
-                foreach ($selectedAlignment as $singleAlignment){
+                foreach ($selectedAlignment as $singleAlignment) {
                     if ($singleAlignment['idt_alinhamento'] == $selectedChar[0]['cod_alinhamento']) {
                         ?>
                         <option value="<?= $singleAlignment['idt_alinhamento'] ?>"
@@ -58,7 +58,7 @@
             </select>
         </div>
         <div class="col-xs-2">
-            <label for="editClass">Editar classe</label>
+            <label for="editClass">Classe</label>
             <select class="form-control" id="editClass" name="editClass">
                 <?php
                 foreach ($selectedClass as $singleClass) {
@@ -76,7 +76,7 @@
                 ?>
             </select>
 
-            <label for="editGenre">Editar Genêro</label>
+            <label for="editGenre">Genêro</label>
             <select id="editGenre" name="editGenre" class="form-control">
                 <?php
                 $genres = array('M' => 'Masculino', 'F' => 'Feminino');
@@ -93,12 +93,14 @@
                 }
                 ?>
             </select>
+            
+            <label for="eyeColor">Cor dos olhos</label>
         </div>
     </div>
 
     <div class="row">
         <div class="col-xs-3 col-xs-offset-1">
-            <label for="editImg">Editar imagem (URL)</label>
+            <label for="editImg">Link da imagem (URL)</label>
             <input type="text" name="editImg" value="<?= $imgURL ?>" id="editImg" class="form-control">
         </div>
     </div>
