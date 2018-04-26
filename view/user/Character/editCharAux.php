@@ -93,8 +93,9 @@
                 }
                 ?>
             </select>
-            
+
             <label for="eyeColor">Cor dos olhos</label>
+            <input type="text" class="form-control" id="eyeColor" name="eyeColor" value="<?=$selectedChar[0]['cor_olho_personagem']?>">
         </div>
     </div>
 

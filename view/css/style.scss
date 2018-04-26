@@ -158,7 +158,10 @@ h1, h2 {
   }
 }
 
-#char-page,#edit-char {
+#char-page, #edit-char {
+  input {
+    color: black;
+  }
 
   #righ-side-table {
     th {

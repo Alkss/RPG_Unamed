@@ -106,6 +106,8 @@ h1, h2 {
   #searchTables a {
     color: white; }
 
+#char-page input, #edit-char input {
+  color: black; }
 #char-page #righ-side-table, #edit-char #righ-side-table {
   text-align: center; }
   #char-page #righ-side-table th, #edit-char #righ-side-table th {
