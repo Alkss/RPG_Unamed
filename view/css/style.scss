@@ -205,11 +205,13 @@ h1, h2 {
 
   td {
     padding: 15px;
+    padding-top: 0;
   }
 
   th {
     color: darkred;
     padding: 15px;
+    padding-bottom: 0;
   }
 
   #char-img {

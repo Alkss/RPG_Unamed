@@ -136,10 +136,12 @@ h1, h2 {
 #char-page #histBody, #edit-char #histBody {
   text-align: justify; }
 #char-page td, #edit-char td {
-  padding: 15px; }
+  padding: 15px;
+  padding-top: 0; }
 #char-page th, #edit-char th {
   color: darkred;
-  padding: 15px; }
+  padding: 15px;
+  padding-bottom: 0; }
 #char-page #char-img, #edit-char #char-img {
   text-align: right; }
 #char-page img, #edit-char img {
