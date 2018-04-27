@@ -24,8 +24,6 @@ $attribute = $char->selectAttribute("idt_personagem = " . $_GET['char']);
 
 $tableInfo = $db->search("SELECT cod_papel_sala FROM tb_usuario JOIN ta_perfil_sala ON idt_usuario=cod_usuario JOIN tb_sala ON idt_sala=cod_sala WHERE cod_sala='" . $_GET['idt'] . "'");
 
-var_dump($tableInfo);
-
 ?>
 
 <!doctype html>
@@ -58,9 +56,9 @@ include '../Table/menu.php';
             if ($tableInfo[0]['cod_papel_sala'] != 1) {
                 ?>
                 <a class="btn btn-primary">Editar pertences</a>
-                <a class="btn btn-primary">Excluir</a>
+                <a class="btn btn-primary" href="deleteCharacter.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>">Excluir</a>
                 <?php
-            }0
+            }
             ?>
         </div>
     </div>
