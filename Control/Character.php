@@ -166,6 +166,20 @@ class Character
         return true;
         
     }
+    
+    
+    public function deleteCharacter($idtChar, $idtTable)
+    {
+        $stringSQL = "UPDATE ta_perfil_sala SET cod_personagem=NULL WHERE cod_usuario=" . $this->db->scapeCont($idtChar)
+            . "AND cod_sala=" . $this->db->scapeCont($idtTable);
+        $this->db->executeQuery($stringSQL);
+    
+        $stringSQL = "DELETE FROM tb_personagem WHERE idt_personagem=" . $this->db->scapeCont($idtChar);
+        $this->db->executeQuery($stringSQL);
+    
+    
+        return true;
+    }
 }
 
 ?>
