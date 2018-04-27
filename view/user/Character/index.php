@@ -56,7 +56,8 @@ include '../Table/menu.php';
             if ($tableInfo[0]['cod_papel_sala'] != 1) {
                 ?>
                 <a class="btn btn-primary">Editar pertences</a>
-                <a class="btn btn-primary" href="deleteCharacter.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>">Excluir</a>
+                <a class="btn btn-primary" onclick="return confirm('Deseja realmente deletar os alinhamentos ' +
+             'selecionados?')" href="deleteCharacter.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>">Excluir</a>
                 <?php
             }
             ?>

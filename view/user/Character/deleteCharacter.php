@@ -14,7 +14,7 @@ $char = new Character();
 if ($char->deleteCharacter($_GET['char'], $_GET['idt'])) {
     echo "<script type='text/javascript'>";
     echo "alert('Operação realizada com sucesso');";
-    echo "window.location='/../Table/index.php?".$_GET['idt']."'";
+    echo "window.location='../Table/index.php?idt=".$_GET['idt']."'";
     echo "</script>";
 }
 ?>
