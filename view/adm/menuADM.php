@@ -20,7 +20,7 @@
         <p><a href="<?= URL ?>view/adm/Magic/index.php">Magias</a></p>
         <p><a href="<?= URL ?>view/adm/Equipment/index.php">Equipamentos</a></p>
         <p><a href="<?= URL ?>view/adm/Attribute/index.php">Atributos</a></p>
-        <p><a>Itens</a></p>
+        <p><a href="<?= URL ?>view/adm/Item/index.php">Itens</a></p>
         <p><a href="<?= URL ?>view/adm/Divinity/index.php">Divindade</a></p>
         <p id="exit_btn"><a href="<?= URL ?>view/adm/exit.php">Sair</a></p>
     </div>
