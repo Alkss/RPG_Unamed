@@ -19,7 +19,7 @@
         <p><a href="<?= URL ?>view/adm/Expertise/index.php">Perícias</a></p>
         <p><a>Magias</a></p>
         <p><a>Equipamentos</a></p>
-        <p><a>Atributos</a></p>
+        <p><a href="<?= URL ?>view/adm/Attribute/index.php">Atributos</a></p>
         <p><a>Itens</a></p>
         <p><a href="<?= URL ?>view/adm/Divinity/index.php">Divindade</a></p>
         <p id="exit_btn"><a href="<?= URL ?>view/adm/exit.php">Sair</a></p>
