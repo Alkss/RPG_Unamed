@@ -58,6 +58,7 @@ if (!isset($_GET['idt'])) {
                             }
                         }
                         ?>
+            </select>
             <label for="equipmentModBase">Modificador base equipamento</label>
             <input class="form-control" type="text" id="equipmentModBase" name="equipmentModBase"
                    value="<?= $singleEquipment[0]['mod_base_equipamento'] ?>">
