@@ -14,7 +14,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
 } else {
     $divinity = new Divinity();
     $deleteDivinities = "";
-    foreach ($_POST['divinities'] as $singleDivinity) {
+    foreach ($_POST['divinity'] as $singleDivinity) {
         $deleteDivinities .= $singleDivinity . ',';
     }
     $deleteDivinities = rtrim($deleteDivinities, ', ');
