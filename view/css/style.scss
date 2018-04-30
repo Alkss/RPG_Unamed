@@ -158,7 +158,34 @@ h1, h2 {
   }
 }
 
-#edit-char {
+#editItens {
+  table {
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+  tr, td {
+    font-size:1.1em;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .btn {
+    &.btn-primary {
+      color: white;
+      &:hover {
+        background-color: #470000;
+      }
+    }
+    &.btn-secondary {
+      color: black;
+      background-color: whitesmoke;
+      &:hover {
+        background-color: silver;
+      }
+    }
+  }
+}
+
+#edit-char, #editItens {
   h6 {
     text-align: center;
     font-size: 1.6em;
