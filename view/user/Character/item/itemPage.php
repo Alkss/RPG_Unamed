@@ -23,7 +23,7 @@
             foreach ($charItem as $singleItem) {
                 ?>
                 <tr>
-                    <td><input class="usable" type="checkbox" name="magic[]"
+                    <td><input class="usable" type="checkbox" name="usable[]"
                                value="<?= $singleItem['idt_item'] ?>">
                     <td><?= $singleItem['nme_item'] ?></td>
                 </tr>
@@ -42,7 +42,7 @@
     ?>
     <div class="row">
         <div class="col-xs-5 col-xs-offset-2">
-            <select id="new-Magic" name="new-Magic" class="form-control" required="required">
+            <select id="new-Usable" name="new-Usable" class="form-control" required="required">
                 <option selected="selected" disabled="disabled" hidden="hidden">Selecione uma opção
                 </option>
                 <?php
@@ -61,20 +61,20 @@
             </select>
         </div>
         <div class="col-xs-2">
-            <input type="submit" class="btn btn-primary" value="Adicionar" id="add-Magic"
-                   name="add-Magic">
+            <input type="submit" class="btn btn-primary" value="Adicionar" id="add-Usable"
+                   name="add-Usable">
         
         </div>
         <div class="col-xs-2">
             <?php
             if ($charItem) {
                 ?>
-                <input type="submit" name="remove-Magic" id="remove-Magic" class="btn btn-secondary"
+                <input type="submit" name="remove-Usable" id="remove-Usable" class="btn btn-secondary"
                        value="Remover">
                 <?php
             } else {
                 ?>
-                <input disabled="disabled" type="submit" name="remove-Magic" id="remove-Magic"
+                <input disabled="disabled" type="submit" name="remove-Usable" id="remove-Usable"
                        class="btn btn-secondary"
                        value="Remover">
                 <?php
