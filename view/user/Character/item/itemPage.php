@@ -15,7 +15,7 @@
             <tr>
                 <td><input type="checkbox" onchange="checkAll(this,'usable')" name="chk[]"/>
                 </td>
-                <td>Utilizáveis</td>
+                <td>Nome</td>
             </tr>
             </thead>
             <tbody>
