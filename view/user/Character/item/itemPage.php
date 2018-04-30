@@ -6,18 +6,16 @@
  * Time: 16:24
  */
 ?>
-<form action="Character/../helper/usableManager.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>" method="post">
+<form action="Character/../helper/itemManager.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>" method="post">
     <?php
     if ($charMagic) {
         ?>
-        <table>
+        <table id="notLeft">
             <thead>
             <tr>
                 <td><input type="checkbox" onchange="checkAll(this,'usable')" name="chk[]"/>
                 </td>
-                <td>Magia</td>
-                <td>Valor Base</td>
-                <td>Tipo</td>
+                <td>Utilizáveis</td>
             </tr>
             </thead>
             <tbody>
@@ -28,8 +26,6 @@
                     <td><input class="usable" type="checkbox" name="magic[]"
                                value="<?= $singleMagic['idt_magia'] ?>">
                     <td><?= $singleMagic['nme_magia'] ?></td>
-                    <td><?= $singleMagic['mod_base_magia'] ?></td>
-                    <td><?= $singleMagic['tpo_magia'] ?></td>
                 </tr>
                 <?php
             }
@@ -40,7 +36,7 @@
         
     } else {
         ?>
-        <h6><span style="color: darkgray;">--Sem magias--</span></h6>
+        <h6><span style="color: darkgray;">--Sem items--</span></h6>
         <?php
     }
     ?>

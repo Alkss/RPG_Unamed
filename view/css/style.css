@@ -107,8 +107,9 @@ h1, h2 {
     color: white; }
 
 #editItens table {
-  margin: 0 auto;
   margin-bottom: 10px; }
+  #editItens table:not(#notLeft) {
+    margin: 0 auto; }
   #editItens table thead td {
     font-size: 1.15em;
     color: darkred; }

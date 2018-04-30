@@ -25,13 +25,13 @@ if ($_SESSION['logado'] != 1) {
     </head>
     <body id="editItens">
     <?php
-    if(isset($_GET['error']) && $_GET['error']==1){
+    if (isset($_GET['error']) && $_GET['error'] == 1) {
         echo "<script type='text/javascript'>";
         echo "alert('Selecione alguma magia');";
         echo "</script>";
     }
     ?>
-    
+
     <h1><?= RPG_NAME ?></h1>
     <h2>Editar pertences de <span style="color:white"><?= $selectedChar[0]['nme_personagem'] ?></span></h2>
     <?php
@@ -53,14 +53,20 @@ if ($_SESSION['logado'] != 1) {
             <div class="col-xs-6">
                 <h6>Utilizaveis</h6>
                 <?php
-                include "usable/usablePage.php";
+                $item = new Item();
+                $charItem = $item->selectCharItem($_GET['char']);
+                $allItems = $item->selectAll();
+                include "item/itemPage.php";
                 ?>
             </div>
         </div>
         <div class="row">
             <div class="col-xs-6">
                 <h6>Equipamentos</h6>
-
+                <?php
+                $equip = new Equipment();
+                $allEquip = $equip->selectAll();
+                ?>
             </div>
 
             <div class="col-xs-6">
@@ -80,7 +86,7 @@ if ($_SESSION['logado'] != 1) {
     </div>
     </body>
     <script>
-        function checkAll(ele,classe) {
+        function checkAll(ele, classe) {
             var checkboxes = document.getElementsByClassName(classe);
             if (ele.checked) {
                 for (var i = 0; i < checkboxes.length; i++) {

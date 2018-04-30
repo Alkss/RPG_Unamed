@@ -159,8 +159,11 @@ h1, h2 {
 }
 
 #editItens {
+
   table {
-    margin: 0 auto;
+    &:not(#notLeft) {
+      margin: 0 auto;
+    }
     margin-bottom: 10px;
     thead {
       td {
