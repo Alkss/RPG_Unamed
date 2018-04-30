@@ -55,8 +55,15 @@ class Magic
     
     public function removeMagicFromChar($codChar, $codMagic)
     {
-        $stringSQL = "DELETE FROM ta_personagem_magia WHERE cod_personagem IN(" . $this->db->scapeCont($codChar) . ") AND cod_magia IN(" . $this->db->scapeCont($codMagic).")";
+        $stringSQL = "DELETE FROM ta_personagem_magia WHERE cod_personagem IN(" . $this->db->scapeCont($codChar) . ") AND cod_magia IN(" . $this->db->scapeCont($codMagic) . ")";
         $this->db->executeQuery($stringSQL);
+        return true;
+    }
+    
+    public function addMagicAtChar($codChar, $codMagic)
+    {
+        $stringSQL = "INSERT INTO ta_personagem_magia(cod_personagem, cod_magia) VALUES(".$this->db->scapeCont($codChar).",".$this->db->scapeCont($codMagic).")";
+        $this->db->insert($stringSQL);
         return true;
     }
     

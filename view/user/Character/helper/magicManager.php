@@ -14,9 +14,6 @@ if ($_SESSION['logado'] != 1) {
 } else {
     if (isset($_POST['magic']) && isset($_POST['remove-Magic']) && $_POST['remove-Magic'] == "Remover") {
         var_dump('hit remover');
-        //TODO:Método para remover a magia selecionada da ficha do personagem.
-        
-        
         $magicClass = new Magic();
         $deleteMagic = "";
         foreach ($_POST['magic'] as $singleMagic) {
@@ -29,10 +26,14 @@ if ($_SESSION['logado'] != 1) {
             echo "window.location='../editItens.php?idt=" . $_GET['idt'] . "&char=" . $_GET['char'] . "'";
             echo "</script>";
         }
-        
     } else if (isset($_POST['new-Magic']) && isset($_POST['add-Magic']) && $_POST['add-Magic'] == "Adicionar") {
-        var_dump('hit adicionar');
-        //TODO: Método para adicionar a magia a ficha do personagem.
+        $magicClass = new Magic();
+        if ($magicClass->addMagicAtChar($_GET['char'], $_POST['new-Magic'])) {
+            echo "<script type='text/javascript'>";
+            echo "alert('Operação realizada com sucesso');";
+            echo "window.location='../editItens.php?idt=" . $_GET['idt'] . "&char=" . $_GET['char'] . "'";
+            echo "</script>";
+        }
     } else {
         //TODO: mostrar a mensagem de erro: "selecione pelo menos uma magia".
     }
