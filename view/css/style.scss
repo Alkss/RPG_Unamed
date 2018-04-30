@@ -194,6 +194,11 @@ h1, h2 {
       }
     }
   }
+  div{
+    &.col-xs-6{
+      margin-bottom: 40px;
+    }
+  }
 }
 
 #edit-char, #editItens {

@@ -127,6 +127,8 @@ h1, h2 {
   background-color: whitesmoke; }
   #editItens .btn.btn-secondary:hover {
     background-color: silver; }
+#editItens div.col-xs-6 {
+  margin-bottom: 40px; }
 
 #edit-char h6, #editItens h6 {
   text-align: center;
