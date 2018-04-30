@@ -13,7 +13,6 @@ if ($_SESSION['logado'] != 1) {
     header('location:' . URL . '/view/index.php');
 } else {
     if (isset($_POST['magic']) && isset($_POST['remove-Magic']) && $_POST['remove-Magic'] == "Remover") {
-        var_dump('hit remover');
         $magicClass = new Magic();
         $deleteMagic = "";
         foreach ($_POST['magic'] as $singleMagic) {

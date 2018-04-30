@@ -18,12 +18,17 @@ class Magic
         return $this->db->search($stringSQL);
     }
     
+    public function selectNotInChar($codChar){
+        $stringSQL = "SELECT * FROM td_magia WHERE idt_magia NOT IN (SELECT cod_magia FROM `ta_personagem_magia` WHERE cod_personagem=".$this->db->scapeCont($codChar).")";
+        return $this->db->search($stringSQL);
+    }
+    
     public function selectCharMagic($where = "")
     {
         if ($where != "") {
             $where = "where " . $where;
         }
-        $stringSQL = "SELECT * FROM tb_personagem JOIN ta_personagem_magia ON idt_personagem=cod_personagem JOIN td_magia ON idt_magia=cod_magia " . $where;
+        $stringSQL = "SELECT idt_personagem_magia,cod_personagem,cod_magia,idt_magia,dsc_magia,nme_magia,tpo_magia,mod_base_magia FROM tb_personagem JOIN ta_personagem_magia ON idt_personagem=cod_personagem JOIN td_magia ON idt_magia=cod_magia " . $where;
         return $this->db->search($stringSQL);
     }
     
@@ -55,7 +60,7 @@ class Magic
     
     public function removeMagicFromChar($codChar, $codMagic)
     {
-        $stringSQL = "DELETE FROM ta_personagem_magia WHERE cod_personagem IN(" . $this->db->scapeCont($codChar) . ") AND cod_magia IN(" . $this->db->scapeCont($codMagic) . ")";
+        $stringSQL = "DELETE FROM ta_personagem_magia WHERE cod_personagem=" . $this->db->scapeCont($codChar) . " AND cod_magia IN(" . $this->db->scapeCont($codMagic) . ")";
         $this->db->executeQuery($stringSQL);
         return true;
     }

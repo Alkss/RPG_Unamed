@@ -17,9 +17,14 @@ if ($_SESSION['logado'] != 1) {
     $magic = new Magic();
     $charMagic = $magic->selectCharMagic("idt_personagem = " . $_GET['char']);
     $allMagic = $magic->selectAll();
+    $availableMagic = $magic->selectNotInChar($_GET['char']);
+    
+    
     
     var_dump($charMagic);
     var_dump($allMagic);
+    var_dump($availableMagic);
+   
     ?>
     <!doctype html>
     <html lang="en">
@@ -59,7 +64,7 @@ if ($_SESSION['logado'] != 1) {
                                 ?>
                                 <tr>
                                     <td><input type="checkbox" name="magic[]"
-                                               value="<?= $singleMagic['idt_personagem_magia'] ?>">
+                                               value="<?= $singleMagic['idt_magia'] ?>">
                                     <td><?= $singleMagic['nme_magia'] ?></td>
                                     <td><?= $singleMagic['mod_base_magia'] ?></td>
                                     <td><?= $singleMagic['tpo_magia'] ?></td>
@@ -83,9 +88,8 @@ if ($_SESSION['logado'] != 1) {
                                 <option selected disabled="disabled" hidden="hidden">Selecione uma opção
                                 </option>
                                 <?php
-                                foreach ($allMagic as $uniqueMagic) {
+                                foreach ($availableMagic as $uniqueMagic) {
                                     ?>
-
                                     <option value="<?= $uniqueMagic['idt_magia'] ?>"><?= $uniqueMagic['nme_magia'] ?></option>
                                     <?php
                                 }
@@ -106,7 +110,8 @@ if ($_SESSION['logado'] != 1) {
                                 <?php
                             } else {
                                 ?>
-                                <input disabled="disabled" type="submit" name="remove-Magic" id="remove-Magic" class="btn btn-secondary"
+                                <input disabled="disabled" type="submit" name="remove-Magic" id="remove-Magic"
+                                       class="btn btn-secondary"
                                        value="Remover">
                                 <?php
                             }
