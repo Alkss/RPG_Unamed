@@ -8,7 +8,7 @@
 ?>
 <form action="Character/../helper/itemManager.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>" method="post">
     <?php
-    if ($charMagic) {
+    if ($charItem) {
         ?>
         <table id="notLeft">
             <thead>
@@ -20,12 +20,12 @@
             </thead>
             <tbody>
             <?php
-            foreach ($charMagic as $singleMagic) {
+            foreach ($charItem as $singleItem) {
                 ?>
                 <tr>
                     <td><input class="usable" type="checkbox" name="magic[]"
-                               value="<?= $singleMagic['idt_magia'] ?>">
-                    <td><?= $singleMagic['nme_magia'] ?></td>
+                               value="<?= $singleItem['idt_item'] ?>">
+                    <td><?= $singleItem['nme_item'] ?></td>
                 </tr>
                 <?php
             }
@@ -46,15 +46,15 @@
                 <option selected="selected" disabled="disabled" hidden="hidden">Selecione uma opção
                 </option>
                 <?php
-                if ($availableMagic) {
-                    foreach ($availableMagic as $uniqueMagic) {
+                if ($availableItem) {
+                    foreach ($availableItem as $uniqueItem) {
                         ?>
-                        <option value="<?= $uniqueMagic['idt_magia'] ?>"><?= $uniqueMagic['nme_magia'] ?></option>
+                        <option value="<?= $uniqueItem['idt_item'] ?>"><?= $uniqueItem['nme_item'] ?></option>
                         <?php
                     }
                 } else {
                     ?>
-                    <option disabled="disabled">Nenhuma magia disponível</option>
+                    <option disabled="disabled">Nenhum item disponível</option>
                     <?php
                 }
                 ?>
@@ -67,7 +67,7 @@
         </div>
         <div class="col-xs-2">
             <?php
-            if ($charMagic) {
+            if ($charItem) {
                 ?>
                 <input type="submit" name="remove-Magic" id="remove-Magic" class="btn btn-secondary"
                        value="Remover">

@@ -55,7 +55,7 @@ if ($_SESSION['logado'] != 1) {
                 <?php
                 $item = new Item();
                 $charItem = $item->selectCharItem($_GET['char']);
-                $allItems = $item->selectAll();
+                $availableItem = $item->selectAvailableItem($_GET['char']);
                 include "item/itemPage.php";
                 ?>
             </div>
