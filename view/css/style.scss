@@ -29,7 +29,7 @@
   display: flex;
 }
 
-#classes-home, #lang-home, #races-home, #alignment-home, #expertise-home,#divinity-home,#atributte-home,#equipment-home,#magic-home,#item-home {
+#classes-home, #lang-home, #races-home, #alignment-home, #expertise-home, #divinity-home, #atributte-home, #equipment-home, #magic-home, #item-home {
   .btn {
     &.btn-primary {
       margin-left: 2.3%;
@@ -104,7 +104,7 @@ h1, h2 {
   }
 }
 
-#table-home, #char-page, #edit-char {
+#table-home, #char-page, #edit-char, #editItens {
   #menu-table {
     border: 1px solid white;
     border-radius: 7px;
@@ -234,7 +234,7 @@ h1, h2 {
   }
 }
 
-#create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character, #table-home, #char-page, #edit-char {
+#create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character, #table-home, #char-page, #edit-char, #editItens {
   background-color: black;
   color: white;
 

@@ -1,62 +1,46 @@
-/* line 1, /var/www/html/RPG_Unamed/view/css/style.scss */
 #index-page {
   background-color: black;
   color: white; }
-  /* line 4, /var/www/html/RPG_Unamed/view/css/style.scss */
   #index-page h1 {
     text-align: center; }
-  /* line 8, /var/www/html/RPG_Unamed/view/css/style.scss */
   #index-page div#form {
     display: flex;
     justify-content: center;
     vertical-align: middle; }
-  /* line 13, /var/www/html/RPG_Unamed/view/css/style.scss */
   #index-page div#login {
     margin-left: 35%; }
-  /* line 16, /var/www/html/RPG_Unamed/view/css/style.scss */
   #index-page div#btns {
     margin-left: 40%; }
-  /* line 20, /var/www/html/RPG_Unamed/view/css/style.scss */
   #index-page .btn-primary {
     margin-top: 10px;
     background-color: darkred;
     border-color: #ab0000; }
 
-/* line 28, /var/www/html/RPG_Unamed/view/css/style.scss */
 .container:not(in #index-page) {
   display: flex; }
 
-/* line 34, /var/www/html/RPG_Unamed/view/css/style.scss */
 #classes-home .btn.btn-primary, #lang-home .btn.btn-primary, #races-home .btn.btn-primary, #alignment-home .btn.btn-primary, #expertise-home .btn.btn-primary, #divinity-home .btn.btn-primary, #atributte-home .btn.btn-primary, #equipment-home .btn.btn-primary, #magic-home .btn.btn-primary, #item-home .btn.btn-primary {
   margin-left: 2.3%; }
 
-/* line 40, /var/www/html/RPG_Unamed/view/css/style.scss */
 h1, h2 {
   text-align: center; }
 
-/* line 44, /var/www/html/RPG_Unamed/view/css/style.scss */
 #showTables {
   background-color: black; }
-  /* line 46, /var/www/html/RPG_Unamed/view/css/style.scss */
   #showTables th {
     font-size: 18px;
     text-align: center;
     background-color: #340a0f; }
-  /* line 51, /var/www/html/RPG_Unamed/view/css/style.scss */
   #showTables div {
     padding-top: 2%;
     color: white; }
-    /* line 54, /var/www/html/RPG_Unamed/view/css/style.scss */
     #showTables div td {
       background-color: #580c17;
       color: white; }
-      /* line 57, /var/www/html/RPG_Unamed/view/css/style.scss */
       #showTables div td:hover {
         background-color: black; }
-    /* line 61, /var/www/html/RPG_Unamed/view/css/style.scss */
     #showTables div a {
       color: white; }
-  /* line 66, /var/www/html/RPG_Unamed/view/css/style.scss */
   #showTables #emptyAlert {
     display: flex;
     width: 100%;
@@ -65,54 +49,39 @@ h1, h2 {
     text-align: center;
     background-color: #580c17; }
 
-/* line 79, /var/www/html/RPG_Unamed/view/css/style.scss */
 #home-page-user .btn-primary {
   position: absolute;
   transform: translate(-6em, -2em); }
-
-/* line 84, /var/www/html/RPG_Unamed/view/css/style.scss */
 #home-page-user .container {
   position: relative; }
-
-/* line 88, /var/www/html/RPG_Unamed/view/css/style.scss */
 #home-page-user #sucessTable {
   display: flex;
   justify-content: center;
   margin: auto;
   margin-bottom: 2%; }
-
-/* line 94, /var/www/html/RPG_Unamed/view/css/style.scss */
 #home-page-user h3 {
   display: flex;
   margin: auto; }
-
-/* line 99, /var/www/html/RPG_Unamed/view/css/style.scss */
 #home-page-user #tableIframe {
   display: flex;
   width: 100%;
   height: 20em;
   margin-bottom: 10px; }
 
-/* line 108, /var/www/html/RPG_Unamed/view/css/style.scss */
-#table-home #menu-table, #char-page #menu-table, #edit-char #menu-table {
+#table-home #menu-table, #char-page #menu-table, #edit-char #menu-table, #editItens #menu-table {
   border: 1px solid white;
   border-radius: 7px;
   min-width: 15em;
   background-color: black; }
-  /* line 113, /var/www/html/RPG_Unamed/view/css/style.scss */
-  #table-home #menu-table a, #char-page #menu-table a, #edit-char #menu-table a {
+  #table-home #menu-table a, #char-page #menu-table a, #edit-char #menu-table a, #editItens #menu-table a {
     color: white; }
-    /* line 115, /var/www/html/RPG_Unamed/view/css/style.scss */
-    #table-home #menu-table a:not(#homeBtn), #char-page #menu-table a:not(#homeBtn), #edit-char #menu-table a:not(#homeBtn) {
+    #table-home #menu-table a:not(#homeBtn), #char-page #menu-table a:not(#homeBtn), #edit-char #menu-table a:not(#homeBtn), #editItens #menu-table a:not(#homeBtn) {
       margin-left: 15px; }
-    /* line 118, /var/www/html/RPG_Unamed/view/css/style.scss */
-    #table-home #menu-table a:hover, #char-page #menu-table a:hover, #edit-char #menu-table a:hover {
+    #table-home #menu-table a:hover, #char-page #menu-table a:hover, #edit-char #menu-table a:hover, #editItens #menu-table a:hover {
       color: green; }
-    /* line 121, /var/www/html/RPG_Unamed/view/css/style.scss */
-    #table-home #menu-table a p, #char-page #menu-table a p, #edit-char #menu-table a p {
+    #table-home #menu-table a p, #char-page #menu-table a p, #edit-char #menu-table a p, #editItens #menu-table a p {
       color: white; }
-  /* line 125, /var/www/html/RPG_Unamed/view/css/style.scss */
-  #table-home #menu-table .menuTitle, #char-page #menu-table .menuTitle, #edit-char #menu-table .menuTitle {
+  #table-home #menu-table .menuTitle, #char-page #menu-table .menuTitle, #edit-char #menu-table .menuTitle, #editItens #menu-table .menuTitle {
     padding-right: 0 !important;
     padding-left: 0 !important;
     background-color: black;
@@ -121,51 +90,36 @@ h1, h2 {
     width: 31%;
     text-align: center; }
 
-/* line 137, /var/www/html/RPG_Unamed/view/css/style.scss */
 #searchTables {
   background-color: black; }
-  /* line 139, /var/www/html/RPG_Unamed/view/css/style.scss */
   #searchTables input {
     background-color: black;
     color: white; }
-  /* line 143, /var/www/html/RPG_Unamed/view/css/style.scss */
   #searchTables th {
     text-align: center !important;
     background-color: #340a0f;
     color: white; }
-  /* line 148, /var/www/html/RPG_Unamed/view/css/style.scss */
   #searchTables table {
     background-color: #580c17; }
-  /* line 152, /var/www/html/RPG_Unamed/view/css/style.scss */
   #searchTables td:hover {
     background-color: black; }
-  /* line 156, /var/www/html/RPG_Unamed/view/css/style.scss */
   #searchTables a {
     color: white; }
 
-/* line 162, /var/www/html/RPG_Unamed/view/css/style.scss */
 #edit-char h6 {
   text-align: center;
   font-size: 1.6em; }
-
-/* line 166, /var/www/html/RPG_Unamed/view/css/style.scss */
 #edit-char input {
   color: black; }
-
-/* line 169, /var/www/html/RPG_Unamed/view/css/style.scss */
 #edit-char textarea {
   color: black; }
 
-/* line 176, /var/www/html/RPG_Unamed/view/css/style.scss */
 #char-page #righ-side-table, #edit-char #righ-side-table {
   text-align: center; }
-  /* line 177, /var/www/html/RPG_Unamed/view/css/style.scss */
   #char-page #righ-side-table th, #edit-char #righ-side-table th {
     text-align: center; }
-  /* line 180, /var/www/html/RPG_Unamed/view/css/style.scss */
   #char-page #righ-side-table table, #edit-char #righ-side-table table {
     margin-left: 15%; }
-  /* line 184, /var/www/html/RPG_Unamed/view/css/style.scss */
   #char-page #righ-side-table h5, #edit-char #righ-side-table h5 {
     border-top-left-radius: 4px;
     border-top: 1px solid;
@@ -175,116 +129,84 @@ h1, h2 {
     border-color: darkred;
     color: darkred;
     font-size: 1.6em; }
-  /* line 194, /var/www/html/RPG_Unamed/view/css/style.scss */
   #char-page #righ-side-table h6, #edit-char #righ-side-table h6 {
     font-size: 1.3em; }
-
-/* line 199, /var/www/html/RPG_Unamed/view/css/style.scss */
 #char-page #histHead, #edit-char #histHead {
   text-align: center; }
-
-/* line 202, /var/www/html/RPG_Unamed/view/css/style.scss */
 #char-page #histBody, #edit-char #histBody {
   text-align: justify; }
-
-/* line 206, /var/www/html/RPG_Unamed/view/css/style.scss */
 #char-page td, #edit-char td {
   padding: 15px;
   padding-top: 0; }
-
-/* line 211, /var/www/html/RPG_Unamed/view/css/style.scss */
 #char-page th, #edit-char th {
   color: darkred;
   padding: 15px;
   padding-bottom: 0; }
-
-/* line 217, /var/www/html/RPG_Unamed/view/css/style.scss */
 #char-page #char-img, #edit-char #char-img {
   text-align: right; }
-
-/* line 220, /var/www/html/RPG_Unamed/view/css/style.scss */
 #char-page img, #edit-char img {
   max-width: 250px;
   max-height: 250px;
   text-align: right; }
-
-/* line 226, /var/www/html/RPG_Unamed/view/css/style.scss */
 #char-page .btn.btn-primary, #edit-char .btn.btn-primary {
   display: table-caption;
   margin-top: 4px; }
-  /* line 230, /var/www/html/RPG_Unamed/view/css/style.scss */
   #char-page .btn.btn-primary:hover, #edit-char .btn.btn-primary:hover {
     background-color: #5d0000; }
 
-/* line 237, /var/www/html/RPG_Unamed/view/css/style.scss */
-#create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character, #table-home, #char-page, #edit-char {
+#create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character, #table-home, #char-page, #edit-char, #editItens {
   background-color: black;
   color: white; }
-  /* line 242, /var/www/html/RPG_Unamed/view/css/style.scss */
-  #create-new-user div#recent-chars, #home-page-user div#recent-chars, #create-new-table div#recent-chars, #show-tables-user div#recent-chars, #create-new-character div#recent-chars, #table-home div#recent-chars, #char-page div#recent-chars, #edit-char div#recent-chars {
+  #create-new-user div#recent-chars, #home-page-user div#recent-chars, #create-new-table div#recent-chars, #show-tables-user div#recent-chars, #create-new-character div#recent-chars, #table-home div#recent-chars, #char-page div#recent-chars, #edit-char div#recent-chars, #editItens div#recent-chars {
     display: flex;
     justify-content: center; }
-  /* line 246, /var/www/html/RPG_Unamed/view/css/style.scss */
-  #create-new-user div#recent-tables, #home-page-user div#recent-tables, #create-new-table div#recent-tables, #show-tables-user div#recent-tables, #create-new-character div#recent-tables, #table-home div#recent-tables, #char-page div#recent-tables, #edit-char div#recent-tables {
+  #create-new-user div#recent-tables, #home-page-user div#recent-tables, #create-new-table div#recent-tables, #show-tables-user div#recent-tables, #create-new-character div#recent-tables, #table-home div#recent-tables, #char-page div#recent-tables, #edit-char div#recent-tables, #editItens div#recent-tables {
     display: flex;
     justify-content: center; }
-  /* line 250, /var/www/html/RPG_Unamed/view/css/style.scss */
-  #create-new-user div#show-tables, #home-page-user div#show-tables, #create-new-table div#show-tables, #show-tables-user div#show-tables, #create-new-character div#show-tables, #table-home div#show-tables, #char-page div#show-tables, #edit-char div#show-tables {
+  #create-new-user div#show-tables, #home-page-user div#show-tables, #create-new-table div#show-tables, #show-tables-user div#show-tables, #create-new-character div#show-tables, #table-home div#show-tables, #char-page div#show-tables, #edit-char div#show-tables, #editItens div#show-tables {
     display: flex;
     justify-content: center; }
-  /* line 256, /var/www/html/RPG_Unamed/view/css/style.scss */
-  #create-new-user select, #home-page-user select, #create-new-table select, #show-tables-user select, #create-new-character select, #table-home select, #char-page select, #edit-char select {
+  #create-new-user select, #home-page-user select, #create-new-table select, #show-tables-user select, #create-new-character select, #table-home select, #char-page select, #edit-char select, #editItens select {
     color: black;
     display: flex;
     justify-content: center;
     vertical-align: middle;
     height: 34px;
     width: 100%; }
-  /* line 265, /var/www/html/RPG_Unamed/view/css/style.scss */
-  #create-new-user .alert.alert-success, #home-page-user .alert.alert-success, #create-new-table .alert.alert-success, #show-tables-user .alert.alert-success, #create-new-character .alert.alert-success, #table-home .alert.alert-success, #char-page .alert.alert-success, #edit-char .alert.alert-success {
+  #create-new-user .alert.alert-success, #home-page-user .alert.alert-success, #create-new-table .alert.alert-success, #show-tables-user .alert.alert-success, #create-new-character .alert.alert-success, #table-home .alert.alert-success, #char-page .alert.alert-success, #edit-char .alert.alert-success, #editItens .alert.alert-success {
     color: #ffffff;
     background-color: #5d020e; }
-  /* line 271, /var/www/html/RPG_Unamed/view/css/style.scss */
-  #create-new-user h1, #home-page-user h1, #create-new-table h1, #show-tables-user h1, #create-new-character h1, #table-home h1, #char-page h1, #edit-char h1 {
+  #create-new-user h1, #home-page-user h1, #create-new-table h1, #show-tables-user h1, #create-new-character h1, #table-home h1, #char-page h1, #edit-char h1, #editItens h1 {
     text-align: center; }
-  /* line 274, /var/www/html/RPG_Unamed/view/css/style.scss */
-  #create-new-user h2, #home-page-user h2, #create-new-table h2, #show-tables-user h2, #create-new-character h2, #table-home h2, #char-page h2, #edit-char h2 {
+  #create-new-user h2, #home-page-user h2, #create-new-table h2, #show-tables-user h2, #create-new-character h2, #table-home h2, #char-page h2, #edit-char h2, #editItens h2 {
     color: darkred;
     text-align: center; }
-  /* line 278, /var/www/html/RPG_Unamed/view/css/style.scss */
-  #create-new-user .btn-primary, #home-page-user .btn-primary, #create-new-table .btn-primary, #show-tables-user .btn-primary, #create-new-character .btn-primary, #table-home .btn-primary, #char-page .btn-primary, #edit-char .btn-primary {
+  #create-new-user .btn-primary, #home-page-user .btn-primary, #create-new-table .btn-primary, #show-tables-user .btn-primary, #create-new-character .btn-primary, #table-home .btn-primary, #char-page .btn-primary, #edit-char .btn-primary, #editItens .btn-primary {
     background-color: darkred;
     border-color: #ab0000;
     margin: auto;
     display: flex; }
-  /* line 285, /var/www/html/RPG_Unamed/view/css/style.scss */
-  #create-new-user div#form, #create-new-user div#menu, #home-page-user div#form, #home-page-user div#menu, #create-new-table div#form, #create-new-table div#menu, #show-tables-user div#form, #show-tables-user div#menu, #create-new-character div#form, #create-new-character div#menu, #table-home div#form, #table-home div#menu, #char-page div#form, #char-page div#menu, #edit-char div#form, #edit-char div#menu {
+  #create-new-user div#form, #create-new-user div#menu, #home-page-user div#form, #home-page-user div#menu, #create-new-table div#form, #create-new-table div#menu, #show-tables-user div#form, #show-tables-user div#menu, #create-new-character div#form, #create-new-character div#menu, #table-home div#form, #table-home div#menu, #char-page div#form, #char-page div#menu, #edit-char div#form, #edit-char div#menu, #editItens div#form, #editItens div#menu {
     display: flex;
     vertical-align: middle;
     justify-content: center;
     align-items: center; }
-  /* line 292, /var/www/html/RPG_Unamed/view/css/style.scss */
-  #create-new-user #create-new-table, #home-page-user #create-new-table, #create-new-table #create-new-table, #show-tables-user #create-new-table, #create-new-character #create-new-table, #table-home #create-new-table, #char-page #create-new-table, #edit-char #create-new-table {
+  #create-new-user #create-new-table, #home-page-user #create-new-table, #create-new-table #create-new-table, #show-tables-user #create-new-table, #create-new-character #create-new-table, #table-home #create-new-table, #char-page #create-new-table, #edit-char #create-new-table, #editItens #create-new-table {
     min-width: 60%; }
-    /* line 295, /var/www/html/RPG_Unamed/view/css/style.scss */
-    #create-new-user #create-new-table #name-label-post:before, #home-page-user #create-new-table #name-label-post:before, #create-new-table #create-new-table #name-label-post:before, #show-tables-user #create-new-table #name-label-post:before, #create-new-character #create-new-table #name-label-post:before, #table-home #create-new-table #name-label-post:before, #char-page #create-new-table #name-label-post:before, #edit-char #create-new-table #name-label-post:before {
+    #create-new-user #create-new-table #name-label-post:before, #home-page-user #create-new-table #name-label-post:before, #create-new-table #create-new-table #name-label-post:before, #show-tables-user #create-new-table #name-label-post:before, #create-new-character #create-new-table #name-label-post:before, #table-home #create-new-table #name-label-post:before, #char-page #create-new-table #name-label-post:before, #edit-char #create-new-table #name-label-post:before, #editItens #create-new-table #name-label-post:before {
       font-family: FontAwesome;
       content: "\f071";
       color: red; }
-    /* line 301, /var/www/html/RPG_Unamed/view/css/style.scss */
-    #create-new-user #create-new-table #name-post, #home-page-user #create-new-table #name-post, #create-new-table #create-new-table #name-post, #show-tables-user #create-new-table #name-post, #create-new-character #create-new-table #name-post, #table-home #create-new-table #name-post, #char-page #create-new-table #name-post, #edit-char #create-new-table #name-post {
+    #create-new-user #create-new-table #name-post, #home-page-user #create-new-table #name-post, #create-new-table #create-new-table #name-post, #show-tables-user #create-new-table #name-post, #create-new-character #create-new-table #name-post, #table-home #create-new-table #name-post, #char-page #create-new-table #name-post, #edit-char #create-new-table #name-post, #editItens #create-new-table #name-post {
       color: red; }
-  /* line 305, /var/www/html/RPG_Unamed/view/css/style.scss */
-  #create-new-user #nPlayers, #home-page-user #nPlayers, #create-new-table #nPlayers, #show-tables-user #nPlayers, #create-new-character #nPlayers, #table-home #nPlayers, #char-page #nPlayers, #edit-char #nPlayers {
+  #create-new-user #nPlayers, #home-page-user #nPlayers, #create-new-table #nPlayers, #show-tables-user #nPlayers, #create-new-character #nPlayers, #table-home #nPlayers, #char-page #nPlayers, #edit-char #nPlayers, #editItens #nPlayers {
     max-width: 20%; }
 
-/* line 310, /var/www/html/RPG_Unamed/view/css/style.scss */
 tbody {
   max-width: 100%;
   overflow: auto;
   max-height: 500px; }
 
-/* line 316, /var/www/html/RPG_Unamed/view/css/style.scss */
 #menu-adm {
   border: 1px solid #ff0000;
   background: rgba(255, 183, 5, 0.18);
@@ -292,10 +214,8 @@ tbody {
   margin-left: 10px;
   position: relative;
   max-width: 20em; }
-  /* line 323, /var/www/html/RPG_Unamed/view/css/style.scss */
   #menu-adm a {
     color: #000000; }
-  /* line 326, /var/www/html/RPG_Unamed/view/css/style.scss */
   #menu-adm .menuTitle {
     border: 1px solid rgba(247, 111, 111, 0.19);
     text-align: center;
@@ -309,11 +229,9 @@ tbody {
     display: flex;
     justify-content: center;
     transform: translate(0%, -45%); }
-  /* line 340, /var/www/html/RPG_Unamed/view/css/style.scss */
   #menu-adm p:nth-child(2) {
     margin-top: 20px; }
 
-/* line 347, /var/www/html/RPG_Unamed/view/css/style.scss */
 #create-new-user-adm #create-new-user-adm .row {
   margin: auto; }
 
