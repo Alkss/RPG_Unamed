@@ -40,7 +40,7 @@ if ($_SESSION['logado'] != 1) {
         <div class="row">
             <div class="col-xs-6">
                 <h6>Magias</h6>
-                <form action="magicManager.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>" method="post">
+                <form action="helper/magicManager.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>" method="post">
                     <?php
                     if ($charMagic) {
                         ?>

@@ -53,4 +53,11 @@ class Magic
         return true;
     }
     
+    public function removeMagicFromChar($codChar, $codMagic)
+    {
+        $stringSQL = "DELETE FROM ta_personagem_magia WHERE cod_personagem IN(" . $this->db->scapeCont($codChar) . ") AND cod_magia IN(" . $this->db->scapeCont($codMagic).")";
+        $this->db->executeQuery($stringSQL);
+        return true;
+    }
+    
 }
