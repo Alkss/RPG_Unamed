@@ -19,12 +19,6 @@ if ($_SESSION['logado'] != 1) {
     $allMagic = $magic->selectAll();
     $availableMagic = $magic->selectNotInChar($_GET['char']);
     
-    
-    
-    var_dump($charMagic);
-    var_dump($allMagic);
-    var_dump($availableMagic);
-   
     ?>
     <!doctype html>
     <html lang="en">
@@ -36,6 +30,14 @@ if ($_SESSION['logado'] != 1) {
         <title>Editar Pertences</title>
     </head>
     <body id="editItens">
+    <?php
+    if(isset($_GET['error']) && $_GET['error']==1){
+        echo "<script type='text/javascript'>";
+        echo "alert('Selecione alguma magia');";
+        echo "</script>";
+    }
+    ?>
+    
     <h1><?= RPG_NAME ?></h1>
     <h2>Editar pertences de <span style="color:white"><?= $selectedChar[0]['nme_personagem'] ?></span></h2>
     <?php

@@ -8,7 +8,6 @@
 require('../../../../config.php');
 include('../../../../header.php');
 
-var_dump($_POST);
 if ($_SESSION['logado'] != 1) {
     header('location:' . URL . '/view/index.php');
 } else {
@@ -34,6 +33,6 @@ if ($_SESSION['logado'] != 1) {
             echo "</script>";
         }
     } else {
-        //TODO: mostrar a mensagem de erro: "selecione pelo menos uma magia".
+        header("Location:../editItens.php?idt=" . $_GET['idt'] . "&char=" . $_GET['char'] . "&error=1");
     }
 }
