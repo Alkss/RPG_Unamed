@@ -109,10 +109,15 @@ h1, h2 {
 #editItens table {
   margin: 0 auto;
   margin-bottom: 10px; }
-#editItens tr, #editItens td {
-  font-size: 1.1em;
-  padding-left: 20px;
-  padding-right: 20px; }
+  #editItens table thead td {
+    font-size: 1.15em;
+    color: darkred; }
+  #editItens table a {
+    color: darkred; }
+  #editItens table tr, #editItens table td {
+    font-size: 1.1em;
+    padding-left: 20px;
+    padding-right: 20px; }
 #editItens .btn.btn-primary {
   color: white; }
   #editItens .btn.btn-primary:hover {

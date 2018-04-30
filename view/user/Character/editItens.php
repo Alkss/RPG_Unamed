@@ -13,12 +13,6 @@ if ($_SESSION['logado'] != 1) {
 } else {
     $char = new Character();
     $selectedChar = $char->selectAll("idt_personagem = " . $_GET['char']);
-    
-    $magic = new Magic();
-    $charMagic = $magic->selectCharMagic("idt_personagem = " . $_GET['char']);
-    $allMagic = $magic->selectAll();
-    $availableMagic = $magic->selectNotInChar($_GET['char']);
-    
     ?>
     <!doctype html>
     <html lang="en">
@@ -47,84 +41,20 @@ if ($_SESSION['logado'] != 1) {
         <div class="row">
             <div class="col-xs-6">
                 <h6>Magias</h6>
-                <form action="helper/magicManager.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>" method="post">
-                    <?php
-                    if ($charMagic) {
-                        ?>
-                        <table>
-                            <thead>
-                            <tr>
-                                <td><input type="checkbox" onchange="checkAll(this)" name="chk[]"/></td>
-                                <td>Magia</td>
-                                <td>Valor Base</td>
-                                <td>Tipo</td>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <?php
-                            foreach ($charMagic as $singleMagic) {
-                                ?>
-                                <tr>
-                                    <td><input type="checkbox" name="magic[]"
-                                               value="<?= $singleMagic['idt_magia'] ?>">
-                                    <td><?= $singleMagic['nme_magia'] ?></td>
-                                    <td><?= $singleMagic['mod_base_magia'] ?></td>
-                                    <td><?= $singleMagic['tpo_magia'] ?></td>
-                                </tr>
-                                <?php
-                            }
-                            ?>
-                            </tbody>
-                        </table>
-                        <?php
-                        
-                    } else {
-                        ?>
-                        <h6><span style="color: darkgray;">--Sem magias--</span></h6>
-                        <?php
-                    }
-                    ?>
-                    <div class="row">
-                        <div class="col-xs-5 col-xs-offset-2">
-                            <select id="new-Magic" name="new-Magic" class="form-control" required="required">
-                                <option selected disabled="disabled" hidden="hidden">Selecione uma opção
-                                </option>
-                                <?php
-                                foreach ($availableMagic as $uniqueMagic) {
-                                    ?>
-                                    <option value="<?= $uniqueMagic['idt_magia'] ?>"><?= $uniqueMagic['nme_magia'] ?></option>
-                                    <?php
-                                }
-                                ?>
-                            </select>
-                        </div>
-                        <div class="col-xs-2">
-                            <input type="submit" class="btn btn-primary" value="Adicionar" id="add-Magic"
-                                   name="add-Magic">
-
-                        </div>
-                        <div class="col-xs-2">
-                            <?php
-                            if ($charMagic) {
-                                ?>
-                                <input type="submit" name="remove-Magic" id="remove-Magic" class="btn btn-secondary"
-                                       value="Remover">
-                                <?php
-                            } else {
-                                ?>
-                                <input disabled="disabled" type="submit" name="remove-Magic" id="remove-Magic"
-                                       class="btn btn-secondary"
-                                       value="Remover">
-                                <?php
-                            }
-                            ?>
-                        </div>
-                    </div>
-                </form>
+                <?php
+                $magic = new Magic();
+                $charMagic = $magic->selectCharMagic("idt_personagem = " . $_GET['char']);
+                $allMagic = $magic->selectAll();
+                $availableMagic = $magic->selectNotInChar($_GET['char']);
+                include "magic/magicPage.php";
+                ?>
             </div>
 
             <div class="col-xs-6">
                 <h6>Utilizaveis</h6>
+                <?php
+                include "usable/usablePage.php";
+                ?>
             </div>
         </div>
         <div class="row">
@@ -150,8 +80,8 @@ if ($_SESSION['logado'] != 1) {
     </div>
     </body>
     <script>
-        function checkAll(ele) {
-            var checkboxes = document.getElementsByTagName('input');
+        function checkAll(ele,classe) {
+            var checkboxes = document.getElementsByClassName(classe);
             if (ele.checked) {
                 for (var i = 0; i < checkboxes.length; i++) {
                     if (checkboxes[i].type == 'checkbox') {
