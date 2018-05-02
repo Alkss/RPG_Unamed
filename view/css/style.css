@@ -68,6 +68,10 @@ h1, h2 {
   height: 20em;
   margin-bottom: 10px; }
 
+#table-home #customModal .modal-header, #char-page #customModal .modal-header, #edit-char #customModal .modal-header, #editItens #customModal .modal-header {
+  background-color: darkred; }
+#table-home #customModal .modal-content, #char-page #customModal .modal-content, #edit-char #customModal .modal-content, #editItens #customModal .modal-content {
+  background-color: #525252; }
 #table-home #menu-table, #char-page #menu-table, #edit-char #menu-table, #editItens #menu-table {
   border: 1px solid white;
   border-radius: 7px;
@@ -81,6 +85,8 @@ h1, h2 {
       color: green; }
     #table-home #menu-table a p, #char-page #menu-table a p, #edit-char #menu-table a p, #editItens #menu-table a p {
       color: white; }
+    #table-home #menu-table a#modal-custom, #char-page #menu-table a#modal-custom, #edit-char #menu-table a#modal-custom, #editItens #menu-table a#modal-custom {
+      cursor: pointer; }
   #table-home #menu-table .menuTitle, #char-page #menu-table .menuTitle, #edit-char #menu-table .menuTitle, #editItens #menu-table .menuTitle {
     padding-right: 0 !important;
     padding-left: 0 !important;

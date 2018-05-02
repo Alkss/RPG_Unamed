@@ -6,12 +6,12 @@
  * Time: 13:26
  */
 ?>
-<form method="post" action="Character/../helper/customCreator.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>">
+<form method="post" action="Character/../helper/customManager.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>">
     <div class="row">
         <div class="col-xs-6">
             <label for="new-custom-name">Nome do Pertence</label>
             <input required="required" type="text" class="form-control" name="new-custom-name" id="new-custom-name"
-                   placeholder="Digite o nome do atributo">
+                   placeholder="Digite o nome do pertence">
         </div>
         <div class="col-xs-6">
             <label for="new-custom-type">Tipo de Pertence</label>
@@ -31,7 +31,7 @@
         </div>
         <div class="col-xs-6">
             <br>
-            <input type="submit" value="Criar um personalizado" name="add-new-Custom" id="add-new-Custom"
+            <input type="submit" value="Criar um personalizado" name="add-Custom" id="add-Custom"
                    class="btn btn-primary">
         </div>
     </div>

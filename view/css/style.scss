@@ -105,6 +105,14 @@ h1, h2 {
 }
 
 #table-home, #char-page, #edit-char, #editItens {
+  #customModal {
+    .modal-header{
+      background-color: darkred;
+    }
+    .modal-content {
+      background-color: #525252;
+    }
+  }
   #menu-table {
     border: 1px solid white;
     border-radius: 7px;
@@ -121,7 +129,11 @@ h1, h2 {
       p {
         color: white;
       }
+      &#modal-custom {
+        cursor: pointer;
+      }
     }
+
     .menuTitle {
       padding-right: 0 !important;
       padding-left: 0 !important;
@@ -160,10 +172,10 @@ h1, h2 {
 
 #editItens {
 
-  #attributeInput,#attributeHead{
+  #attributeInput, #attributeHead {
     width: 6em;
     height: 1em;
-    input{
+    input {
       margin-bottom: 2px;
     }
 

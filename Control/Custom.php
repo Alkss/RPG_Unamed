@@ -19,11 +19,13 @@ class Custom
         $stringSQL = "INSERT INTO tb_custom(nme_custom, dsc_custom, tpo_custom, cod_sala) VALUES('" . $this->db->scapeCont($nme) . "','" . $this->db->scapeCont($desc) . "','" . $this->db->scapeCont($type) . "', '" . $this->db->scapeCont($idTable) . "');";
         $idCustom = $this->db->insert($stringSQL);
         
-        if (!$char) {
-            $char = null;
+        if ($char == null) {
+            $stringSQL = "INSERT INTO ta_personalizavel(cod_custom, cod_personagem) VALUES(" . $this->db->scapeCont($idCustom) . ", null)";
+            $this->db->insert($stringSQL);
+        } else {
+            $stringSQL = "INSERT INTO ta_personalizavel(cod_custom, cod_personagem) VALUES(" . $this->db->scapeCont($idCustom) . ",'" . $this->db->scapeCont($char) . "')";
+            $this->db->insert($stringSQL);
         }
-        $stringSQL = "INSERT INTO ta_personalizavel(cod_custom, cod_personagem) VALUES(" . $this->db->scapeCont($idCustom) . ",'" . $this->db->scapeCont($char) . "')";
-        $this->db->insert($stringSQL);
         return true;
     }
     
@@ -33,9 +35,9 @@ class Custom
         return $this->db->search($stringSQL);
     }
     
-    public function selectNotInChar($codChar)
+    public function selectNotInChar($codChar, $codTable)
     {
-        $stringSQL = "SELECT * FROM tb_custom WHERE idt_custom NOT IN (SELECT cod_custom FROM ta_personalizavel WHERE cod_personagem=" . $this->db->scapeCont($codChar) . ")";
+        $stringSQL = "SELECT * FROM tb_custom WHERE cod_sala=" . $this->db->scapeCont($codTable) . " AND idt_custom NOT IN (SELECT cod_custom FROM ta_personalizavel WHERE cod_personagem=" . $this->db->scapeCont($codChar) . ")";
         return $this->db->search($stringSQL);
         
     }

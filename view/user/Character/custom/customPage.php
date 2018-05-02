@@ -27,8 +27,8 @@
                 <tr>
                     <td><input class="custom" type="checkbox" name="custom[]"
                                value="<?= $singleCustom['idt_custom'] ?>"></td>
-                    <td><?= $singleCustom['nme_custom'] ?></td>
-                    <td><?= $singleCustom['dsc_custom'] ?></td>
+                    <td style="width: 35%"><?= $singleCustom['nme_custom'] ?></td>
+                    <td style="width: 40%; padding-left: 15px"><?= $singleCustom['dsc_custom'] ?></td>
                     <td><?php
                         if ($singleCustom['tpo_custom'] == "M") {
                             $customType = "Magia";

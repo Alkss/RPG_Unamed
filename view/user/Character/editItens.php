@@ -87,7 +87,7 @@ if ($_SESSION['logado'] != 1) {
                 <?php
                 $custom = new Custom();
                 $charCustom = $custom->selectCharCustom($_GET['idt'], $_GET['char']);
-                $availableCustom = $custom->selectNotInChar($_GET['char']);
+                $availableCustom = $custom->selectNotInChar($_GET['char'], $_GET['idt']);
                 include "custom/customPage.php";
                 ?>
             </div>

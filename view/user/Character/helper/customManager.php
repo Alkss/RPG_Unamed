@@ -34,6 +34,22 @@ if ($_SESSION['logado'] != 1) {
             echo "</script>";
         }
         //Redireciona caso não seja selecionada nenhuma opção.
+    } else if (isset($_POST['add-new-Custom']) && $_POST['add-new-Custom'] == "Criar um personalizado") {
+        $customClass = new Custom();
+        if ($customClass->insertCustom($_GET['idt'], $_POST['new-custom-name'], $_POST['new-custom-desc'], $_POST['new-custom-type'], $_GET['char'])) {
+            echo "<script type='text/javascript'>";
+            echo "alert('Operação realizada com sucesso');";
+            echo "window.location='../editItens.php?idt=" . $_GET['idt'] . "&char=" . $_GET['char'] . "'";
+            echo "</script>";
+        }
+    } else if (isset($_POST['add-Custom']) && $_POST['add-Custom'] == "Criar um personalizado") {
+        $customClass = new Custom();
+        if ($customClass->insertCustom($_GET['idt'], $_POST['new-custom-name'], $_POST['new-custom-desc'], $_POST['new-custom-type'], null)) {
+            echo "<script type='text/javascript'>";
+            echo "alert('Operação realizada com sucesso');";
+            echo "window.location='../editItens.php?idt=" . $_GET['idt'] . "&char=" . $_GET['char'] . "'";
+            echo "</script>";
+        }
     } else {
         header("Location:../editItens.php?idt=" . $_GET['idt'] . "&char=" . $_GET['char'] . "&error=1");
     }
