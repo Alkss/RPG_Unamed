@@ -26,7 +26,7 @@
                 ?>
                 <tr>
                     <td><input class="equip" type="checkbox" name="equip[]"
-                               value="<?= $singleEquip['idt_equipamento'] ?>">
+                               value="<?= $singleEquip['idt_equipamento'] ?>"></td>
                     <td><?= $singleEquip['nme_equipamento'] ?></td>
                     <td><?= $singleEquip['tpo_equipamento'] ?></td>
                     <td><?= $singleEquip['mod_base_equipamento'] ?></td>

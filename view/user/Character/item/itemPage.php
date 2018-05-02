@@ -24,7 +24,7 @@
                 ?>
                 <tr>
                     <td><input class="usable" type="checkbox" name="usable[]"
-                               value="<?= $singleItem['idt_item'] ?>">
+                               value="<?= $singleItem['idt_item'] ?>"></td>
                     <td><?= $singleItem['nme_item'] ?></td>
                 </tr>
                 <?php

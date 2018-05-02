@@ -73,6 +73,12 @@ if ($_SESSION['logado'] != 1) {
 
             <div class="col-xs-6">
                 <h6>Atributos</h6>
+                <?php
+                $attr = new Attribute();
+                $charAttr = $attr->selectCharAttribute($_GET['char']);
+                $availableAttr = $attr->selectAvailableAttribute($_GET['char']);
+                include "attribute/attrPage.php";
+                ?>
             </div>
         </div>
         <div class="row">

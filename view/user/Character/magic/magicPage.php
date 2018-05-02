@@ -26,7 +26,7 @@
                 ?>
                 <tr>
                     <td><input class="magic" type="checkbox" name="magic[]"
-                               value="<?= $singleMagic['idt_magia'] ?>">
+                               value="<?= $singleMagic['idt_magia'] ?>"></td>
                     <td><?= $singleMagic['nme_magia'] ?></td>
                     <td><?= $singleMagic['mod_base_magia'] ?></td>
                     <td><?= $singleMagic['tpo_magia'] ?></td>

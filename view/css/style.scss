@@ -160,6 +160,15 @@ h1, h2 {
 
 #editItens {
 
+  #attributeInput,#attributeHead{
+    width: 6em;
+    height: 1em;
+    input{
+      margin-bottom: 2px;
+    }
+
+  }
+
   table {
     margin: 0 auto;
     margin-bottom: 10px;
