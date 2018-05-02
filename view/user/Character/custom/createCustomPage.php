@@ -31,7 +31,7 @@
         </div>
         <div class="col-xs-6">
             <br>
-            <input type="submit" value="Criar um personalizado" name="add-Custom" id="add-Custom"
+            <input type="submit" value="Criar um personalizado" name="add-new-Custom" id="add-new-Custom"
                    class="btn btn-primary">
         </div>
     </div>
