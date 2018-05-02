@@ -16,7 +16,7 @@
                 <td><input type="checkbox" onchange="checkAll(this,'attr')" name="chk[]"/>
                 </td>
                 <td>Nome</td>
-                <td id="attributeHead">Valor Base</td>
+                <td id="attributeHead">Valor</td>
             </tr>
             </thead>
             <tbody>

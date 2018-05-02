@@ -84,7 +84,12 @@ if ($_SESSION['logado'] != 1) {
         <div class="row">
             <div class="col-xs-6">
                 <h6>Personalizados</h6>
-
+                <?php
+                $custom = new Custom();
+                $charCustom = $custom->selectCharCustom($_GET['idt'], $_GET['char']);
+                $availableCustom = $custom->selectNotInChar($_GET['char']);
+                include "custom/customPage.php";
+                ?>
             </div>
 
             <div class="col-xs-6">
