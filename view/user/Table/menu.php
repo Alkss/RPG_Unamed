@@ -64,7 +64,7 @@ $chars = $db->search("SELECT * FROM ta_perfil_sala JOIN tb_sala ON cod_sala=idt_
                 </div>
                 <div class="modal-body">
                     <form method="post"
-                          action="Character/../helper/customManager.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>">
+                          action="/RPG_Unamed/view/user/Character/helper/customManager.php?idt=<?= $_GET['idt'] ?>">
                         <div class="row">
                             <div class="col-xs-6">
                                 <label for="new-custom-name">Nome do Pertence</label>

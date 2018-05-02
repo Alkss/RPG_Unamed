@@ -47,7 +47,7 @@ if ($_SESSION['logado'] != 1) {
         if ($customClass->insertCustom($_GET['idt'], $_POST['new-custom-name'], $_POST['new-custom-desc'], $_POST['new-custom-type'], null)) {
             echo "<script type='text/javascript'>";
             echo "alert('Operação realizada com sucesso');";
-            echo "window.location='../editItens.php?idt=" . $_GET['idt'] . "&char=" . $_GET['char'] . "'";
+            echo "window.location='/RPG_Unamed/view/user/Table/index.php?idt=" . $_GET['idt']."'";
             echo "</script>";
         }
     } else {
