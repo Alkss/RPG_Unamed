@@ -65,7 +65,9 @@ if ($_SESSION['logado'] != 1) {
                 <h6>Equipamentos</h6>
                 <?php
                 $equip = new Equipment();
-                $allEquip = $equip->selectAll();
+                $charEquip = $equip->selectCharEquip($_GET['char']);
+                $availableEquip = $equip->selectAvailableEquip($_GET['char']);
+                include "equipment/equipPage.php";
                 ?>
             </div>
 
