@@ -32,6 +32,20 @@ VALUES('" . $this->db->scapeCont($desc) . "','" . $this->db->scapeCont($name) . 
         return true;
     }
     
+    public function removeItemFromChar($codChar, $codItem)
+    {
+        $stringSQL = "DELETE FROM ta_utilizaveis WHERE cod_personagem=" . $this->db->scapeCont($codChar) . " AND cod_item IN(" . $this->db->scapeCont($codItem) . ")";
+        $this->db->executeQuery($stringSQL);
+        return true;
+    }
+    
+    public function addItemAtChar($codChar, $codItem)
+    {
+        $stringSQL = "INSERT INTO ta_utilizaveis(cod_personagem, cod_item) VALUES(".$this->db->scapeCont($codChar).",".$this->db->scapeCont($codItem).")";
+        $this->db->insert($stringSQL);
+        return true;
+    }
+    
     public function selectAvailableItem($codChar)
     {
         $stringSQL = "SELECT idt_item, nme_item FROM td_item WHERE idt_item NOT IN(SELECT cod_item FROM ta_utilizaveis WHERE cod_personagem=" . $this->db->scapeCont($codChar) . ")";
@@ -40,7 +54,7 @@ VALUES('" . $this->db->scapeCont($desc) . "','" . $this->db->scapeCont($name) . 
     
     public function selectCharItem($codChar)
     {
-        $stringSQL = "SELECT nme_item FROM td_item JOIN ta_utilizaveis ON idt_item=cod_item JOIN tb_personagem ON idt_personagem=cod_personagem WHERE cod_personagem=" . $this->db->scapeCont($codChar);
+        $stringSQL = "SELECT nme_item, idt_item FROM td_item JOIN ta_utilizaveis ON idt_item=cod_item JOIN tb_personagem ON idt_personagem=cod_personagem WHERE cod_personagem=" . $this->db->scapeCont($codChar);
         return $this->db->search($stringSQL);
     }
     

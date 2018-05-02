@@ -10,28 +10,30 @@ include('../../../../header.php');
 if ($_SESSION['logado'] != 1) {
     header('location:' . URL . '/view/index.php');
 } else {
-    var_dump($_POST);die;
+    //Remove item
     if (isset($_POST['usable']) && isset($_POST['remove-Usable']) && $_POST['remove-Usable'] == "Remover") {
-        $magicClass = new Magic();
-        $deleteMagic = "";
-        foreach ($_POST['usable'] as $singleMagic) {
-            $deleteMagic .= $singleMagic . ',';
+        $itemClass = new Item();
+        $deleteUsable = "";
+        foreach ($_POST['usable'] as $singleItem) {
+            $deleteUsable .= $singleItem . ',';
         }
-        $deleteMagic = rtrim($deleteMagic, ', ');
-        if ($magicClass->removeMagicFromChar($_GET['char'], $deleteMagic)) {
+        $deleteUsable = rtrim($deleteUsable, ', ');
+        if ($itemClass->removeItemFromChar($_GET['char'], $deleteUsable)) {
             echo "<script type='text/javascript'>";
             echo "alert('Operação realizada com sucesso');";
             echo "window.location='../editItens.php?idt=" . $_GET['idt'] . "&char=" . $_GET['char'] . "'";
             echo "</script>";
         }
-    } else if (isset($_POST['new-Magic']) && isset($_POST['add-Magic']) && $_POST['add-Magic'] == "Adicionar") {
-        $magicClass = new Magic();
-        if ($magicClass->addMagicAtChar($_GET['char'], $_POST['new-Magic'])) {
+        //Adiciona item
+    } else if (isset($_POST['new-Usable']) && isset($_POST['add-Usable']) && $_POST['add-Usable'] == "Adicionar") {
+        $itemClass = new Item();
+        if ($itemClass->addItemAtChar($_GET['char'], $_POST['new-Usable'])) {
             echo "<script type='text/javascript'>";
             echo "alert('Operação realizada com sucesso');";
             echo "window.location='../editItens.php?idt=" . $_GET['idt'] . "&char=" . $_GET['char'] . "'";
             echo "</script>";
         }
+        //Redireciona caso não seja selecionada nenhuma opção.
     } else {
         header("Location:../editItens.php?idt=" . $_GET['idt'] . "&char=" . $_GET['char'] . "&error=1");
     }
