@@ -17,6 +17,7 @@
                 </td>
                 <td>Nome</td>
                 <td id="attributeHead">Valor</td>
+                <td>Modificador</td>
             </tr>
             </thead>
             <tbody>
@@ -30,6 +31,45 @@
                     <td id="attributeInput"><input name="attr-value[<?= $singleAttr['idt_atributo'] ?>]" type="number"
                                                    min="0" max="30" step="1" class="form-control"
                                                    value="<?= $singleAttr['val_personagem_atributo'] ?>"></td>
+                    <td style="text-align: center"><?php
+                        if ($singleAttr['val_personagem_atributo'] == 1)
+                            $modValue = -5;
+                        else if ($singleAttr['val_personagem_atributo'] == 2 || ($singleAttr['val_personagem_atributo'] == 3))
+                            $modValue = -4;
+                        else if ($singleAttr['val_personagem_atributo'] == 4 || ($singleAttr['val_personagem_atributo'] == 5))
+                            $modValue = -3;
+                        else if ($singleAttr['val_personagem_atributo'] == 6 || ($singleAttr['val_personagem_atributo'] == 7))
+                            $modValue = -2;
+                        else if ($singleAttr['val_personagem_atributo'] == 8 || ($singleAttr['val_personagem_atributo'] == 9))
+                            $modValue = -1;
+                        else if ($singleAttr['val_personagem_atributo'] == 10 || ($singleAttr['val_personagem_atributo'] == 11))
+                            $modValue = 0;
+                        else if ($singleAttr['val_personagem_atributo'] == 12 || ($singleAttr['val_personagem_atributo'] == 13))
+                            $modValue = 1;
+                        else if ($singleAttr['val_personagem_atributo'] == 14 || ($singleAttr['val_personagem_atributo'] == 15))
+                            $modValue = 2;
+                        else if ($singleAttr['val_personagem_atributo'] == 16 || ($singleAttr['val_personagem_atributo'] == 17))
+                            $modValue = 3;
+                        else if ($singleAttr['val_personagem_atributo'] == 18 || ($singleAttr['val_personagem_atributo'] == 19))
+                            $modValue = 4;
+                        else if ($singleAttr['val_personagem_atributo'] == 20 || ($singleAttr['val_personagem_atributo'] == 21))
+                            $modValue = 5;
+                        else if ($singleAttr['val_personagem_atributo'] == 22 || ($singleAttr['val_personagem_atributo'] == 23))
+                            $modValue = 6;
+                        else if ($singleAttr['val_personagem_atributo'] == 24 || ($singleAttr['val_personagem_atributo'] == 25))
+                            $modValue = 7;
+                        else if ($singleAttr['val_personagem_atributo'] == 27 || ($singleAttr['val_personagem_atributo'] == 26))
+                            $modValue = 8;
+                        else if ($singleAttr['val_personagem_atributo'] == 28 || ($singleAttr['val_personagem_atributo'] == 29))
+                            $modValue = 9;
+                        else if ($singleAttr['val_personagem_atributo'] == 30)
+                            $modValue = 10;
+                        
+                        if ($modValue > 0){
+                            $modValue = '+' . $modValue;
+                        }
+                        echo $modValue;
+                        ?></td>
                 </tr>
                 <?php
             }

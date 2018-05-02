@@ -94,6 +94,9 @@ if ($_SESSION['logado'] != 1) {
 
             <div class="col-xs-6">
                 <h6>Criar um pertence personalizado</h6>
+                <?php
+                include "custom/createCustomPage.php";
+                ?>
             </div>
         </div>
     </div>
