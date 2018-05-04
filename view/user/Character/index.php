@@ -28,7 +28,6 @@ if ($_SESSION['logado'] != 1) {
     
     
     $tableInfo = $db->search("SELECT cod_papel_sala FROM tb_usuario JOIN ta_perfil_sala ON idt_usuario=cod_usuario JOIN tb_sala ON idt_sala=cod_sala WHERE cod_sala='" . $_GET['idt'] . "' AND cod_usuario=".$_SESSION['idt_usuario']);
-    
     ?>
 
     <!doctype html>

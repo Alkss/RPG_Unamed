@@ -22,7 +22,7 @@ if ($_SESSION['logado'] != 1) {
             $db->executeQuery("INSERT INTO `ta_perfil_sala`(`cod_usuario`, `cod_personagem`, `cod_papel_sala`, `cod_sala`)
 VALUES ('" . $db->scapeCont($_SESSION['idt_usuario']) . "',
         null,
-        '" . '3' . "',
+        '" . '1' . "',
         '" . $db->scapeCont($_GET['idt']) . "')");
         }
     }
