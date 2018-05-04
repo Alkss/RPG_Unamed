@@ -56,4 +56,10 @@ VALUES('"
         $stringSQL = "SELECT nme_personagem, img_personagem, qtd_vida_personagem, qtd_vida_total_personagem, nme_usuario FROM tb_usuario JOIN ta_perfil_sala ON idt_usuario=cod_usuario JOIN tb_personagem ON idt_personagem=cod_personagem JOIN tb_sala ON idt_sala=cod_sala where idt_sala=" . $this->db->scapeCont($tableId);
         return $this->db->search($stringSQL);
     }
+    
+    public function selectUserRole($idtTable, $idtUser)
+    {
+        $stringSQL = "SELECT cod_papel_sala FROM tb_usuario JOIN ta_perfil_sala ON idt_usuario=cod_usuario JOIN tb_sala ON idt_sala=cod_sala WHERE cod_sala='" . $this->db->scapeCont($idtTable) . "' AND cod_usuario=" . $this->db->scapeCont($idtUser);
+        return $this->db->search($stringSQL);
+    }
 }
