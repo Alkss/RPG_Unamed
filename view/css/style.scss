@@ -106,7 +106,7 @@ h1, h2 {
 
 #table-home, #char-page, #edit-char, #editItens {
   #customModal {
-    .modal-header{
+    .modal-header {
       background-color: darkred;
     }
     .modal-content {
@@ -218,6 +218,34 @@ h1, h2 {
   div {
     &.col-xs-6 {
       margin-bottom: 40px;
+    }
+  }
+}
+
+.row {
+  &#show-character-at-table {
+    margin: 0 auto;
+    div {
+      &#charDiv {
+        margin: 0 auto;
+      }
+    }
+    h6 {
+      color: darkred;
+      font-size: 1.3em;
+      text-align: center;
+    }
+    img {
+      display: flex;
+      margin: 0 auto;
+      max-width: 250px;
+      max-height: 250px;
+    }
+    .progress{
+      background-color: darkred;
+    }
+    .progress-bar{
+      background-color: red;
     }
   }
 }

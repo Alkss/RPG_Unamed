@@ -141,6 +141,24 @@ h1, h2 {
 #editItens div.col-xs-6 {
   margin-bottom: 40px; }
 
+.row#show-character-at-table {
+  margin: 0 auto; }
+  .row#show-character-at-table div#charDiv {
+    margin: 0 auto; }
+  .row#show-character-at-table h6 {
+    color: darkred;
+    font-size: 1.3em;
+    text-align: center; }
+  .row#show-character-at-table img {
+    display: flex;
+    margin: 0 auto;
+    max-width: 250px;
+    max-height: 250px; }
+  .row#show-character-at-table .progress {
+    background-color: darkred; }
+  .row#show-character-at-table .progress-bar {
+    background-color: red; }
+
 #edit-char h6, #editItens h6 {
   text-align: center;
   font-size: 1.6em; }

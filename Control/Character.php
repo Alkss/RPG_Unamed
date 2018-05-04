@@ -132,7 +132,7 @@ class Character
         $stringSQL .= "pes_personagem,alt_personagem,";
         $stringSQL .= "dsc_cabelo_personagem,img_personagem,cor_olho_personagem,";
         $stringSQL .= "hst_personagem,inf_adicional_personagem,cod_alinhamento,";
-        $stringSQL .= "qtd_vida_personagem,";
+        $stringSQL .= "qtd_vida_personagem, qtd_vida_total_personagem,";
         $stringSQL .= "cod_classe,cod_raca,qtd_dinheiro_personagem) VALUES ('";
         $stringSQL .= $this->db->scapeCont($nme_personagem) . "'," . $this->db->scapeCont($exp_personagem) . ",'";
         $stringSQL .= $this->db->scapeCont($gen_personagem) . "',";
@@ -140,6 +140,7 @@ class Character
         $stringSQL .= $this->db->scapeCont($dsc_cabelo_pesonagem) . "','" . $this->db->scapeCont($img_personagem) . "','";
         $stringSQL .= $this->db->scapeCont($cor_olho) . "','" . $this->db->scapeCont($hst_personagem) . "','";
         $stringSQL .= $this->db->scapeCont($inf_adicional_personagem) . "'," . $this->db->scapeCont($cod_alinhamento) . ",";
+        $stringSQL .= $this->db->scapeCont('10') . ",";
         $stringSQL .= $this->db->scapeCont('10') . ",";
         $stringSQL .= $this->db->scapeCont($cod_classe) . "," . $this->db->scapeCont($cod_raca) . ",0)";
         //Retorna o ID inserido?
