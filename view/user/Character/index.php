@@ -27,7 +27,7 @@ if ($_SESSION['logado'] != 1) {
     $attribute = $char->selectAttribute("idt_personagem = " . $_GET['char']);
     
     
-    $tableInfo = $db->search("SELECT cod_papel_sala FROM tb_usuario JOIN ta_perfil_sala ON idt_usuario=cod_usuario JOIN tb_sala ON idt_sala=cod_sala WHERE cod_sala='" . $_GET['idt'] . "'");
+    $tableInfo = $db->search("SELECT cod_papel_sala FROM tb_usuario JOIN ta_perfil_sala ON idt_usuario=cod_usuario JOIN tb_sala ON idt_sala=cod_sala WHERE cod_sala='" . $_GET['idt'] . "' AND cod_usuario=".$_SESSION['idt_usuario']);
     
     ?>
 
@@ -58,7 +58,7 @@ if ($_SESSION['logado'] != 1) {
                 <a class="btn btn-primary" href="editCharacter.php?char=<?= $_GET['char'] ?>&idt=<?= $_GET['idt'] ?>">Editar
                     dados</a>
                 <?php
-                if ($tableInfo[0]['cod_papel_sala'] != 1) {
+                if ($tableInfo[0]['cod_papel_sala'] != 1){
                     ?>
                     <a class="btn btn-primary" href="editItens.php?idt=<?=$_GET['idt']?>&char=<?=$_GET['char']?>">Editar pertences</a>
                     <a class="btn btn-primary" onclick="return confirm('Deseja realmente deletar o personagem ')"
