@@ -71,4 +71,20 @@ VALUES('" . $this->db->scapeCont($desc) . "','" . $this->db->scapeCont($name) . 
         $this->db->executeQuery($stringSQL);
         return true;
     }
+    
+    public function getError($errorNumber){
+        $errorMessage = "";
+        if($errorNumber == 1){
+            $errorMessage = "Selecione alguma magia";
+        }else if($errorNumber == 2){
+            $errorMessage = "Selecione algum utilizavel";
+        }else if($errorNumber == 3){
+            $errorMessage = "Selecione algum equipamento";
+        }else if($errorNumber == 4){
+            $errorMessage = "Selecione algum atributo";
+        }else{
+            $errorMessage = "Selecione algum personalizado";
+        }
+        return $errorMessage;
+    }
 }

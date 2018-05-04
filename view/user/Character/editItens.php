@@ -25,9 +25,11 @@ if ($_SESSION['logado'] != 1) {
     </head>
     <body id="editItens">
     <?php
-    if (isset($_GET['error']) && $_GET['error'] == 1) {
+    if (isset($_GET['error'])) {
+        $item = new Item();
+        $errorMessage = $item->getError($_GET['error']);
         echo "<script type='text/javascript'>";
-        echo "alert('Selecione alguma magia');";
+        echo "alert('" . $errorMessage . "');";
         echo "</script>";
     }
     ?>

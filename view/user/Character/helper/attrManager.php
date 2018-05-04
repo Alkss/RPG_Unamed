@@ -43,6 +43,6 @@ if ($_SESSION['logado'] != 1) {
             echo "</script>";
         }
     } else {
-        header("Location:../editItens.php?idt=" . $_GET['idt'] . "&char=" . $_GET['char'] . "&error=1");
+        header("Location:../editItens.php?idt=" . $_GET['idt'] . "&char=" . $_GET['char'] . "&error=4");
     }
 }

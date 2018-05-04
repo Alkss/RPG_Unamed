@@ -35,6 +35,6 @@ if ($_SESSION['logado'] != 1) {
         }
         //Redireciona caso não seja selecionada nenhuma opção.
     } else {
-        header("Location:../editItens.php?idt=" . $_GET['idt'] . "&char=" . $_GET['char'] . "&error=1");
+        header("Location:../editItens.php?idt=" . $_GET['idt'] . "&char=" . $_GET['char'] . "&error=3");
     }
 }
