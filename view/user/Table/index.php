@@ -33,7 +33,8 @@ VALUES ('" . $db->scapeCont($_SESSION['idt_usuario']) . "',
     <h1><?= RPG_NAME ?></h1>
 
     <h2><?= $tableInfo[0]['nme_sala'] ?> - (Mesa de <?= $tableInfo[0]['nme_usuario'] ?>)</h2>
-    <?php include 'menu.php';
+    <?php
+    include 'menu.php';
     include 'characters/index.php';
     include 'chat/index.php';
     ?>

@@ -16,14 +16,15 @@ $religiao = $db->search("select * from td_divindade");
     <div id="form">
         <div class="col-xs-6">
             <form method="post" id="create-new-character">
-
                 <p>
                     <label for="nme_personagem" id="name-label-post">Nome do personagem</label><br>
-                    <input class="form-control" type="text" name="nme_personagem" id="nme_personagem" required="required">
+                    <input class="form-control" type="text" name="nme_personagem" id="nme_personagem"
+                           required="required">
                 </p>
                 <p>
                     <label for="exp_personagem">Exp Personagem</label><br>
-                    <input class="form-control" type="number" name="exp_personagem" id="exp_personagem" required="required">
+                    <input class="form-control" type="number" name="exp_personagem" id="exp_personagem"
+                           required="required">
                 </p>
                 <p>
                     <label for="classe">Classe</label><br>
@@ -62,17 +63,20 @@ $religiao = $db->search("select * from td_divindade");
 
                 <p>
                     <label for="pes_personagem">Peso do Personagem</label><br>
-                    <input class="form-control" type="number" name="pes_personagem" id="pes_personagem" required="required">
+                    <input class="form-control" type="number" name="pes_personagem" id="pes_personagem"
+                           required="required">
                 </p>
 
                 <p>
                     <label for="alt_personagem">Altura do Personagem</label><br>
-                    <input class="form-control" type="number" min="0.00" max="10.00" step="0.01" name="alt_personagem" id="alt_personagem" required="required">
+                    <input class="form-control" type="number" min="0.00" max="10.00" step="0.01" name="alt_personagem"
+                           id="alt_personagem" required="required">
                 </p>
 
                 <p>
                     <label for="dsc_cabelo_pesonagem">Descriçao do Cabelo</label><br>
-                    <select id="dsc_cabelo_pesonagem" name="dsc_cabelo_pesonagem" class="form-control" required="required">
+                    <select id="dsc_cabelo_pesonagem" name="dsc_cabelo_pesonagem" class="form-control"
+                            required="required">
                         <option value="" selected hidden>-- Selecione uma opçao --</option>
                         <option value="Careca">Careca</option>
                         <option value="Longo">Cabelo Longo</option>

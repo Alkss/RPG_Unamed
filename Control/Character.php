@@ -151,6 +151,9 @@ class Character
         $stringSQL2 .= " AND cod_sala = " . $sala_id;
         //Update
         $this->db->executeQuery($stringSQL2);
+        
+        $stringSQL3 = "INSERT INTO ta_culto(cod_divindade, cod_personagem) VALUES(" . $this->db->scapeCont($cod_religiao) . "," . $this->db->scapeCont($personagemID) . ")";
+        $this->db->insert($stringSQL3);
         return true;
     }
     
@@ -173,8 +176,8 @@ class Character
     {
         $stringSQL = "DELETE FROM tb_personagem WHERE idt_personagem=" . $this->db->scapeCont($idtChar);
         $this->db->executeQuery($stringSQL);
-    
-    
+        
+        
         return true;
     }
 }
