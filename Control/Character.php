@@ -152,6 +152,7 @@ class Character
         //Update
         $this->db->executeQuery($stringSQL2);
         
+        //Insert na tabela culto
         $stringSQL3 = "INSERT INTO ta_culto(cod_divindade, cod_personagem) VALUES(" . $this->db->scapeCont($cod_religiao) . "," . $this->db->scapeCont($personagemID) . ")";
         $this->db->insert($stringSQL3);
         return true;
