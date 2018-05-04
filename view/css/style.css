@@ -112,6 +112,16 @@ h1, h2 {
   #searchTables a {
     color: white; }
 
+div#editUserModal .modal-body, div#editUserModal .modal-footer {
+  background-color: black; }
+div#editUserModal .modal-header {
+  background-color: darkred; }
+div#editUserModal table#editUserTable {
+  margin: 0 auto; }
+  div#editUserModal table#editUserTable td, div#editUserModal table#editUserTable th {
+    padding-left: 15px;
+    padding-right: 15px; }
+
 #editItens #attributeInput, #editItens #attributeHead {
   width: 6em;
   height: 1em; }

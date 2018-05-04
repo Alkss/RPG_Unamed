@@ -10,6 +10,8 @@ $numberOfCharSQL = "SELECT * FROM tb_personagem JOIN ta_perfil_sala ON idt_perso
 $numberOfCharSQL = $db->search($numberOfCharSQL);
 $chars = $db->search("SELECT * FROM ta_perfil_sala JOIN tb_sala ON cod_sala=idt_sala JOIN tb_personagem ON cod_personagem = idt_personagem WHERE cod_sala='" . $db->scapeCont($_GET['idt']) . "'");
 
+$userChar = $db->search("SELECT nme_usuario, nme_personagem, nme_papel_sala FROM tb_usuario JOIN ta_perfil_sala ON idt_usuario=cod_usuario JOIN td_papel_sala ON idt_papel_sala=cod_papel_sala JOIN tb_sala ON idt_sala=cod_sala JOIN tb_personagem ON idt_personagem=cod_personagem WHERE idt_sala=".$_GET['idt']);
+
 ?>
 <div class="col-xs-2">
 
@@ -49,7 +51,7 @@ $chars = $db->search("SELECT * FROM ta_perfil_sala JOIN tb_sala ON cod_sala=idt_
         <p><a href="http://bunkernerd.com.br/dungeons-dragons-dd-regras-basicas/" target="_blank">Livro de Regras</a>
         </p>
         <hr>
-        <p><a>Usuários</a></p>
+        <p><a id="modal-custom" data-toggle="modal" data-target="#editUserModal">Usuários</a></p>
         <hr>
         <p><a id="modal-custom" data-toggle="modal" data-target="#customModal">Customizáveis</a></p>
     </div>
@@ -108,5 +110,8 @@ $chars = $db->search("SELECT * FROM ta_perfil_sala JOIN tb_sala ON cod_sala=idt_
 
         </div>
     </div>
+    <?php
+    include 'users/index.php';
+    ?>
     </body>
 </div>

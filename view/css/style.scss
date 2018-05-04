@@ -170,8 +170,27 @@ h1, h2 {
   }
 }
 
-#editItens {
+div {
+  &#editUserModal {
+    .modal-body, .modal-footer {
+      background-color: black;
+    }
+    .modal-header {
+      background-color: darkred;
+    }
+    table {
+      &#editUserTable {
+        margin: 0 auto;
+        td, th {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+    }
+  }
+}
 
+#editItens {
   #attributeInput, #attributeHead {
     width: 6em;
     height: 1em;
@@ -241,10 +260,10 @@ h1, h2 {
       max-width: 250px;
       max-height: 250px;
     }
-    .progress{
+    .progress {
       background-color: darkred;
     }
-    .progress-bar{
+    .progress-bar {
       background-color: red;
     }
   }
