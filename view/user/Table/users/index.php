@@ -16,7 +16,6 @@
             <div class="modal-body">
                 <?php
                 if ($userChar) {
-                    var_dump($userChar);
                     ?>
                     <form action="../index.php?idt=<?= $_GET['idt'] ?>" method="post">
                         <table id="editUserTable">
@@ -37,6 +36,7 @@
                                             <?php
                                             //todo: mostrar como opção padrão(do papel do usuario) o valor atual do usuário e mostrar as demais opções.
                                             ?>
+                                            <option>NYI</option>
                                         </select>
 
                                     </td>

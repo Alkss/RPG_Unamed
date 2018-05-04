@@ -29,6 +29,9 @@ VALUES ('" . $db->scapeCont($_SESSION['idt_usuario']) . "',
     
     
     ?>
+    <header>
+        <title>RPG_Unnamed</title>
+    </header>
     <body id="table-home">
     <h1><?= RPG_NAME ?></h1>
 
