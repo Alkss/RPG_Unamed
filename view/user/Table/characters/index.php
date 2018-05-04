@@ -33,7 +33,7 @@ $charsAtTable = $table->selectCharacterTable($_GET['idt']);
                                  ?>%">
                             </div>
                         </div>
-                        <h6>(<?= $singleChar['qtd_vida_personagem'] ?>)</h6>
+                        <h6>Vida atual: <?= $singleChar['qtd_vida_personagem'] ?></h6>
 
                     </div>
                 </div>
