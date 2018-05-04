@@ -10,7 +10,9 @@ $numberOfCharSQL = "SELECT * FROM tb_personagem JOIN ta_perfil_sala ON idt_perso
 $numberOfCharSQL = $db->search($numberOfCharSQL);
 $chars = $db->search("SELECT * FROM ta_perfil_sala JOIN tb_sala ON cod_sala=idt_sala JOIN tb_personagem ON cod_personagem = idt_personagem WHERE cod_sala='" . $db->scapeCont($_GET['idt']) . "'");
 
-$userChar = $db->search("SELECT nme_usuario, nme_personagem, nme_papel_sala FROM tb_usuario JOIN ta_perfil_sala ON idt_usuario=cod_usuario JOIN td_papel_sala ON idt_papel_sala=cod_papel_sala JOIN tb_sala ON idt_sala=cod_sala JOIN tb_personagem ON idt_personagem=cod_personagem WHERE idt_sala=".$_GET['idt']);
+$userChar = $db->search("SELECT nme_usuario, nme_personagem, nme_papel_sala FROM tb_usuario JOIN ta_perfil_sala ON idt_usuario=cod_usuario JOIN td_papel_sala ON idt_papel_sala=cod_papel_sala JOIN tb_sala ON idt_sala=cod_sala JOIN tb_personagem ON idt_personagem=cod_personagem WHERE idt_sala=" . $_GET['idt']);
+
+$table = new Table();
 
 ?>
 <div class="col-xs-2">
@@ -50,10 +52,19 @@ $userChar = $db->search("SELECT nme_usuario, nme_personagem, nme_papel_sala FROM
         <hr>
         <p><a href="http://bunkernerd.com.br/dungeons-dragons-dd-regras-basicas/" target="_blank">Livro de Regras</a>
         </p>
-        <hr>
-        <p><a id="modal-custom" data-toggle="modal" data-target="#editUserModal">Usuários</a></p>
-        <hr>
-        <p><a id="modal-custom" data-toggle="modal" data-target="#customModal">Customizáveis</a></p>
+        
+        <?php
+        $tableInfo = $table->selectUserRole($_GET['idt'], $_SESSION['idt_usuario']);
+        if ($tableInfo[0]['cod_papel_sala'] != 1) {
+            ?>
+            <!--Permissão para somente o mestre criar customizaveis e ver permissões dos jogadores-->
+            <hr>
+            <p><a id="modal-custom" data-toggle="modal" data-target="#editUserModal">Usuários</a></p>
+            <hr>
+            <p><a id="modal-custom" data-toggle="modal" data-target="#customModal">Customizáveis</a></p>
+            <?php
+        }
+        ?>
     </div>
 
     <div id="customModal" class="modal fade" role="dialog">
