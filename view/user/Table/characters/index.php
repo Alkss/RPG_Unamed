@@ -11,7 +11,7 @@ $charsAtTable = $table->selectCharacterTable($_GET['idt']);
 <div class="row" id="show-character-at-table">
     <div class="col-xs-10" style="display:flex">
         <?php
-        if (!$charsAtTable) {
+        if ($charsAtTable) {
             foreach ($charsAtTable as $singleChar) {
                 ?>
                 <div class="col-xs-4" id="charDiv">
