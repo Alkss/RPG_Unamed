@@ -61,12 +61,15 @@ if ($_SESSION['logado'] != 1) {
         </tr>
         <?php
         $allTables = $table->selectAll();
-        foreach ($allTables as $singleTable) {
-            ?>
-            <tr>
-                <td><a href="index.php?idt=<?= $singleTable['idt_sala'] ?>" target="_blank"><?= $singleTable['nme_sala'] ?></a></td>
-            </tr>
-            <?php
+        if ($allTables) {
+            foreach ($allTables as $singleTable) {
+                ?>
+                <tr>
+                    <td><a href="index.php?idt=<?= $singleTable['idt_sala'] ?>"
+                           target="_blank"><?= $singleTable['nme_sala'] ?></a></td>
+                </tr>
+                <?php
+            }
         }
         ?>
     </table>
