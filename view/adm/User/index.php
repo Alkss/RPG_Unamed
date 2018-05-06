@@ -58,6 +58,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
                         <td>Login</td>
                         <td>Status</td>
                         <td>Perfil</td>
+                        <td> </td>
                     </tr>
                     </thead>
                     <tbody>

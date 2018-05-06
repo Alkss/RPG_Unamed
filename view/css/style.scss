@@ -36,6 +36,20 @@
       margin-left: 2.3%;
     }
   }
+  table {
+        &.table-responsive{
+            min-height: .01%;
+            overflow-x: auto;
+            background-color: #c3bb8b;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+      thead{
+        &.inactiveUsers {
+        color: white;
+        background-color: black;
+      }
+    }
 }
 
 h1, h2 {
@@ -466,4 +480,5 @@ tbody {
       margin: auto;
     }
   }
+ }
 }
