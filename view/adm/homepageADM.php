@@ -18,8 +18,8 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     </head>
     <body id="home-page-adm">
 
-    <h1><?= RPG_NAME ?></h1>
-    <h2>Administrador</h2>
+   <h1><?= RPG_NAME ?></h1>
+    <h2><?= ADMINISTRADOR ?></h2>
     
     <?php
     include 'menuADM.php';

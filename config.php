@@ -13,7 +13,8 @@ define('DB_HOST', 'localhost'); //Host
 define('DB_USER', 'root'); //User
 define('DB_PASS', 'root'); //Password
 define('DB_NAME', 'RPG_unamed'); //Database
-define('RPG_NAME', 'RPG_Unnamed'); // nome do projeto.
+define('RPG_NAME', '<img src="http://localhost/RPG_Unamed/view/imgs/logo.png" alt="Logo" width="250px">'); // nome do projeto.
+define('ADMINISTRADOR', '<img src="http://localhost/RPG_Unamed/view/imgs/administrator.png" alt="admin" width="250px">'); // nome do projeto.
 
 define('DEBUG', 1);
 ini_set('default_charset', 'UTF-8');
