@@ -87,6 +87,9 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
             }
             ?>
         </form>
+        <?php
+        include('Charts/Chart1.php');
+        ?>
     </div>
     </div>
     <script>
