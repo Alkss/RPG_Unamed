@@ -1,12 +1,12 @@
-<canvas class="line-chart"></canvas>
+<canvas class="lineChart" style="display: block; width: 205px; height: 205px;"></canvas>
 <?php
     $labels = "";
     $values = "";
     $db = new DataBase();
     $userData = $db->search("select count(*) as Total,DATE_FORMAT(dta_criacao_usuario, \"%M %Y\") as Mes from tb_usuario GROUP BY Mes LIMIT 12;");
     foreach ($userData as $data) {
-        $labels .= $labels . "\"" . $data['Mes']. "\",";
-        $values .= $values . $data['Total'] . ",";
+        $labels .= "\"" . $data['Mes']. "\",";
+        $values .= $data['Total'] . ",";
     }
 ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
@@ -14,10 +14,14 @@
 if ($userData) {
 ?>
 <script>
-    var ctx = document.getElementsByClassName("line-chart");
+    var ctx = document.getElementsByClassName("lineChart");
     
     var chartGraph = new Chart(ctx, {
         type: 'line',
+        options:[{
+            responsive:false,
+            maintainAspectRatio: false,
+        }],
         data: {
             labels: [<?= $labels ?>],
             datasets: [{
@@ -25,7 +29,7 @@ if ($userData) {
              data: [<?= $values ?>],
              borderWidth: 2,
              borderColor: 'rgba(255, 199, 9, 1)',
-             backgroundColor: 'Transparent',
+             backgroundColor: 'rgba(255, 199, 9, 0.3)',
             }]
         }
     })

@@ -4,8 +4,6 @@ include('../header.php');
 ?>
 <body id="index-page">
 <?php
-
-
 if (isset($_POST['usrName'])) {
     $user = new User();
     $login = $user->login($_POST['usrName'], $_POST['psswrd']);
@@ -23,14 +21,12 @@ if (isset($_POST['usrName'])) {
         
     }
 }
-
 /**
  * Created by PhpStorm.
  * User: alex
  * Date: 02/11/17
  * Time: 23:13
  */
-
 if (isset($_GET['success'])) {
     ?>
     <div class="alert alert-success">Usuário Registrado com sucesso, aguarde a aprovação de um administrador.</div>
@@ -38,7 +34,6 @@ if (isset($_GET['success'])) {
     <?php
     
 }
-
 ?>
 
 
