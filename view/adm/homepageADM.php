@@ -91,8 +91,6 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
         <div class="chart-container">
             <?php
             include('Charts/PieChart.php');
-            ?>
-            <?php
             include('Charts/LineChart.php');
             ?>
         </div>

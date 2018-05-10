@@ -1,5 +1,3 @@
-<h3>Usuários cadastrados mensalmente</h3>
-<canvas class="lineChart"></canvas>
 <?php
     $labels = "";
     $values = "";
@@ -14,6 +12,8 @@
 <?php
 if ($userData) {
 ?>
+<h3>Número de usuários cadastrados mensalmente</h3>
+<canvas class="lineChart"></canvas>
 <script>
     var ctx = document.getElementsByClassName("lineChart");
     

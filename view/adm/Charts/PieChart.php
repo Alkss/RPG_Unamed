@@ -16,6 +16,8 @@
 <?php
 if ($tableData) {
 ?>
+<h3>Salas com mais jogadores</h3>
+<canvas class="pieChart"></canvas>
 <script>
     var ctx = document.getElementsByClassName("pieChart");
     
@@ -56,14 +58,6 @@ if ($tableData) {
         }
     })
 </script>
-<?php
-}
-?>
-<?php
-if ($tableData) {
-?>
-<h3>Salas com mais jogadores</h3>
-<canvas class="pieChart"></canvas>
 <?php
 }
 ?>
