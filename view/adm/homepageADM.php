@@ -89,11 +89,9 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
         </form>
         
         <div class="chart-container">
-            <h3>Salas com mais jogadores</h3>
             <?php
             include('Charts/PieChart.php');
             ?>
-            <h3>Usuários cadastrados mensalmente</h3>
             <?php
             include('Charts/LineChart.php');
             ?>

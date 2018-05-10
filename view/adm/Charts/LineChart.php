@@ -1,4 +1,5 @@
-<canvas class="lineChart" style="display: block; width: 205px; height: 205px;"></canvas>
+<h3>Usuários cadastrados mensalmente</h3>
+<canvas class="lineChart"></canvas>
 <?php
     $labels = "";
     $values = "";
@@ -18,10 +19,6 @@ if ($userData) {
     
     var chartGraph = new Chart(ctx, {
         type: 'line',
-        options:[{
-            responsive:false,
-            maintainAspectRatio: false,
-        }],
         data: {
             labels: [<?= $labels ?>],
             datasets: [{

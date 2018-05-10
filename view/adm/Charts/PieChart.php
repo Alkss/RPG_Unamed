@@ -1,4 +1,3 @@
-<canvas class="pieChart"></canvas>
 <?php
     $labels = "";
     $values = "";
@@ -6,10 +5,12 @@
     $tableData = $db->search("select count(cod_usuario) as Total,nme_sala as Sala from ta_perfil_sala
 	   JOIN tb_usuario ON cod_usuario = idt_usuario
        JOIN tb_sala on cod_sala = idt_sala group by nme_sala;");
+    if($tableData){
     foreach ($tableData as $data) {
         $labels .= "\"" . $data['Sala']. "\",";
         $values .= $data['Total'] . ",";
     }
+}
 ?>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <?php
@@ -55,6 +56,14 @@ if ($tableData) {
         }
     })
 </script>
+<?php
+}
+?>
+<?php
+if ($tableData) {
+?>
+<h3>Salas com mais jogadores</h3>
+<canvas class="pieChart"></canvas>
 <?php
 }
 ?>
