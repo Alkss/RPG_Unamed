@@ -12,7 +12,7 @@
     }
 }
 ?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script src="http://localhost/RPG_Unamed/view/js/Chart.bundle.min.js"></script>
 <?php
 if ($tableData) {
 ?>
