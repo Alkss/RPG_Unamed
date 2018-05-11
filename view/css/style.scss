@@ -402,6 +402,19 @@ div {
   }
 }
 
+#edit-char {
+  i {
+    color: gray;
+    &:hover {
+      color: darkred;
+      cursor: pointer;
+    }
+  }
+  .modal-dialog {
+    width: 875px;
+  }
+}
+
 #create-new-character {
   div {
     #leftDiv {
@@ -410,6 +423,7 @@ div {
   }
   i {
     &:hover {
+      color: darkred;
       cursor: pointer;
     }
     margin-top: 30px;

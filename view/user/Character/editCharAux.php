@@ -5,6 +5,11 @@
  * Date: 26/04/18
  * Time: 13:47
  */
+$db = new DataBase();
+$classe = $db->search("select idt_classe,nme_classe, dsc_classe from td_classe");
+$race = $db->search("select idt_raca,nme_raca, dsc_raca from td_raca");
+$alignments = $db->search("select * from td_alinhamento");
+
 ?>
 <div class="col-xs-10">
     <form method="post">
@@ -16,14 +21,18 @@
                 ?>
             </div>
 
-            <input type="hidden" name="idt" id="idt" value="<?= $selectedChar[0]['idt_personagem']?>">
-            
+            <input type="hidden" name="idt" id="idt" value="<?= $selectedChar[0]['idt_personagem'] ?>">
+
             <div class="col-xs-3">
                 <label for="editName">Nome</label>
-                <input required="required" type="text" value="<?= $selectedChar[0]['nme_personagem'] ?>" id="editName" name="editName"
+                <input required="required" type="text" value="<?= $selectedChar[0]['nme_personagem'] ?>"
+                       id="editName"
+                       name="editName"
                        class="form-control">
 
-                <label for="editRace">Raça</label>
+                <label for="editRace">Raça <a data-toggle="modal" data-target="#raceModal"><i
+                                class="fa fa-info-circle"
+                                aria-hidden="true"></i></a></label>
                 <select required="required" class="form-control" id="editRace" name="editRace">
                     <?php
                     foreach ($selectedRace as $singleRace) {
@@ -41,7 +50,9 @@
                     ?>
                 </select>
 
-                <label for="editAlignment">Alinhamento</label>
+                <label for="editAlignment">Alinhamento <a data-toggle="modal" data-target="#alignModal"><i
+                                class="fa fa-info-circle"
+                                aria-hidden="true"></i></a></label>
                 <select required="required" class="form-control" id="editAlignment" name="editAlignment">
                     <?php
                     foreach ($selectedAlignment as $singleAlignment) {
@@ -60,7 +71,9 @@
                 </select>
             </div>
             <div class="col-xs-2">
-                <label for="editClass">Classe</label>
+                <label for="editClass">Classe <a data-toggle="modal" data-target="#classModal"><i
+                                class="fa fa-info-circle"
+                                aria-hidden="true"></i></a></label>
                 <select required="required" class="form-control" id="editClass" name="editClass">
                     <?php
                     foreach ($selectedClass as $singleClass) {
@@ -102,7 +115,9 @@
             </div>
             <div class="col-xs-2">
                 <label for="height">Altura</label>
-                <input required="required" class="form-control" id="height" name="height" type="number" min="0" max="20" step="0.01"
+                <input required="required" class="form-control" id="height" name="height" type="number" min="0"
+                       max="20"
+                       step="0.01"
                        value="<?= $selectedChar[0]['alt_personagem'] ?>">
 
                 <label for="weight">Peso</label>
@@ -123,9 +138,14 @@
         <div class="row">
             <div class="col-xs-10 col-xs-offset-1">
                 <h6>História</h6>
-                <textarea id="editHist" name="editHist" style="margin-bottom:15px;text-align: justify; height: 180px"
+                <textarea id="editHist" name="editHist"
+                          style="margin-bottom:15px;text-align: justify; height: 180px"
                           class="form-control"><?= $selectedChar[0]['hst_personagem'] ?></textarea>
             </div>
         </div>
     </form>
+    <?php
+    include 'modal/class_race_rel.php';
+    ?>
 </div>
+

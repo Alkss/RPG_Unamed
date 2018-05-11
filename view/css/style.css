@@ -255,12 +255,21 @@ div#editUserModal table#editUserTable {
   #char-page .btn.btn-primary:hover, #edit-char .btn.btn-primary:hover {
     background-color: #5d0000; }
 
+#edit-char i {
+  color: gray; }
+  #edit-char i:hover {
+    color: darkred;
+    cursor: pointer; }
+#edit-char .modal-dialog {
+  width: 875px; }
+
 #create-new-character div #leftDiv {
   margin-bottom: 20px; }
 #create-new-character i {
   margin-top: 30px;
   color: gray; }
   #create-new-character i:hover {
+    color: darkred;
     cursor: pointer; }
 #create-new-character .btn {
   margin-bottom: 10px !important;
