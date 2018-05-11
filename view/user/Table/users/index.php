@@ -33,10 +33,19 @@
                                     <td><?= $singleUserChar['nme_usuario'] ?></td>
                                     <td>
                                         <select name="userRole" id="userRole" class="form-control">
+
+
+                                            <option selected="selected"
+                                                    value="<?= $singleUserChar['cod_papel_sala'] ?>"
+                                                    hidden="hidden"><?= $singleUserChar['nme_papel_sala'] ?></option>
                                             <?php
-                                            //todo: mostrar como opção padrão(do papel do usuario) o valor atual do usuário e mostrar as demais opções.
+                                            $roles = array("1" => "Jogador", "2" => "Mestre", "3" => "Dono");
+                                            foreach ($roles as $key => $role) {
+                                                ?>
+                                                <option value="<?= $key ?>"><?= $role ?></option>
+                                                <?php
+                                            }
                                             ?>
-                                            <option>NYI</option>
                                         </select>
 
                                     </td>
