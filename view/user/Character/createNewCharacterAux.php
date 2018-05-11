@@ -40,7 +40,7 @@ $religiao = $db->search("select * from td_divindade");
                     </select>
                 </div>
                 <div class="col-xs-1">
-                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    <a data-toggle="modal" data-target="#classModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                 </div>
                 <div class="col-xs-11">
                     <label for="racas">Raça</label><br>
@@ -56,7 +56,7 @@ $religiao = $db->search("select * from td_divindade");
                     </select>
                 </div>
                 <div class="col-xs-1">
-                    <a data-toggle="modal" data-target="#classModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                    <a data-toggle="modal" data-target="#raceModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                 </div>
 
                 <div class="col-xs-11">
@@ -73,7 +73,7 @@ $religiao = $db->search("select * from td_divindade");
                     </select>
                 </div>
                 <div class="col-xs-1">
-                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                    <a data-toggle="modal" data-target="#relModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
                 </div>
 
                 <div class="col-xs-12">
@@ -154,5 +154,11 @@ $religiao = $db->search("select * from td_divindade");
     </form>
 </div>
 </div>
+
+<!--Modal de Classe-->
+<!--Modal de Raça-->
+<!--Modal de Religião-->
+
+
 </body>
 
