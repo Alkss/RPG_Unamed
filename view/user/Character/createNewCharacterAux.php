@@ -1,8 +1,8 @@
 <?php
 $db = new DataBase();
 $alignments = $db->search("select * from td_alinhamento");
-$race = $db->search("select idt_raca,nme_raca from td_raca");
-$classe = $db->search("select idt_classe,nme_classe from td_classe");
+$race = $db->search("select idt_raca,nme_raca, dsc_raca from td_raca");
+$classe = $db->search("select idt_classe,nme_classe, dsc_classe from td_classe");
 $language = $db->search("select * from td_linguagem");
 $language = $db->search("select * from td_linguagem");
 $religiao = $db->search("select * from td_divindade");
@@ -40,7 +40,8 @@ $religiao = $db->search("select * from td_divindade");
                     </select>
                 </div>
                 <div class="col-xs-1">
-                    <a data-toggle="modal" data-target="#classModal"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
+                    <a data-toggle="modal" data-target="#classModal"><i class="fa fa-info-circle"
+                                                                        aria-hidden="true"></i></a>
                 </div>
                 <div class="col-xs-11">
                     <label for="racas">Raça</label><br>
@@ -156,8 +157,113 @@ $religiao = $db->search("select * from td_divindade");
 </div>
 
 <!--Modal de Classe-->
+<div id="classModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Lista de Classes</h4>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Classe</th>
+                        <th>Descrição</th>
+                    </tr>
+                    <?php
+                    foreach ($classe as $singleClass) {
+                        ?>
+                        <tr>
+                            <td><strong><?= $singleClass['nme_classe'] ?></strong></td>
+                            <td><?= $singleClass['dsc_classe'] ?></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 <!--Modal de Raça-->
+<div id="raceModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Criar personalizado</h4>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Classe</th>
+                        <th>Descrição</th>
+                    </tr>
+                    <?php
+                    foreach ($race as $singleRace) {
+                        ?>
+                        <tr>
+                            <td><strong><?= $singleRace['nme_raca'] ?></strong></td>
+                            <td><?= $singleRace['dsc_raca'] ?></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 <!--Modal de Religião-->
+<div id="relModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Criar personalizado</h4>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Classe</th>
+                        <th>Descrição</th>
+                    </tr>
+                    <?php
+                    foreach ($religiao as $singleRel) {
+                        ?>
+                        <tr>
+                            <td><strong><?= $singleRel['nme_divindade'] ?></strong></td>
+                            <td><?= $singleRel['dsc_divindade'] ?></td>
+                        </tr>
+                        <?php
+                    }
+                    ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
 
 
 </body>

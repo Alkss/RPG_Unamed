@@ -147,13 +147,26 @@ h1, h2 {
   }
 }
 
-#table-home, #char-page, #edit-char, #editItens {
-  #customModal {
+#table-home, #char-page, #edit-char, #editItens, #create-new-character {
+  #customModal, #classModal, #raceModal, #relModal {
     .modal-header {
       background-color: darkred;
     }
     .modal-content {
       background-color: #525252;
+      table {
+        th {
+          text-align: center;
+          border: 1px solid white;
+        }
+        td {
+          padding: 10px;
+          border: 1px solid white;
+        }
+        tr {
+          border: 1px solid white;
+        }
+      }
     }
   }
   #menu-table {
@@ -389,19 +402,25 @@ div {
 }
 
 #create-new-character {
-  div{
-    #leftDiv{
-      margin-bottom:20px;
+  div {
+    #leftDiv {
+      margin-bottom: 20px;
     }
   }
   i {
+    &:hover {
+      cursor: pointer;
+    }
     margin-top: 30px;
     color: gray;
   }
-  .btn{
+  .btn {
     margin-bottom: 10px !important;
     margin-top: 20px !important;
 
+  }
+  .modal-dialog {
+    width: 875px;
   }
 }
 

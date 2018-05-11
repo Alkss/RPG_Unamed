@@ -97,26 +97,35 @@ h1, h2 {
   height: 20em;
   margin-bottom: 10px; }
 
-#table-home #customModal .modal-header, #char-page #customModal .modal-header, #edit-char #customModal .modal-header, #editItens #customModal .modal-header {
+#table-home #customModal .modal-header, #table-home #classModal .modal-header, #table-home #raceModal .modal-header, #table-home #relModal .modal-header, #char-page #customModal .modal-header, #char-page #classModal .modal-header, #char-page #raceModal .modal-header, #char-page #relModal .modal-header, #edit-char #customModal .modal-header, #edit-char #classModal .modal-header, #edit-char #raceModal .modal-header, #edit-char #relModal .modal-header, #editItens #customModal .modal-header, #editItens #classModal .modal-header, #editItens #raceModal .modal-header, #editItens #relModal .modal-header, #create-new-character #customModal .modal-header, #create-new-character #classModal .modal-header, #create-new-character #raceModal .modal-header, #create-new-character #relModal .modal-header {
   background-color: darkred; }
-#table-home #customModal .modal-content, #char-page #customModal .modal-content, #edit-char #customModal .modal-content, #editItens #customModal .modal-content {
+#table-home #customModal .modal-content, #table-home #classModal .modal-content, #table-home #raceModal .modal-content, #table-home #relModal .modal-content, #char-page #customModal .modal-content, #char-page #classModal .modal-content, #char-page #raceModal .modal-content, #char-page #relModal .modal-content, #edit-char #customModal .modal-content, #edit-char #classModal .modal-content, #edit-char #raceModal .modal-content, #edit-char #relModal .modal-content, #editItens #customModal .modal-content, #editItens #classModal .modal-content, #editItens #raceModal .modal-content, #editItens #relModal .modal-content, #create-new-character #customModal .modal-content, #create-new-character #classModal .modal-content, #create-new-character #raceModal .modal-content, #create-new-character #relModal .modal-content {
   background-color: #525252; }
-#table-home #menu-table, #char-page #menu-table, #edit-char #menu-table, #editItens #menu-table {
+  #table-home #customModal .modal-content table th, #table-home #classModal .modal-content table th, #table-home #raceModal .modal-content table th, #table-home #relModal .modal-content table th, #char-page #customModal .modal-content table th, #char-page #classModal .modal-content table th, #char-page #raceModal .modal-content table th, #char-page #relModal .modal-content table th, #edit-char #customModal .modal-content table th, #edit-char #classModal .modal-content table th, #edit-char #raceModal .modal-content table th, #edit-char #relModal .modal-content table th, #editItens #customModal .modal-content table th, #editItens #classModal .modal-content table th, #editItens #raceModal .modal-content table th, #editItens #relModal .modal-content table th, #create-new-character #customModal .modal-content table th, #create-new-character #classModal .modal-content table th, #create-new-character #raceModal .modal-content table th, #create-new-character #relModal .modal-content table th {
+    text-align: center;
+    border: 1px solid white;
+    border-top-left-radius: 4px; }
+  #table-home #customModal .modal-content table td, #table-home #classModal .modal-content table td, #table-home #raceModal .modal-content table td, #table-home #relModal .modal-content table td, #char-page #customModal .modal-content table td, #char-page #classModal .modal-content table td, #char-page #raceModal .modal-content table td, #char-page #relModal .modal-content table td, #edit-char #customModal .modal-content table td, #edit-char #classModal .modal-content table td, #edit-char #raceModal .modal-content table td, #edit-char #relModal .modal-content table td, #editItens #customModal .modal-content table td, #editItens #classModal .modal-content table td, #editItens #raceModal .modal-content table td, #editItens #relModal .modal-content table td, #create-new-character #customModal .modal-content table td, #create-new-character #classModal .modal-content table td, #create-new-character #raceModal .modal-content table td, #create-new-character #relModal .modal-content table td {
+    padding: 10px;
+    border: 1px solid white; }
+  #table-home #customModal .modal-content table tr, #table-home #classModal .modal-content table tr, #table-home #raceModal .modal-content table tr, #table-home #relModal .modal-content table tr, #char-page #customModal .modal-content table tr, #char-page #classModal .modal-content table tr, #char-page #raceModal .modal-content table tr, #char-page #relModal .modal-content table tr, #edit-char #customModal .modal-content table tr, #edit-char #classModal .modal-content table tr, #edit-char #raceModal .modal-content table tr, #edit-char #relModal .modal-content table tr, #editItens #customModal .modal-content table tr, #editItens #classModal .modal-content table tr, #editItens #raceModal .modal-content table tr, #editItens #relModal .modal-content table tr, #create-new-character #customModal .modal-content table tr, #create-new-character #classModal .modal-content table tr, #create-new-character #raceModal .modal-content table tr, #create-new-character #relModal .modal-content table tr {
+    border: 1px solid white; }
+#table-home #menu-table, #char-page #menu-table, #edit-char #menu-table, #editItens #menu-table, #create-new-character #menu-table {
   border: 1px solid white;
   border-radius: 7px;
   min-width: 15em;
   background-color: black; }
-  #table-home #menu-table a, #char-page #menu-table a, #edit-char #menu-table a, #editItens #menu-table a {
+  #table-home #menu-table a, #char-page #menu-table a, #edit-char #menu-table a, #editItens #menu-table a, #create-new-character #menu-table a {
     color: white; }
-    #table-home #menu-table a:not(#homeBtn), #char-page #menu-table a:not(#homeBtn), #edit-char #menu-table a:not(#homeBtn), #editItens #menu-table a:not(#homeBtn) {
+    #table-home #menu-table a:not(#homeBtn), #char-page #menu-table a:not(#homeBtn), #edit-char #menu-table a:not(#homeBtn), #editItens #menu-table a:not(#homeBtn), #create-new-character #menu-table a:not(#homeBtn) {
       margin-left: 15px; }
-    #table-home #menu-table a:hover, #char-page #menu-table a:hover, #edit-char #menu-table a:hover, #editItens #menu-table a:hover {
+    #table-home #menu-table a:hover, #char-page #menu-table a:hover, #edit-char #menu-table a:hover, #editItens #menu-table a:hover, #create-new-character #menu-table a:hover {
       color: green; }
-    #table-home #menu-table a p, #char-page #menu-table a p, #edit-char #menu-table a p, #editItens #menu-table a p {
+    #table-home #menu-table a p, #char-page #menu-table a p, #edit-char #menu-table a p, #editItens #menu-table a p, #create-new-character #menu-table a p {
       color: white; }
-    #table-home #menu-table a#modal-custom, #char-page #menu-table a#modal-custom, #edit-char #menu-table a#modal-custom, #editItens #menu-table a#modal-custom {
+    #table-home #menu-table a#modal-custom, #char-page #menu-table a#modal-custom, #edit-char #menu-table a#modal-custom, #editItens #menu-table a#modal-custom, #create-new-character #menu-table a#modal-custom {
       cursor: pointer; }
-  #table-home #menu-table .menuTitle, #char-page #menu-table .menuTitle, #edit-char #menu-table .menuTitle, #editItens #menu-table .menuTitle {
+  #table-home #menu-table .menuTitle, #char-page #menu-table .menuTitle, #edit-char #menu-table .menuTitle, #editItens #menu-table .menuTitle, #create-new-character #menu-table .menuTitle {
     padding-right: 0 !important;
     padding-left: 0 !important;
     background-color: black;
@@ -251,9 +260,13 @@ div#editUserModal table#editUserTable {
 #create-new-character i {
   margin-top: 30px;
   color: gray; }
+  #create-new-character i:hover {
+    cursor: pointer; }
 #create-new-character .btn {
   margin-bottom: 10px !important;
   margin-top: 20px !important; }
+#create-new-character .modal-dialog {
+  width: 875px; }
 
 #create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character, #table-home, #char-page, #edit-char, #editItens {
   background-color: black;
