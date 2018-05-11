@@ -29,7 +29,14 @@
                             foreach ($userChar as $singleUserChar) {
                                 ?>
                                 <tr>
-                                    <td><?= $singleUserChar['nme_personagem'] ?></td>
+                                    <td><?php
+                                        if ($singleUserChar['nme_personagem']) {
+                                            echo $singleUserChar['nme_personagem'];
+                                        } else {
+                                            echo "Não tem personagem";
+                                        }
+                                        
+                                        ?></td>
                                     <td><?= $singleUserChar['nme_usuario'] ?></td>
                                     <td>
                                         <select name="userRole" id="userRole" class="form-control">
