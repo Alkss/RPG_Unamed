@@ -148,7 +148,7 @@ h1, h2 {
 }
 
 #table-home, #char-page, #edit-char, #editItens, #create-new-character {
-  #customModal, #classModal, #raceModal, #relModal {
+  #customModal, #classModal, #raceModal, #relModal, #alignModal {
     .modal-header {
       background-color: darkred;
     }
@@ -156,6 +156,7 @@ h1, h2 {
       background-color: #525252;
       table {
         th {
+          padding: 10px;
           text-align: center;
           border: 1px solid white;
         }

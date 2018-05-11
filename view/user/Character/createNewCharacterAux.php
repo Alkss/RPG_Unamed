@@ -78,7 +78,24 @@ $religiao = $db->search("select * from td_divindade");
                     <a data-toggle="modal" data-target="#relModal"><i class="fa fa-info-circle fa-2x"
                                                                       aria-hidden="true"></i></a>
                 </div>
-
+                <div class="col-xs-11">
+                    <label for="alignments">Alinhamento</label><br>
+                    <select id="alignments" name="alignments" class="form-control" required="required">
+                        <option value="" selected hidden>-- Selecione uma opçao --</option>
+                        <?php
+                        foreach ($alignments as $linha) {
+                            ?>
+                            <option value="<?= $linha['idt_alinhamento'] ?>"><?= $linha['nme_alinhamento'] ?></option>
+                            <?php
+                        }
+                        ?>
+                    </select>
+                </div>
+                <div class="col-xs-1">
+                    <a data-toggle="modal" data-target="#alignModal"><i class="fa fa-info-circle fa-2x"
+                                                                      aria-hidden="true"></i></a>
+                </div>
+                
                 <div class="col-xs-12">
                     <label for="gen_personagem">Genero do Personagem</label><br>
                     <select id="gen_personagem" name="gen_personagem" class="form-control" required="required">
@@ -112,10 +129,7 @@ $religiao = $db->search("select * from td_divindade");
                     </select>
                 </div>
 
-                <div class="col-xs-12">
-                    <label for="cor_olho">Cor dos olhos</label><br>
-                    <input class="form-control" type="text" name="cor_olho" id="cor_olho" required="required">
-                </div>
+
             </div>
             <div class="col-xs-6">
                 <div class="col-xs-12">
@@ -138,17 +152,8 @@ $religiao = $db->search("select * from td_divindade");
                 </div>
 
                 <div class="col-xs-12">
-                    <label for="alignments">Alinhamento</label><br>
-                    <select id="alignments" name="alignments" class="form-control" required="required">
-                        <option value="" selected hidden>-- Selecione uma opçao --</option>
-                        <?php
-                        foreach ($alignments as $linha) {
-                            ?>
-                            <option value="<?= $linha['idt_alinhamento'] ?>"><?= $linha['nme_alinhamento'] ?></option>
-                            <?php
-                        }
-                        ?>
-                    </select>
+                    <label for="cor_olho">Cor dos olhos</label><br>
+                    <input class="form-control" type="text" name="cor_olho" id="cor_olho" required="required">
                 </div>
                 <div class="col-xs-12">
                     <button class="btn btn-primary" id="createUser">Criar Personagem</button>
