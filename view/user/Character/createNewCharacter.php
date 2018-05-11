@@ -11,7 +11,7 @@ include('../../../header.php');
 
 if ($_SESSION['logado'] != 1) {
     header('location:' . URL . '/view/index.php');
-}else {
+} else {
     
     if (isset($_POST['nme_personagem']) && isset($_POST['exp_personagem']) &&
         isset($_POST['gen_personagem']) && isset($_POST['religiao']) &&

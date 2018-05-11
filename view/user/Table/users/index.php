@@ -22,7 +22,7 @@
                             <tbody>
                             <tr>
                                 <th>Personagem</th>
-                                <th>Dono</th>
+                                <th>Usuário</th>
                                 <th>Papel</th>
                             </tr>
                             <?php

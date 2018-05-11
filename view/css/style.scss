@@ -29,35 +29,35 @@
   display: flex;
 }
 
-#classes-home, #lang-home, #races-home, #alignment-home, #expertise-home, #divinity-home, #atributte-home, #equipment-home, #magic-home, #item-home, #table-home-adm,#user-page-adm,
-#alignment-edit,#attribute-edit,#class-edit, #divinity-edit,#equipment-edit,#expertise-edit,#item-edit,#lang-edit,#magic-edit,#race-edit,#table-edit,#edit-user-adm{
-        background-color: #030015;
-    
-    table{
-        &.table-responsive {
-            color: white;
-        }
+#classes-home, #lang-home, #races-home, #alignment-home, #expertise-home, #divinity-home, #atributte-home, #equipment-home, #magic-home, #item-home, #table-home-adm, #user-page-adm,
+#alignment-edit, #attribute-edit, #class-edit, #divinity-edit, #equipment-edit, #expertise-edit, #item-edit, #lang-edit, #magic-edit, #race-edit, #table-edit, #edit-user-adm {
+  background-color: #030015;
+
+  table {
+    &.table-responsive {
+      color: white;
     }
-    
-    h1,h2,h3{
-        color: white;
-    }
-    
-    label{
-        color: darkgray;
-    }
-    
-    .btn{
-      &.btn-default{
-        &.btn-sm {
+  }
+
+  h1, h2, h3 {
+    color: white;
+  }
+
+  label {
+    color: darkgray;
+  }
+
+  .btn {
+    &.btn-default {
+      &.btn-sm {
         background-color: #6e0000;
         color: white;
-        }
-       }
-      &.btn-primary {
-      margin-left: 2.3%;
-        }
+      }
     }
+    &.btn-primary {
+      margin-left: 2.3%;
+    }
+  }
 }
 
 h1, h2 {
@@ -97,24 +97,24 @@ h1, h2 {
 
 }
 
-#home-page-adm{
-    background-color: #030015;
-    table{
-        &.table-responsive {
-            color: white;
-        }
+#home-page-adm {
+  background-color: #030015;
+  table {
+    &.table-responsive {
+      color: white;
     }
-    h3{
-        color: white;
-    }
-    .btn{
-      &.btn-default{
-        &.btn-sm {
+  }
+  h3 {
+    color: white;
+  }
+  .btn {
+    &.btn-default {
+      &.btn-sm {
         background-color: #6e0000;
         color: white;
-        }
-       }
+      }
     }
+  }
 }
 
 #home-page-user {
@@ -388,6 +388,23 @@ div {
   }
 }
 
+#create-new-character {
+  div{
+    #leftDiv{
+      margin-bottom:20px;
+    }
+  }
+  i {
+    margin-top: 30px;
+    color: gray;
+  }
+  .btn{
+    margin-bottom: 10px !important;
+    margin-top: 20px !important;
+
+  }
+}
+
 #create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character, #table-home, #char-page, #edit-char, #editItens {
   background-color: black;
   color: white;
@@ -475,8 +492,8 @@ tbody {
   position: relative;
   max-width: 20em;
   a {
-        color: white;
-   }
+    color: white;
+  }
   .menuTitle {
     border: 1px solid rgba(181, 7, 7, 0.19);
     text-align: center;
