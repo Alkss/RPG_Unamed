@@ -266,7 +266,6 @@ div#editUserModal table#editUserTable {
 #create-new-character div #leftDiv {
   margin-bottom: 20px; }
 #create-new-character i {
-  margin-top: 30px;
   color: gray; }
   #create-new-character i:hover {
     color: darkred;

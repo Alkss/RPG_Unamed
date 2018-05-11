@@ -26,8 +26,10 @@ $religiao = $db->search("select * from td_divindade");
                     <input class="form-control" type="number" name="exp_personagem" id="exp_personagem"
                            required="required">
                 </div>
-                <div class="col-xs-11">
-                    <label for="classe">Classe</label><br>
+                <div class="col-xs-12">
+                    <label for="classe">Classe <a data-toggle="modal" data-target="#classModal"><i
+                                    class="fa fa-info-circle"
+                                    aria-hidden="true"></i></a></label><br>
                     <select id="classe" name="classe" class="form-control" required="required">
                         <option value="" selected hidden>-- Selecione uma opçao --</option>
                         <?php
@@ -39,12 +41,10 @@ $religiao = $db->search("select * from td_divindade");
                         ?>
                     </select>
                 </div>
-                <div class="col-xs-1">
-                    <a data-toggle="modal" data-target="#classModal"><i class="fa fa-info-circle fa-2x"
-                                                                        aria-hidden="true"></i></a>
-                </div>
-                <div class="col-xs-11">
-                    <label for="racas">Raça</label><br>
+
+                <div class="col-xs-12">
+                    <label for="racas">Raça <a data-toggle="modal" data-target="#raceModal"><i class="fa fa-info-circle"
+                                                                                               aria-hidden="true"></i></a></label><br>
                     <select id="racas" name="racas" class="form-control" required="required">
                         <option value="" selected hidden>-- Selecione uma opçao --</option>
                         <?php
@@ -56,13 +56,11 @@ $religiao = $db->search("select * from td_divindade");
                         ?>
                     </select>
                 </div>
-                <div class="col-xs-1">
-                    <a data-toggle="modal" data-target="#raceModal"><i class="fa fa-info-circle  fa-2x"
-                                                                       aria-hidden="true"></i></a>
-                </div>
 
-                <div class="col-xs-11">
-                    <label for="religiao">Religiao</label><br>
+                <div class="col-xs-12">
+                    <label for="religiao">Religiao <a data-toggle="modal" data-target="#relModal"><i
+                                    class="fa fa-info-circle"
+                                    aria-hidden="true"></i></a></label><br>
                     <select id="religiao" name="religiao" class="form-control" required="required">
                         <option value="" selected hidden>-- Selecione uma opçao --</option>
                         <?php
@@ -74,12 +72,11 @@ $religiao = $db->search("select * from td_divindade");
                         ?>
                     </select>
                 </div>
-                <div class="col-xs-1">
-                    <a data-toggle="modal" data-target="#relModal"><i class="fa fa-info-circle fa-2x"
-                                                                      aria-hidden="true"></i></a>
-                </div>
-                <div class="col-xs-11">
-                    <label for="alignments">Alinhamento</label><br>
+
+                <div class="col-xs-12">
+                    <label for="alignments">Alinhamento <a data-toggle="modal" data-target="#alignModal"><i
+                                    class="fa fa-info-circle"
+                                    aria-hidden="true"></i></a></label><br>
                     <select id="alignments" name="alignments" class="form-control" required="required">
                         <option value="" selected hidden>-- Selecione uma opçao --</option>
                         <?php
@@ -91,11 +88,8 @@ $religiao = $db->search("select * from td_divindade");
                         ?>
                     </select>
                 </div>
-                <div class="col-xs-1">
-                    <a data-toggle="modal" data-target="#alignModal"><i class="fa fa-info-circle fa-2x"
-                                                                      aria-hidden="true"></i></a>
-                </div>
-                
+
+
                 <div class="col-xs-12">
                     <label for="gen_personagem">Genero do Personagem</label><br>
                     <select id="gen_personagem" name="gen_personagem" class="form-control" required="required">
