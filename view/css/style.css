@@ -1,65 +1,86 @@
+/* line 1, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #index-page {
   background-color: black;
   color: white; }
+  /* line 4, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #index-page h1 {
     text-align: center; }
+  /* line 8, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #index-page div#form {
     display: flex;
     justify-content: center;
     vertical-align: middle; }
+  /* line 13, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #index-page div#login {
     margin-left: 35%; }
+  /* line 16, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #index-page div#btns {
     margin-left: 40%; }
+  /* line 20, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #index-page .btn-primary {
     margin-top: 10px;
     background-color: darkred;
     border-color: #ab0000; }
 
+/* line 28, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 .container:not(in #index-page) {
   display: flex; }
 
+/* line 32, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #classes-home, #lang-home, #races-home, #alignment-home, #expertise-home, #divinity-home, #atributte-home, #equipment-home, #magic-home, #item-home, #table-home-adm, #user-page-adm,
 #alignment-edit, #attribute-edit, #class-edit, #divinity-edit, #equipment-edit, #expertise-edit, #item-edit, #lang-edit, #magic-edit, #race-edit, #table-edit, #edit-user-adm {
   background-color: #030015; }
+  /* line 37, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #classes-home table.table-responsive, #lang-home table.table-responsive, #races-home table.table-responsive, #alignment-home table.table-responsive, #expertise-home table.table-responsive, #divinity-home table.table-responsive, #atributte-home table.table-responsive, #equipment-home table.table-responsive, #magic-home table.table-responsive, #item-home table.table-responsive, #table-home-adm table.table-responsive, #user-page-adm table.table-responsive,
   #alignment-edit table.table-responsive, #attribute-edit table.table-responsive, #class-edit table.table-responsive, #divinity-edit table.table-responsive, #equipment-edit table.table-responsive, #expertise-edit table.table-responsive, #item-edit table.table-responsive, #lang-edit table.table-responsive, #magic-edit table.table-responsive, #race-edit table.table-responsive, #table-edit table.table-responsive, #edit-user-adm table.table-responsive {
     color: white; }
+  /* line 42, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #classes-home h1, #classes-home h2, #classes-home h3, #lang-home h1, #lang-home h2, #lang-home h3, #races-home h1, #races-home h2, #races-home h3, #alignment-home h1, #alignment-home h2, #alignment-home h3, #expertise-home h1, #expertise-home h2, #expertise-home h3, #divinity-home h1, #divinity-home h2, #divinity-home h3, #atributte-home h1, #atributte-home h2, #atributte-home h3, #equipment-home h1, #equipment-home h2, #equipment-home h3, #magic-home h1, #magic-home h2, #magic-home h3, #item-home h1, #item-home h2, #item-home h3, #table-home-adm h1, #table-home-adm h2, #table-home-adm h3, #user-page-adm h1, #user-page-adm h2, #user-page-adm h3,
   #alignment-edit h1,
   #alignment-edit h2,
   #alignment-edit h3, #attribute-edit h1, #attribute-edit h2, #attribute-edit h3, #class-edit h1, #class-edit h2, #class-edit h3, #divinity-edit h1, #divinity-edit h2, #divinity-edit h3, #equipment-edit h1, #equipment-edit h2, #equipment-edit h3, #expertise-edit h1, #expertise-edit h2, #expertise-edit h3, #item-edit h1, #item-edit h2, #item-edit h3, #lang-edit h1, #lang-edit h2, #lang-edit h3, #magic-edit h1, #magic-edit h2, #magic-edit h3, #race-edit h1, #race-edit h2, #race-edit h3, #table-edit h1, #table-edit h2, #table-edit h3, #edit-user-adm h1, #edit-user-adm h2, #edit-user-adm h3 {
     color: white; }
+  /* line 46, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #classes-home label, #lang-home label, #races-home label, #alignment-home label, #expertise-home label, #divinity-home label, #atributte-home label, #equipment-home label, #magic-home label, #item-home label, #table-home-adm label, #user-page-adm label,
   #alignment-edit label, #attribute-edit label, #class-edit label, #divinity-edit label, #equipment-edit label, #expertise-edit label, #item-edit label, #lang-edit label, #magic-edit label, #race-edit label, #table-edit label, #edit-user-adm label {
     color: darkgray; }
+  /* line 52, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #classes-home .btn.btn-default.btn-sm, #lang-home .btn.btn-default.btn-sm, #races-home .btn.btn-default.btn-sm, #alignment-home .btn.btn-default.btn-sm, #expertise-home .btn.btn-default.btn-sm, #divinity-home .btn.btn-default.btn-sm, #atributte-home .btn.btn-default.btn-sm, #equipment-home .btn.btn-default.btn-sm, #magic-home .btn.btn-default.btn-sm, #item-home .btn.btn-default.btn-sm, #table-home-adm .btn.btn-default.btn-sm, #user-page-adm .btn.btn-default.btn-sm,
   #alignment-edit .btn.btn-default.btn-sm, #attribute-edit .btn.btn-default.btn-sm, #class-edit .btn.btn-default.btn-sm, #divinity-edit .btn.btn-default.btn-sm, #equipment-edit .btn.btn-default.btn-sm, #expertise-edit .btn.btn-default.btn-sm, #item-edit .btn.btn-default.btn-sm, #lang-edit .btn.btn-default.btn-sm, #magic-edit .btn.btn-default.btn-sm, #race-edit .btn.btn-default.btn-sm, #table-edit .btn.btn-default.btn-sm, #edit-user-adm .btn.btn-default.btn-sm {
     background-color: #6e0000;
     color: white; }
+  /* line 57, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #classes-home .btn.btn-primary, #lang-home .btn.btn-primary, #races-home .btn.btn-primary, #alignment-home .btn.btn-primary, #expertise-home .btn.btn-primary, #divinity-home .btn.btn-primary, #atributte-home .btn.btn-primary, #equipment-home .btn.btn-primary, #magic-home .btn.btn-primary, #item-home .btn.btn-primary, #table-home-adm .btn.btn-primary, #user-page-adm .btn.btn-primary,
   #alignment-edit .btn.btn-primary, #attribute-edit .btn.btn-primary, #class-edit .btn.btn-primary, #divinity-edit .btn.btn-primary, #equipment-edit .btn.btn-primary, #expertise-edit .btn.btn-primary, #item-edit .btn.btn-primary, #lang-edit .btn.btn-primary, #magic-edit .btn.btn-primary, #race-edit .btn.btn-primary, #table-edit .btn.btn-primary, #edit-user-adm .btn.btn-primary {
     margin-left: 2.3%; }
 
+/* line 63, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 h1, h2 {
   text-align: center; }
 
+/* line 67, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #showTables {
   background-color: black; }
+  /* line 69, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #showTables th {
     font-size: 18px;
     text-align: center;
     background-color: #340a0f; }
+  /* line 74, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #showTables div {
     padding-top: 2%;
     color: white; }
+    /* line 77, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
     #showTables div td {
       background-color: #580c17;
       color: white; }
+      /* line 80, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
       #showTables div td:hover {
         background-color: black; }
+    /* line 84, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
     #showTables div a {
       color: white; }
+  /* line 89, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #showTables #emptyAlert {
     display: flex;
     width: 100%;
@@ -68,63 +89,98 @@ h1, h2 {
     text-align: center;
     background-color: #580c17; }
 
+/* line 100, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #home-page-adm {
   background-color: #030015; }
+  /* line 103, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
+  #home-page-adm div .panel-info {
+    border-color: #6e0000; }
+    /* line 105, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
+    #home-page-adm div .panel-info .panel-heading {
+      color: #ffffff;
+      background-color: #6e0000;
+      border-color: #6e0000; }
+  /* line 113, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #home-page-adm table.table-responsive {
-    color: white; }
+    color: black; }
+  /* line 117, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #home-page-adm h3 {
     color: white; }
+  /* line 122, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #home-page-adm .btn.btn-default.btn-sm {
     background-color: #6e0000;
     color: white; }
 
+/* line 132, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #home-page-user .btn-primary {
   position: absolute;
   transform: translate(-6em, -2em); }
+
+/* line 137, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #home-page-user .container {
   position: relative; }
+
+/* line 141, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #home-page-user #sucessTable {
   display: flex;
   justify-content: center;
   margin: auto;
   margin-bottom: 2%; }
+
+/* line 147, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #home-page-user h3 {
   display: flex;
   margin: auto; }
+
+/* line 152, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #home-page-user #tableIframe {
   display: flex;
   width: 100%;
   height: 20em;
   margin-bottom: 10px; }
 
+/* line 162, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #table-home #customModal .modal-header, #table-home #classModal .modal-header, #table-home #raceModal .modal-header, #table-home #relModal .modal-header, #table-home #alignModal .modal-header, #char-page #customModal .modal-header, #char-page #classModal .modal-header, #char-page #raceModal .modal-header, #char-page #relModal .modal-header, #char-page #alignModal .modal-header, #edit-char #customModal .modal-header, #edit-char #classModal .modal-header, #edit-char #raceModal .modal-header, #edit-char #relModal .modal-header, #edit-char #alignModal .modal-header, #editItens #customModal .modal-header, #editItens #classModal .modal-header, #editItens #raceModal .modal-header, #editItens #relModal .modal-header, #editItens #alignModal .modal-header, #create-new-character #customModal .modal-header, #create-new-character #classModal .modal-header, #create-new-character #raceModal .modal-header, #create-new-character #relModal .modal-header, #create-new-character #alignModal .modal-header {
   background-color: darkred; }
+
+/* line 165, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #table-home #customModal .modal-content, #table-home #classModal .modal-content, #table-home #raceModal .modal-content, #table-home #relModal .modal-content, #table-home #alignModal .modal-content, #char-page #customModal .modal-content, #char-page #classModal .modal-content, #char-page #raceModal .modal-content, #char-page #relModal .modal-content, #char-page #alignModal .modal-content, #edit-char #customModal .modal-content, #edit-char #classModal .modal-content, #edit-char #raceModal .modal-content, #edit-char #relModal .modal-content, #edit-char #alignModal .modal-content, #editItens #customModal .modal-content, #editItens #classModal .modal-content, #editItens #raceModal .modal-content, #editItens #relModal .modal-content, #editItens #alignModal .modal-content, #create-new-character #customModal .modal-content, #create-new-character #classModal .modal-content, #create-new-character #raceModal .modal-content, #create-new-character #relModal .modal-content, #create-new-character #alignModal .modal-content {
   background-color: #525252; }
+  /* line 168, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #table-home #customModal .modal-content table th, #table-home #classModal .modal-content table th, #table-home #raceModal .modal-content table th, #table-home #relModal .modal-content table th, #table-home #alignModal .modal-content table th, #char-page #customModal .modal-content table th, #char-page #classModal .modal-content table th, #char-page #raceModal .modal-content table th, #char-page #relModal .modal-content table th, #char-page #alignModal .modal-content table th, #edit-char #customModal .modal-content table th, #edit-char #classModal .modal-content table th, #edit-char #raceModal .modal-content table th, #edit-char #relModal .modal-content table th, #edit-char #alignModal .modal-content table th, #editItens #customModal .modal-content table th, #editItens #classModal .modal-content table th, #editItens #raceModal .modal-content table th, #editItens #relModal .modal-content table th, #editItens #alignModal .modal-content table th, #create-new-character #customModal .modal-content table th, #create-new-character #classModal .modal-content table th, #create-new-character #raceModal .modal-content table th, #create-new-character #relModal .modal-content table th, #create-new-character #alignModal .modal-content table th {
     padding: 10px;
     text-align: center;
     border: 1px solid white; }
+  /* line 173, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #table-home #customModal .modal-content table td, #table-home #classModal .modal-content table td, #table-home #raceModal .modal-content table td, #table-home #relModal .modal-content table td, #table-home #alignModal .modal-content table td, #char-page #customModal .modal-content table td, #char-page #classModal .modal-content table td, #char-page #raceModal .modal-content table td, #char-page #relModal .modal-content table td, #char-page #alignModal .modal-content table td, #edit-char #customModal .modal-content table td, #edit-char #classModal .modal-content table td, #edit-char #raceModal .modal-content table td, #edit-char #relModal .modal-content table td, #edit-char #alignModal .modal-content table td, #editItens #customModal .modal-content table td, #editItens #classModal .modal-content table td, #editItens #raceModal .modal-content table td, #editItens #relModal .modal-content table td, #editItens #alignModal .modal-content table td, #create-new-character #customModal .modal-content table td, #create-new-character #classModal .modal-content table td, #create-new-character #raceModal .modal-content table td, #create-new-character #relModal .modal-content table td, #create-new-character #alignModal .modal-content table td {
     padding: 10px;
     border: 1px solid white; }
+  /* line 177, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #table-home #customModal .modal-content table tr, #table-home #classModal .modal-content table tr, #table-home #raceModal .modal-content table tr, #table-home #relModal .modal-content table tr, #table-home #alignModal .modal-content table tr, #char-page #customModal .modal-content table tr, #char-page #classModal .modal-content table tr, #char-page #raceModal .modal-content table tr, #char-page #relModal .modal-content table tr, #char-page #alignModal .modal-content table tr, #edit-char #customModal .modal-content table tr, #edit-char #classModal .modal-content table tr, #edit-char #raceModal .modal-content table tr, #edit-char #relModal .modal-content table tr, #edit-char #alignModal .modal-content table tr, #editItens #customModal .modal-content table tr, #editItens #classModal .modal-content table tr, #editItens #raceModal .modal-content table tr, #editItens #relModal .modal-content table tr, #editItens #alignModal .modal-content table tr, #create-new-character #customModal .modal-content table tr, #create-new-character #classModal .modal-content table tr, #create-new-character #raceModal .modal-content table tr, #create-new-character #relModal .modal-content table tr, #create-new-character #alignModal .modal-content table tr {
     border: 1px solid white; }
+
+/* line 183, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #table-home #menu-table, #char-page #menu-table, #edit-char #menu-table, #editItens #menu-table, #create-new-character #menu-table {
   border: 1px solid white;
   border-radius: 7px;
   min-width: 15em;
   background-color: black; }
+  /* line 188, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #table-home #menu-table a, #char-page #menu-table a, #edit-char #menu-table a, #editItens #menu-table a, #create-new-character #menu-table a {
     color: white; }
+    /* line 190, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
     #table-home #menu-table a:not(#homeBtn), #char-page #menu-table a:not(#homeBtn), #edit-char #menu-table a:not(#homeBtn), #editItens #menu-table a:not(#homeBtn), #create-new-character #menu-table a:not(#homeBtn) {
       margin-left: 15px; }
+    /* line 193, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
     #table-home #menu-table a:hover, #char-page #menu-table a:hover, #edit-char #menu-table a:hover, #editItens #menu-table a:hover, #create-new-character #menu-table a:hover {
       color: green; }
+    /* line 196, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
     #table-home #menu-table a p, #char-page #menu-table a p, #edit-char #menu-table a p, #editItens #menu-table a p, #create-new-character #menu-table a p {
       color: white; }
+    /* line 199, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
     #table-home #menu-table a#modal-custom, #char-page #menu-table a#modal-custom, #edit-char #menu-table a#modal-custom, #editItens #menu-table a#modal-custom, #create-new-character #menu-table a#modal-custom {
       cursor: pointer; }
+  /* line 204, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #table-home #menu-table .menuTitle, #char-page #menu-table .menuTitle, #edit-char #menu-table .menuTitle, #editItens #menu-table .menuTitle, #create-new-character #menu-table .menuTitle {
     padding-right: 0 !important;
     padding-left: 0 !important;
@@ -134,93 +190,135 @@ h1, h2 {
     width: 31%;
     text-align: center; }
 
+/* line 216, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #searchTables {
   background-color: black; }
+  /* line 218, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #searchTables input {
     background-color: black;
     color: white; }
+  /* line 222, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #searchTables th {
     text-align: center !important;
     background-color: #340a0f;
     color: white; }
+  /* line 227, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #searchTables table {
     background-color: #580c17; }
+  /* line 231, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #searchTables td:hover {
     background-color: black; }
+  /* line 235, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #searchTables a {
     color: white; }
 
+/* line 242, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 div#editUserModal .modal-body, div#editUserModal .modal-footer {
   background-color: black; }
+
+/* line 245, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 div#editUserModal .modal-header {
   background-color: darkred; }
+
+/* line 249, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 div#editUserModal table#editUserTable {
   margin: 0 auto; }
+  /* line 251, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   div#editUserModal table#editUserTable td, div#editUserModal table#editUserTable th {
     padding-left: 15px;
     padding-right: 15px; }
 
+/* line 261, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #editItens #attributeInput, #editItens #attributeHead {
   width: 6em;
   height: 1em; }
+  /* line 264, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #editItens #attributeInput input, #editItens #attributeHead input {
     margin-bottom: 2px; }
+
+/* line 270, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #editItens table {
   margin: 0 auto;
   margin-bottom: 10px; }
+  /* line 274, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #editItens table thead td {
     font-size: 1.15em;
     color: darkred; }
+  /* line 279, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #editItens table a {
     color: darkred; }
+  /* line 282, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #editItens table tr, #editItens table td {
     font-size: 1.1em;
     padding-left: 20px;
     padding-right: 20px; }
+
+/* line 290, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #editItens .btn.btn-primary {
   color: white; }
+  /* line 292, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #editItens .btn.btn-primary:hover {
     background-color: #470000; }
+
+/* line 296, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #editItens .btn.btn-secondary {
   color: black;
   background-color: whitesmoke; }
+  /* line 299, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #editItens .btn.btn-secondary:hover {
     background-color: silver; }
+
+/* line 305, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #editItens div.col-xs-6 {
   margin-bottom: 40px; }
 
+/* line 312, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 .row#show-character-at-table {
   margin: 0 auto; }
+  /* line 315, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   .row#show-character-at-table div#charDiv {
     margin: 0 auto; }
+  /* line 319, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   .row#show-character-at-table h6 {
     color: darkred;
     font-size: 1.3em;
     text-align: center; }
+  /* line 324, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   .row#show-character-at-table img {
     display: flex;
     margin: 0 auto;
     max-width: 250px;
     max-height: 250px; }
+  /* line 330, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   .row#show-character-at-table .progress {
     background-color: darkred; }
+  /* line 333, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   .row#show-character-at-table .progress-bar {
     background-color: red; }
 
+/* line 340, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #edit-char h6, #editItens h6 {
   text-align: center;
   font-size: 1.6em; }
+
+/* line 344, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #edit-char input, #editItens input {
   color: black; }
+
+/* line 347, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #edit-char textarea, #editItens textarea {
   color: black; }
 
+/* line 354, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #char-page #righ-side-table, #edit-char #righ-side-table {
   text-align: center; }
+  /* line 355, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #char-page #righ-side-table th, #edit-char #righ-side-table th {
     text-align: center; }
+  /* line 358, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #char-page #righ-side-table table, #edit-char #righ-side-table table {
     margin-left: 15%; }
+  /* line 362, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #char-page #righ-side-table h5, #edit-char #righ-side-table h5 {
     border-top-left-radius: 4px;
     border-top: 1px solid;
@@ -230,64 +328,97 @@ div#editUserModal table#editUserTable {
     border-color: darkred;
     color: darkred;
     font-size: 1.6em; }
+  /* line 372, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #char-page #righ-side-table h6, #edit-char #righ-side-table h6 {
     font-size: 1.3em; }
+
+/* line 377, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #char-page #histHead, #edit-char #histHead {
   text-align: center; }
+
+/* line 380, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #char-page #histBody, #edit-char #histBody {
   text-align: justify; }
+
+/* line 384, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #char-page td, #edit-char td {
   padding: 15px;
   padding-top: 0; }
+
+/* line 389, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #char-page th, #edit-char th {
   color: darkred;
   padding: 15px;
   padding-bottom: 0; }
+
+/* line 395, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #char-page #char-img, #edit-char #char-img {
   text-align: right; }
+
+/* line 398, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #char-page img, #edit-char img {
   max-width: 250px;
   max-height: 250px;
   text-align: right; }
+
+/* line 404, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #char-page .btn.btn-primary, #edit-char .btn.btn-primary {
   display: table-caption;
   margin-top: 4px; }
+  /* line 408, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #char-page .btn.btn-primary:hover, #edit-char .btn.btn-primary:hover {
     background-color: #5d0000; }
 
+/* line 416, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #edit-char i {
   color: gray; }
+  /* line 418, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #edit-char i:hover {
     color: darkred;
     cursor: pointer; }
+
+/* line 423, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #edit-char .modal-dialog {
   width: 875px; }
 
+/* line 430, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #create-new-character div #leftDiv {
   margin-bottom: 20px; }
+
+/* line 434, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #create-new-character i {
   color: gray; }
+  /* line 435, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #create-new-character i:hover {
     color: darkred;
     cursor: pointer; }
+
+/* line 441, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #create-new-character .btn {
   margin-bottom: 10px !important;
   margin-top: 20px !important; }
+
+/* line 446, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #create-new-character .modal-dialog {
   width: 875px; }
 
+/* line 451, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #create-new-user, #home-page-user, #create-new-table, #show-tables-user, #create-new-character, #table-home, #char-page, #edit-char, #editItens {
   background-color: black;
   color: white; }
+  /* line 456, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #create-new-user div#recent-chars, #home-page-user div#recent-chars, #create-new-table div#recent-chars, #show-tables-user div#recent-chars, #create-new-character div#recent-chars, #table-home div#recent-chars, #char-page div#recent-chars, #edit-char div#recent-chars, #editItens div#recent-chars {
     display: flex;
     justify-content: center; }
+  /* line 460, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #create-new-user div#recent-tables, #home-page-user div#recent-tables, #create-new-table div#recent-tables, #show-tables-user div#recent-tables, #create-new-character div#recent-tables, #table-home div#recent-tables, #char-page div#recent-tables, #edit-char div#recent-tables, #editItens div#recent-tables {
     display: flex;
     justify-content: center; }
+  /* line 464, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #create-new-user div#show-tables, #home-page-user div#show-tables, #create-new-table div#show-tables, #show-tables-user div#show-tables, #create-new-character div#show-tables, #table-home div#show-tables, #char-page div#show-tables, #edit-char div#show-tables, #editItens div#show-tables {
     display: flex;
     justify-content: center; }
+  /* line 470, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #create-new-user select, #home-page-user select, #create-new-table select, #show-tables-user select, #create-new-character select, #table-home select, #char-page select, #edit-char select, #editItens select {
     color: black;
     display: flex;
@@ -295,40 +426,51 @@ div#editUserModal table#editUserTable {
     vertical-align: middle;
     height: 34px;
     width: 100%; }
+  /* line 479, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #create-new-user .alert.alert-success, #home-page-user .alert.alert-success, #create-new-table .alert.alert-success, #show-tables-user .alert.alert-success, #create-new-character .alert.alert-success, #table-home .alert.alert-success, #char-page .alert.alert-success, #edit-char .alert.alert-success, #editItens .alert.alert-success {
     color: #ffffff;
     background-color: #5d020e; }
+  /* line 485, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #create-new-user h1, #home-page-user h1, #create-new-table h1, #show-tables-user h1, #create-new-character h1, #table-home h1, #char-page h1, #edit-char h1, #editItens h1 {
     text-align: center; }
+  /* line 488, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #create-new-user h2, #home-page-user h2, #create-new-table h2, #show-tables-user h2, #create-new-character h2, #table-home h2, #char-page h2, #edit-char h2, #editItens h2 {
     color: darkred;
     text-align: center; }
+  /* line 492, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #create-new-user .btn-primary, #home-page-user .btn-primary, #create-new-table .btn-primary, #show-tables-user .btn-primary, #create-new-character .btn-primary, #table-home .btn-primary, #char-page .btn-primary, #edit-char .btn-primary, #editItens .btn-primary {
     background-color: darkred;
     border-color: #ab0000;
     margin: auto;
     display: flex; }
+  /* line 499, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #create-new-user div#form, #create-new-user div#menu, #home-page-user div#form, #home-page-user div#menu, #create-new-table div#form, #create-new-table div#menu, #show-tables-user div#form, #show-tables-user div#menu, #create-new-character div#form, #create-new-character div#menu, #table-home div#form, #table-home div#menu, #char-page div#form, #char-page div#menu, #edit-char div#form, #edit-char div#menu, #editItens div#form, #editItens div#menu {
     display: flex;
     vertical-align: middle;
     justify-content: center;
     align-items: center; }
+  /* line 506, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #create-new-user #create-new-table, #home-page-user #create-new-table, #create-new-table #create-new-table, #show-tables-user #create-new-table, #create-new-character #create-new-table, #table-home #create-new-table, #char-page #create-new-table, #edit-char #create-new-table, #editItens #create-new-table {
     min-width: 60%; }
+    /* line 509, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
     #create-new-user #create-new-table #name-label-post:before, #home-page-user #create-new-table #name-label-post:before, #create-new-table #create-new-table #name-label-post:before, #show-tables-user #create-new-table #name-label-post:before, #create-new-character #create-new-table #name-label-post:before, #table-home #create-new-table #name-label-post:before, #char-page #create-new-table #name-label-post:before, #edit-char #create-new-table #name-label-post:before, #editItens #create-new-table #name-label-post:before {
       font-family: FontAwesome;
       content: "\f071";
       color: red; }
+    /* line 515, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
     #create-new-user #create-new-table #name-post, #home-page-user #create-new-table #name-post, #create-new-table #create-new-table #name-post, #show-tables-user #create-new-table #name-post, #create-new-character #create-new-table #name-post, #table-home #create-new-table #name-post, #char-page #create-new-table #name-post, #edit-char #create-new-table #name-post, #editItens #create-new-table #name-post {
       color: red; }
+  /* line 519, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #create-new-user #nPlayers, #home-page-user #nPlayers, #create-new-table #nPlayers, #show-tables-user #nPlayers, #create-new-character #nPlayers, #table-home #nPlayers, #char-page #nPlayers, #edit-char #nPlayers, #editItens #nPlayers {
     max-width: 20%; }
 
+/* line 524, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 tbody {
   max-width: 100%;
   overflow: auto;
   max-height: 500px; }
 
+/* line 530, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #menu-adm {
   border: 1px solid #a00c0c;
   background-color: #6e0000;
@@ -336,8 +478,10 @@ tbody {
   margin-left: 10px;
   position: relative;
   max-width: 20em; }
+  /* line 537, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #menu-adm a {
     color: white; }
+  /* line 540, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #menu-adm .menuTitle {
     border: 1px solid rgba(181, 7, 7, 0.19);
     text-align: center;
@@ -351,9 +495,11 @@ tbody {
     display: flex;
     justify-content: center;
     transform: translate(0%, -45%); }
+  /* line 554, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
   #menu-adm p:nth-child(2) {
     margin-top: 20px; }
 
+/* line 561, C:/xampp/htdocs/RPG_Unamed/view/css/style.scss */
 #create-new-user-adm #create-new-user-adm .row {
   margin: auto; }
 
