@@ -46,7 +46,7 @@ if (isset($_GET['success'])) {
 include '../menuADM.php';
 ?>
 <div class="col-xs-5">
-    <form method="post" id="create-new-alignment">
+    <form method="post" id="new-alignment">
         <p>
             <label for="alignmentName">Alinhamento</label>
             <input class="form-control" type="text" id="alignmentName" name="alignmentName">

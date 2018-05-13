@@ -7,7 +7,7 @@
  */
 
 ?>
-<body id="create-new-user-adm">
+<body id="new-user-adm">
 <h1><?= RPG_NAME ?></h1>
 <h2>Novo usuário</h2>
 <?php

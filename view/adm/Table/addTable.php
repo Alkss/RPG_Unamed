@@ -21,7 +21,7 @@ if ($_SESSION['logado'] != 1) {
     <head>
         <title>RPG_Unnamed - Nova sala</title>
     </head>
-<body id="create-new-table-adm">
+<body id="new-table-adm">
 <h1><?= RPG_NAME ?></h1>
 <h2>Nova Mesa</h2>
 
