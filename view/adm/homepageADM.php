@@ -24,11 +24,12 @@
         <?php
         include 'menuADM.php';
         $db = new DataBase();
-        $inactiveUsers = $db->search("select count(idt_usuario) as Total,idt_usuario, nme_usuario from tb_usuario where atv_usuario = 0");
+        $inactiveUsers = $db->search("select idt_usuario, nme_usuario from tb_usuario where atv_usuario = 0");
+        $qtd_inactiveUsers = $db->search("select count(idt_usuario) as Total,nme_usuario from tb_usuario where atv_usuario = 0 group by 2;");
         ?>
         <div class="col-xs-5">
         <?php
-            if($inactiveUsers[0]['Total'] > 0){
+            if($qtd_inactiveUsers[0]['Total'] > 0){
         ?>
         <form action="confirmUsers.php" class="form-horizontal" method="post" id="form"
                   onsubmit="return confirm('Deseja realmente fazer a ativação dos usuários ' +
@@ -37,7 +38,7 @@
         <div class="panel-heading">
           <h4 class="panel-title">
             <a class="colpsible-panel collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false">
-              Usuários a serem ativados (<?= $inactiveUsers[0]['Total'] ?>)
+              Usuários a serem ativados (<?= $qtd_inactiveUsers[0]['Total'] ?>)
             </a>
           </h4>
         </div>
