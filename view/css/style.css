@@ -85,6 +85,8 @@ h1, h2 {
       color: #ffffff;
       background-color: #6e0000;
       border-color: #6e0000; }
+      #home-page-adm div .panel-info .panel-heading#inativeUsers:hover {
+        cursor: pointer; }
   #home-page-adm table.table-responsive {
     color: black; }
   #home-page-adm h3 {

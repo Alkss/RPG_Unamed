@@ -104,6 +104,11 @@ h1, h2 {
     .panel-info {
       border-color: #6e0000;
       .panel-heading {
+        &#inativeUsers{
+          &:hover{
+            cursor: pointer;
+          }
+        }
         text-align: center;
         color: #ffffff;
         background-color: #6e0000;
