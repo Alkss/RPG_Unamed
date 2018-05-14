@@ -41,17 +41,17 @@ if (isset($_POST['idt']) && isset($_POST['name']) && isset($_POST['campaign']) &
             
             <label for="nPlayers">Quantidade de jogadores</label>
             <p>
-            <input type="number" name="nPlayers" id="nPlayers" value="<?= $singleTable[0]['qtd_players_sala'] ?>">
+            <input class="form-control" type="number" name="nPlayers" id="nPlayers" value="<?= $singleTable[0]['qtd_players_sala'] ?>">
             </p>
             
             <label for="campaign">História da campanha</label>
             <p>
-            <textarea name="campaign" id="campaign" ><?= $singleTable[0]['hst_campanha_sala'] ?></textarea>
+            <textarea style="height: 10em;" class="form-control" name="campaign" id="campaign" ><?= $singleTable[0]['hst_campanha_sala'] ?></textarea>
             </p>
             
             <label for="password">Senha</label><br>
             <p>
-            <input type="password" name="password" id="password" value="<?= $singleTable[0]['pwd_sala'] ?>">
+            <input class="form-control" type="password" name="password" id="password" value="<?= $singleTable[0]['pwd_sala'] ?>">
             </p>
             
             <button type="submit" class="btn btn-primary">Editar</button>
