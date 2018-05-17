@@ -168,6 +168,19 @@ h1, h2 {
   div {
     &#chat-div {
       border-color: black;
+      #btn-list {
+        background-color: black;
+        display: flex;
+        .btn {
+          margin: 10px !important;
+        }
+      }
+      #submitBtn {
+        background-color: black;
+      }
+      .selected {
+        background-color: #430000;
+      }
       .panel-heading {
         background-color: darkred;
         color: white;
@@ -178,6 +191,8 @@ h1, h2 {
         background-color: black;
       }
       .chat-text {
+        overflow: auto;
+        max-height: 20em;
         p {
           color: white;
         }

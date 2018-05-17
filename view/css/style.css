@@ -116,6 +116,15 @@ h1, h2 {
 
 #table-home div#chat-div {
   border-color: black; }
+  #table-home div#chat-div #btn-list {
+    background-color: black;
+    display: flex; }
+    #table-home div#chat-div #btn-list .btn {
+      margin: 10px !important; }
+  #table-home div#chat-div #submitBtn {
+    background-color: black; }
+  #table-home div#chat-div .selected {
+    background-color: #430000; }
   #table-home div#chat-div .panel-heading {
     background-color: darkred;
     color: white;
@@ -123,8 +132,11 @@ h1, h2 {
   #table-home div#chat-div .panel-body {
     border-color: black;
     background-color: black; }
-  #table-home div#chat-div .chat-text p {
-    color: white; }
+  #table-home div#chat-div .chat-text {
+    overflow: auto;
+    max-height: 20em; }
+    #table-home div#chat-div .chat-text p {
+      color: white; }
 
 #table-home #customModal .modal-header, #table-home #classModal .modal-header, #table-home #raceModal .modal-header, #table-home #relModal .modal-header, #table-home #alignModal .modal-header, #char-page #customModal .modal-header, #char-page #classModal .modal-header, #char-page #raceModal .modal-header, #char-page #relModal .modal-header, #char-page #alignModal .modal-header, #edit-char #customModal .modal-header, #edit-char #classModal .modal-header, #edit-char #raceModal .modal-header, #edit-char #relModal .modal-header, #edit-char #alignModal .modal-header, #editItens #customModal .modal-header, #editItens #classModal .modal-header, #editItens #raceModal .modal-header, #editItens #relModal .modal-header, #editItens #alignModal .modal-header, #create-new-character #customModal .modal-header, #create-new-character #classModal .modal-header, #create-new-character #raceModal .modal-header, #create-new-character #relModal .modal-header, #create-new-character #alignModal .modal-header {
   background-color: darkred; }
