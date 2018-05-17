@@ -104,8 +104,8 @@ h1, h2 {
     .panel-info {
       border-color: #6e0000;
       .panel-heading {
-        &#inativeUsers{
-          &:hover{
+        &#inativeUsers {
+          &:hover {
             cursor: pointer;
           }
         }
@@ -161,6 +161,28 @@ h1, h2 {
     width: 100%;
     height: 20em;
     margin-bottom: 10px;
+  }
+}
+
+#table-home {
+  div {
+    &#chat-div {
+      border-color: black;
+      .panel-heading {
+        background-color: darkred;
+        color: white;
+        border-color: black;
+      }
+      .panel-body {
+        border-color: black;
+        background-color: black;
+      }
+      .chat-text {
+        p {
+          color: white;
+        }
+      }
+    }
   }
 }
 

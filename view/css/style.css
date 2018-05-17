@@ -114,6 +114,18 @@ h1, h2 {
   height: 20em;
   margin-bottom: 10px; }
 
+#table-home div#chat-div {
+  border-color: black; }
+  #table-home div#chat-div .panel-heading {
+    background-color: darkred;
+    color: white;
+    border-color: black; }
+  #table-home div#chat-div .panel-body {
+    border-color: black;
+    background-color: black; }
+  #table-home div#chat-div .chat-text p {
+    color: white; }
+
 #table-home #customModal .modal-header, #table-home #classModal .modal-header, #table-home #raceModal .modal-header, #table-home #relModal .modal-header, #table-home #alignModal .modal-header, #char-page #customModal .modal-header, #char-page #classModal .modal-header, #char-page #raceModal .modal-header, #char-page #relModal .modal-header, #char-page #alignModal .modal-header, #edit-char #customModal .modal-header, #edit-char #classModal .modal-header, #edit-char #raceModal .modal-header, #edit-char #relModal .modal-header, #edit-char #alignModal .modal-header, #editItens #customModal .modal-header, #editItens #classModal .modal-header, #editItens #raceModal .modal-header, #editItens #relModal .modal-header, #editItens #alignModal .modal-header, #create-new-character #customModal .modal-header, #create-new-character #classModal .modal-header, #create-new-character #raceModal .modal-header, #create-new-character #relModal .modal-header, #create-new-character #alignModal .modal-header {
   background-color: darkred; }
 #table-home #customModal .modal-content, #table-home #classModal .modal-content, #table-home #raceModal .modal-content, #table-home #relModal .modal-content, #table-home #alignModal .modal-content, #char-page #customModal .modal-content, #char-page #classModal .modal-content, #char-page #raceModal .modal-content, #char-page #relModal .modal-content, #char-page #alignModal .modal-content, #edit-char #customModal .modal-content, #edit-char #classModal .modal-content, #edit-char #raceModal .modal-content, #edit-char #relModal .modal-content, #edit-char #alignModal .modal-content, #editItens #customModal .modal-content, #editItens #classModal .modal-content, #editItens #raceModal .modal-content, #editItens #relModal .modal-content, #editItens #alignModal .modal-content, #create-new-character #customModal .modal-content, #create-new-character #classModal .modal-content, #create-new-character #raceModal .modal-content, #create-new-character #relModal .modal-content, #create-new-character #alignModal .modal-content {
