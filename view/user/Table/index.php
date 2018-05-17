@@ -39,8 +39,13 @@ VALUES ('" . $db->scapeCont($_SESSION['idt_usuario']) . "',
     <?php
     include 'menu.php';
     include 'characters/index.php';
-    include 'chat/index.php';
+    include 'chat/chat.php';
     ?>
     </body>
+    <script>
+        <?php
+        include 'chat/app.js';
+        ?>
+    </script>
     <?php
 }
