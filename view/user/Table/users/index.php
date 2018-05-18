@@ -5,6 +5,8 @@
  * Date: 04/05/18
  * Time: 14:10
  */
+
+$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 ?>
 <div id="editUserModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
@@ -17,7 +19,8 @@
                 <?php
                 if ($userChar) {
                     ?>
-                    <form action="../index.php?idt=<?= $_GET['idt'] ?>" method="post">
+                    <form action="/RPG_Unamed/view/user/Table/users/updateUserRole.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>"
+                          method="post" id="userListForm">
                         <table id="editUserTable">
                             <tbody>
                             <tr>
@@ -39,7 +42,8 @@
                                         ?></td>
                                     <td><?= $singleUserChar['nme_usuario'] ?></td>
                                     <td>
-                                        <select name="userRole" id="userRole" class="form-control">
+                                        <select name="userRole[<?= $singleUserChar['cod_usuario'] ?>]" id="userRole"
+                                                class="form-control">
 
 
                                             <option selected="selected"
@@ -62,6 +66,10 @@
                             ?>
                             </tbody>
                         </table>
+                        <input type="hidden" value="<?= $actual_link ?>" name="previusPage" id="previusPage">
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" id="updateUserRole" name="updateUserRole">Atualizar</button>
+                        </div>
                     </form>
                     <?php
                 } else {
@@ -71,9 +79,7 @@
                 }
                 ?>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
-            </div>
+
         </div>
 
     </div>

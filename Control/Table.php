@@ -62,7 +62,14 @@ VALUES('"
         $stringSQL = "SELECT cod_papel_sala FROM tb_usuario JOIN ta_perfil_sala ON idt_usuario=cod_usuario JOIN tb_sala ON idt_sala=cod_sala WHERE cod_sala='" . $this->db->scapeCont($idtTable) . "' AND cod_usuario=" . $this->db->scapeCont($idtUser);
         return $this->db->search($stringSQL);
     }
-
+    
+    
+    public function updateUsersRoles($codUser, $userRole, $tableId)
+    {
+        $stringSQL = "UPDATE ta_perfil_sala SET cod_papel_sala=" . $this->db->scapeCont($userRole) . " WHERE cod_sala = " . $this->db->scapeCont($tableId) . " AND cod_usuario=" . $this->db->scapeCont($codUser);
+        return $this->db->executeQuery($stringSQL);
+    }
+    
     public function updateTable($id, $name, $history, $password, $players)
     {
         $today = date('Y-m-d H:i:s');
@@ -75,12 +82,14 @@ VALUES('"
             . " where idt_sala = " . $this->db->scapeCont($id);
         return $this->db->executeQuery($sql);
     }
-
-        public function deleteTable($idt){
-        $stringSQL ="DELETE FROM ta_perfil_sala WHERE cod_sala = ". $this->db->scapeCont($idt); 
+    
+    public
+    function deleteTable($idt)
+    {
+        $stringSQL = "DELETE FROM ta_perfil_sala WHERE cod_sala = " . $this->db->scapeCont($idt);
         $this->db->executeQuery($stringSQL);
-        $stringSQL ="DELETE FROM tb_sala WHERE idt_sala = ". $this->db->scapeCont($idt);
+        $stringSQL = "DELETE FROM tb_sala WHERE idt_sala = " . $this->db->scapeCont($idt);
         $this->db->executeQuery($stringSQL);
         return true;
-	}
+    }
 }

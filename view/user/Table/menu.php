@@ -12,7 +12,7 @@ $chars = $db->search("SELECT * FROM ta_perfil_sala JOIN tb_sala ON cod_sala=idt_
 
 
 
-$userChar = $db->search("SELECT nme_usuario, nme_personagem, nme_papel_sala, cod_papel_sala FROM tb_usuario JOIN ta_perfil_sala ON idt_usuario=cod_usuario JOIN td_papel_sala ON idt_papel_sala=cod_papel_sala JOIN tb_sala ON idt_sala=cod_sala LEFT JOIN tb_personagem ON idt_personagem=cod_personagem WHERE idt_sala=" . $_GET['idt']);
+$userChar = $db->search("SELECT cod_usuario, nme_usuario, nme_personagem, nme_papel_sala, cod_papel_sala FROM tb_usuario JOIN ta_perfil_sala ON idt_usuario=cod_usuario JOIN td_papel_sala ON idt_papel_sala=cod_papel_sala JOIN tb_sala ON idt_sala=cod_sala LEFT JOIN tb_personagem ON idt_personagem=cod_personagem WHERE idt_sala=" . $_GET['idt']);
 $table = new Table();
 
 ?>
