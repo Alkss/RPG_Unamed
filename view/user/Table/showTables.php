@@ -55,7 +55,7 @@ $salas = $db->search("SELECT idt_sala, nme_sala FROM tb_sala INNER JOIN ta_perfi
             }
         } else {
             ?>
-            <div class="alert alert-info" id="emptyAlert">Não há nenhuma sala registrado ainda</div>
+            <div class="alert alert-info" id="emptyAlert">Não há nenhuma sala registrada ainda</div>
             <?php
         }
         ?>
