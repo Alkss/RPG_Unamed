@@ -15,6 +15,5 @@ foreach ($_POST['userRole'] as $key => $singleUser) {
 }
 header('Location:' . $_POST['previusPage']);
 
-
 ?>
 
