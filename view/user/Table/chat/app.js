@@ -2,7 +2,7 @@ var diceResult = "";
 var diceType = "";
 var diceNumber = 0;
 
-function restartDice(dice, diceValue) {
+function restartDice(dice, diceNumber) {
     diceResult = dice + " (";
     diceResult += Math.floor((Math.random() * diceNumber) + 1);
     diceResult += ")";

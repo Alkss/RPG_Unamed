@@ -32,6 +32,7 @@
                                                    min="0" max="30" step="1" class="form-control"
                                                    value="<?= $singleAttr['val_personagem_atributo'] ?>"></td>
                     <td style="text-align: center"><?php
+                        $modValue = 0;
                         if ($singleAttr['val_personagem_atributo'] == 1)
                             $modValue = -5;
                         else if ($singleAttr['val_personagem_atributo'] == 2 || ($singleAttr['val_personagem_atributo'] == 3))
@@ -65,7 +66,7 @@
                         else if ($singleAttr['val_personagem_atributo'] == 30)
                             $modValue = 10;
                         
-                        if ($modValue > 0){
+                        if ($modValue > 0) {
                             $modValue = '+' . $modValue;
                         }
                         echo $modValue;
