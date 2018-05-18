@@ -115,13 +115,14 @@ $alignments = $db->search("select * from td_alinhamento");
             </div>
             <div class="col-xs-2">
                 <label for="height">Altura</label>
-                <input required="required" class="form-control" id="height" name="height" type="number" min="0"
+                <input required="required" class="form-control" id="height" name="height" type="number" min="0.50"
                        max="20"
                        step="0.01"
                        value="<?= $selectedChar[0]['alt_personagem'] ?>">
 
                 <label for="weight">Peso</label>
-                <input required="required" class="form-control" id="weight" name="weight" type="number"
+                <input required="required" class="form-control" id="weight" min="1.00" step="0.01" name="weight"
+                       type="number"
                        value="<?= $selectedChar[0]['pes_personagem'] ?>">
 
                 <br>

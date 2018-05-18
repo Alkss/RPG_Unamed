@@ -109,7 +109,7 @@ $table = new Table();
                             <div class="col-xs-6">
                                 <br>
                                 <input type="submit" value="Criar um personalizado" name="add-Custom"
-                                       id="add-Custom"
+                                       id="add-Custom" required="required"
                                        class="btn btn-primary">
                             </div>
                         </div>

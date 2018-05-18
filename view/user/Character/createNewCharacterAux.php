@@ -101,13 +101,13 @@ $religiao = $db->search("select * from td_divindade");
 
                 <div class="col-xs-12">
                     <label for="pes_personagem">Peso do Personagem</label><br>
-                    <input class="form-control" type="number" name="pes_personagem" id="pes_personagem"
+                    <input class="form-control" type="number" min="1.00" step="0.01" name="pes_personagem" id="pes_personagem"
                            required="required">
                 </div>
 
                 <div class="col-xs-12">
                     <label for="alt_personagem">Altura do Personagem</label><br>
-                    <input class="form-control" type="number" min="0.00" max="10.00" step="0.01" name="alt_personagem"
+                    <input class="form-control" type="number" min="0.50" max="10.00" step="0.01" name="alt_personagem"
                            id="alt_personagem" required="required">
                 </div>
 
