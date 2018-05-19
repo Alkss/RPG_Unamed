@@ -25,7 +25,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     include 'menuADM.php';
     $db = new DataBase();
     $inactiveUsers = $db->search("select idt_usuario, nme_usuario from tb_usuario where atv_usuario = 0");
-    $qtd_inactiveUsers = $db->search("select count(idt_usuario) as Total,nme_usuario from tb_usuario where atv_usuario = 0 group by 2;");
+    $qtd_inactiveUsers = $db->search("select count(idt_usuario) as Total from tb_usuario where atv_usuario = 0;");
     ?>
     <div class="col-xs-5">
         <?php
