@@ -65,7 +65,7 @@ if (isset($_POST['name']) && isset($_POST['login']) && isset($_POST['email']) &&
                 </p>
                 <p>
                     <label for="email">Email</label><br>
-                    <input class="form-control" type="text" name="email" id="email"
+                    <input class="form-control" type="email" name="email" id="email"
                            value="<?= $user[0]['eml_usuario'] ?>">
                 </p>
                 <p>

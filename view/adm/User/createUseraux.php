@@ -27,7 +27,7 @@ include '../menuADM.php';
                 </p>
                 <p>
                     <label for="email">Email</label><br>
-                    <input class="form-control" type="text" name="email" id="email" required="true">
+                    <input class="form-control" type="email" name="email" id="email" required="true">
                 </p>
                 <p>
                     <label for="userType">Tipo de usuário</label>
