@@ -50,13 +50,13 @@ if (!isset($_GET['idt'])) {
             <input type="hidden" id="idt" name="idt" value="<?= $singleExpertise[0]['idt_pericia'] ?>">
             <label for="expertise-name">Perícia</label>
             <input class="form-control" type="text" id="expertise-name" name="expertise-name"
-                   value="<?= $singleExpertise[0]['nme_pericia'] ?>">
+                   value="<?= $singleExpertise[0]['nme_pericia'] ?>" required="true">
 
             <label for="expertise-desc">Descrição da perícia</label>
             <textarea class="form-control" name="expertise-desc" id="expertise-desc"
-                      form="edit-expertise-form"><?= $singleExpertise[0]['dsc_pericia'] ?></textarea>
+                      required="true" form="edit-expertise-form"><?= $singleExpertise[0]['dsc_pericia'] ?></textarea>
 
-            <button type="submit" class="btn btn-primary">Editar</button>
+            <button type="submit"required="true"  class="btn btn-primary">Editar</button>
         </form>
 
     </div>

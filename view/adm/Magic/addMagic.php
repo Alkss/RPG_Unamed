@@ -10,8 +10,9 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     
     if (isset($_POST['magicName']) && isset($_POST['magicDesc']) && isset($_POST['magicType'])&& isset($_POST['magicModBase'])) {
         $magic = new Magic();
-        
-        if ($magic->createMagic($_POST['magicName'], $_POST['magicDesc'], $_POST['magicType'], $_POST['magicModBase'])) {
+        if ($magic->checkIfExistsByName($_POST['magicName'])) {
+            header('Location: addMagic.php?error=1');
+        }else if ($magic->createMagic($_POST['magicName'], $_POST['magicDesc'], $_POST['magicType'], $_POST['magicModBase'])) {
             header('Location: addMagic.php?success=1');
         }
     }
@@ -30,13 +31,15 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
 if (isset($_GET['success'])) {
     if ($_GET['success'] == 1) {
         ?>
-        <div class="alert alert-success"><p>Magia criado com sucesso!</p></div>
-        <?php
-    } else {
-        ?>
-        <div class="alert alert-error"><p>Erro na criação da magia!</p></div>
+        <div class="alert alert-success"><p>Magia criada com sucesso!</p></div>
         <?php
     }
+}if(isset($_GET['error'])){
+        if ($_GET['error'] == 1)  {
+        ?>
+        <div class="alert alert-danger"><p>Nome da magia já existe!</p></div>
+        <?php
+        }
 }
 include '../menuADM.php';
 ?>
@@ -44,16 +47,16 @@ include '../menuADM.php';
     <form method="post" id="create-new-magic">
         <p>
             <label for="magicName">Magia</label>
-            <input class="form-control" type="text" id="magicName" name="magicName">
+            <input class="form-control" type="text" id="magicName" name="magicName" required="true">
         </p>
         <p>
             <label for="magicDesc">Descrição do magia</label>
         </p>
         <textarea class="form-control" form="create-new-magic" id="magicDesc" name="magicDesc"
-                  style="height: 180px"></textarea>
+                  style="height: 180px" required="true"></textarea>
         <p>
         <label for="magicType">Tipo de magia</label>
-            <select class="form-control" id="magicType" name="magicType">
+            <select class="form-control" id="magicType" name="magicType" required="true">
                 <option selected disabled="disabled" hidden>Escolha um tipo</option>
                 <option value="A">Ataque</option>
                 <option value="D">Defesa</option>
@@ -61,7 +64,7 @@ include '../menuADM.php';
         </p>
         <p>
             <label for="magicModBase">Modificador base da magia</label>
-            <input class="form-control" type="text" id="magicModBase" name="magicModBase">
+            <input class="form-control" type="text" id="magicModBase" name="magicModBase" required="true">
         </p>
         <button class="btn btn-primary" id="createMagic" name="createMagic">Adicionar magia</button>
     </form>

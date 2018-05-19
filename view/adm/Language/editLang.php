@@ -56,7 +56,7 @@ if (!isset($_GET['idt'])) {
             <input type="hidden" id="idt" name="idt" value="<?= $singleLang[0]['idt_linguagem'] ?>">
             <label for="lang-name">Linguagem</label>
             <input class="form-control" type="text" id="lang-name" name="lang-name"
-                   value="<?= $singleLang[0]['nme_linguagem'] ?>">
+                   value="<?= $singleLang[0]['nme_linguagem'] ?>" required="true">
 
             <button type="submit" class="btn btn-primary">Editar</button>
         </form>

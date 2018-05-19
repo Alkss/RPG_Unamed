@@ -49,7 +49,7 @@ include '../menuADM.php';
     <form method="post" id="create-new-divinity">
         <p>
             <label for="divinityName">Divindade</label>
-            <input class="form-control" type="text" id="divinityName" name="divinityName">
+            <input class="form-control" type="text" id="divinityName" name="divinityName" required="true">
         </p>
         <p>
             <label for="divinityDesc">Descrição da divindade</label>

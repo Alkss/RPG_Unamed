@@ -62,7 +62,7 @@ include '../menuADM.php';
             <label for="alignmentDesc">Descrição do alinhamento</label>
         </p>
         <textarea class="form-control" form="create-new-alignment" id="alignmentDesc" name="alignmentDesc"
-                  style="height: 180px"></textarea>
+                  style="height: 180px" required="true"></textarea>
 
         <button class="btn btn-primary" id="createAlignment" name="createAlignment">Adicionar alinhamento</button>
     </form>

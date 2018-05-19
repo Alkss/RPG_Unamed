@@ -41,7 +41,7 @@ if (!isset($_GET['idt'])) {
             <input type="hidden" id="idt" name="idt" value="<?= $singleAttribute[0]['idt_atributo'] ?>">
             <label for="attribute-name">Atributo</label>
             <input class="form-control" type="text" id="attribute-name" name="attribute-name"
-                   value="<?= $singleAttribute[0]['nme_atributo'] ?>">
+                   value="<?= $singleAttribute[0]['nme_atributo'] ?>" required="true">
 
             <button type="submit" class="btn btn-primary">Editar</button>
         </form>

@@ -41,11 +41,11 @@ if (!isset($_GET['idt'])) {
             <input type="hidden" id="idt" name="idt" value="<?= $singleItem[0]['idt_item'] ?>">
             <label for="item-name">Item</label>
             <input class="form-control" type="text" id="item-name" name="item-name"
-                   value="<?= $singleItem[0]['nme_item'] ?>"
+                   value="<?= $singleItem[0]['nme_item'] ?>" required="true">
 
             <label for="item-desc">Descrição do item</label>
             <textarea class="form-control" name="item-desc" id="item-desc"
-                      form="edit-item-form"><?= $singleItem[0]['dsc_item'] ?></textarea>
+                     required="true" form="edit-item-form"><?= $singleItem[0]['dsc_item'] ?></textarea>
 
             <button type="submit" class="btn btn-primary">Editar</button>
         </form>

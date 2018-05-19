@@ -35,11 +35,11 @@ if (!isset($_GET['idt'])) {
             <input type="hidden" id="idt" name="idt" value="<?= $singleDivinity[0]['idt_divindade'] ?>">
             <label for="divinity-name">Divindade</label>
             <input class="form-control" type="text" id="divinity-name" name="divinity-name"
-                   value="<?= $singleDivinity[0]['nme_divindade'] ?>"
+                   value="<?= $singleDivinity[0]['nme_divindade'] ?>" required="true">
 
             <label for="alignment-desc">Descrição do alinhamento</label>
             <textarea class="form-control" name="divinity-desc" id="divinity-desc"
-                      form="edit-divinity-form"><?= $singleDivinity[0]['dsc_divindade'] ?></textarea>
+                      required="true" form="edit-divinity-form"><?= $singleDivinity[0]['dsc_divindade'] ?></textarea>
 
             <button type="submit" class="btn btn-primary">Editar</button>
         </form>

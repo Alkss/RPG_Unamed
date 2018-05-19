@@ -49,7 +49,7 @@ include '../menuADM.php';
     <form method="post" id="create-new-attribute">
         <p>
             <label for="attributeName">Atributo</label>
-            <input class="form-control" type="text" id="attributeName" name="attributeName">
+            <input class="form-control" type="text" id="attributeName" name="attributeName" required="true">
         </p>
 
         <button class="btn btn-primary" id="createAttribute" name="createAttribute">Adicionar atributo</button>

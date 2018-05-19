@@ -49,13 +49,13 @@ include '../menuADM.php';
     <form method="post" id="create-new-item">
         <p>
             <label for="itemName">Item</label>
-            <input class="form-control" type="text" id="itemName" name="itemName">
+            <input class="form-control" type="text" id="itemName" name="itemName" required="true">
         </p>
         <p>
             <label for="itemDesc">Descrição do item</label>
         </p>
         <textarea class="form-control" form="create-new-item" id="itemDesc" name="itemDesc"
-                  style="height: 180px"></textarea>
+                  style="height: 180px" required="true"></textarea>
 
         <button class="btn btn-primary" id="createItem" name="createItem">Adicionar item</button>
     </form>

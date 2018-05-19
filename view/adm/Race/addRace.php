@@ -58,13 +58,13 @@ include '../menuADM.php';
     <form method="post" id="create-new-race">
         <p>
             <label for="raceName">Nome</label>
-            <input class="form-control" type="text" id="raceName" name="raceName">
+            <input class="form-control" type="text" id="raceName" name="raceName" required="true">
         </p>
         <p>
             <label for="raceDesc">Descrição da raça</label>
         </p>
         <textarea class="form-control" form="create-new-race" id="raceDesc" name="raceDesc"
-                  style="height: 180px"></textarea>
+                  style="height: 180px" required="true"></textarea>
 
         <button class="btn btn-primary" id="createRace" name="createRace">Adicionar Raça</button>
     </form>

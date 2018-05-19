@@ -59,13 +59,13 @@ include '../menuADM.php';
     <form method="post" id="create-new-expertise">
         <p>
             <label for="expertiseName">Pericia</label>
-            <input class="form-control" type="text" id="expertiseName" name="expertiseName">
+            <input class="form-control" type="text" id="expertiseName" name="expertiseName" required="true">
         </p>
         <p>
             <label for="expertiseDesc">Descrição da perícia</label>
         </p>
         <textarea class="form-control" form="create-new-expertise" id="expertiseDesc" name="expertiseDesc"
-                  style="height: 180px"></textarea>
+                  style="height: 180px" required="true"></textarea>
 
         <button class="btn btn-primary" id="createExpertise" name="createExpertise">Adicionar perícia</button>
     </form>

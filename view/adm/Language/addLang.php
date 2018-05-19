@@ -58,7 +58,7 @@ include '../menuADM.php';
     <form method="post" id="create-new-lang">
         <p>
             <label for="langName">Linguagem</label>
-            <input class="form-control" type="text" id="langName" name="langName">
+            <input class="form-control" type="text" id="langName" name="langName" required="true">
         </p>
         
         <button class="btn btn-primary" id="createLang" name="createLang">Adicionar Linguagem</button>

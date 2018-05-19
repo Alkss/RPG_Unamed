@@ -56,11 +56,11 @@ if (!isset($_GET['idt'])) {
             <input type="hidden" id="idt" name="idt" value="<?= $singleRace[0]['idt_raca'] ?>">
             <label for="race-name">Raça</label>
             <input class="form-control" type="text" id="race-name" name="race-name"
-                   value="<?= $singleRace[0]['nme_raca'] ?>">
+                   value="<?= $singleRace[0]['nme_raca'] ?>" required="true">
 
             <label for="race-desc">Descrição da Raça</label>
             <textarea class="form-control" name="race-desc" id="race-desc"
-                      form="edit-race-form"><?= $singleRace[0]['dsc_raca'] ?></textarea>
+                     required="true" form="edit-race-form"><?= $singleRace[0]['dsc_raca'] ?></textarea>
 
             <button type="submit" class="btn btn-primary">Editar</button>
         </form>

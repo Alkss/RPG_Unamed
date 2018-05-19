@@ -55,7 +55,7 @@ if (!isset($_GET['idt'])) {
 
             <label for="class-desc">Descrição da classe</label>
             <textarea class="form-control" name="class-desc" id="class-desc"
-                      form="edit-classes-form"><?= $singleClass[0]['dsc_classe'] ?></textarea>
+                     required="true" form="edit-classes-form"><?= $singleClass[0]['dsc_classe'] ?></textarea>
 
             <button type="submit" class="btn btn-primary">Editar</button>
         </form>

@@ -44,16 +44,16 @@ include '../menuADM.php';
     <form method="post" id="create-new-equipment">
         <p>
             <label for="equipmentName">Equipamento</label>
-            <input class="form-control" type="text" id="equipmentName" name="equipmentName">
+            <input class="form-control" type="text" id="equipmentName" name="equipmentName" required="true">
         </p>
         <p>
             <label for="equipmentDesc">Descrição do equipamento</label>
         </p>
         <textarea class="form-control" form="create-new-equipment" id="equipmentDesc" name="equipmentDesc"
-                  style="height: 180px"></textarea>
+                  style="height: 180px" required="true"></textarea>
         <p>
         <label for="equipmentType">Tipo de equipamento</label>
-            <select class="form-control" id="equipmentType" name="equipmentType">
+            <select class="form-control" id="equipmentType" name="equipmentType" required="true">
                 <option selected disabled="disabled" hidden>Escolha um tipo</option>
                 <option value="A">Ataque</option>
                 <option value="D">Defesa</option>
@@ -61,9 +61,9 @@ include '../menuADM.php';
         </p>
         <p>
             <label for="equipmentModBase">Modificador base do equipamento</label>
-            <input class="form-control" type="text" id="equipmentModBase" name="equipmentModBase">
+            <input class="form-control" type="text" id="equipmentModBase" name="equipmentModBase" required="true">
         </p>
-        <button class="btn btn-primary" id="createEquipment" name="createEquipment">Adicionar perícia</button>
+        <button class="btn btn-primary" id="createEquipment" name="createEquipment">Adicionar equipamento</button>
     </form>
 </div>
     <?php

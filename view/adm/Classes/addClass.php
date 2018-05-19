@@ -59,7 +59,7 @@ include '../menuADM.php';
             <label for="classDesc">Descrição da Classe</label>
         </p>
         <textarea class="form-control" form="create-new-class" id="classDesc" name="classDesc"
-                  style="height: 180px"></textarea>
+                  style="height: 180px" required="true"></textarea>
 
         <button class="btn btn-primary" id="createclass" name="createclass">Adicionar Classe</button>
     </form>

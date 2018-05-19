@@ -60,7 +60,7 @@ if (!isset($_GET['idt'])) {
 
             <label for="alignment-desc">Descrição do alinhamento</label>
             <textarea class="form-control" name="alignment-desc" id="alignment-desc"
-                      form="edit-alignment-form"><?= $singleAlignment[0]['dsc_alinhamento'] ?></textarea>
+                      required="true" form="edit-alignment-form"><?= $singleAlignment[0]['dsc_alinhamento'] ?></textarea>
 
             <button type="submit" class="btn btn-primary">Editar</button>
         </form>
