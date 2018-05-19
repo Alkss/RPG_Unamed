@@ -16,7 +16,11 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     if (isset($_POST['divinityName']) && isset($_POST['divinityDesc'])) {
         $divinity = new Divinity();
         
-        if ($divinity->createDivinity($_POST['divinityName'], $_POST['divinityDesc'])) {
+        if ($divinity->checkIfExistsByName($_POST['divinityName'])) {
+            header('Location: addDivinity.php?error=1');
+        }else if (!preg_match ("/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/",$_POST['divinityName'])) {
+            header('Location: addDivinity.php?error=2');
+        }else if ($divinity->createDivinity($_POST['divinityName'], $_POST['divinityDesc'])) {
             header('Location: addDivinity.php?success=1');
         }
     }
@@ -37,12 +41,18 @@ if (isset($_GET['success'])) {
         ?>
         <div class="alert alert-success"><p>Divindade criada com sucesso!</p></div>
         <?php
-    } else {
-        ?>
-        <div class="alert alert-error"><p>Erro na criação da divindade!</p></div>
-        <?php
     }
-}
+}if(isset($_GET['error'])){
+        if ($_GET['error'] == 1)  {
+        ?>
+        <div class="alert alert-danger"><p>Esta divindade já existe!</p></div>
+        <?php
+        }else if ($_GET['error'] == 2)  {
+        ?>
+        <div class="alert alert-danger"><p>Nome da divindade só pode possuir letras!</p></div>
+        <?php
+        }
+    }
 include '../menuADM.php';
 ?>
 <div class="col-xs-5">

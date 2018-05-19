@@ -42,4 +42,18 @@ VALUES('" . $this->db->scapeCont($desc) . "','" . $this->db->scapeCont($name) . 
         $this->db->executeQuery($stringSQL);
         return true;
     }
+    
+    public function checkIfExistsByName($name, $idt = ""){
+        $where = "";
+        if ($idt != "") {
+            $where = "AND idt_divindade != " . $idt;
+        }
+        $stringSQL = "SELECT * FROM `td_divindade` WHERE nme_divindade = '" . $this->db->scapeCont($name) . "' " . $where;
+        $sql = $this->db->search($stringSQL);
+        if ($sql) {
+            return true;
+        }
+        return false;
+        
+    }
 }

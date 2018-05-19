@@ -1,10 +1,14 @@
 <?php
 require('../../../config.php');
 include('../../../header.php');
-
+$idt = $_GET['idt'];
 if (isset($_POST['idt']) && isset($_POST['divinity-name']) && isset($_POST['divinity-desc'])) {
     $divinity = new Divinity();
-    if ($divinity->updateDivinity($_POST['idt'], $_POST['divinity-name'], $_POST['divinity-desc']))
+    if ($divinity->checkIfExistsByName($_POST['divinity-name'],$id)) {
+            header('Location: editDivinity.php?idt=' . $idt . '&error=1');
+    }else if (!preg_match ("/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/",$_POST['divinity-name'])) {
+            header('Location: editDivinity.php?idt=' . $idt . '&error=2');
+    }else if ($divinity->updateDivinity($_POST['idt'], $_POST['divinity-name'], $_POST['divinity-desc']))
         header('Location:' . URL . 'view/adm/Divinity/index.php?success=2');
 }
 
@@ -28,6 +32,17 @@ if (!isset($_GET['idt'])) {
     <h2>Editar divindades</h2>
     
     <?php
+    if(isset($_GET['error'])){
+            if ($_GET['error'] == 1)  {
+            ?>
+            <div class="alert alert-danger"><p>Esta divindade já existe!</p></div>
+            <?php
+            }else if ($_GET['error'] == 2)  {
+            ?>
+            <div class="alert alert-danger"><p>Nome da divindade só pode possuir letras!</p></div>
+            <?php
+            }
+        }        
     include '../menuADM.php';
     ?>
     <div class="col-xs-5">
