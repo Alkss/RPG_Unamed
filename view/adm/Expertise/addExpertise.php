@@ -16,7 +16,11 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     if (isset($_POST['expertiseName']) && isset($_POST['expertiseDesc'])) {
         $expertise = new Expertise();
         
-        if ($expertise->createExpertise($_POST['expertiseName'], $_POST['expertiseDesc'])) {
+        if ($expertise->checkIfExistsByName($_POST['expertiseName'])) {
+            header('Location: addExpertise.php?error=1');
+        }else if (!preg_match ("/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/",$_POST['expertiseName'])) {
+            header('Location: addExpertise.php?error=2');
+        }else if ($expertise->createExpertise($_POST['expertiseName'], $_POST['expertiseDesc'])) {
             header('Location: addExpertise.php?success=1');
         }
     }
@@ -37,11 +41,17 @@ if (isset($_GET['success'])) {
         ?>
         <div class="alert alert-success"><p>Pericia criado com sucesso!</p></div>
         <?php
-    } else {
-        ?>
-        <div class="alert alert-error"><p>Erro na criação da perícia!</p></div>
-        <?php
     }
+} if(isset($_GET['error'])){
+        if ($_GET['error'] == 1)  {
+        ?>
+        <div class="alert alert-danger"><p>Esta perícia já existe!</p></div>
+        <?php
+        }else if ($_GET['error'] == 2)  {
+        ?>
+        <div class="alert alert-danger"><p>Nome da perícia só pode possuir letras!</p></div>
+        <?php
+        }
 }
 include '../menuADM.php';
 ?>
