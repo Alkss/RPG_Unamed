@@ -16,7 +16,9 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     if (isset($_POST['attributeName'])) {
         $attribute = new Attribute();
         
-        if ($attribute->createAttribute($_POST['attributeName'])) {
+        if ($attribute->checkIfExistsByName($_POST['attributeName'])) {
+        header('Location: addAttribute.php?error=1');
+        } elseif ($attribute->createAttribute($_POST['attributeName'])) {
             header('Location: addAttribute.php?success=1');
         }
     }
@@ -37,11 +39,13 @@ if (isset($_GET['success'])) {
         ?>
         <div class="alert alert-success"><p>Atributo criado com sucesso!</p></div>
         <?php
-    } else {
-        ?>
-        <div class="alert alert-error"><p>Erro na criação do atributo!</p></div>
-        <?php
     }
+}if(isset($_GET['error'])){
+        if ($_GET['error'] == 1)  {
+        ?>
+        <div class="alert alert-danger"><p>Nome do atributo já existe!</p></div>
+        <?php
+        }
 }
 include '../menuADM.php';
 ?>

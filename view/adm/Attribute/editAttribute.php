@@ -7,10 +7,12 @@
  */
 require('../../../config.php');
 include('../../../header.php');
-
+$idt = $_GET['idt'];
 if (isset($_POST['idt']) && isset($_POST['attribute-name'])) {
     $attribute = new Attribute();
-    if ($attribute->updateAttribute($_POST['idt'], $_POST['attribute-name']))
+    if ($attribute->checkIfExistsByName($_POST['attribute-name'],$idt)) {
+        header('Location: editAttribute.php?idt=' . $idt .'&error=1');
+    }else if ($attribute->updateAttribute($_POST['idt'], $_POST['attribute-name']))
         header('Location:' . URL . 'view/adm/Attribute/index.php?success=2');
 }
 
@@ -34,6 +36,13 @@ if (!isset($_GET['idt'])) {
     <h2>Editar atributos</h2>
     
     <?php
+    if(isset($_GET['error'])){
+        if ($_GET['error'] == 1)  {
+        ?>
+        <div class="alert alert-danger"><p>Nome do atributo já existe!</p></div>
+        <?php
+        }
+    }
     include '../menuADM.php';
     ?>
     <div class="col-xs-5">

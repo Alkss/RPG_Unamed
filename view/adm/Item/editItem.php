@@ -7,10 +7,13 @@
  */
 require('../../../config.php');
 include('../../../header.php');
+$idt = $_GET['idt'];
 
 if (isset($_POST['idt']) && isset($_POST['item-name']) && isset($_POST['item-desc'])) {
     $item = new Item();
-    if ($item->updateItem($_POST['idt'], $_POST['item-name'], $_POST['item-desc']))
+    if ($item->checkIfExistsByName($_POST['item-name'],$idt)) {
+        header('Location: editItem.php?idt=' . $idt .'&error=1');
+    }else if ($item->updateItem($_POST['idt'], $_POST['item-name'], $_POST['item-desc']))
         header('Location:' . URL . 'view/adm/Item/index.php?success=2');
 }
 
@@ -34,6 +37,13 @@ if (!isset($_GET['idt'])) {
     <h2>Editar items</h2>
     
     <?php
+    if(isset($_GET['error'])){
+        if ($_GET['error'] == 1)  {
+        ?>
+        <div class="alert alert-danger"><p>Nome do item já existe!</p></div>
+        <?php
+        }
+    }
     include '../menuADM.php';
     ?>
     <div class="col-xs-5">

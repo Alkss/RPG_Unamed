@@ -87,4 +87,18 @@ VALUES('" . $this->db->scapeCont($desc) . "','" . $this->db->scapeCont($name) . 
         }
         return $errorMessage;
     }
+    
+    public function checkIfExistsByName($name, $idt = ""){
+        $where = "";
+        if ($idt != "") {
+            $where = "AND idt_item != " . $idt;
+        }
+        $stringSQL = "SELECT * FROM `td_item` WHERE nme_item = '" . $this->db->scapeCont($name) . "' " . $where;
+        $sql = $this->db->search($stringSQL);
+        if ($sql) {
+            return true;
+        }
+        return false;
+        
+    }
 }

@@ -16,7 +16,9 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     if (isset($_POST['itemName']) && isset($_POST['itemDesc'])) {
         $item = new Item();
         
-        if ($item->createItem($_POST['itemName'], $_POST['itemDesc'])) {
+        if ($item->checkIfExistsByName($_POST['itemName'])) {
+        header('Location: addItem.php?error=1');
+        }else if ($item->createItem($_POST['itemName'], $_POST['itemDesc'])) {
             header('Location: addItem.php?success=1');
         }
     }
@@ -37,12 +39,14 @@ if (isset($_GET['success'])) {
         ?>
         <div class="alert alert-success"><p>Item criado com sucesso!</p></div>
         <?php
-    } else {
-        ?>
-        <div class="alert alert-error"><p>Erro na criação do item!</p></div>
-        <?php
     }
-}
+}if(isset($_GET['error'])){
+        if ($_GET['error'] == 1)  {
+        ?>
+        <div class="alert alert-danger"><p>Nome do item já existe!</p></div>
+        <?php
+        }
+    }
 include '../menuADM.php';
 ?>
 <div class="col-xs-5">

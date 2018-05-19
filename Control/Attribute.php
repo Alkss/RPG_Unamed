@@ -75,4 +75,18 @@ VALUES('" . $this->db->scapeCont($name) . "')";
         }
         return true;
     }
+    
+    public function checkIfExistsByName($name, $idt = ""){
+        $where = "";
+        if ($idt != "") {
+            $where = "AND idt_atributo != " . $idt;
+        }
+        $stringSQL = "SELECT * FROM `td_atributo` WHERE nme_atributo = '" . $this->db->scapeCont($name) . "' " . $where;
+        $sql = $this->db->search($stringSQL);
+        if ($sql) {
+            return true;
+        }
+        return false;
+        
+    }
 }
