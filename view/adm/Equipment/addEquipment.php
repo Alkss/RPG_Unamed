@@ -10,8 +10,9 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     
     if (isset($_POST['equipmentName']) && isset($_POST['equipmentDesc']) && isset($_POST['equipmentType'])&& isset($_POST['equipmentModBase'])) {
         $equipment = new Equipment();
-        
-        if ($equipment->createEquipment($_POST['equipmentName'], $_POST['equipmentDesc'], $_POST['equipmentType'], $_POST['equipmentModBase'])) {
+        if ($equipment->checkIfExistsByName($_POST['equipmentName'])) {
+        header('Location: addEquipment.php?error=1');
+        } else if ($equipment->createEquipment($_POST['equipmentName'], $_POST['equipmentDesc'], $_POST['equipmentType'], $_POST['equipmentModBase'])) {
             header('Location: addEquipment.php?success=1');
         }
     }
@@ -32,11 +33,13 @@ if (isset($_GET['success'])) {
         ?>
         <div class="alert alert-success"><p>Equipamento criado com sucesso!</p></div>
         <?php
-    } else {
-        ?>
-        <div class="alert alert-error"><p>Erro na criação do equipamento!</p></div>
-        <?php
     }
+}if (isset($_GET['error'])){
+        if ($_GET['error'] == 1)  {
+        ?>
+        <div class="alert alert-danger"><p>Nome do equipamento já existe!</p></div>
+        <?php
+        }
 }
 include '../menuADM.php';
 ?>

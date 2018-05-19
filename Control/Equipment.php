@@ -71,5 +71,17 @@ class Equipment
         $this->db->insert($stringSQL);
         return true;
     }
-    
+    public function checkIfExistsByName($name, $idt = ""){
+        $where = "";
+        if ($idt != "") {
+            $where = "AND idt_equipamento != " . $idt;
+        }
+        $stringSQL = "SELECT * FROM `td_equipamento` WHERE nme_equipamento = '" . $this->db->scapeCont($name) . "' " . $where;
+        $sql = $this->db->search($stringSQL);
+        if ($sql) {
+            return true;
+        }
+        return false;
+        
+    }
 }

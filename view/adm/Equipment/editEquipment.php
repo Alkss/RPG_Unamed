@@ -1,10 +1,12 @@
 <?php
 require('../../../config.php');
 include('../../../header.php');
-
+$idt = $_GET['idt'];
 if (isset($_POST['equipmentName']) && isset($_POST['equipmentDesc']) && isset($_POST['equipmentType'])&& isset($_POST['equipmentModBase'])) {
     $equipment = new Equipment();
-    if ($equipment->updateEquipment($_POST['idt'], $_POST['equipmentName'], $_POST['equipmentDesc'], $_POST['equipmentType'], $_POST['equipmentModBase']))
+    if ($equipment->checkIfExistsByName($_POST['equipmentName'],$idt)) {
+        header('Location: editEquipment.php?idt=' . $idt .'&error=1');
+    }else if ($equipment->updateEquipment($_POST['idt'], $_POST['equipmentName'], $_POST['equipmentDesc'], $_POST['equipmentType'], $_POST['equipmentModBase']))
         header('Location:' . URL . 'view/adm/Equipment/index.php?success=2');
 }
 
@@ -28,6 +30,13 @@ if (!isset($_GET['idt'])) {
     <h2>Editar equipamento</h2>
     
     <?php
+    if(isset($_GET['error'])){
+        if ($_GET['error'] == 1)  {
+        ?>
+        <div class="alert alert-danger"><p>Nome do equipamento já existe!</p></div>
+        <?php
+        }
+    }
     include '../menuADM.php';
     ?>
     <div class="col-xs-5">
