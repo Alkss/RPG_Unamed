@@ -14,9 +14,12 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
 } else {
     
     if (isset($_POST['raceName']) && isset($_POST['raceDesc'])) {
-        $race = new Race();
-        
-        if ($race->createRace($_POST['raceName'], $_POST['raceDesc'])) {
+        $race = new Race();  
+        if ($race->checkIfExistsByName($_POST['raceName'])) {
+            header('Location: addRace.php?error=1');
+        }else if (!preg_match ("/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/",$_POST['raceName'])) {
+            header('Location: addRace.php?error=2');
+        }else if ($race->createRace($_POST['raceName'], $_POST['raceDesc'])) {
             header('Location: addRace.php?success=1');
         }
     }
@@ -37,12 +40,18 @@ if (isset($_GET['success'])) {
         ?>
         <div class="alert alert-success"><p>Raça criada com sucesso!</p></div>
         <?php
-    } else {
-        ?>
-        <div class="alert alert-error"><p>Erro na criação da raça!</p></div>
-        <?php
     }
-}
+}if(isset($_GET['error'])){
+        if ($_GET['error'] == 1)  {
+        ?>
+        <div class="alert alert-danger"><p>Esta raça já existe!</p></div>
+        <?php
+        }else if ($_GET['error'] == 2)  {
+        ?>
+        <div class="alert alert-danger"><p>Nome da raça só pode possuir letras!</p></div>
+        <?php
+        }
+    }
 include '../menuADM.php';
 ?>
 <div class="col-xs-5">
