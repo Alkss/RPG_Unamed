@@ -27,23 +27,12 @@ if ($_SESSION['logado'] != 1) {
     }
     ?>
         <div class="col-xs-6">
-            <h3>Personagens</h3>
-            <div id="recent-chars">
-                <iframe src="Table/showRecentChars.php" id="tableIframe"></iframe>
-            </div>
-
-            <h3>Mesas Recentes</h3>
-            <div id="recent-tables">
-                <iframe src="Table/showRecentTables.php" id="tableIframe"></iframe>
+            <h3>Buscar Mesas</h3>
+                <div id="recent-tables">
+                <iframe src="Table/searchTables.php" id="tableIframe"></iframe>
             </div>
         </div>
         <div class="col-xs-6">
-            <h3>Buscar Mesas</h3>
-            <div id="recent-tables">
-                <iframe src="Table/searchTables.php" id="tableIframe"></iframe>
-            </div>
-
-
             <h3>Minhas Mesas</h3>
             <div id="show-tables">
                 <iframe src="Table/showTables.php" id="tableIframe"></iframe>
