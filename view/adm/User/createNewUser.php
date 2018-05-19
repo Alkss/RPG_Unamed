@@ -29,7 +29,7 @@ if (isset($_POST['name']) && isset($_POST['login']) && isset($_POST['email']) &&
     }if ($_POST['password'] != $_POST['confirm-password']) {
         $message = "Senhas não conferem";
         $error = true;
-    }if (!ctype_alpha($_POST['name'])) {
+    }if (!preg_match ("/^[a-zA-Z\s]+$/",$_POST['name'])) {
         $message = "Nome não pode conter números e caracteres especiais";
         $error = true;
     }if ($error) {
