@@ -26,8 +26,13 @@ if (isset($_POST['name']) && isset($_POST['login']) && isset($_POST['email']) &&
     if ($user->checkIfExistsByEmail($_POST['email'])) {
         $message = "Email já existe";
         $error = true;
-    }
-    if ($error) {
+    }if ($_POST['password'] != $_POST['confirm-password']) {
+        $message = "Senhas não conferem";
+        $error = true;
+    }if (!ctype_alpha($_POST['name'])) {
+        $message = "Nome não pode conter números e caracteres especiais";
+        $error = true;
+    }if ($error) {
         echo "<script type='text/javascript'>";
         echo "alert('" . $message . "');";
         echo "</script>";
