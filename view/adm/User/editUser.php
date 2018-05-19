@@ -11,8 +11,28 @@ $idt = $_GET['idt'];
 
 if (isset($_POST['name']) && isset($_POST['login']) && isset($_POST['email']) && isset($_POST['userType']) && isset($_POST['password']) && isset($_POST['confirm-password'])) {
     $user = new User();
-    
-    if ($_POST['password'] == $_POST['confirm-password']) {
+    $error = false;
+    $message = "";
+     if ($user->checkIfExistsByLogin($_POST['login'],$idt)) {
+        $message = "Nome de usuário já existe";
+        $error = true;
+    }
+    if ($user->checkIfExistsByEmail($_POST['email'],$idt)) {
+        $message = "Email já existe";
+        $error = true;
+    }if ($_POST['password'] != $_POST['confirm-password']) {
+        $message = "Senhas não conferem";
+        $error = true;
+    }if (!preg_match ("/^[a-zA-Z\s]+$/",$_POST['name'])) {
+        $message = "Nome não pode conter números e caracteres especiais";
+        $error = true;
+    }if ($error) {
+        echo "<script type='text/javascript'>";
+        echo "alert('" . $message . "');";
+        echo "window.location.href='" . URL . "/view/adm/User/editUser.php?idt=" . $idt ."'";
+        echo "</script>";
+    } else
+        if ($_POST['password'] == $_POST['confirm-password']) {
         $md5_password = MD5($_POST['password']);
         echo $user->updateUser($idt, $_POST['name'], $_POST['email'], $_POST['login'], $md5_password, $_POST['userType'], $_POST['active']);
         header('Location:index.php?success=1');

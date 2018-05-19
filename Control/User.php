@@ -81,9 +81,13 @@ class User
         
     }
     
-    public function checkIfExistsByEmail($email)
-    {
-        $stringSQL = "SELECT * FROM `tb_usuario` WHERE eml_usuario = '" . $this->db->scapeCont($email) . "' ";
+    public function checkIfExistsByEmail($email, $idt = "")
+    {   
+        $where = "";
+        if ($idt != "") {
+            $where = "AND idt_usuario != " . $idt;
+        }
+        $stringSQL = "SELECT * FROM `tb_usuario` WHERE eml_usuario = '" . $this->db->scapeCont($email) . "' " . $where;
         $sql = $this->db->search($stringSQL);
         if ($sql) {
             return true;
@@ -92,9 +96,13 @@ class User
         
     }
     
-    public function checkIfExistsByLogin($login)
+    public function checkIfExistsByLogin($login, $idt = "")
     {
-        $stringSQL = "SELECT * FROM `tb_usuario` WHERE lgn_usuario = '" . $this->db->scapeCont($login) . "' ";
+        $where = "";
+        if ($idt != "") {
+            $where = "AND idt_usuario != " . $idt;
+        }
+        $stringSQL = "SELECT * FROM `tb_usuario` WHERE lgn_usuario = '" . $this->db->scapeCont($login) . "' " . $where;
         $sql = $this->db->search($stringSQL);
         if ($sql) {
             return true;
