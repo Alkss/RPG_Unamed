@@ -7,10 +7,14 @@
  */
 require('../../../config.php');
 include('../../../header.php');
-
+$idt = $_GET['idt'];
 if (isset($_POST['idt']) && isset($_POST['alignment-name']) && isset($_POST['alignment-desc'])) {
     $alignment = new Alignment();
-    if ($alignment->updateAlignment($_POST['idt'], $_POST['alignment-name'], $_POST['alignment-desc']))
+    if ($alignment->checkIfExistsByName($_POST['alignment-name'])) {
+            header('Location: editAlignment.php?idt=' . $idt .'&error=1');
+    }else if (!preg_match ("/^[a-zA-Z\s]+$/",$_POST['alignment-name'])) {
+            header('Location: editAlignment.php?idt=' . $idt .'&error=2');
+    }else if ($alignment->updateAlignment($_POST['idt'], $_POST['alignment-name'], $_POST['alignment-desc']))
         header('Location:' . URL . 'view/adm/Alignment/index.php?success=2');
 }
 
@@ -34,6 +38,17 @@ if (!isset($_GET['idt'])) {
     <h2>Editar alinhamentos</h2>
     
     <?php
+    if(isset($_GET['error'])){
+        if ($_GET['error'] == 1)  {
+        ?>
+        <div class="alert alert-danger"><p>Nome do alinhamento já existe!</p></div>
+        <?php
+        }else if ($_GET['error'] == 2)  {
+        ?>
+        <div class="alert alert-danger"><p>Nome do alinhamento só pode possuir letras!</p></div>
+        <?php
+        }
+    }
     include '../menuADM.php';
     ?>
     <div class="col-xs-5">
@@ -41,7 +56,7 @@ if (!isset($_GET['idt'])) {
             <input type="hidden" id="idt" name="idt" value="<?= $singleAlignment[0]['idt_alinhamento'] ?>">
             <label for="alignment-name">Alinhamento</label>
             <input class="form-control" type="text" id="alignment-name" name="alignment-name"
-                   value="<?= $singleAlignment[0]['nme_alinhamento'] ?>"
+                   value="<?= $singleAlignment[0]['nme_alinhamento'] ?>" required="true">
 
             <label for="alignment-desc">Descrição do alinhamento</label>
             <textarea class="form-control" name="alignment-desc" id="alignment-desc"
