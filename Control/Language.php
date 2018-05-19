@@ -45,4 +45,18 @@ VALUES('" . $this->db->scapeCont($name) ."')";
         $this->db->executeQuery($stringSQL);
         return true;
     }
+    
+    public function checkIfExistsByName($name, $idt = ""){
+        $where = "";
+        if ($idt != "") {
+            $where = "AND idt_linguagem != " . $idt;
+        }
+        $stringSQL = "SELECT * FROM `td_linguagem` WHERE nme_linguagem = '" . $this->db->scapeCont($name) . "' " . $where;
+        $sql = $this->db->search($stringSQL);
+        if ($sql) {
+            return true;
+        }
+        return false;
+        
+    }
 }

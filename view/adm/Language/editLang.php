@@ -7,10 +7,14 @@
  */
 require('../../../config.php');
 include('../../../header.php');
-
+$idt = $_GET['idt'];
 if (isset($_POST['idt']) && isset($_POST['lang-name'])) {
     $lang = new Language();
-    if ($lang->updateLang($_POST['idt'], $_POST['lang-name']))
+        if ($lang->checkIfExistsByName($_POST['lang-name'],$idt)) {
+            header('Location: editLang.php?idt=' . $idt . '&error=1');
+        }else if (!preg_match ("/^[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$/",$_POST['lang-name'])) {
+            header('Location: editLang.php?idt=' . $idt . '&error=2');
+        }else if ($lang->updateLang($_POST['idt'], $_POST['lang-name']))
         header('Location:' . URL . 'view/adm/Language/index.php?success=2');
 }
 
@@ -34,6 +38,17 @@ if (!isset($_GET['idt'])) {
     <h2>Editar Linguagem</h2>
     
     <?php
+        if(isset($_GET['error'])){
+            if ($_GET['error'] == 1)  {
+            ?>
+            <div class="alert alert-danger"><p>Esta linguagem já existe!</p></div>
+            <?php
+            }else if ($_GET['error'] == 2)  {
+            ?>
+            <div class="alert alert-danger"><p>Nome da linguagem só pode possuir letras!</p></div>
+            <?php
+            }
+        }
     include '../menuADM.php';
     ?>
     <div class="col-xs-5">
