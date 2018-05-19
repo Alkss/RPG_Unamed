@@ -92,4 +92,18 @@ VALUES('"
         $this->db->executeQuery($stringSQL);
         return true;
     }
+    
+        public function checkIfExistsByName($name, $idt = ""){
+        $where = "";
+        if ($idt != "") {
+            $where = "AND idt_sala != " . $idt;
+        }
+        $stringSQL = "SELECT * FROM `tb_sala` WHERE nme_sala = '" . $this->db->scapeCont($name) . "' " . $where;
+        $sql = $this->db->search($stringSQL);
+        if ($sql) {
+            return true;
+        }
+        return false;
+        
+    }
 }

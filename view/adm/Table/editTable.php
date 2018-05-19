@@ -7,12 +7,14 @@
  */
 require('../../../config.php');
 include('../../../header.php');
-
+$idt = $_GET['idt'];
 if (isset($_POST['idt']) && isset($_POST['name']) && isset($_POST['campaign']) && isset($_POST['nPlayers'])) {
     $table = new Table();
-    echo $table->updateTable($_POST['idt'], $_POST['name'], $_POST['campaign'], $_POST['password'], $_POST['nPlayers']);
-    header('Location:' . URL . 'view/adm/Table/index.php?success=2');
-    header('Location:index.php?success=2');
+    if ($table->checkIfExistsByName($_POST['name'],$idt)) {
+        header('Location: editTable.php?idt=' . $idt .'&error=1');
+    }else if ($table->updateTable($_POST['idt'], $_POST['name'], $_POST['campaign'], $_POST['password'], $_POST['nPlayers'])){
+        header('Location:index.php?success=2');
+    }
 } else {
     $table = new Table();
     $singleTable = $table->selectAll("idt_sala = '" . $_GET['idt'] . "'");
@@ -26,23 +28,30 @@ if (isset($_POST['idt']) && isset($_POST['name']) && isset($_POST['campaign']) &
 <h2>Editar mesas</h2>
 
 <?php
+    if(isset($_GET['error'])){
+        if ($_GET['error'] == 1)  {
+        ?>
+        <div class="alert alert-danger"><p>Nome da mesa já existe!</p></div>
+        <?php
+        }
+    }
 include '../menuADM.php';
 ?>
 <div class="col-xs-5">
     <form method="post" id="edit-table-form">
-        <input type="hidden" id="idt" name="idt" value="<?= $singleTable[0]['idt_sala'] ?>">
+        <input type="hidden" id="idt" name="idt" value="<?= $singleTable[0]['idt_sala'] ?>" >
 
         <label for="name">Mesa</label>
         <p>
             <input class="form-control" type="text" id="name" name="name"
-                   value="<?= $singleTable[0]['nme_sala'] ?>">
+                   value="<?= $singleTable[0]['nme_sala'] ?>" required="true">
         </p>
 
 
         <label for="nPlayers">Quantidade de jogadores</label>
         <p>
             <input class="form-control" type="number" name="nPlayers" id="nPlayers"
-                   value="<?= $singleTable[0]['qtd_players_sala'] ?>">
+                   value="<?= $singleTable[0]['qtd_players_sala'] ?>" required="true">
         </p>
 
         <label for="campaign">História da campanha</label>

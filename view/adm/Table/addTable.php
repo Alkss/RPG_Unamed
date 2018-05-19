@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: alex
- * Date: 30/01/18
- * Time: 16:30
- */
 require('../../../config.php');
 include('../../../header.php');
 
@@ -13,9 +7,11 @@ if ($_SESSION['logado'] != 1) {
 } else{
     if (isset($_POST['name']) && isset($_POST['nPlayers']) && isset($_POST['campaign'])) {
     $table = new Table();
-    if ($table->createTable($_POST['name'], $_POST['campaign'], $_POST['password'], $_POST['nPlayers'])) {
+    if ($table->checkIfExistsByName($_POST['name'])) {
+        header('Location: addTable.php?error=1');
+    }else if ($table->createTable($_POST['name'], $_POST['campaign'], $_POST['password'], $_POST['nPlayers'])) {
         header('Location: addTable.php?success=1');
-    } 
+    }
 }
     ?>
     <head>
@@ -31,12 +27,15 @@ if (isset($_GET['success'])) {
         ?>
         <div class="alert alert-success"><p>Mesa criada com sucesso!</p></div>
         <?php
-    } else {
-        ?>
-        <div class="alert alert-error"><p>Erro na criação da mesa!</p></div>
-        <?php
     }
 }
+if(isset($_GET['error'])){
+        if ($_GET['error'] == 1)  {
+        ?>
+        <div class="alert alert-danger"><p>Nome da mesa já existe!</p></div>
+        <?php
+        }
+    }
 include '../menuADM.php';
 ?>
     
@@ -44,11 +43,11 @@ include '../menuADM.php';
         <form method="post" id="create-new-table-adm">
             <p>
                 <label for="name">Mesa</label><br>
-                <input class="form-control" type="text" name="name" id="name">
+                <input class="form-control" type="text" name="name" id="name" required="true">
             </p>
             <p>
                 <label for="nPlayers">Quantidade de Jogadores</label><br>
-                <input class="form-control" type="number" name="nPlayers" id="nPlayers">
+                <input class="form-control" type="number" name="nPlayers" id="nPlayers" required="true">
             </p>
             <p>
                 <label for="campaign">História da Campanha</label><br>
