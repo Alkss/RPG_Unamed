@@ -115,6 +115,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
             <?php
             include('Charts/PieChart.php');
             include('Charts/LineChart.php');
+            include('Charts/BarChart.php');
             ?>
         </div>
 
