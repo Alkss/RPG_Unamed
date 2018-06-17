@@ -27,7 +27,7 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
     $inactiveUsers = $db->search("select idt_usuario, nme_usuario from tb_usuario where atv_usuario = 0");
     $qtd_inactiveUsers = $db->search("select count(idt_usuario) as Total from tb_usuario where atv_usuario = 0;");
     ?>
-    <div class="col-xs-5">
+    <div class="col-xs-7">
         <?php
         if ($qtd_inactiveUsers[0]['Total'] > 0) {
             ?>
@@ -113,9 +113,9 @@ if ($_SESSION['logado'] != 1 && $_SESSION['permissoes'] != "adm") {
 
         <div class="chart-container">
             <?php
+            include('Charts/DougChart.php');
             include('Charts/PieChart.php');
             include('Charts/LineChart.php');
-            include('Charts/BarChart.php');
             ?>
         </div>
 

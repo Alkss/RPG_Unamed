@@ -14,8 +14,11 @@
 <?php
 if ($tableData) {
 ?>
-<h3>Uso de Classes</h3>
-<canvas class="doughnutChart" width="700px" height="450px"></canvas>
+<div id="dougnut">
+    <h3>Uso de Classes</h3>
+    <canvas class="doughnutChart"></canvas>
+</div>
+
 <script>
     var ctx = document.getElementsByClassName("doughnutChart");
     

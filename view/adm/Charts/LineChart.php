@@ -12,8 +12,10 @@
 <?php
 if ($userData) {
 ?>
-<h3>Número de usuários cadastrados mensalmente</h3>
-<canvas class="lineChart"></canvas>
+<div id="line">
+    <h3>Número de usuários cadastrados mensalmente</h3>
+    <canvas class="lineChart"></canvas>
+</div>
 <script>
     var ctx = document.getElementsByClassName("lineChart");
     
