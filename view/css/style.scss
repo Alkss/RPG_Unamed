@@ -120,6 +120,11 @@ h1, h2 {
     &.table-responsive {
       color: black;
     }
+    thead{
+        &.inactiveUsers{
+            font-weight: bold;
+        }
+    }
   }
   h3 {
     color: white;
