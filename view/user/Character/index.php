@@ -28,6 +28,13 @@ if ($_SESSION['logado'] != 1) {
     $attribute = $char->selectAttribute("idt_personagem = " . $_GET['char']);
     
     $tableInfo = $table->selectUserRole($_GET['idt'], $_SESSION['idt_usuario']);
+    
+    $charLife = $char->selectAll("idt_personagem=" . $_GET['char']);
+    
+    
+    if (isset($_POST['total-life']) && isset($_POST['actual-life'])) {
+        $char->db->executeQuery("UPDATE tb_personagem SET qtd_vida_total_personagem=" . $_POST['total-life'] . ", qtd_vida_personagem=" . $_POST['actual-life'] . " WHERE idt_personagem=" . $_GET['char']);
+    }
     ?>
 
     <!doctype html>
@@ -53,7 +60,7 @@ if ($_SESSION['logado'] != 1) {
                 echo '<img id="charImg" src="' . $imgURL . '">'
                 ?>
             </div>
-            <div class="col-xs-6">
+            <div class="col-xs-3">
                 <a class="btn btn-primary" href="editCharacter.php?char=<?= $_GET['char'] ?>&idt=<?= $_GET['idt'] ?>">Editar
                     dados</a>
                 <?php
@@ -63,6 +70,15 @@ if ($_SESSION['logado'] != 1) {
                         pertences</a>
                     <a class="btn btn-primary" onclick="return confirm('Deseja realmente deletar o personagem ')"
                        href="deleteCharacter.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>">Excluir</a>
+                    <form action="index.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>" method="post">
+                        <label for="actual-life">Vida Atual</label>
+                        <input class="form-control" type="number" name="actual-life" id="actual-life"
+                               value="<?= $charLife[0]['qtd_vida_personagem'] ?>">
+                        <label for="total-life">Vida Total</label>
+                        <input class="form-control" type="number" name="total-life" id="total-life"
+                               value="<?= $charLife[0]['qtd_vida_total_personagem'] ?>">
+                        <button class="btn btn-primary">Atualizar vida</button>
+                    </form>
                     <?php
                 }
                 ?>

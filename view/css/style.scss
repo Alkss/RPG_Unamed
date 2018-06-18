@@ -120,10 +120,10 @@ h1, h2 {
     &.table-responsive {
       color: black;
     }
-    thead{
-        &.inactiveUsers{
-            font-weight: bold;
-        }
+    thead {
+      &.inactiveUsers {
+        font-weight: bold;
+      }
     }
   }
   h3 {
@@ -204,6 +204,12 @@ h1, h2 {
       }
     }
   }
+}
+
+.life {
+  width: 10%;
+  margin-bottom: 20px;
+  margin: 0 auto;
 }
 
 #table-home, #char-page, #edit-char, #editItens, #create-new-character {
