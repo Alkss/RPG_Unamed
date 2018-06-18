@@ -9,7 +9,7 @@
 require('../../../config.php');
 $classe = new Classe();
 $race = new Race();
-
+$alinhamento = new Alignment();
 switch ($_POST['action']) {
     case "checkClass":
         $avaibleAlignments = $classe->avaibleAlignments($_POST['classe']);
@@ -39,5 +39,17 @@ switch ($_POST['action']) {
                id="pes_personagem"
                required="required">
         <?php
+        break;
+    
+    case "checkAlign":
+        $avaibleDiv = $alinhamento->avaibleAlignments($_POST['align']);
+        ?>
+        <option value="" selected hidden>-- Selecione uma opção --</option>
+        <?php
+        foreach ($avaibleDiv as $key => $singleDiv) {
+            ?>
+            <option value="<?= $key ?>"><?= $singleDiv ?></option>
+            <?php
+        }
         break;
 }

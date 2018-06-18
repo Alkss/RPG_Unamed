@@ -83,6 +83,18 @@ if ($_SESSION['logado'] != 1) {
                 )
             }
 
+            function checkAlignment() {
+                var align = $("#alignments").val();
+
+                if (align !== "") {
+                    $("#religiao").removeAttr("disabled");
+                }
+                $.post("<?=URL?>view/user/Character/charAjax.php", {align: align, action: "checkAlign"}).done(
+                    function (returnedData4) {
+                        $("#religiao").html(returnedData4);
+                    }
+                )
+            }
         </script>
         <?php
     }

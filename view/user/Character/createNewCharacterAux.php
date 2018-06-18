@@ -58,30 +58,25 @@ $religiao = $db->search("select * from td_divindade");
                 </div>
 
                 <div class="col-xs-12">
-                    <label for="religiao">Religiao <a data-toggle="modal" data-target="#relModal"><i
-                                    class="fa fa-info-circle"
-                                    aria-hidden="true"></i></a></label><br>
-                    <select id="religiao" name="religiao" class="form-control" required="required">
-                        <option value="" selected hidden>-- Selecione uma opçao --</option>
-                        <?php
-                        foreach ($religiao as $linha) {
-                            ?>
-                            <option value="<?= $linha['idt_divindade'] ?>"><?= $linha['nme_divindade'] ?></option>
-                            <?php
-                        }
-                        ?>
-                    </select>
-                </div>
-
-                <div class="col-xs-12">
                     <label for="alignments">Alinhamento <a data-toggle="modal" data-target="#alignModal"><i
                                     class="fa fa-info-circle"
                                     aria-hidden="true"></i></a></label><br>
-                    <select id="alignments" name="alignments" class="form-control" required="required" disabled>
+                    <select id="alignments" name="alignments" class="form-control" required="required"
+                            disabled="disabled"
+                            onchange="checkAlignment()">
                         <option value="" selected hidden>-- Selecione uma classe primeiro --</option>
                     </select>
                 </div>
 
+                <div class="col-xs-12">
+                    <label for="religiao">Religiao <a data-toggle="modal" data-target="#relModal"><i
+                                    class="fa fa-info-circle"
+                                    aria-hidden="true"></i></a></label><br>
+                    <select id="religiao" name="religiao" class="form-control" required="required" disabled="disabled">
+                        <option value="" selected hidden>-- Selecione um alinhamento primeiro --</option>
+
+                    </select>
+                </div>
 
                 <div class="col-xs-12">
                     <label for="gen_personagem">Genero do Personagem</label><br>
@@ -96,8 +91,8 @@ $religiao = $db->search("select * from td_divindade");
                     <label for="pes_personagem">Peso do Personagem</label><br>
                     <div id="pes_personagemBox">
                         <input class="form-control" type="text" name="pes_personagem"
-                           id="pes_personagem"
-                           required="required" disabled value="Escolha uma raça primeiro">
+                               id="pes_personagem"
+                               required="required" disabled="disabled" value="Escolha uma raça primeiro">
                     </div>
                 </div>
 
@@ -105,7 +100,7 @@ $religiao = $db->search("select * from td_divindade");
                     <label for="alt_personagem">Altura do Personagem</label><br>
                     <div id="alt_personagemBox">
                         <input class="form-control" type="text" name="alt_personagem"
-                               id="alt_personagem" required="required" disabled
+                               id="alt_personagem" required="required" disabled="disabled"
                                value="Escolha uma raça primeiro">
                     </div>
 
