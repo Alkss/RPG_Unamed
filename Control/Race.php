@@ -61,12 +61,136 @@ VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($desc) . 
         
     }
     
+    /*public function avaibleClasses($raceName)
+    {
+        //Humano
+        if ($raceName == 1) {
+            $avaibleClasses = array(
+                1 => "Barbaro",
+                2 => "Bardo",
+                3 => "Clérigo",
+                4 => "Druida",
+                6 => "Guerreiro",
+                7 => "Ladino",
+                8 => "Mago",
+                9 => "Monge",
+                10 => "Paladino",
+                11 => "Ranger"
+            );
+        } //Anão
+        else if ($raceName == 2) {
+            $avaibleClasses = array(
+                1 => "Barbaro",
+                2 => "Bardo",
+                3 => "Clérigo",
+                4 => "Druida",
+                5 => "Feiticeiro",
+                6 => "Guerreiro",
+                7 => "Ladino",
+                8 => "Mago",
+                9 => "Monge",
+                10 => "Paladino"
+            );
+        } //Elfo
+        else if ($raceName == 3) {
+            $avaibleClasses = array(
+                1 => "Barbaro",
+                2 => "Bardo",
+                3 => "Clérigo",
+                4 => "Druida",
+                5 => "Feiticeiro",
+                6 => "Guerreiro",
+                7 => "Ladino",
+                8 => "Mago",
+                9 => "Monge",
+                10 => "Paladino",
+                11 => "Ranger"
+            );
+        } //Gnomo
+        else if ($raceName == 4) {
+            $avaibleClasses = array(
+                1 => "Barbaro",
+                2 => "Bardo",
+                3 => "Clérigo",
+                4 => "Druida",
+                5 => "Feiticeiro",
+                6 => "Guerreiro",
+                7 => "Ladino",
+                8 => "Mago",
+                9 => "Monge",
+                10 => "Paladino",
+                11 => "Ranger"
+            );
+        } //Meio-Orc
+        else if ($raceName == 6) {
+            $avaibleClasses = array(
+                1 => "Barbaro",
+                2 => "Bardo",
+                3 => "Clérigo",
+                4 => "Druida",
+                5 => "Feiticeiro",
+                6 => "Guerreiro",
+                7 => "Ladino",
+                8 => "Mago",
+                9 => "Monge",
+                10 => "Paladino",
+                11 => "Ranger"
+            );
+        } //Halfling
+        else if ($raceName == 7) {
+            $avaibleClasses = array(
+                1 => "Barbaro",
+                2 => "Bardo",
+                3 => "Clérigo",
+                4 => "Druida",
+                5 => "Feiticeiro",
+                6 => "Guerreiro",
+                7 => "Ladino",
+                8 => "Mago",
+                9 => "Monge",
+                10 => "Paladino",
+                11 => "Ranger"
+            );
+        } // Meio-elfo
+        else if ($raceName == 5) {
+            $avaibleClasses = array(
+                1 => "Barbaro",
+                2 => "Bardo",
+                3 => "Clérigo",
+                4 => "Druida",
+                5 => "Feiticeiro",
+                6 => "Guerreiro",
+                7 => "Ladino",
+                8 => "Mago",
+                9 => "Monge",
+                10 => "Paladino",
+                11 => "Ranger"
+            );
+        } else {
+            $avaibleClasses = array(
+                1 => "Barbaro",
+                2 => "Bardo",
+                3 => "Clérigo",
+                4 => "Druida",
+                5 => "Feiticeiro",
+                6 => "Guerreiro",
+                7 => "Ladino",
+                8 => "Mago",
+                9 => "Monge",
+                10 => "Paladino",
+                11 => "Ranger"
+            );
+        }
+        
+        
+        return $avaibleClasses;
+    }*/
+    
     public function avaibleSizes($raceName)
     {
         
         //1 para altura min - 2 para max
         //3 para peso min - 4 para max
-        $avaibleSizes = array();
         //Humano
         if ($raceName == 1) {
             $avaibleSizes = array(

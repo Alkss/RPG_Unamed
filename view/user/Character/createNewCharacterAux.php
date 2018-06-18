@@ -61,8 +61,7 @@ $religiao = $db->search("select * from td_divindade");
                     <label for="alignments">Alinhamento <a data-toggle="modal" data-target="#alignModal"><i
                                     class="fa fa-info-circle"
                                     aria-hidden="true"></i></a></label><br>
-                    <select id="alignments" name="alignments" class="form-control" required="required"
-                            disabled="disabled"
+                    <select id="alignments" name="alignments" class="form-control" required="required" disabled="disabled"
                             onchange="checkAlignment()">
                         <option value="" selected hidden>-- Selecione uma classe primeiro --</option>
                     </select>
