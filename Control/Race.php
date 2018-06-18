@@ -194,8 +194,8 @@ VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($desc) . 
         //Humano
         if ($raceName == 1) {
             $avaibleSizes = array(
-                1 => 1.60,
-                2 => 2.10,
+                1 => "1,60",
+                2 => "2,10",
                 3 => 60,
                 4 => 90
             );

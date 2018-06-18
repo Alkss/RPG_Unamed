@@ -25,7 +25,7 @@ switch ($_POST['action']) {
     case "checkRace":
         $avaibleRaces = $race->avaibleSizes($_POST['race']);
         ?>
-        <input class="form-control" type="text" min="<?= $avaibleRaces[1] ?>" max="<?= $avaibleRaces[2] ?>" step="0.01"
+        <input class="form-control" type="number" min="<?= $avaibleRaces[1] ?>" max="<?= $avaibleRaces[2] ?>" step="0.01"
                name="alt_personagem"
                id="alt_personagem"
                required="required">
@@ -34,7 +34,7 @@ switch ($_POST['action']) {
     case "checkRaceSize":
         $avaibleRaces = $race->avaibleSizes($_POST['race']);
         ?>
-        <input class="form-control" type="text" min="<?= $avaibleRaces[3] ?>" max="<?= $avaibleRaces[4] ?>" step="0.01"
+        <input class="form-control" type="number" min="<?= $avaibleRaces[3] ?>" max="<?= $avaibleRaces[4] ?>" step="0.01"
                name="pes_personagem"
                id="pes_personagem"
                required="required">

@@ -22,13 +22,21 @@ if ($_SESSION['logado'] != 1) {
         isset($_POST['classe']) && isset($_POST['racas'])
     ) {
         $character = new Character();
-        if ($character->createCharacter_pt1($_POST['nme_personagem'], $_POST['exp_personagem'],
-            $_POST['gen_personagem'], $_POST['religiao'],
-            $_POST['pes_personagem'], $_POST['alt_personagem'],
-            $_POST['dsc_cabelo_pesonagem'], $_POST['cor_olho'],
-            $_POST['img_personagem'], $_POST['hst_personagem'],
-            $_POST['inf_adicional_personagem'], $_POST['alignments'],
-            $_POST['classe'], $_POST['racas'])
+        if ($character->createCharacter_pt1(
+            $_POST['nme_personagem'],
+            $_POST['exp_personagem'],
+            $_POST['gen_personagem'],
+            $_POST['religiao'],
+            $_POST['pes_personagem'],
+            $_POST['alt_personagem'],
+            $_POST['dsc_cabelo_pesonagem'],
+            $_POST['cor_olho'],
+            $_POST['img_personagem'],
+            $_POST['hst_personagem'],
+            $_POST['inf_adicional_personagem'],
+            $_POST['alignments'],
+            $_POST['classe'],
+            $_POST['racas'])
         ) {
             header('Location: ../Table/index.php?idt=' . $_GET['idt']);
         } else {
