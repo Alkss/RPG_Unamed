@@ -47,7 +47,8 @@ VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($desc) . 
         return true;
     }
     
-    public function checkIfExistsByName($name, $idt = ""){
+    public function checkIfExistsByName($name, $idt = "")
+    {
         $where = "";
         if ($idt != "") {
             $where = "AND idt_classe != " . $idt;
@@ -59,5 +60,138 @@ VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($desc) . 
         }
         return false;
         
+    }
+    
+    public function avaibleAlignments($className)
+    {
+        $avaibleAligments = array();
+        //Druida
+        if ($className == 10) {
+            $avaibleAligments = array(
+                11 => "Neutro e Bom",
+                13 => "Leal e Neutro",
+                14 => "Neutro",
+                15 => "Caótico e Neutro",
+                17 => "Neutro e Mal"
+            );
+        } //Barbaro
+        else if ($className == 29) {
+            $avaibleAligments = array(
+                11 => "Neutro e Bom",
+                12 => "Caótico e Bom",
+                14 => "Neutro",
+                15 => "Caótico e Neutro",
+                17 => "Neutro e Mal",
+                18 => "Caótico e Mal"
+            );
+        } //Bardo
+        else if ($className == 30) {
+            $avaibleAligments = array(
+                11 => "Neutro e Bom",
+                12 => "Caótico e Bom",
+                14 => "Neutro",
+                15 => "Caótico e Neutro",
+                17 => "Neutro e Mal",
+                18 => "Caótico e Mal"
+            );
+        } //Clérigo
+        else if ($className == 31) {
+            $avaibleAligments = array(
+                10 => "Leal e Bom",
+                11 => "Neutro e Bom",
+                12 => "Caótico e Bom",
+                13 => "Leal e Neutro",
+                14 => "Neutro",
+                15 => "Caótico e Neutro",
+                16 => "Leal e Mal",
+                17 => "Neutro e Mal",
+                18 => "Caótico e Mal"
+            );
+        } //Feiticeiro
+        else if ($className == 32) {
+            $avaibleAligments = array(
+                10 => "Leal e Bom",
+                11 => "Neutro e Bom",
+                12 => "Caótico e Bom",
+                13 => "Leal e Neutro",
+                14 => "Neutro",
+                15 => "Caótico e Neutro",
+                16 => "Leal e Mal",
+                17 => "Neutro e Mal",
+                18 => "Caótico e Mal"
+            );
+        }
+        //Guerreiro
+        else if ($className == 33) {
+            $avaibleAligments = array(
+                10 => "Leal e Bom",
+                11 => "Neutro e Bom",
+                12 => "Caótico e Bom",
+                13 => "Leal e Neutro",
+                14 => "Neutro",
+                15 => "Caótico e Neutro",
+                16 => "Leal e Mal",
+                17 => "Neutro e Mal",
+                18 => "Caótico e Mal"
+            );
+        }
+        //Ladino
+        else if ($className == 34) {
+            $avaibleAligments = array(
+                10 => "Leal e Bom",
+                11 => "Neutro e Bom",
+                12 => "Caótico e Bom",
+                13 => "Leal e Neutro",
+                14 => "Neutro",
+                15 => "Caótico e Neutro",
+                16 => "Leal e Mal",
+                17 => "Neutro e Mal",
+                18 => "Caótico e Mal"
+            );
+        }
+        //Mago
+        else if ($className == 35) {
+            $avaibleAligments = array(
+                10 => "Leal e Bom",
+                11 => "Neutro e Bom",
+                12 => "Caótico e Bom",
+                13 => "Leal e Neutro",
+                14 => "Neutro",
+                15 => "Caótico e Neutro",
+                16 => "Leal e Mal",
+                17 => "Neutro e Mal",
+                18 => "Caótico e Mal"
+            );
+        }
+        //Monge
+        else if ($className == 36) {
+            $avaibleAligments = array(
+                10 => "Leal e Bom",
+                13 => "Leal e Neutro",
+                16 => "Leal e Mal"
+            );
+        }
+        //Paladino
+        else if ($className == 37) {
+            $avaibleAligments = array(
+                10 => "Leal e Bom"
+            );
+        }
+        //Ranger
+        else if ($className == 38) {
+            $avaibleAligments = array(
+                10 => "Leal e Bom",
+                11 => "Neutro e Bom",
+                12 => "Caótico e Bom",
+                13 => "Leal e Neutro",
+                14 => "Neutro",
+                15 => "Caótico e Neutro",
+                16 => "Leal e Mal",
+                17 => "Neutro e Mal",
+                18 => "Caótico e Mal"
+            );
+        }
+        
+        return $avaibleAligments;
     }
 }

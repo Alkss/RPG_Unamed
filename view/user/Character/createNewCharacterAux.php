@@ -30,8 +30,8 @@ $religiao = $db->search("select * from td_divindade");
                     <label for="classe">Classe <a data-toggle="modal" data-target="#classModal"><i
                                     class="fa fa-info-circle"
                                     aria-hidden="true"></i></a></label><br>
-                    <select id="classe" name="classe" class="form-control" required="required">
-                        <option value="" selected hidden>-- Selecione uma opçao --</option>
+                    <select id="classe" name="classe" class="form-control" required="required" onchange="checkClass();">
+                        <option value="" selected hidden>-- Selecione uma classe --</option>
                         <?php
                         foreach ($classe as $linha) {
                             ?>
@@ -77,15 +77,8 @@ $religiao = $db->search("select * from td_divindade");
                     <label for="alignments">Alinhamento <a data-toggle="modal" data-target="#alignModal"><i
                                     class="fa fa-info-circle"
                                     aria-hidden="true"></i></a></label><br>
-                    <select id="alignments" name="alignments" class="form-control" required="required">
-                        <option value="" selected hidden>-- Selecione uma opçao --</option>
-                        <?php
-                        foreach ($alignments as $linha) {
-                            ?>
-                            <option value="<?= $linha['idt_alinhamento'] ?>"><?= $linha['nme_alinhamento'] ?></option>
-                            <?php
-                        }
-                        ?>
+                    <select id="alignments" name="alignments" class="form-control" required="required" disabled>
+                        <option value="" selected hidden>-- Selecione uma classe primeiro --</option>
                     </select>
                 </div>
 
@@ -101,7 +94,8 @@ $religiao = $db->search("select * from td_divindade");
 
                 <div class="col-xs-12">
                     <label for="pes_personagem">Peso do Personagem</label><br>
-                    <input class="form-control" type="number" min="1.00" step="0.01" name="pes_personagem" id="pes_personagem"
+                    <input class="form-control" type="number" min="1.00" step="0.01" name="pes_personagem"
+                           id="pes_personagem"
                            required="required">
                 </div>
 

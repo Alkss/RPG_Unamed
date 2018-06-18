@@ -39,6 +39,28 @@ if ($_SESSION['logado'] != 1) {
         }
     } else {
         include 'createNewCharacterAux.php';
+        ?>
+
+        <script>
+            function checkClass() {
+                var classe = $("#classe").val();
+                var align = $("#alignments").val();
+
+                if (classe !== "") {
+                    $("#alignments").removeAttr("disabled");
+                }
+                $.post("<?=URL?>/view/user/Character/charAjax.php", {
+                    classe: classe,
+                    align: align,
+                    action: "checkClass"
+                }).done(
+                    function (returnedData) {
+                        $("#alignments").html(returnedData);
+                    }
+                )
+            }
+        </script>
+        <?php
     }
 }
 ?>
