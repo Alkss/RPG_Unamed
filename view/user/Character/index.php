@@ -33,7 +33,10 @@ if ($_SESSION['logado'] != 1) {
     
     
     if (isset($_POST['total-life']) && isset($_POST['actual-life'])) {
-        $char->db->executeQuery("UPDATE tb_personagem SET qtd_vida_total_personagem=" . $_POST['total-life'] . ", qtd_vida_personagem=" . $_POST['actual-life'] . " WHERE idt_personagem=" . $_GET['char']);
+        if ($char->db->executeQuery("UPDATE tb_personagem SET qtd_vida_total_personagem=" . $_POST['total-life'] . ", qtd_vida_personagem=" . $_POST['actual-life'] . " WHERE idt_personagem=" . $_GET['char'])) {
+            header('Location:index.php?idt=' . $_GET['idt'] . "&char=" . $_GET['char']);
+        }
+        
     }
     ?>
 
@@ -70,7 +73,7 @@ if ($_SESSION['logado'] != 1) {
                         pertences</a>
                     <a class="btn btn-primary" onclick="return confirm('Deseja realmente deletar o personagem ')"
                        href="deleteCharacter.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>">Excluir</a>
-                    <form action="index.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>" method="post">
+                    <form method="post">
                         <label for="actual-life">Vida Atual</label>
                         <input class="form-control" type="number" name="actual-life" id="actual-life"
                                value="<?= $charLife[0]['qtd_vida_personagem'] ?>">
