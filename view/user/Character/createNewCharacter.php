@@ -44,14 +44,12 @@ if ($_SESSION['logado'] != 1) {
         <script>
             function checkClass() {
                 var classe = $("#classe").val();
-                var align = $("#alignments").val();
 
                 if (classe !== "") {
                     $("#alignments").removeAttr("disabled");
                 }
                 $.post("<?=URL?>/view/user/Character/charAjax.php", {
                     classe: classe,
-                    align: align,
                     action: "checkClass"
                 }).done(
                     function (returnedData) {
@@ -59,6 +57,32 @@ if ($_SESSION['logado'] != 1) {
                     }
                 )
             }
+
+            function checkRace() {
+                var race = $("#racas").val();
+
+                if (race !== "") {
+                    $("#alt_personagem").removeAttr("disabled");
+                    $("#pes_personagem").removeAttr("disabled");
+                }
+                $.post("<?=URL?>view/user/Character/charAjax.php", {race: race, action: "checkRace"}).done(
+                    function (returnedData2) {
+                        $("#alt_personagemBox").html(returnedData2);
+                        updateSize();
+                    }
+                )
+            }
+
+            function updateSize() {
+                var race = $("#racas").val();
+
+                $.post("<?=URL?>view/user/Character/charAjax.php", {race: race, action: "checkRaceSize"}).done(
+                    function (returnedData3) {
+                        $("#pes_personagemBox").html(returnedData3);
+                    }
+                )
+            }
+
         </script>
         <?php
     }

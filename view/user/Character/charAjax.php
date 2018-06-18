@@ -8,6 +8,7 @@
 
 require('../../../config.php');
 $classe = new Classe();
+$race = new Race();
 
 switch ($_POST['action']) {
     case "checkClass":
@@ -20,5 +21,23 @@ switch ($_POST['action']) {
             <option value="<?= $key ?>"><?= $alignment ?></option>
             <?php
         }
-    
+        break;
+    case "checkRace":
+        $avaibleRaces = $race->avaibleSizes($_POST['race']);
+        ?>
+        <input class="form-control" type="text" min="<?= $avaibleRaces[1] ?>" max="<?= $avaibleRaces[2] ?>" step="0.01"
+               name="alt_personagem"
+               id="alt_personagem"
+               required="required">
+        <?php
+        break;
+    case "checkRaceSize":
+        $avaibleRaces = $race->avaibleSizes($_POST['race']);
+        ?>
+        <input class="form-control" type="text" min="<?= $avaibleRaces[3] ?>" max="<?= $avaibleRaces[4] ?>" step="0.01"
+               name="pes_personagem"
+               id="pes_personagem"
+               required="required">
+        <?php
+        break;
 }

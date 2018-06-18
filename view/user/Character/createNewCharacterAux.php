@@ -45,7 +45,7 @@ $religiao = $db->search("select * from td_divindade");
                 <div class="col-xs-12">
                     <label for="racas">Raça <a data-toggle="modal" data-target="#raceModal"><i class="fa fa-info-circle"
                                                                                                aria-hidden="true"></i></a></label><br>
-                    <select id="racas" name="racas" class="form-control" required="required">
+                    <select id="racas" name="racas" class="form-control" required="required" onchange="checkRace();">
                         <option value="" selected hidden>-- Selecione uma opçao --</option>
                         <?php
                         foreach ($race as $linha) {
@@ -94,15 +94,21 @@ $religiao = $db->search("select * from td_divindade");
 
                 <div class="col-xs-12">
                     <label for="pes_personagem">Peso do Personagem</label><br>
-                    <input class="form-control" type="number" min="1.00" step="0.01" name="pes_personagem"
+                    <div id="pes_personagemBox">
+                        <input class="form-control" type="text" name="pes_personagem"
                            id="pes_personagem"
-                           required="required">
+                           required="required" disabled value="Escolha uma raça primeiro">
+                    </div>
                 </div>
 
                 <div class="col-xs-12">
                     <label for="alt_personagem">Altura do Personagem</label><br>
-                    <input class="form-control" type="number" min="0.50" max="10.00" step="0.01" name="alt_personagem"
-                           id="alt_personagem" required="required">
+                    <div id="alt_personagemBox">
+                        <input class="form-control" type="text" name="alt_personagem"
+                               id="alt_personagem" required="required" disabled
+                               value="Escolha uma raça primeiro">
+                    </div>
+
                 </div>
 
                 <div class="col-xs-12">

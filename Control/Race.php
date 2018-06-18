@@ -46,7 +46,8 @@ VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($desc) . 
         return true;
     }
     
-    public function checkIfExistsByName($name, $idt = ""){
+    public function checkIfExistsByName($name, $idt = "")
+    {
         $where = "";
         if ($idt != "") {
             $where = "AND idt_raca != " . $idt;
@@ -58,5 +59,79 @@ VALUES('" . $this->db->scapeCont($name) . "','" . $this->db->scapeCont($desc) . 
         }
         return false;
         
+    }
+    
+    public function avaibleSizes($raceName)
+    {
+        
+        //1 para altura min - 2 para max
+        //3 para peso min - 4 para max
+        $avaibleSizes = array();
+        //Humano
+        if ($raceName == 1) {
+            $avaibleSizes = array(
+                1 => 1.60,
+                2 => 2.10,
+                3 => 60,
+                4 => 90
+            );
+        } //Anão
+        else if ($raceName == 2) {
+            $avaibleSizes = array(
+                1 => 1.30,
+                2 => 1.50,
+                3 => 60,
+                4 => 90
+            );
+        } //Elfo
+        else if ($raceName == 3) {
+            $avaibleSizes = array(
+                1 => 1.40,
+                2 => 1.70,
+                3 => 40,
+                4 => 60
+            );
+        } //Gnomo
+        else if ($raceName == 4) {
+            $avaibleSizes = array(
+                1 => 1.00,
+                2 => 1.20,
+                3 => 20,
+                4 => 30
+            );
+        } //Meio-Orc
+        else if ($raceName == 6) {
+            $avaibleSizes = array(
+                1 => 1.80,
+                2 => 2.10,
+                3 => 90,
+                4 => 125
+            );
+        } //Halfling
+        else if ($raceName == 7) {
+            $avaibleSizes = array(
+                1 => 0.00,
+                2 => 0.90,
+                3 => 15,
+                4 => 18
+            );
+        } // Meio-elfo
+        else if ($raceName == 5) {
+            $avaibleSizes = array(
+                1 => 1.50,
+                2 => 1.80,
+                3 => 45,
+                4 => 90
+            );
+        } else {
+            $avaibleSizes = array(
+                1 => 0.00,
+                2 => 3.00,
+                3 => 0,
+                4 => 150
+            );
+        }
+        
+        return $avaibleSizes;
     }
 }
