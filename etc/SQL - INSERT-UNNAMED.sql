@@ -1,63 +1,450 @@
 -- SQL INSERT PARA TABELA DE TIPO-PERFIL
-INSERT INTO td_tipo_perfil (idt_tipo_perfil, nme_tipo_perfil) VALUES (1, 'Admin'),(2, 'Usuário Comum');
+INSERT INTO td_tipo_perfil (idt_tipo_perfil, nme_tipo_perfil) VALUES
+  (1, 'Admin'),
+  (2, 'Usuário Comum');
+
 -- SQL INSERT PARA TABELA DE PAPEL-SALA
-INSERT INTO td_papel_sala (IDT_PAPEL_SALA, NME_PAPEL_SALA, DSC_PAPEL_SALA) VALUES (1,'Jogador','Participante de uma sala, poucos previlégios em sala'),(2,'Mestre','Narrador da aventura na sala, Maiores previlégios em sala'),(3,'Dono','Responsável por atribuir papel na sala');
--- SQL INSERT PARA TABELA DE SALAS
-INSERT INTO tb_sala (NME_SALA, DTA_CRIACAO_SALA, DTA_ULTIMA_ATIVIDADE_SALA, HST_CAMPANHA_SALA, PWD_SALA, QTD_PLAYERS_SALA) VALUES ('Sala 1','2018-04-18 00:00:00','2018-04-18 00:00:00','','',0),('Sala 2','2018-04-18 00:00:00','2018-04-18 00:00:00','','',0);
+INSERT INTO td_papel_sala (idt_papel_sala, nme_papel_sala, dsc_papel_sala) VALUES
+  (1,'Jogador','Participante de uma sala, poucos previlégios em sala'),
+  (2,'Mestre','Narrador da aventura na sala, Maiores previlégios em sala'),
+  (3,'Dono','Responsável por atribuir papel na sala');
 
--- SQL INSERT PARA TABELA PERSONAGEM
+-- SQL INSERT PARA TABELAS DE DOMÍNIO RELACIONADAS AO PERSONAGEM
+-- ATRIBUTOS / HABILIDADES (td_atributo)
+INSERT INTO td_atributo (nme_atributo) VALUES
+  ('Força'),
+  ('Destreza'),
+  ('Constituição'),
+  ('Inteligência'),
+  ('Sabedoria'),
+  ('Carisma');
 
-/*INSERT INTO tb_personagem
-(NME_PERSONAGEM, EXP_PERSONAGEM, GEN_PERSONAGEM, PES_PERSONAGEM, ALT_PERSONAGEM, DSC_CABELO_PERSONAGEM, IMG_PERSONAGEM, COR_OLHO_PERSONAGEM, HST_PERSONAGEM, INF_ADICIONAL_PERSONAGEM, QTD_DINHEIRO_PERSONAGEM, QTD_VIDA_PERSONAGEM,COD_ALINHAMENTO, COD_CLASSE, COD_RACA)
-VALUES ('Steve',0,'Masculino',87,1.67,'Ruim','https://www.pt.com.br/lulaeumaideia', 'qualquer uma', 'teste','teste', 1000000.00, 25,1,1,1);
-*/
+-- RAÇAS (td_raça)
+INSERT INTO td_raca (nme_raca, dsc_raca) VALUES
+  ('Humano', 'A maioria dos humanos descende de pioneiros, conquistadores, mercadores, refugiados e outras pessoas que viajam com freqüência. Desse modo, os territórios dos humanos são uma mistura de povos – com diferenças físicas, culturais, religiosas e políticas. Simples ou refinados, de pele clara ou escura, extrovertidos ou austeros, primitivos ou civilizados, devotos ou impiedosos, os humanos se espalham pelo mundo.'),
+  ('Anão', 'Os anões são famosos por sua eficiência militar, sua habilidade para resistir a castigos físicos e mágicos, seu conhecimento sobre os segredos da terra, seu trabalho árduo e sua capacidade de beber cerveja. Seus reinos misteriosos,escavados no interior das montanhas, são famosos pelos tesouros maravilhosos que a raça produz como presentes ou para o comércio.'),
+  ('Elfo', 'Os elfos caminham livremente nas terras dos humanos. Eles sempre são bem-vindos, mas nunca se sentem realmente em casa. A raça é famosa pela poesia, dança, música, cultura e artes mágicas. Os elfos valorizam as coisas naturais e a beleza simples. No entanto, quando existem ameaças contra seus lares nas florestas, eles revelam um aspecto militarizado, demonstrando uma eficácia incrível com espadas, arcos e estratégias de batalha.'),
+  ('Gnomo', 'Os gnomos são bem-vindos em todos os lugares como técnicos, alquimistas e inventores. Apesar da demanda por suas habilidades, a maioria prefere viver entre a própria raça, em confortáveis buracos sob as colinas, em meio à natureza e os animais.'),
+  ('Meio-Elfo', 'Algumas vezes, os humanos e os elfos se casam. Um elfo é atraído pela energia humana e o humano pela graciosidade élfica. Esses casamentos acabam depressa, na opinião dos elfos, porque a vida de um humano é muito curta, mas deixam um legado duradouro – os filhos meio-elfos.'),
+  ('Meio-Orc', 'As tribos bárbaras de humanos e orcs vivem em um equilíbrio instável nas regiões selvagens, aniquilando-se durante as épocas de guerra e negociando em tempos de paz. Os meio-orcs nascidos nessas áreas podem viver com seus pais humanos ou orcs; contudo, eles serão expostos às duas culturas. Por diversas razões, muitos abandonam sua terra natal e viajam para as terras civilizadas, levando consigo a tenacidade, a coragem e a habilidade de combate desenvolvidas nas regiões agrestes do mundo'),
+  ('Halfling', 'Os halflings são espertos, competentes e oportunistas. Os indivíduos e os clãs desta raça encontram seu espaço em qualquer lugar. Muitas vezes, eles são viajantes e peregrinos, e os nativos os observam com desconfiança ou curiosidade. De acordo com o clã, os halflings podem ser cidadãos honestos e trabalhadores ou ladrões à espera de uma oportunidade para realizar um grande golpe e desaparecer na escuridão da noite. De qualquer forma, eles são sobreviventes astutos e engenhosos.');
+
+-- CLASSES (td_classe)
+INSERT INTO td_classe (nme_classe, dsc_classe) VALUES
+  ('Bárbaro',	'Um	combatente	violento, que	usa	a	fúria	e	o instinto para derrotar seus	inimigos.'),
+  ('Bardo', 'Um	artista	cuja	música	cria	magia	–	um	viajante,	um	contador	de	histórias	e	um	faz-tudo.'),
+  ('Clérigo', 'Um	mestre	da	magia	divina	e	um	guerreiro	treinado.'),
+  ('Druida',	'Um	sábio	que	extrai	energia	do	mundo	natural	para	conjurar	magias divinas	e	adquirir	estranhos	poderes	mágicos.'),
+  ('Feiticeiro',	'Um	conjurador	com	habilidades	mágicas	inatas.'),
+  ('Guerreiro',	'Um	combatente	com	técnicas de	combate	excepcionais	e	habilidade inigualável	com	anuas.'),
+  ('Ladino', 'Um	espião	repleto	de	perícias	e	truques,	que	prefere	vencer através	da furtividade	em	vez	da	força	bruta.'),
+  ('Mago', 'Um conjurador	poderoso,	versado	nas	artes	arcanas.'),
+  ('Monge', 'Um	artista	marcial	cujos	ataques	desarmados	são	rápidos	e	fortes –	 um	mestre de	poderes	exóticos.'),
+  ('Paladino', 'Um	campeão	da	justiça	e	destruidor	do	mal,	protegido	apoiado	por uma	enorme	variedade	de	poderes	divinos.'),
+  ('Ranger', 'Um	guerreiro	da	natureza	sagaz	e	habilidoso.');
+
+-- PERÍCIAS e TALENTOS (td_pericia)
+-- PERÍCIAS
+INSERT INTO td_pericia (nme_pericia, dsc_pericia) VALUES
+  ('Abrir Fechaduras', 'O personagem é capaz de arrombar cadeados, fechaduras de combinação é descobrir segredos de trancas. Cada tentativa requer, no mínimo, uma ferramenta simples do tipo apropriado (um grampo, um espelhinho, uma chave mestra, um arame e similares).'),
+  ('Acrobacia', 'O personagem é capaz de mergulhar, rolar, executar cambalhotas, rodopios e similares. É impossível utilizar esta perícia quando o deslocamento do personagem está reduzido em função da armadura, excesso de equipamento ou carga.'),
+  ('Adestrar Animais', 'Essa perícia é utilizada para forçar um grupo de cavalos à puxar uma carroça em terreno difícil, treinar um cão de guarda ou ensinar um tiranossauro a “rugir” com um comando.'),
+  ('Arte da Fuga', 'Essa perícia é usada para escapar de amarras ou algemas, rastejar por espaços apertados ou fugir das garras de monstros que agarrem o personagem.'),
+  ('Atuação', 'O personagem foi treinado ou é habilidoso em uma variedade de expressão artística, que pode abranger diversos métodos diferentes, e sabe montar um espetáculo.'),
+  ('Avaliação', 'Essa perícia é usada para diferenciar uma antiguidade de uma velharia, uma espada velha e bonita de uma lâmina de fabricação élfica e jóias de alta qualidade de bijuterias atraentes.'),
+  ('Blefar', 'O personagem é capaz de transformar fatos duvidosos ou falsos em argumentos verossímeis ou usar engodos e insinuações para enviar uma mensagem secreta para outro personagem. Essa perícia abrange encenar, enganar, convencer os interlocutores, distrair, mentir e utilizar linguagem corporal. É possível usar um blefe para causar uma confusão temporária, desviar a atenção de alguém ou simplesmente para parecer inocente.'),
+  ('Cavalgar', 'O personagem é capaz de se locomover sobre uma montaria, seja um cavalo, um cachorro de montaria, um grifo, um dragão ou qualquer outra criatura adaptável como montaria.'),
+  ('Concentração', 'Essa perícia é utilizada para manter a atenção e a concentração mental do personagem.'),
+  ('Conhecimento', 'Semelhante a Atuação, Ofícios e Profissão, o Conhecimento engloba uma série de perícias distintas. Os conhecimentos representam o estudo de alguma doutrina, possivelmente uma disciplina acadêmica ou científica. A seguir, apresentamos os diversos campos de estudo disponíveis. Com a aprovação do Mestre, o jogador pode inventar novas áreas de conhecimento'),
+  ('Cura', 'Essa perícia é utilizada para salvar a vida de um aliado muito ferido, auxiliar as pessoas a se recuperarem mais rápido, ajudar um amigo a sobreviver ao veneno dowyvern ou tratar doenças.'),
+  ('Decifrar Escrita', 'Essa perícia é utilizada para compreender runas ancestrais, inscritas nas paredes de um antigo templo, captar o significado de uma carta interceptada e redigida no idioma Infernal, seguir as orientações de um mapa de tesouro escrito em um alfabeto esquecido ou interpretar os pictogramas de uma caverna.'),
+  ('Diplomacia', 'Essa perícia é utilizada para convencer um guarda a permitir uma audiência do grupo com o rei, negociar a paz entre tribos bárbaras ou assegurar que os ogros magos que capturaram o personagem exijam um resgate em vez de desmembrá-lo por diversão. A diplomacia inclui etiqueta, boas maneiras, tato, sutileza e palavras bem colocadas. Um personagem treinado conhece as regras formais e informais de conduta, assunções sociais, títulos corretos de tratamento e similares.'),
+  ('Disfarces', 'Essa perícia é utilizada para alterar a aparência do personagem ou de outra pessoa. Ela exige alguns acessórios indispensáveis, um pouco de maquiagem e tempo. Um disfarce é capaz de gerar uma mudança aparente de altura ou peso, embora limitada a 10% dos valores originais.'),
+  ('Equilíbrio', 'O personagem é capaz de manter o equilíbrio para andar sobre uma corda banda, uma trave estreita, um peitoril escorregadio ou em solo irregular.'),
+  ('Escalar', 'Essa perícia é utilizada para escalar um penhasco, alcançar a janela do segundo andar da torre de um mago ou escapar de um poço depois de cair em um alçapão.'),
+  ('Esconder-se', 'Essa perícia é utilizada para desaparecer nas sombras e espreitar um alvo, se aproximar da torre de um mago escondido entre arbustos ou seguir alguém em uma rua cheia sem ninguém perceber.'),
+  ('Falar Idioma', 'Um personagem alfabetizado é capaz de ler e escrever em qualquer idioma que conheça.'),
+  ('Falsificação', 'Essa perícia é utilizada para falsificar uma ordem escrita da duquesa, com instruções diretas à carceragem para libertar os prisioneiros, criar um mapa do tesouro que pareça autêntico ou identificar falsificações em vários documentos.'),
+  ('Furtividade', 'Essa perícia é utilizada para se aproximar sorrateiramente de um inimigo ou sair de um aposento sem ninguém perceber.'),
+  ('Identificar Magia', 'Essa perícia é utilizada para identificar magias enquanto são conjuradas ou estão ativas em um local fixo.'),
+  ('Intimidação', 'Essa perícia é utilizada para obrigar um capanga a recuar, aterrorizar um adversário ou arrancar uma informação de um prisioneiro. A intimidação inclui ameaças verbais e linguagem corporal.'),
+  ('Natação', 'Essa perícia é utilizada para que uma criatura terrestre consiga flutuar, nadar, mergulhar, desviar-se de obstáculos submersos e tarefas similares.'),
+  ('Observar', 'Essa perícia é utilizada para notar bandidos preparando uma emboscada, perceber um ladino escondido em um beco, identificar um disfarce, ler lábios ou distinguir uma centopéia gigante escondida em um monte de lixo.'),
+  ('Obter Informação', 'Essa perícia é utilizada para fazer contatos em uma região, descobrir os boatos e rumores locais e coletar informações gerais.'),
+  ('Ofícios', 'O personagem foi treinado em um ofício, comércio ou arte, como alquimia, alvenaria, armadilharia, armeiro (fabricar armas), armoraria (fabricar armaduras), arquearia (fabricar arcos), caligrafia, carpintaria, cestaria, construção naval, curtição (artigos de couro), encadernação, escultura, forjaria, lapidação, olaria, pintura, sapataria, serralheria ou tecelagem.'),
+  ('Operar Mecanismo', 'Essa perícia é utilizada para desativar armadilhas, emperrar uma fechadura (seja na posição trancada ou aberta) ou sabotar a roda de uma carroça. O personagem é capaz de examinar um aparelho mecânico pequeno ou simples e desmontá-lo.'),
+  ('Ouvir', 'Essa perícia é utilizada para escutar a aproximação de inimigos, perceber alguém se esgueirando na retaguarda do grupo ou ouvir a conversa alheia.'),
+  ('Prestidigitação', 'O personagem é capaz de cortar ou furtar uma bolsa e guardá-la no corpo, esconder um objeto livre ou uma arma leve em sua roupa ou realizar alguns truques com itens menores que um chapéu ou uma fatia de pão.'),
+  ('Procurar', 'O personagem é capaz de encontrar portas secretas, armadilhas simples, compartimentos escondidos e outros detalhes. Para enxergar qualquer coisa pouco aparente, como um ladino escondido, utilize a perícia Observar. A perícia Procurar é utilizada para distinguir pequenos detalhes ou irregularidades por meio de um esforço consciente.'),
+  ('Profissão', 'O personagem foi treinado em um tipo de prestação de serviços ou função profissional, como barqueiro, bibliotecário, boticário, caçador, carregador, carroceiro, cavalariço, cervejeiro, cocheiro, cozinheiro, curtidor, engenheiro tático, escriba, estalajadeiro, fazendeiro, guia, herborista, lenhador, marinheiro, mineiro, moleiro, pastor, pescador, rancheiro, xilografista, etc.'),
+  ('Saltar', 'Essa perícia é utilizada para superar buracos, saltar cercas baixas ou alcançar os galhos inferiores de uma árvore.'),
+  ('Sentir Motivação', 'Essa perícia é utilizada para descobrir se alguém está blefando, discernir mensagens ocultas em diálogos ou perceber se uma criatura está sendo influenciada por encantamentos. Essa perícia representa a sensibilidade do personagem para a linguagem corporal, hábitos de fala e maneirismos das pessoas.'),
+  ('Sobrevivência', 'Essa perícia é utilizada para seguir rastros, caçar animais selvagens, guiar um bando em segurança através de regiões gélidas, identificar os sinais típicos dos territórios dos ursos-coruja, prever o clima ou evitar área movediça e outros perigos naturais.'),
+  ('Usar Cordas', 'Essa perícia é utilizada para dar nós firmes, desfazer nós difíceis e amarrar prisioneiros com cordas.'),
+  ('Usar Instrumento Mágico', 'Essa perícia é utilizada para ativar instrumentos mágicos, incluindo pergaminhos e varinhas, impossíveis de acionar pela classe do personagem de outra forma.');
+-- TALENTOS
+INSERT INTO td_pericia (nme_pericia, dsc_pericia) VALUES
+  ('Acelerar Magia', 'O personagem pode conjurar magias com a velocidade do pensamento.'),
+  ('Acrobático', 'O personagem possui coordenação e domínio corporais excelentes.'),
+  ('Acuidade com Arma', 'O personagem é especialmente habilidoso para utilizar armas que se beneficiam mais da Destreza do que da Força.'),
+  ('Afinidade com Animais', 'O personagem se relaciona bem com animais.'),
+  ('Agarrar Aprimorado', 'O personagem foi treinado para agarrar seus oponentes.'),
+  ('Ágil', 'O personagem é particularmente flexível e esguio.'),
+  ('Ampliar Magia', 'O personagem pode aumentar a área de efeito das suas magias.'),
+  ('Apanhar Objetos', 'O personagem consegue apanhar projéteis atirados contra ele em pleno ar, como flechas, virotes, lanças e outros projéteis e armas de arremesso.'),
+  ('Aptidão Mágica', 'O personagem é habilidoso com tarefas relacionadas à magia.'),
+  ('Arquearia Montada', 'O personagem é capaz de usar armas de ataque à distância enquanto está cavalgando.'),
+  ('Ataque Atordoante', 'O personagem sabe atingir oponentes em áreas vulneráveis.'),
+  ('Ataque com Escudo Aprimorado', 'O personagem pode atacar com um escudo sem perder seu bônus na Classe de Armadura.'),
+  ('Ataque Desarmado Aprimorado', 'O personagem foi treinado para combater desarmado.'),
+  ('Ataque em Movimento', 'O personagem foi treinado para atacar com rapidez, movimentando-se com agilidade.'),
+  ('Ataque Giratório', 'O personagem é capaz de golpear os oponentes mais próximos usando um incrível ataque giratório.'),
+  ('Ataque Poderoso', 'O personagem é capaz de realizar ataques corporais excepcionalmente poderosos.'),
+  ('Atlético', 'O personagem tem talento para façanhas atléticas.'),
+  ('Atropelar Aprimorado', 'O personagem foi treinado para derrubar seus oponentes.'),
+  ('Aumentar Magia', 'O personagem pode lançar magia com alcance maior.'),
+  ('Auto-suficiente', 'O personagem pode tomar conta de si mesmo durante situações difíceis e em ambientes áridos.'),
+  ('Bloqueio Ambidestro', 'Seu estilo de combate com duas armas privilegia a defesa e o ataque.'),
+  ('Combate Montado', 'O personagem foi treinado para combater sobre montarias.'),
+  ('Combater com Duas Armas', 'O personagem pode combater com uma arma em cada mão; ele é capaz de desferir um ataque adicional por rodada com a segunda arma.'),
+  ('Combater com Duas Armas Aprimorado', 'O personagem é um especialista em combate com duas armas.'),
+  ('Combater com Duas Armas Maior', 'O personagem é um mestre no combate com duas armas.'),
+  ('Contramágica Aprimorada', 'O personagem compreende as variantes da magia o suficiente para neutralizar as magias de seus adversários com eficiência incrível.'),
+  ('Corrida', 'O personagem é mais rápido que o normal.'),
+  ('Criar Armaduras e Armas Mágicas', 'O personagem pode criar armas, armaduras e escudos mágicos.'),
+  ('Criar Bastão', 'O personagem pode criar bastões encantados que possuem efeitos mágicos variados.'),
+  ('Criar Cajado', 'O personagem pode criar cajados encantados que armazenam vários efeitos mágicos.'),
+  ('Criar Item Maravilhoso', 'O personagem pode criar itens mágicos variados, como bolas de cristal e tapetes voadores.'),
+  ('Criar Varinha', 'O personagem pode criar varinhas mágicas que conjuram magias.'),
+  ('Dedos Lépidos', 'O personagem tem facilidade em manipular objetos pequenos e delicados.'),
+  ('Desarme Aprimorado', 'O personagem sabe como desarmar componentes em combate corporal.'),
+  ('Desviar Objetos', 'O personagem pode desviar flechas, virotes de besta, lanças ou outras armas de disparo ou arremesso.'),
+  ('Diligente', 'Sua perspicácia é capaz de encontrar detalhes minuciosos que escapam aos demais.'),
+  ('Dominar Magia', 'O personagem está intimamente familiarizado com certas magias e não precisa de um grimório para prepará-las.'),
+  ('Duro de Matar', 'O personagem é capaz de permanecer consciente mesmo depois de sofrer ferimentos que teriam eliminado outros indivíduos.'),
+  ('Elevar Magia', 'O personagem pode lançar	uma	magia usando qualquer	nível mais elevado que o normal.'),
+  ('Encontrão Aprimorado', 'O	personagem sabe como forçar seus	oponentes	a	recuar.'),
+  ('Escrever Pergaminho', 'O personagem pode criar	pergaminhos,	utilizados por	outros conjuradores	para lançar	as magias armazenadas'),
+  ('Especialização em Arma', 'Escolha	um	tipo	de	arma,	em	que o	personagem	já	tenha	o	talento Foco em	Arma.	É	possível selecionar ataque desarmado ou a	manobra Agarrar	para a aplicação desse talento. O personagem causa dano	adicional	com	a arma escolhida.'),
+  ('Especialização em Arma Maior', 'Escolha	um	tipo	de	arma,	em	que o	personagem	já	tenha	o	talento Foco em	Arma.	É	possível selecionar ataque desarmado ou a	manobra Agarrar	para a aplicação desse talento. O personagem causa dano	excepcional	com	a arma escolhida.'),
+  ('Especialização em Combate', 'O	personagem foi	treinado para utilizar sua	perícia	em combate	na defesa e	no ataque com	a	mesma	eficiência.'),
+  ('Esquiva', 'O personagem é muito hábil para se esquivar de golpes.'),
+  ('Estender Magia', 'O personagem pode lançar magias mais duradouras.'),
+  ('Expulsão Adicional', 'O personagem é capaz de expulsar ou fascinar criaturas com mais freqüência que o normal.'),
+  ('Expulsão Aprimorada', 'Suas tentativas de expulsar ou fascinar criaturas são mais poderosas que o normal.'),
+  ('Fintar Aprimorado', 'O personagem sabe como distrair a atenção dos seus adversários em combate.'),
+  ('Foco em Arma', 'Escolha um tipo de arma. É possível selecionar ataque desarmado ou a manobra Agarrar para a aplicação desse talento. O personagem é muito habilidoso para utilizar a arma selecionada.'),
+  ('Foco em Arma Maior', 'Escolha um tipo de arma, em que o personagem já tenha o talento Foco em Arma. É possível selecionar ataque desarmado ou a manobra Agarrar para a aplicação desse talento. O personagem é excepcionalmente habilidoso para utilizar a arma selecionada.'),
+  ('Foco em Magia', 'Escolha uma escola de magia, como Ilusão. As magias dessa escola do personagem serão mais poderosas que o normal'),
+  ('Foco em Magia Maior', 'Escolha uma escola de magia em que o personagem já tenha o talento Foco em Magia. Suas magias daquela escola serão ainda mais potentes.'),
+  ('Foco em Perícia', 'Escolha uma perícia, como Furtividade. O personagem terá um talento especial com a perícia selecionada.'),
+  ('Forjar Anel', 'O personagem pode criar anéis encantados que possuem efeitos mágicos variados.'),
+  ('Fortitude Maior', 'O personagem é mais resistente que o normal.'),
+  ('Fraudulento', 'O personagem sabe como encobrir a verdade.'),
+  ('Ignorar Componentes Materiais', 'O personagem é capaz de conjurar magias ignorando seus componentes materiais.'),
+  ('Imobilização Aprimorada', 'O personagem foi treinado para imobilizar seus oponentes com segurança e ainda realizar um ataque.'),
+  ('Iniciativa Aprimorada', 'O personagem pode reagir mais rapidamente que o normal numa luta.'),
+  ('Investida Implacável', 'O personagem foi treinado para realizar investidas montadas devastadoras.'),
+  ('Investida Montada', 'O personagem foi treinado para atacar com mais rapidez enquanto estiver montado.'),
+  ('Investigador', 'O personagem sabe como descobrir informações.'),
+  ('Liderança', 'O personagem é um indivíduo que as pessoas desejam seguir. Ele tem se esforçado um pouco para recrutar parceiros e seguidores.'),
+  ('Lutar às Cegas', 'O personagem foi treinado em combate corporal, mesmo sem enxergar seus oponentes.'),
+  ('Magia Natural', 'O personagem pode lançar magias enquanto estiver na forma selvagem.'),
+  ('Magia Penetrante', 'As magias do conjurador são profundamente concentradas, atravessando a Resistência à Magia com mais facilidade.'),
+  ('Magia Penetrante Maior', 'As magias do conjurador são excepcionalmente concentradas, atravessando a Resistência à Magia com mais facilidade que o normal.'),
+  ('Magia sem Gestos', 'O personagem pode conjurar magias sem gesticular.'),
+  ('Magia Silenciosa', 'O personagem pode conjurar magias silenciosamente.'),
+  ('Magias em Combate', 'O personagem foi treinado para conjurar magias durante combates.'),
+  ('Mãos Leves', 'O personagem tem uma destreza manual excepcional.'),
+  ('Maximizar Magia', 'O personagem pode lançar magias com efeitos máximos.'),
+  ('Mobilidade', 'O personagem foi treinado para se esquivar entre os oponentes e evitar golpes.'),
+  ('Negociador', 'O personagem sabe como influenciar as atitudes alheias.'),
+  ('Persuasivo', 'O personagem sabe como usar as palavras e a linguagem corporal.'),
+  ('Pisotear', 'O personagem foi treinado para usar sua montaria para derrubar os oponentes.'),
+  ('Potencializar Invocação', 'As criaturas invocadas pelo conjurador são mais poderosas que o normal.'),
+  ('Potencializar Magia', 'O personagem pode lançar magias com efeitos maiores.'),
+  ('Preparar Poção', 'O personagem é capaz de criar poções mágicas.'),
+  ('Prontidão', 'O personagem tem sentidos aguçados.'),
+  ('Rapidez de Recarga', 'Escolha um tipo de besta. O personagem é capaz de recarregar as bestas do tipo selecionado com mais rapidez que o normal.'),
+  ('Rastrear', 'O personagem é capaz de seguir rastros de criaturas e personagens através de diversos tipos de terreno.'),
+  ('Reflexos de Combate', 'O personagem é capaz de reagir rápida e repetidamente contra os oponentes que baixam a própria guarda.'),
+  ('Reflexos Rápidos', 'O personagem tem reflexos mais rápidos que o normal.'),
+  ('Saque Rápido', 'O personagem é capaz de sacar suas armas com uma velocidade estonteante.'),
+  ('Separar Aprimorado', 'O personagem foi treinado para atacar as armas e escudos dos adversários, entre outros objetos.'),
+  ('Sorrateiro', 'Você tem um talento notável para evitar ser notado.'),
+  ('Sucesso Decisivo Aprimorado', 'Escolha um tipo de arma, como espada longa ou machado grande. O personagem consegue desferir golpes mais precisos com a arma selecionada.'),
+  ('Tiro Certeiro', 'O personagem sabe realizar disparos com mais exatidão quando seu alvo está mais próximo.'),
+  ('Tiro em Movimento', 'O personagem é extremamente habilidoso em técnicas de combate com armas à ataque à distância.'),
+  ('Tiro Longo', 'O personagem consegue atingir alvos a uma distância maior com armas de disparo.'),
+  ('Tiro Múltiplo', 'O personagem é capaz de disparar várias flechas simultaneamente contra um alvo próximo.'),
+  ('Tiro Preciso', 'O personagem foi treinado para mirar e disparar no momento e locais exatos.'),
+  ('Tiro Preciso Aprimorado', 'Seus ataques à distância ignoram a cobertura e a camuflagem.'),
+  ('Tiro Rápido', 'O personagem pode usar armas de ataque à distância com velocidade excepcional.'),
+  ('Tolerância', 'O personagem é capaz de executar incríveis façanhas de resistência.'),
+  ('Trespassar', 'O personagem é capaz de realizar outro ataque corporal depois de um golpe eficiente.'),
+  ('Trespassar Maior', 'O personagem brande uma arma branca com muita eficiência e consegue atacar diversas vezes quando derruba seus oponentes.'),
+  ('Usar Arma Comum', 'Escolha um tipo de arma comum. O personagem sabe combater com a arma selecionada.'),
+  ('Usar Armas Exóticas', 'Escolha um tipo de arma exótica. O personagem sabe combater com a arma selecionada.'),
+  ('Usar Armas Simples', 'O personagem sabe usar todas as variedades de armas simples em combate.'),
+  ('Usar Armadura (Leve)', 'O personagem foi treinado para usar armaduras leves.'),
+  ('Usar Armadura (Média)', 'O personagem foi treinado para usar armaduras médias.'),
+  ('Usar Armadura (Pesada)', 'O personagem foi treinado para usar pesadas.'),
+  ('Usar Escudo', 'O personagem sabe usar escudos pequenos e grandes, assim como o broquel.'),
+  ('Usar Escudo de Corpo', 'O personagem sabe usar escudos de corpo.'),
+  ('Vitalidade', 'O personagem é mais vigoroso que o normal.'),
+  ('Vontade de Ferro', 'A vontade do personagem é muito superior ao normal.');
+
+-- LINGUAGENS / IDIOMAS
+INSERT INTO td_linguagem (nme_linguagem) VALUES
+  ('Abissal'),
+  ('Aquan'),
+  ('Auran'),
+  ('Celestial'),
+  ('Comum'),
+  ('Dracônico'),
+  ('Druídico'),
+  ('Anão'),
+  ('Élfico'),
+  ('Gnomo'),
+  ('Goblin'),
+  ('Gigante'),
+  ('Gnoll'),
+  ('Halfling'),
+  ('Ignan'),
+  ('Infernal'),
+  ('Ore'),
+  ('Silvestre'),
+  ('Terran'),
+  ('Subterrânea');
+
+-- ALINHAMENTOS / TENDÊNCIAS (td_alinhamento)
+INSERT INTO td_alinhamento (nme_alinhamento, dsc_alinhamento) VALUES
+  ('Leal e Bom', ': Um personagem com essa tendência se comporta como todos esperam que uma pessoa boa o faça. Ele combina a vontade de combater o mal com a disciplina de lutar incessantemente. Ele diz a verdade, mantém sua palavra, ajuda os que estão em necessidade e combate as injustiças. Um personagem Leal e Bom detesta ver os culpados saírem impunes.'),
+  ('Neutro e Bom', 'Um personagem Neutro e Bom faz o melhor que uma pessoa boa conseguiria. Ele é devotado a ajudar os outros e colabora com reis e magistrados, mesmo não se sentindo obrigado a fazê-lo.'),
+  ('Caótico e Bom', 'Um personagem Caótico e Bom se comporta de acordo com a sua consciência, sem se preocupar com o que os outros esperam dele. Ele faz as coisas do seu jeito, mas é educado e benevolente. Ele acredita no bem, mas não vê utilidade para as leis e os regulamentos. Ele detesta quando as pessoas tentam intimidar os mais fracos e dizer-lhes o que fazer. Ele segue sua própria “bússola moral” que, embora tenha uma inclinação para o Bem, algumas vezes não coincide com as diretrizes da sociedade.'),
+  ('Leal e Neutro', 'Um personagem Leal e Neutro se comporta de acordo com a lei e a tradição, ou é dirigido por um código de conduta pessoal. Para ele, a ordem e a organização são importantíssimos. Ele pode acreditar em uma ordem pessoal e viver segundo um código ou padrão, ou acreditar em uma mesma ordem para todos e preferir um governo forte e organizado.'),
+  ('Neutro', 'Um personagem Neutro sempre faz o que lhe parece ser uma boa idéia. Ele não se sente inclinado fortemente por um lado ou pelo outro quando o assunto é lei contra caos ou o bem contra o mal. Na maioria das ocasiões, a neutralidade é, na verdade, mais uma falta de convicção do que um compromisso com a própria neutralidade. Esse tipo de personagem considera o Bem melhor que o Mal. Afinal, ele prefere ter bons vizinhos e governantes. Ainda assim, ele não se vê pessoalmente inclinado a defender o bem de modo abstrato ou universal.'),
+  ('Caótico e Neutro', 'Um personagem Caótico e Neutro obedece apenas à sua vontade. Trata-se de uma pessoa individualista, que valoriza sua própria liberdade e não tenta proteger a liberdade dos demais. Ele evita a autoridade,	ressente-se	das	restrições	e	desafia	as	tradições.	Um	personagem	Caótico e	Neutro	não	prejudica	intencionalmente	as	organizações	como	parte	de	uma campanha	em	favor	da	anarquia.	Para	fazer	isso,	ele	deveria	se	sentir	inspirado	pelo bem	ou	pelo	mal.'),
+  ('Leal e Mau', 'Um	vilão	Leal	e	Mau	usurpa	o	que	deseja metodicamente,	dentro	dos	limites	de seu	código	de	conduta, mas	sem	se	preocupar com	quem	será	prejudicado. Ele se preocupa com	a	tradição,	a	lealdade e a ordem, mas	não	se importa	com	a	liberdade, a	dignidade	ou	mesmo	com	a	vida. Ele joga segundo as regras,	 mas	 sem	 mostrar	piedade	 nem	 compaixão.	Sente-se confortável	com	a	hierarquia	e	gostaria	de	governar,	mas	também	aceita	servir.	Ele	não	condena	os	outros	pelas	atitudes	que	tomam,	mas	por	sua	raça,	religião,	terra	natal	ou	posição	social.'),
+  ('Neutro e Mau', 'Um	vilão	Neutro e	Mau	fará	o	possível para	sair	impune	e	se	preocupa	única	e	exclusivamente consigo. Ele	não	derrama	lágrimas	por	suas	vítimas,	matando	para	obter	vantagens,	por	esporte	ou	por	conveniência. Ele	não	tem	apreço nenhum	pela	ordem	e	não	sustenta	a	ilusão	de	que	o	respeito	pela	lei,	pelas	tradições	ou	por	um	código	de	ética	o	tornaria	melhor	ou	mais	nobre.'),
+  ('Caótico e Mau', 'Um	personagem Caótico	e	Mau	realiza	o	que	sua	ambição,	ódio	ou	ânsia	de	destruição	o	inspiram	a	fazer.	Ele	tem	um temperamento	 forte,	 traiçoeiro,	 é	 arbitrariamente	 violento,	 cruel	 e	 imprevisível. Ele	simplesmente	usurpa	o	que	deseja,	é	brutal	e	não	sente	piedade	ou	remorso.');
+
+-- DIVINDADES / DEUSES (td_divindade)
+INSERT INTO td_divindade (nme_divindade, dsc_divindade) VALUES
+  ('Boccob', 'Boccob	(bó-cob),	o	deus	da	magia,	é	Neutro.	Seus	títulos incluem	O	Distraído,	Lorde	de	Todas	as	Magias e	Arquimago	dos	Deuses.	Trata-se de	uma	divindade	distante,	que	não	executa	ações	no	mundo	dos	mortais. Sendo	o	deus	da	magia	e	do	conhecimento,	ele	é	adorado	por	magos,	feiticeiros	e	sábios.	Os	domínios associados	a	Boccob	são	Conhecimento,	Magia	e	Enganação. Sua	arma	predileta	é	o	bordão.'),
+  ('Corellon Larethian', 'Corellon Larethian (cór-e-lon	 la-ré-ti-an), o deus	 dos elfos,	é	Caótico	e	Bom.	Ele	é	conhecido	como	o	Criador dos	Elfos,	o	Protetor,	o	Protetor	e	Preservador	da	Vida e	Soberano	dos	Elfos.	Ele	é	o	criador	e	protetor	da	raça élfica	e	governa	as	coisas	que	os	elfos	mais	estimam, como	a	magia,	a	música,	as	artes,	os	ofícios, a	poesia e a	guerra.	É	venerado	pelos	elfos,	meio-elfos	e	bardos. Os	 domínios	 associados	 a	 Corellon	 são	 Caos,	 Bem, Proteção	e	Guerra.	Sua	arma	predileta	é	a	espada	longa.'),
+  ('Ehlonna', 'Ehlonna	(ê-lo-ná),	deusa	das	florestas,	é	Neutra	e	Boa. Seu	título	mais	comum	é	Ehlonna	das	Florestas. Essa	divindade protege	 todas	 as	 pessoas	 boas	 que	 vivem	 na	 floresta, que	a	amam	ou	obtém	sustento	dela.	Algumas	vezes, é	representada	como	uma	elfa	e	outras	como	uma	humana.	Ela	é	especialmente	próxima	dos	elfos,	gnomos,	meio-elfos e	halflings.	Também	é	adorada	por	rangers	e	alguns	druidas. Os domínios	associados	a	Ehlonna	são	Animais,	Bem,	Plantas	e	Sol. Sua	arma	predileta	é	o	arco	longo.'),
+  ('Erythnul', 'Erythnul	(é-rif-nul),	o	deus	da	matança,	é	Caótico	e	Mau.	Seu	título	principal	é	O	Diverso.	Erythnul	sente	prazer	no	pânico	e	na	carnificina.	Em	terras	civilizadas, seus	seguidores	formam	pequenas	seitas	dedicadas	ao	crime. Em	terras	selvagens,	bárbaros,	gnolls,	bugbears,	ogros	e	trolls	malignos	costumam	venerá-lo	abertamente.	Os domínios	 associados	 a	 ele	 são	 Caos,	 Mal,	 Enganação e Guerra.	Sua	arma	predileta	é	a	maça-estrela	com	uma	ponta	de	pedra	e	sem	esporões.'),
+  ('Fharlanghn', 'Fharlanghn	(far-lan-gun),	o	deus	das	estradas,	é	Neutro. Seu	título	é	O	Morador	do	Horizonte.	Os	altares de	Fharlanghn	são	comuns	na	beira	das	estradas	mais transitadas,	pois	ele	é	o	deus	das	viagens,	das	estradas, das	distâncias	e	do	horizonte.	Os	bardos,	os	aventureiros viajantes	e	os	mercadores	veneram	essa	divindade. Os	domínios	associados	a	Fharlanghn	são	Sorte,	Proteção e	Viagem.	Sua	arma	predileta	é	o	bordão.'),
+  ('Garl	Glittergold', 'Garl	Glittergold	(gá-url	glí-ter	gôl-d),	também	chamado	de	Ouro-Líquido,	é	o	deus	Neutro	e	Bom	dos	gnomos.	Ele	é	conhecido	como	O	Brincalhão,	O	Protetor Vigilante,	A	Gema	Sem	Preço	e	A	Esperteza	Brilhante.	Gari	Glittergold	descobriu	os	gnomos	e	os	guiou	para	o	mundo,	convertendo-se	em	seu	protetor.	Ele	governa	o	humor,	a	esperteza,	a	lapidação	e	a	fabricação	de	jóias.	Os	domínios	associados	a	ele	são	Bem,	Proteção	e	Enganação.	A	arma	predileta	de	Gari	é	o	machado	de	batalha.'),
+  ('Gruumsh', 'Gruumsh	(grúm-chi),	o	deus	dos	orcs,	é	Caótico	e	Mau. Seus	títulos	são	O Caolho e	Aquele	Que	Nunca	Dorme.	Gruumsh	é	o	deus	supremo	dos	orcs	e	exige que	seus	seguidores	sejam	fortes,	eliminem	os	fracos	entre	seus	semelhantes	e	reclamem todo	o	território	que	pertence	à	raça	por	direito	(que	abrange	quase	tudo). Os domínios	associados	a	ele	são	Caos,	Mal, Força	e	Guerra.	A	arma	predileta	de	Gruumsh	é	a	lança'),
+  ('Heironeous', 'Heironeous	(rei-rô-neus), o	deus	do	heroísmo,	é	Leal	e	Bom. Seu	título	é	O	Invencível.	Esse	deus	promove	a	justiça,	o	heroísmo,	o	cavalheirismo e	a	honra.	Os	domínios	associados	a	ele	são	Bem,	Ordem	e	 Guerra.	 Sua	 arma	 predileta	 é	 a	 espada	 longa.'),
+  ('Hextor', 'Hextor (récs-tor), o	deus	da	tirania, é	Leal	e	mau.	Seus	títulos são	O	Campeão	do	Mal,	Porta-Voz	do	Inferno	e	O	Terror	da	Batalha. Hextor	é	um	deus	de	seis	braços	que	promove	a	guerra,	o	conflito e	a	destruição.	Entre	seus	fiéis	estão	guerreiros	e	monges	malignos.	Os domínios	associados	a	ele	são	Destruição,	Mal,	Ordem	e	Guerra.	Sua arma	predileta	é	o	mangual.'),
+  ('Kord', 'Kord	(córd),	o	deus	da	força,	é	Caótico	e	Bom.	Ele é	 conhecido	 como	 O	 Lutador.	 Kord	 é	 o	 patrono	 dos atletas,	especialmente	os	praticantes	de	luta	livre.	Seus adoradores	incluem	guerreiros,	bárbaros	e	ladinos.	Os domínios	associados	a	ele	são	Caos,	Bem,	Sorte	e	Força. A	arma	predileta	de	Kord	é	a	espada	larga.'),
+  ('Moradin', 'Moradin	(mô-rá-din),	o	deus	dos	anões,	é	Leal	e	Bom. Seus	títulos	incluem	O	Forjador	de	Almas,	Pai	dos	Anões,	Pai	de	Todos	e	O	Criador.	Moradin	forjou	os	primeiros	anões	usando	metal	e	gemas	preciosas	e	depois	soprou a	vida	dentro	deles.	Ele	governa	as	artes	e	as	ciências	dos	anões:	forjar	e	moldar	metais,	engenharia	e	guerra.	Os	domínios associados	a	ele	são	Terra,	Bem,	Ordem	e	Proteção.	Sua	arma	predileta	é	o	martelo	de	guerra.'),
+  ('Nerull', 'Nerull	(nê-rul),	o	deus	da	morte,	é	Neutro	e	Mau.	Ele	é	conhecido	como	A	Morte,	O	Inimigo	do	Bem,	Aquele	que	Odeia	a	Vida,	O	Portador	da	Escuridão,	Rei	de	Toda	a	Escuridão e	O	Dilacerador	da	Carne.	Nerull	é	o	patrono	daqueles	que	buscam	o	mal	supremo	para	seu	próprio prazer	 ou	 interesse.	 Os	 domínios	 associados	 a	ele	são	Morte,	Mal	e	Enganação. Seus	adoradores,	que	incluem	necromantes	e	ladinos	malignos,	o	ilustram	como	uma	figura	quase	esquelética,	vestindo	uma	túnica e	portando	sua	arma	predileta,	uma	foice.'),
+  ('Obad-Hai', 'Obad-Hai	 (oh-bad-rai),	 o	 deus	 da	 natureza,	 é	 Neutro. Ele	é	conhecido	como	O	Oboé	e	A	Flauta	do	Pastor. Obad-Hai	 governa	 a	 natureza	 e	 é	 amigo	 de	 todos os	que	vivem	em	harmonia	com	o	mundo	natural. Os	bárbaros,	rangers	e	druidas	o	veneram. Os domínios associados	a ele são Ar, Animais,	Terra, Fogo,	Plantas e Água. Como	 Obad-Hai	 sustenta diretamente	a	Neutralidade. Obad-Hai	toca	um	oboé e	seu	título	advém	desse	instrumento. Sua	arma	predileta	é	o	bordão.'),
+  ('Olidammara', 'Olidammara	(o-lí-dã-má-ra),	o	deus	dos	ladinos, é	Caótico	e	Neutro.	Seu	título	é	O	Ladino	Sorridente. Olidammara	 adora	 vinhos,	 mulheres	 e	 músicas. Ele	é	um	vagabundo,	um	brincalhão	e	um	mestre dos	 disfarces.	 Seus	 templos	 são	 raros,	 mas	 muitas pessoas	aceitam	brindar	em	sua	honra.	Com	freqüência, os	ladinos	e	os	bardos	são	seus	adoradores.	Os domínios	associados	a	ele	são	Caos,	Sorte	e	Enganação. O	sabre	é	sua	arma	predileta.'),
+  ('Pelor', 'Pelor	(pê-lor),	o	deus	do	sol,	é	Neutro	e	Bom. Seu título	é	O	Radiante.	Pelor	é	o	criador	de	muitas	coisas boas,	serve	de	apoio	aos	necessitados	e	um	adversário de	todo	o	mal.	Ele	é	a	divindade	mais	adorada	entre	os	humanos	e	seus	sacerdotes	são	bem	recebidos em	qualquer	lugar.	Os	rangers	e	bardos	também são	 encontrados	 entre	 seus	 adoradores. Os	domínios	associados	e	ele	são	Bem,	Cura,	Força	e	Sol. Sua	arma predileta	é	a	maça.'),
+  ('St.	Cuthbert', 'St.	Cuthbert	(sain-ti	cut-bért),	o	deus	da	retribuição, é	Leal	e	Neutro.	Ele	é	conhecido	como	St.	Cuthbert	da Maça.	St.	Cuthbert	prega	a	vingança	e	a	punição	justa a	todos	que	transgredirem	a	lei.	Como	as	criaturas	malignas	violam	as	leis	com	mais	freqüência	e	de	forma mais	 visível	 que	 as	 criaturas	 boas,	 St.	 Cuthbert prefere	o	Bem	ao	Mal,	mesmo	não	sendo	um	deus de	Bom.	Os	domínios a	que	ele	está	associado	são	Destruição,	Ordem, Proteção	e	Força.	Sua	arma	predileta	é	a	maça.'),
+  ('Vecna', 'Vecna	(véc-ná),	o	deus	dos	segredos,	é	Neutro	e	Mau.	Ele	é conhecido	como	O	Lorde	Aleijado,	O	Nome	Sussurrado	e	O Mestre	de	Todos	os	Segredos	e	Mistérios.	Vecna	governa	tudo o	que	não	deve	ser	conhecido	e	aquilo	que	as	pessoas	desejam manter	em	segredo.	Os	domínios	associados	a	ele	são	Mal,	Conhecimento e Magia.	 Ele	 normalmente	 é	 retratado	 como	 um lich	(um	morto-vivo),	que	perdeu	a	mão	e	o	olho	esquerdos	numa luta	contra	seu	tenente	traidor,	Kas.	Sua	arma	predileta	é	a	adaga.'),
+  ('Wee	 Jas', 'Wee	 Jas	 (ui-jaz),	 a	 deusa	 da	 morte	 e	 da	 magia, é	 Leal	 e	 Neutra.	 Seus	 títulos	 são	 A	 Deusa	 Bruxa, A	Feiticeira	Rubi,	A	Dama	Severa	e	A	Guardiã	da Morte.	Wee	Jas	é	uma	deusa	exigente	que	espera a	 obediência	 dos	 seus	 seguidores.	 Seus	 templos são	poucos	e	afastados	entre	si,	mas	ela	conta	com	feiticeiros	 e	 magos	 poderosos entre	seus	seguidores.	Os	domínios	associados ela	são	Morte,	Ordem	e	Magia.	Sua	arma predileta	é	a	adaga.'),
+  ('Yondalla', 'Yondalla	(ion-dá-Ia),	a	deusa	dos	halflings,	é	Leal	e Boa.	Seus	títulos	incluem	A	Protetora	e	Provedora,	A	Matriarca Cuidadosa	e	A	Abençoada.	Yondalla	é	a	criadora e	protetora	dos	halflings,	e	prega	a	harmonia	entre	seus filhos	e	a	defesa	vigorosa	contra	seus	inimigos.	Seus	seguidores esperam	ter	vidas	seguras	e	prósperas	obedecendo	aos	seus	ensinamentos.	Os	domínios	associados	a	ela	são	Bem, Ordem	e	Proteção.	Sua	arma	predileta	é	a	espada	curta.');
 
 
+-- ITENS (td_item)
+-- MOEDAS
+INSERT INTO td_item (nme_item, dsc_item) VALUES
+  ('Peça de Cobre (PC)', 'Moeda de menor valor.'),
+  ('Peça de Prata (PP)', 'Vale a 10 PC'),
+  ('Peça de Ouro (PO)', 'Vale a 10 PP'),
+  ('Peça de Platina (PL)', 'Vale 10 PO');
+-- BENS DE TROCA
+INSERT INTO td_item (nme_item, dsc_item) VALUES
+  ('Trigo (1 quilo)', 'Vale 2 PC'),
+  ('Farinha (1 quilo)', 'Vale 4 PC'),
+  ('Galinha', 'Vale 4 PC'),
+  ('Ferro (1 quilo)', 'Vale 2 PP'),
+  ('Tabaco (1 quilo)', 'Vale 1 PO'),
+  ('Cobre (1 quilo)', 'Vale 1 PO'),
+  ('Bode', 'Vale 1 PO'),
+  ('Canela (0,5 quilo)', 'Vale 1 PO'),
+  ('Ovelha', 'Vale 2 PO'),
+  ('Gengibre (0,5 quilo)', 'Vale 2 PO'),
+  ('Pimenta (0,5 quilo)','Vale 2 PO'),
+  ('Porco', 'Vale 3 PO'),
+  ('Linho (1 metro quadrado)', 'Vale 4 PO'),
+  ('Sal (0,5 quilo)', 'Vale 5 PO'),
+  ('Prata (0,5 quilo)', 'Vale 5 PO'),
+  ('Seda (1 metro quadrado)', 'Vale 1 PL'),
+  ('Vaca', 'Vale 1 PL'),
+  ('Ouro (0,5 quilo)', 'Vale 5 PL'),
+  ('Platina (0,5 quilo)', ' Vale 50 PL');
+-- ITENS DE AVENTURA
+INSERT INTO td_item (nme_item, dsc_item) VALUES
+  ('Agulha de Costura', 'Vale 5 PP.'),
+  ('Algemas', 'Vale 15 PO.'),
+  ('Anzol', 'Vale 1 PP.'),
+  ('Apito', 'Vale 8 PP.'),
+  ('Aríete', 'Vale 10 PO.'),
+  ('Balde', 'Vale 5 PP.'),
+  ('Cantil', 'Vale 1 PO.'),
+  ('Cobertor', 'Vale 5 PP.'),
+  ('Corda (15 metros)', 'Vale 1 PO.'),
+  ('Corrente (3 metros)', 'Vale 3 PL.'),
+  ('Escada (3 metros)', 'Vale 5 PC.'),
+  ('Espelho de metal pequeno', 'Vale 1 PL.'),
+  ('Frasco', 'Vale 3 PC.'),
+  ('Lenha (por dia)', 'Vale 1 PC.'),
+  ('Luneta', 'Vale 100 PL.'),
+  ('Mochila', 'Vale 2 PO.'),
+  ('Óleo (0,5 litro)', 'Vale 1 PP.'),
+  ('Pá', 'Vale 2 PO.'),
+  ('Parafina', 'Vale 1 PO.'),
+  ('Pederneira e isqueiro', 'Vale 1 PO.'),
+  ('Pergaminho (folha)', 'Vale 2 PP.'),
+  ('Rações de viagem (por dia)', 'Vale 5 PP.'),
+  ('Sabão (1 quilo)', 'Vale 5 PP.'),
+  ('Saco de dormir', 'Vale 1 PP.'),
+  ('Tenda', 'Vale 10 PO.'),
+  ('Tocha', 'Vale 1 PC.'),
+  ('Vara (3 metros)', 'Vale 2 PP.');
+-- ITENS E SUBSTÂNCIAS ESPECIAIS
+INSERT INTO td_item (nme_item, dsc_item) VALUES
+  ('Acido (frasco)', 'Vale 1 PL.'),
+  ('Água benta (frasco)', 'Vale 25 PO.'),
+  ('Antídoto (vidro)', 'Vale 5 PL.'),
+  ('Bastão de Fumaça', 'Vale 2 PL.'),
+  ('Fogo alquímico (frasco)', 'Vale 2 PL.'),
+  ('Fósforo', 'Vale 1 PO.'),
+  ('Tocha da chama eterna', 'Vale 11 PL.');
+-- INTRUMENTOS DE CLASSE E KITS DE PERÍCIA
+INSERT INTO td_item (nme_item, dsc_item) VALUES
+  ('Ampulheta', 'Vale 25 PO.'),
+  ('Balança de mercador', 'Vale 2 PO.'),
+  ('Bolsa de componentes de magia', 'Vale 5 PO.'),
+  ('Instrumento musical', 'Vale 5 PO.'),
+  ('Instrumentos de ladrão', 'Vale 3 PL.'),
+  ('Kit de disfarces', 'Vale 5 PL.'),
+  ('Kit de escalada', 'Vale 8 PL.'),
+  ('Kit de primeiros socorros', 'Vale 5 PL.'),
+  ('Lente de aumento', 'Vale 10 PL.');
 
--- SQL INSERT NAS TABELAS DE DOMINIO RELACIONADAS AO PERSONAGEM
+-- EQUIPAMENTOS (td_equipamento)
+-- ATAQUE
+INSERT INTO td_equipamento (nme_equipamento, dsc_equipamento, tpo_equipamento, mod_base_equipamento) VALUES
+  ('Manopla', 'Arma simples e de concussão para combate corpo-a-corpo. Ataques com a Manopla são considerados ataques desarmados. Vale 2 PO.', 'A', '1d2 (P) / 1d3 (M)'),
+  ('Adaga', 'Arma leve, simples e perfurante ou cortante para combate corpo-a-corpo. Vale 2 PO.', 'A', '1d3 (P) / 1d4 (M)'),
+  ('Foice curta', 'Arma leve, simples e cortante para combate corpo-a-corpo. Vale 6 PO.', 'A', '1d4 (P) / 1d6 (M)'),
+  ('Clava', 'Arma de uma mão, simples e de concussão para combate corpo-a-corpo.', 'A', '1d4 (P) / 1d6 (M)'),
+  ('Lança curta', 'Arma de uma mão, simples e perfurante para combate corpo-a-corpo. Vale 1 PO.', 'A', '1d4 (P) / 1d6 (M)'),
+  ('Lança longa', 'Arma de duas mãos, simples e perfurante para combate corpo-a-corpo. Vale 5 PO.', 'A', '1d6 (P) / 1d8 (M)'),
+  ('Besta leve', 'Arma simples e perfurante para combate à distância. Vale 35 PO.', 'A', '1d6 (P) / 1d8 (M)'),
+  ('Besta pesada', 'Arma simples e perfurante para combate à distância. Vale 5 PL,', 'A', '1d8 (P) / 1d10 (M)'),
+  ('Espada curta', 'Arma leve, comum e cortante para combate corpo-a-corpo. Vale 10 PO.', 'A', '1d4 (P) / 1d6 (M)'),
+  ('Machadinha', 'Arma leve, comum e cortante para combate corpo-a-corpo. Vale 6 PO.', 'A', '1d4 (P) / 1d6 (M)'),
+  ('Porrete', 'Arma leve, comum e de concussão para combate corpo-a-corpo. Vale 1 PO.', 'A', '1d4 (P) / 1d6 (M)'),
+  ('Cimitarra', 'Arma de uma mão, comum e cortante para combate corpo-a-corpo. Vale 15 PO.', 'A', '1d4 (P) / 1d6 (M)'),
+  ('Machado de batalha', 'Arma de uma mão, comum e cortante para combate corpo-a-corpo. Vale 1 PL.', 'A', '1d6 (P) / 1d8 (M)'),
+  ('Tridente', 'Arma de uma mão, comum e perfurante para combate corpo-a-corpo. Vale 15 PO.', 'A', '1d6 (P) / 1d8 (M)'),
+  ('Alabarda', 'Arma de duas mãos, comum e cortante / perfurante para combate corpo-a-corpo. Vale 10 PO.', 'A', '1d8 (P) / 1d10 (M)'),
+  ('Espada larga', 'Arma de duas mãos, comum e cortante para combate corpo-a-corpo. Vale 5 PL.', 'A', '1d10 (P) / 2d6 (M)'),
+  ('Mangual pesado', 'Arma de duas mãos, comum e de concussão para combate corpo-a-corpo. Vale 15 PO.', 'A', '1d8 (P) / 1d10 (M)'),
+  ('Arco curto', 'Arma comum e perfurante para combate à disância. Vale 3 PL.', 'A', '1d4 (P) / 1d6 (M)'),
+  ('Arco longo', 'Arma comum e perfurante para combate à disância. Vale 75 PO.', 'A', '1d6 (P) / 1d8 (M)'),
+  ('Nunchaku', 'Arma leve, exótica e de concussão para combate corpo-a-corpo. Vale 2 PO.', 'A', '1d4 (P) / 1d6 (M)'),
+  ('Chicote', 'Arma de uma mão, exótica e cortante para combate corpo-a-corpo. Vale 1 PO.', 'A', '1d2 (P) / 1d3 (M)'),
+  ('Espada bastarda', 'Arma de uma mão, exótica e cortante para combate corpo-a-corpo. Vale 35 PO.', 'A', '1d8 (P) / 1d10 (M)'),
+  ('Corrente com cravos', 'Arma de duas mãos, exótica e perfurante para combate corpo-a-corpo. Vale 25 PO.', 'A', '1d6 (P) / 2d4 (M)'),
+  ('Besta leve de repetição', 'Arma exótica e perfurante para combate à distância. Vale 25 PL.', 'A', '1d6 (P) / 1d8 (M)'),
+  ('Besta pesada de repetição', 'Arma exótica e perfurante para combate à distância. Vale 40 PL.', 'A', '1d8 (P) / 1d10 (M)'),
+  ('Besta de mão', 'Arma exótica e perfurante para combate à distância. Vale 10 PL.', 'A', '1d3 (P) / 1d4 (M)'),
+  ('Virote de besta', 'Munição usada em bestas. Vale 1 PP.', 'A', '-'),
+  ('Flecha', 'Munição usada em arcos. Vale 5 PC.', 'A', '-');
+-- DEFESA
+INSERT INTO td_equipamento (nme_equipamento, dsc_equipamento, tpo_equipamento, mod_base_equipamento) VALUES
+  ('Alcolchoada', 'Armadura leve. Vale 5 PO.', 'D', '+1'),
+  ('Couro', 'Armadura leve. Vale 10 PO.', 'D', '+2'),
+  ('Camisão de cota de malha', 'Armadura leve. Vale 10 PL.', 'D', '+4'),
+  ('Gibão de peles', 'Armadura média. Vale 15 PO.', 'D', '+3'),
+  ('Peitoral de aço', 'Armadura média. Vale 20 PL.', 'D', '+5'),
+  ('Meia armadura', 'Armadura pesada. Vale 60 PL.', 'D', '+7'),
+  ('Armadura de batalha', 'Armadura pesada. Vale 150 PL.', 'D', '+8'),
+  ('Broquel', 'Escudo. Vale 15 PO.', 'D', '+1'),
+  ('Escudo pequeno de madeira', 'Escudo. Vale 3 PO.', 'D', '+1'),
+  ('Escudo pequeno de metal', 'Escudo. Vale 9 PO.', 'D', '+1'),
+  ('Escudo grande de madeira', 'Escudo. Vale 7 PO.', 'D', '+2'),
+  ('Escudo grande de metal', 'Escudo. Vale 2 PL.', 'D', '+2'),
+  ('Escudo de corpo', 'Escudo. Vale 3 PL.', 'D', '+4'),
+  ('Cravos para armadura', 'Acessório para armadura. Vale 5 PL.', 'D', '0'),
+  ('Cravos para escudo', 'Acessório para escudo. Vale 1 PL.', 'D', '0');
 
-INSERT INTO td_alinhamento (NME_ALINHAMENTO, DSC_ALINHAMENTO) VALUES 
-('Leal e Bom','Um personagem com essa tendência se com-porta como todos esperam que uma pessoa boa o faça. Ele combina a vontade de combater o mal com a disciplina de lutar incessantemente. Ele diz a verdade,mantém sua palavra, ajuda os que estão em necessidade e combate as injustiças.Um personagem Leal e Bom detesta ver os culpados saírem impunes.'),
-('Neutro e Bom','Um personagem Neutro e Bom faz o melhor que uma pessoa boa conseguiria. Ele é devotado a ajudar os outros e colabora com reis e magistrados, mesmo não se sentindo obrigado a fazê-lo.'),
-('Caótico e Bom','Um personagem Caótico e Bom se comporta de acordo com a sua consciência, sem se preocupar com o que os outros esperam dele. Ele faz as coisas do seu jeito, mas é educado e benevolente. Ele acredita no bem, mas não vê utilidade para as leis e os regulamentos. Ele detesta quando as pessoas tentam intimidar os mais fracos e dizer-lhes o que fazer. Ele segue sua própria “bússola moral” que, embora tenha uma inclinação para o Bem, algumas vezes não coincide com as diretrizes da sociedade.'),
-('Leal e Neutro','Um personagem Leal e Neutro se comporta de acordo com a lei e a tradição, ou é dirigido por um código de conduta pessoal. Para ele, a ordem e a organização são importantíssimos. Ele pode acreditar em uma ordem pessoal e viver segundo um código ou padrão, ou acreditar em uma mesma ordem para todos e preferir um governo forte e organizado.'),
-('Neutro','Um personagem Neutro sempre faz o que lhe parece ser uma boa idéia. Ele não se sente inclinado fortemente por um lado ou pelo outro quando o assunto é lei contra caos ou o bem contra o mal. Na maioria das ocasiões, a neutralidade é, na verdade, mais uma falta de convicção do que um compromisso com a própria neutralidade. Esse tipo de personagem considera o Bem melhor que o Mal. Ainda assim, ele não se vê pessoalmente inclinado a defender o bem de modo abstrato ou universal.'),
-('Caótico e Neutro','Um personagem Caótico e Neutro obedece apenas à sua vontade. Trata-se de uma pessoa individualista, que valoriza sua própria liberdade e não tenta proteger a liberdade dos demais. Ele evita a autoridade, ressente-se das restrições e desafia as tradições. Um personagem Caótico e Neutro não prejudica intencionalmente as organizações como parte de uma campanha em favor da anarquia. '),
-('Leal e Mal','Um vilão Leal e Mau usurpa o que deseja metodicamente, dentro dos limites de seu código de conduta, mas sem se preocupar com quem será prejudicado. Ele se preocupa com a tradição, a lealdade e a ordem, mas não se importa com a liberdade, a dignidade ou mesmo com a vida. Ele joga segundo as regras, mas sem mostrar piedade nem compaixão. Sente-se confortável com a hierarquia e gostaria de governar, mas também aceita servir.'),
-('Neutro e Mal','Um vilão Neutro e Mau fará o possível para sair impune e se preocupa única e exclusivamente consigo. Ele não derrama lágrimas por suas vítimas, matando para obter vantagens, por esporte ou por conveniência. Neutro e Mau é uma tendência muito perigosa, porque representa o mal puro, sem honra ou variação.'),
-('Caótico e Mal','Um personagem Caótico e Mau realiza o que sua ambição, ódio ou ânsia de destruição o inspiram a fazer. Ele tem um temperamento forte, traiçoeiro, é arbitrariamente violento, cruel e imprevisível. Ele simplesmente usurpa o que deseja, é brutal e não sente piedade ou remorso.');
+-- MAGIAS (td_magia)
+-- ATAQUE
+INSERT INTO td_magia (nme_magia, dsc_magia, tpo_magia, mod_base_magia) VALUES
+  ('Raio de ácido', 'Magia de nível 0.', 'A', '1d3'),
+  ('Raio de gelo', 'Magia de nível 0.', 'A', '1d3'),
+  ('Romper morto-vivo', 'Magia de nível 0.', 'A', '1d6 a um morto-vivo.'),
+  ('Ataque certeiro', 'Magia de nível 1. Concede +20 de bonus à proxima jogada de ataque.', 'A', '-'),
+  ('Mãos flamejantes', 'Magia de nível 1.', 'A', '1d4/nível (máx. 5d4).'),
+  ('Mísseis Mágicos', 'Magia de nível 1. +1 míssil/cada 2 níveis acima do 1°', 'A', '1d4+l'),
+  ('Flecha ácida de Melf', 'Magia de nível 2. +1 rodada para cada 3 níveis', 'A', '2d4'),
+  ('Esfera flamejante', 'Magia de nível 2. Dura 1 rodada para cada nível', 'A', '2d6'),
+  ('Raio ardente', 'Magia de nível 2. 1 raio para cada 4 níveis (máx. 3)', 'A', '4d6 por raio.'),
+  ('Runas Explosivas', 'Magia de nível 3. Dano ocorre caso decifradas', 'A', '6d6'),
+  ('Bola de fogo', 'Magia de nível 3. 6m de raio.', 'A', '1d6 de dano por nível.'),
+  ('Relâmpago', 'Magia de nível 3.', 'A', '1d6 por nível.'),
+  ('Flecha de chamas', 'Magia de nível 3.', 'A', 'Flechas causam +1d6.'),
+  ('Armadilha de fogo', 'Magia de nível 4.', 'A', '1d4 +1 por nível.'),
+  ('Tempestade glacial', 'Magia de nível 4. Cilindro de 12m.', 'A', '5d6'),
+  ('Assassíno fantasmagórico', 'Magia de nível 4. Ilusão mata alvo ou causa dano.', 'A', '3d6'),
+  ('Cão fiel de Mordenkainen', 'Magia de nível 5. Cachorro fantasma pode guardar e atacar.', 'A', '-'),
+  ('Cone glacial', 'Magia de nível 5.', 'A', '1d6 por nível.'),
+  ('Símbolo da dor', 'Magia de nível 5. Runa ativada causa dor às criaturas próximas.', 'A', '-'),
+  ('Esfera gélida de Otiluke', 'Magia de nível 6. Congela água ou causa dano de frio.', 'A', '-'),
+  ('Carne para pedra', 'Magia de nível 6. Transforma a criatura alvo em uma estátua.', 'A', '-'),
+  ('Circulo da morte', 'Magia de nível 6.', 'A', 'Mata 1d4 DV por nível.'),
+  ('Desintegrar', 'Magia de nível 6. Faz uma criatura ou objeto desaparecer.', 'A', '-'),
+  ('Bola de fogo controlável', 'Magia de nível 7. Retarda a explosão em até 5 rodadas.', 'A', '1d6 dano por nível'),
+  ('Rajada prísmica', 'Magia de nível 7. Raios atingem alvo com efeitos variados.', 'A', '-'),
+  ('Nuvem incendiária', 'Magia de nível 8.', 'A', '4d6 por rodada.'),
+  ('Grito maior', 'Magia de nível 8. Atordoa criaturas, danifica objetos.', 'A', '10d6'),
+  ('Raio polar', 'Magia de nível 8.', 'A', '1d6 por nível de frio.'),
+  ('Evaporação', 'Magia de nível 8. Atinge uma àrea de 9m.', 'A', '1d6 por nível.'),
+  ('Palavra de poder, Matar', 'Magia de nível 9. Mata uma criatura com 100 PV ou menos.', 'A', '-'),
+  ('Drenar energia', 'Magia de nível 9.', 'A', '2d4 níveis negativos.'),
+  ('Grito da Banshee', 'Magia de nível 9. Mata uma criatura por nível.', 'A', '-');
+-- DEFESA E UTILIDADE
+INSERT INTO td_magia (nme_magia, dsc_magia, tpo_magia, mod_base_magia) VALUES
+  ('Resistência', 'Magia de nível 0. O alvo recebe bonus para testes de resistência.', 'D', '+1'),
+  ('Luz', 'Magia de nível 0. Um objeto brilha como uma tocha.', 'D', '-'),
+  ('Consertar', 'Magia de nível 0. Faz pequenos reparos em um objeto.', 'D', '-'),
+  ('Cerrar portas', 'Magia de nível 1. Mantém uma porta fechada.', 'D', '-'),
+  ('Armadura arcana', 'Magia de nível 1. Concede ao alvo bônus de armadura.', 'D', '+4'),
+  ('Sono', 'Magia de nível 1. 4 DV de criaturas caem num sono parecido com o coma.', 'D', '-'),
+  ('Proteção contra flechas', 'Magia de nível 2. O alvo fica imune à maioria dos ataques à distância.', 'D', '-'),
+  ('Resistência à elementos', 'Magia de nível 2. Ignora dano por ataque de um tipo de energia.', 'D', '10 de dano.'),
+  ('Invisibilidade', 'Magia de nível 2. O alvo fica invisível durante 1 min por nível ou até atacar.', 'D', '-'),
+  ('Dissipar magia', 'Magia de nível 3. Cancela magias e efeitos mágicos.', 'D', '-'),
+  ('Imobilizar pessoa', 'Magia de nível 3. Imobiliza uma pessoa.', 'D', '1 rodada por nível.'),
+  ('Forma gasosa', 'Magia de nível 3. O alvo fica incorpóreo e pode voar lentamente.', 'D', '-'),
+  ('Remover maldição', 'Magia de nível 4. Liberta objeto ou pessoa de maldição.', 'D', '-'),
+  ('Enfeitiçar monstro', 'Magia de nível 4. Obriga um monstro a acreditar que é seu aliado.', 'D', '-'),
+  ('Escudo do fogo', 'Magia de nível 4. Criaturas atacantes sofrem dano de fogo. Protege de frio ou calor.', 'D', '-'),
+  ('Muralha de pedra', 'Magia de nível 5. Cria uma barreira de pedra que pode ser moldada.', 'D', '-'),
+  ('Cancelar encantamento', 'Magia de nível 5. Liberta os alvos de encantamentos, alterações, maldições e petrificação.', 'D', '-'),
+  ('Metamorfose tórrida', 'Magia de nível 5. Transforma o alvo num animal inofensivo.', 'D', '-'),
+  ('Repulsão', 'Magia de nível 6. Criaturas não podem se aproximar do conjurador.', 'D', '-'),
+  ('Despistar', 'Magia de nível 6. Deixa o conjurador invisível e cria uma duplicata ilusória.', 'D', '-'),
+  ('Pedra em carne', 'Magia de nível 6. Recupera criatura petrificada.', 'D', '-'),
+  ('Passagem invisível', 'Magia de nível 7. Cria uma passagem invisível através de madeira ou pedra.', 'D', '-'),
+  ('Cubo de energia', 'Magia de nível 7. Cubo de energia aprisiona todos dentro dele.', 'D', '-'),
+  ('Passeio etéreo', 'Magia de nível 7. Você fica etéreo.', 'D', '1 rodada por nível.'),
+  ('Limpar a mente', 'Magia de nível 8. O alvo é imune a magias mentais/emocionais e vidência.', 'D', '-'),
+  ('Labirinto', 'Magia de nível 8. Prende um alvo em labirinto extra-dimensional.', 'D', '-'),
+  ('Corpo de ferro', 'Magia de nível 8. Seu corpo se torna ferro vivo.', 'D', '-'),
+  ('Aprisionamento', 'Magia de nível 9. Prende um alvo sob a terra.', 'D', '-'),
+  ('Libertação', 'Magia de nível 9. Liberta uma criatura aprisionada.', 'D', '-'),
+  ('Projeção astral', 'Magia de nível 9. Projeta você e seus companheiros para o Plano Astral.', 'D', '-'),
+  ('Parar o tempo', 'Magia de nível 9. Você age livremente.', 'D', '1d4+l rodadas.');
 
-INSERT INTO td_raca (NME_RACA, DSC_RACA) VALUES 
-('Humano','A raça humana é a mais adaptável, flexível e ambiciosa dentre todas as raças comuns. Suas preferências, moral, costumes e hábitos variam muito. As raças inumanas acusam-nos de não cultivarem respeito pela história, mas é natural que os humanos,com sua vida relativamentecurta e sua cultura em freqüente alteração, tenham uma memória coletiva inferior aos anões, elfos, gnomos e halflings.'),
-('Anão','Os anões hesitam em sorrir ou celebrar e suspeitam muito de estranhos, mas são generososcom os poucos indivíduos que adquirem sua confiança. Eles valorizam o ouro, as gemas, as jóias e os objetos de arte fabricados com esses materiais preciosos e muitos já sucumbiram à ambição. Eles não combatem de forma recatada ou temerária, mascom coragem, tenacidade ecautela. A raça possui um forte senso de justiça, que pode se transformar em uma sede de vingança infindável.'),
-('Elfo','Os elfos preferem a serenidade à agitação e a raça costuma ceder mais à curiosidade do que à cobiça. Em função de sua longevidade, eles tendem a desenvolver uma perspectiva mais ampla dos eventos, tornando-se distantes e indiferentes às casualidades sem importância. No entanto, quando se dedicam a alcançar um objetivo, seja uma missão aventureira ou o estudo de uma nova perícia ou arte, são perseverantes e implacáveis. Os elfos hesitam em criar vínculos de amizade ou inimizade, mas são ainda mais reticentes em esquecê-los.'),
-('Gnomo','Os gnomos adoram os animais, belas pedras preciosas e piadas de qualquer tipo. Eles têm um enorme senso de humor, adoram brincadeiras e jogos e também apreciam os truques – quanto mais complexos, melhor. Felizmente, eles dedicam o mesmo empenho em suas brincadeiras e em outras artes mais práticas, como a engenharia. Os gnomos são curiosos e preferem descobrir ascoisas através da própria experiência, muitas vezescometendo imprudências.'),
-('Meio-Elfo','A maioria dos meio-elfos possui a curiosidade, a inventividade e a ambição de seu parente humano, aliadas aos sentidos refinados, o amor à natureza e os gostos artísticos de sua herança élfica.'),
-('Meio-Orc','Os meio-orcscostumam apresentar um temperamento inquieto e serem mal-humorados. Eles preferem agir a pensar e lutar em vez de discutir. Contudo, os meio-orcs destinados a obter sucesso são os indivíduos que desenvolveram autocontrole suficiente para viver nas terras civilizadas, não os insanos.'),
-('Halfling','Os halflings são espertos, competentes e oportunistas. Os indivíduos e os clãs desta raça encontram seu espaço em qualquer lugar. Muitas vezes, eles são viajantes e peregrinos, e os nativos os observam com desconfiança ou curiosidade. De acordo com o clã, os halflings podem ser cidadãos honestos e trabalhadores ou ladrões à espera de uma oportunidade para realizar um grande golpe e desaparecer na escuridão da noite. De qualquer forma, eles são sobreviventes astutos e engenhosos.');
-
-INSERT INTO td_classe (NME_CLASSE, DSC_CLASSE) VALUES 
-('Bárbaro','Um combatente violento, que usa a fúria e o instinto para derrotar seus inimigos.'),
-('Bardo','Um artista cuja música cria magia – um viajante, um contador de histórias e um faz-tudo.'),
-('Clérigo','Um mestre da magia divina e um guerreiro treinado.'),
-('Druida','Um sábio que extrai energia do mundo natural para conjurar magias divinas e adquirir estranhos poderes mágicos.'),
-('Feiticeiro','Um conjurador com habilidades mágicas inatas.'),
-('Guerreiro','Um combatente com técnicas de combate excepcionais e habili-
-dade inigualável com anuas.'),
-('Ladino','Um espião repleto de perícias e truques, que prefere vencer através da furtividade em vez da força bruta.'),
-('Mago','Um conjurador poderoso, versado nas artes arcanas.'),
-('Monge','Um artista marcial cujos ataques desarmados são rápidos e fortes – um mestre de poderes exóticos.'),
-('Paladino','Um campeão da justiça e destruidor do mal, protegido apoiado por uma enorme variedade de poderes divinos.'),
-('Ranger','Um guerreiro da natureza sagaz e habilidoso.');
-
-INSERT INTO td_linguagem (NME_LINGUAGEM) VALUES ('Comum'),('Anão'),('Terran'),('Aquan');
-INSERT INTO td_divindade (NME_DIVINDADE, DSC_DIVINDADE) VALUES 
-('Moradin','Moradin (mô-rá-din), o deus dos anões, é Leal e Bom. Seus títulos incluem O Forjador de Almas, Pai dos Anões, Pai de Todos e O Criador. Moradin forjou os primeiros anões usando metal e gemas preciosas e depois soprou a vida dentro deles. Ele governa as artes e as ciências dos anões: forjar e moldar metais, engenharia e guerra. Os domínios associados a ele são Terra, Bem, Ordem e Proteção.Sua arma predileta é o martelo de guerra.'),
-('Kord','Kord (córd), o deus da força, é Caótico e Bom. Ele é conhecido como O Lutador. Kord é o patrono dos atletas, especialmente os praticantes de luta livre. Seus adoradores incluem guerreiros, bárbaros e ladinos. Os domínios associados a ele são Caos, Bem, Sorte e Força. A arma predileta de Kord é a espada larga.'),
-('Pelor','Pelor (pê-lor), o deus do sol, é Neutro e Bom. Seu título é O Radiante. Pelor é o criador de muitas coisas boas, serve de apoio aos necessitados e um adversário de todo o mal. Ele é a divindade mais adorada entre os humanos e seus sacerdotes são bem recebidos em qualquer lugar. Os rangers e bardos também são encontrados entre seus adoradores. Os domínios associados e ele são Bem, Cura, Força e Sol. Sua arma predileta é a maça.');
-
-/*INSERT INTO TD_PERICIA (NME_PERICIA, DSC_PERICIA, VLR_BASE_PERICIA) VALUES ('','',0),('','',0),('','',),('','',0);
-INSERT INTO TD_ITEM (NME_ITEM, DSC_ITEM) VALUES ('',''),('',''),('',''),('',''),('','');
-INSERT INTO TD_EQUIPAMENTO (NME_EQUIPAMENTO, DSC_EQUIPAMENTO, TPO_EQUIPAMENTO, MOD_BASE_EQUIPAMENTO) VALUES ('','','',0), ('','','',3),('','','',5);
-INSERT INTO TD_MAGIA (NME_MAGIA, DSC_MAGIA, TPO_MAGIA, MOD_BASE_MAGIA) VALUES ('','','',0), ('','','',3), ('','','', 5);
-*/
