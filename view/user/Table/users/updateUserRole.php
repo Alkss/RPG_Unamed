@@ -9,7 +9,6 @@
 require('../../../../config.php');
 include('../../../../header.php');
 $table = new Table();
-
 foreach ($_POST['userRole'] as $key => $singleUser) {
     $table->updateUsersRoles($key, $singleUser, $_GET['idt']);
 }

@@ -19,7 +19,7 @@ $actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
                 <?php
                 if ($userChar) {
                     ?>
-                    <form action="/RPG_Unamed/view/user/Table/users/updateUserRole.php?idt=<?= $_GET['idt'] ?>&char=<?= $_GET['char'] ?>"
+                    <form action="/RPG_Unamed/view/user/Table/users/updateUserRole.php?idt=<?= $_GET['idt'] ?>"
                           method="post" id="userListForm">
                         <table id="editUserTable">
                             <tbody>
